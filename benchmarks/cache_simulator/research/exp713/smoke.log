@@ -1,0 +1,15 @@
+smoke start 2026-11-05 04:27:21 EST
+PARAMS {"center": [0.005, 0.0025, 32768.0], "bo": [0.0016164844791733762, 0.009989643116869357, 160974.82764885513], "clamp": [0.0016164844791733762, 0.00573992195495215, 160974.82764885513], "clampM": [0.0016164844791733762, 0.00573992195495215, 32768.0], "clampH": [0.005, 0.00573992195495215, 160974.82764885513]} | exp712 verdict G-BOUNDARY@g4
+SMOKE S0 machinery AST-identical to sealed exp712 runner: True
+SMOKE S1 ok: sha assertion bites on perturbed seed
+stream 4 done [58s]
+SMOKE S2 H0 full-N bookend replication vs exp674 cells 8 ok True
+SMOKE S3 H0 negative control detects perturbation: True
+stream 0 done [9s]
+stream 9 done [15s]
+stream 0 done [9s]
+stream 9 done [15s]
+SMOKE S4 det True | adjudicate well-formed True | serializable True | accounting True | adjudicator arithmetic True | ladder 8/8 True | params True
+SMOKE_OK
+exit=0
+smoke end 2026-11-05 04:28:48 EST
