@@ -1,0 +1,6 @@
+hi 1152 300000 follow 220390 brute 220390 switches 3 3 MATCH
+lo 1024 300000 follow 193041 brute 193041 switches 1 1 MATCH
+hi 1536 300000 follow 249207 brute 249207 switches 3 3 MATCH
+granite 896 638208 follow 597869 brute 597869 switches 1 1 MATCH
+granite 1024 638208 follow 620386 brute 620386 switches 1 1 MATCH
+lo 2048 638208 follow 544812 brute 544812 switches 3 3 MATCH

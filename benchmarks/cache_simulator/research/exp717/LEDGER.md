@@ -1,1 +1,2 @@
 - 2026-11-05 10:09 EST frozen: PREREG + follow.py + run_follow.py; smoke 6 cells OK (fb 0, invariant OK).
+- 2026-11-05 10:23 EST settled: FOLLOW-SHIPPABLE|STATIC-distinct:FAIL|STATIC-ws20:FAIL. F1 27/27 (LCNU 17/27), F2 worst -0.099pp, F3 FOLLOW-CostFit >= -0.020pp; static LOTO 15/27 & 17/27, worst 9.25pp. xcheck_brute 6/6 MATCH. ADDENDUM59 (116 checks).
