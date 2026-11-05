@@ -1,0 +1,1 @@
+- 2026-11-05 10:09 EST frozen: PREREG + follow.py + run_follow.py; smoke 6 cells OK (fb 0, invariant OK).
