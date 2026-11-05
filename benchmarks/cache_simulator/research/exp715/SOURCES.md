@@ -1,0 +1,1 @@
+Upstream sources are NOT duplicated here: src/prefetch/eviction_policy.{h,cpp}, tests/cpp/unit/prefetch/eviction_policy_driver.cpp and benchmarks/cache_simulator/ are taken unmodified from upstream main at UPSTREAM_SHA (sha256 in SOURCE.sha256).
