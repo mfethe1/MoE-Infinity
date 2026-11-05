@@ -1,0 +1,12 @@
+GAMMA LINE [0.0025, 0.003298086194221004, 0.004350949017804475, 0.00573992195495215, 0.007572302942213488, 0.009989643116869357] BO 0.009989643116869357
+SMOKE S1 ok: sha assertion bites on perturbed seed
+stream 4 done [55s]
+SMOKE S2 H0 machinery replication cells 8 ok True
+SMOKE S3 H0 negative control detects True
+stream 0 done [10s]
+stream 9 done [16s]
+stream 0 done [10s]
+stream 9 done [16s]
+SMOKE S4 det True adjudicate well-formed True accounting True ladder True gamma line True
+SMOKE_OK
+smoke_exit=0
