@@ -1,0 +1,36 @@
+[      0s] sealed deps ok (15 files)
+[      0s] ladder self-test 15/15
+[      0s] round 0 granite caps [262144, 256, 1024, 4096] loadavg 6.38
+[    292s]   done granite r0 qos=0 first-cap thread ratios {'null': 1.0243, 'floor': 1.2355, 'lean': 1.5113, 'fused': 0.9225}
+[    292s] round 0 qwen30b caps [262144, 256, 1024, 4096] loadavg 6.50
+[   1560s]   done qwen30b r0 qos=0 first-cap thread ratios {'null': 1.0051, 'floor': 1.2284, 'lean': 1.4677, 'fused': 0.9041}
+[   1560s] round 1 qwen30b caps [1024, 262144, 256, 4096] loadavg 5.12
+[   2823s]   done qwen30b r1 qos=0 first-cap thread ratios {'null': 1.0065, 'floor': 1.1978, 'lean': 1.405, 'fused': 0.9328}
+[   2823s] round 1 granite caps [1024, 262144, 256, 4096] loadavg 6.16
+[   3113s]   done granite r1 qos=0 first-cap thread ratios {'null': 1.0054, 'floor': 1.2854, 'lean': 1.5527, 'fused': 0.9519}
+[   3118s] round 2 granite caps [1024, 4096, 256, 262144] loadavg 5.60
+[   3416s]   done granite r2 qos=0 first-cap thread ratios {'null': 0.9885, 'floor': 1.2508, 'lean': 1.5504, 'fused': 0.9514}
+[   3416s] round 2 qwen30b caps [1024, 4096, 256, 262144] loadavg 5.55
+[   4679s]   done qwen30b r2 qos=0 first-cap thread ratios {'null': 1.0032, 'floor': 1.1992, 'lean': 1.3534, 'fused': 0.9413}
+[   4679s] round 3 granite caps [1024, 4096, 262144, 256] loadavg 6.39
+[   4962s]   done granite r3 qos=0 first-cap thread ratios {'null': 0.9943, 'floor': 1.282, 'lean': 1.5509, 'fused': 0.9342}
+[   4962s] round 3 qwen30b caps [1024, 4096, 262144, 256] loadavg 5.10
+[   6215s]   done qwen30b r3 qos=0 first-cap thread ratios {'null': 1.001, 'floor': 1.1986, 'lean': 1.3126, 'fused': 0.932}
+[   6215s] round 4 qwen30b caps [4096, 262144, 256, 1024] loadavg 5.32
+[   7471s]   done qwen30b r4 qos=0 first-cap thread ratios {'null': 1.0161, 'floor': 1.2592, 'lean': 1.5071, 'fused': 0.9459}
+[   7471s] round 4 granite caps [4096, 262144, 256, 1024] loadavg 7.79
+[   7757s]   done granite r4 qos=0 first-cap thread ratios {'null': 1.0422, 'floor': 1.2673, 'lean': 1.4065, 'fused': 0.9125}
+[   7757s] round 5 granite caps [4096, 256, 262144, 1024] loadavg 4.99
+[   8041s]   done granite r5 qos=0 first-cap thread ratios {'null': 0.9977, 'floor': 1.2604, 'lean': 1.4532, 'fused': 0.928}
+[   8041s] round 5 qwen30b caps [4096, 256, 262144, 1024] loadavg 4.15
+[   9297s]   done qwen30b r5 qos=0 first-cap thread ratios {'null': 0.9996, 'floor': 1.2584, 'lean': 1.4833, 'fused': 0.9938}
+[   9297s] round 6 qwen30b caps [262144, 4096, 1024, 256] loadavg 5.14
+[  10583s]   done qwen30b r6 qos=0 first-cap thread ratios {'null': 0.9696, 'floor': 1.1963, 'lean': 1.5603, 'fused': 0.8978}
+[  10583s] round 6 granite caps [262144, 4096, 1024, 256] loadavg 5.91
+[  10882s]   done granite r6 qos=0 first-cap thread ratios {'null': 1.0131, 'floor': 1.3016, 'lean': 1.4188, 'fused': 0.9396}
+[  10882s] round 7 granite caps [4096, 262144, 256, 1024] loadavg 5.41
+[  11168s]   done granite r7 qos=0 first-cap thread ratios {'null': 1.0075, 'floor': 1.2144, 'lean': 1.4472, 'fused': 0.9164}
+[  11168s] round 7 qwen30b caps [4096, 262144, 256, 1024] loadavg 5.64
+[  12447s]   done qwen30b r7 qos=0 first-cap thread ratios {'null': 1.01, 'floor': 1.2449, 'lean': 1.4842, 'fused': 0.9559}
+[  12447s] settled verdict=PAYOFF-CONFIRMED economics=SAVING fused-R3=0.9605 [0.9482,0.9735] argmax=['qwen30b', 4096] R2=1.5507 null=0.9991 rounds=8
+RUN_EXIT=0

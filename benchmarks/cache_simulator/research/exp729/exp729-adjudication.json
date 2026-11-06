@@ -1,0 +1,617 @@
+{
+ "verdict": "PAYOFF-CONFIRMED",
+ "economics": "SAVING",
+ "checks_ok": 95,
+ "checks_total": 95,
+ "checks": [
+  {
+   "check": "ARTIFACT.sha256 lists PREREG, runner, policies, sealed_deps, smoke.log",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha PREREG.md",
+   "ok": true,
+   "detail": "d64f92afa952"
+  },
+  {
+   "check": "freeze commit 534c2f5 carries PREREG.md byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha run_fused.py",
+   "ok": true,
+   "detail": "86b6fb662aac"
+  },
+  {
+   "check": "freeze commit 534c2f5 carries run_fused.py byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha policies_fused.py",
+   "ok": true,
+   "detail": "050aa1b53538"
+  },
+  {
+   "check": "freeze commit 534c2f5 carries policies_fused.py byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha sealed_deps.sha256",
+   "ok": true,
+   "detail": "21f8cb6cce03"
+  },
+  {
+   "check": "freeze commit 534c2f5 carries sealed_deps.sha256 byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha smoke.log",
+   "ok": true,
+   "detail": "a18b8dff1331"
+  },
+  {
+   "check": "freeze commit 534c2f5 carries smoke.log byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy PREREG.md == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy run_fused.py == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy policies_fused.py == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy sealed_deps.sha256 == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy smoke.log == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy exp729-fused.json == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy run.log == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "committed ARTIFACT.sha256 == local ARTIFACT.sha256",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "freeze commit time precedes result mtime",
+   "ok": true,
+   "detail": "freeze 1793939991 < result 1793952463"
+  },
+  {
+   "check": "running.json registration shas == ARTIFACT (PREREG + runner)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "8001024c6280"
+  },
+  {
+   "check": "result JSON records sealed dep census_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "e50379fce393"
+  },
+  {
+   "check": "result JSON records sealed dep policies_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit.py unchanged",
+   "ok": true,
+   "detail": "4bfff5bd4ada"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit3.py unchanged",
+   "ok": true,
+   "detail": "23bd944aa491"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit3.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_rothead.py unchanged",
+   "ok": true,
+   "detail": "01c79a2fdebc"
+  },
+  {
+   "check": "result JSON records sealed dep policies_rothead.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies.py unchanged",
+   "ok": true,
+   "detail": "b38c55b86b70"
+  },
+  {
+   "check": "result JSON records sealed dep policies.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_policies_real.py unchanged",
+   "ok": true,
+   "detail": "46690edaaddf"
+  },
+  {
+   "check": "result JSON records sealed dep run_policies_real.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-qwen30b.csv unchanged",
+   "ok": true,
+   "detail": "546f0059d7d2"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-qwen30b.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-granite.csv unchanged",
+   "ok": true,
+   "detail": "a147cc8e819b"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-granite.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp675a-shared-costfit.json unchanged",
+   "ok": true,
+   "detail": "64a39b9909d2"
+  },
+  {
+   "check": "result JSON records sealed dep exp675a-shared-costfit.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_qwen30b.pt unchanged",
+   "ok": true,
+   "detail": "08732f27ce6b"
+  },
+  {
+   "check": "result JSON records sealed dep stream_qwen30b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_granite3b.pt unchanged",
+   "ok": true,
+   "detail": "7f8e4303927d"
+  },
+  {
+   "check": "result JSON records sealed dep stream_granite3b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_bo.py unchanged",
+   "ok": true,
+   "detail": "35b2498a49a1"
+  },
+  {
+   "check": "result JSON records sealed dep run_bo.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp718-econ.json unchanged",
+   "ok": true,
+   "detail": "392128938508"
+  },
+  {
+   "check": "result JSON records sealed dep exp718-econ.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_econ.py unchanged",
+   "ok": true,
+   "detail": "3d92941ebf82"
+  },
+  {
+   "check": "result JSON records sealed dep run_econ.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "15 sealed deps",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log RUN_EXIT=0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log sealed deps ok (15 files)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log ladder self-test 15/15 before measurement",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log settled verdict + economics == JSON",
+   "ok": true,
+   "detail": "PAYOFF-CONFIRMED SAVING"
+  },
+  {
+   "check": "stored ladder_selftest 15/15",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "design == PREREG (8 rounds, min 5, caps incl. ceiling, streams, seed 729, 5.5h, null bars, 1.10/1.35, 0.80)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "16 worker records = 8 rounds x 2 streams",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "Random(729) stream/cap schedule reproduced exactly (16/16 records)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker replayed the FULL stream (qwen30b 1,424,640 / granite 638,208)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker QOS rc == 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every unit: fixed null/floor/lean/fused order, 4 reps, ABBA even / BAAB odd (256/256 units)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "budget not hit; elapsed < 5.5h",
+   "ok": true,
+   "detail": "12446.7"
+  },
+  {
+   "check": "rung 1: every timed replay hit_rate == exp718 PASS-1 costfit3 exactly (1024/1024)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored hit_rate_mismatches empty",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "round-0 census complete: 32/32 (2 streams x 4 caps x 4 units), only in round 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rung 1: round-0 terminal FULL STATE of every B arm == sealed costfit3 A (32/32)",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "check": "rung 1: A-arm census == sealed structure_census (32/32)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "A-arm (costfit3) census identical across the 4 units of each cell (8/8)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "struct ratios re-derived from census == stored (32/32, |d| <= 1e-15)",
+   "ok": true,
+   "detail": "0.0e+00"
+  },
+  {
+   "check": "null and floor struct ratio == 1.0 at all cells (no sharing)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "economics qualifier re-derived (fused/costfit3 struct_bytes <= 0.80 at all 8 cells) == stored",
+   "ok": true,
+   "detail": "SAVING; fused max 0.6271"
+  },
+  {
+   "check": "32 cells (2 streams x 4 caps x 4 units), n=8 rounds each",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored cell stats == re-derived from raw ns (32 cells x 3 clocks x 3 stats, |d| <= 1e-12)",
+   "ok": true,
+   "detail": "max |d| 0.00e+00"
+  },
+  {
+   "check": "rung 2: complete rounds 8 >= MIN 5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rung 3 null pooled in [0.97,1.03]",
+   "ok": true,
+   "detail": "0.9991"
+  },
+  {
+   "check": "rung 3 every cell null median in [0.93,1.07] (8/8)",
+   "ok": true,
+   "detail": "range 0.9909-1.0187"
+  },
+  {
+   "check": "gate input null_pooled re-derived == stored null_pooled",
+   "ok": true,
+   "detail": "0.999115"
+  },
+  {
+   "check": "gate input F re-derived == stored R3",
+   "ok": true,
+   "detail": "0.960520"
+  },
+  {
+   "check": "gate input F_q25 re-derived == stored R3_q25",
+   "ok": true,
+   "detail": "0.948157"
+  },
+  {
+   "check": "gate input F_q75 re-derived == stored R3_q75",
+   "ok": true,
+   "detail": "0.973538"
+  },
+  {
+   "check": "gate input lean_max re-derived == stored R2",
+   "ok": true,
+   "detail": "1.550661"
+  },
+  {
+   "check": "fused argmax cell re-derived == stored",
+   "ok": true,
+   "detail": "('qwen30b', 4096)"
+  },
+  {
+   "check": "rung 4: fused argmax IQR does not straddle 1.10 or 1.35",
+   "ok": true,
+   "detail": "[0.9482,0.9735]"
+  },
+  {
+   "check": "rung 5: F <= 1.10",
+   "ok": true,
+   "detail": "0.9605"
+  },
+  {
+   "check": "independent ladder boundary self-test 16/16",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "independent economics qualifier self-test 4/4",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "re-adjudicated verdict == stored verdict",
+   "ok": true,
+   "detail": "PAYOFF-CONFIRMED"
+  },
+  {
+   "check": "descriptive: leave-one-round-out verdict stable (8/8 == stored)",
+   "ok": true,
+   "detail": "['PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED']"
+  },
+  {
+   "check": "exp723 sealed result parsed: 8 N=3 cells",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE qwen30b@4096: 16/16 fresh replays hit_rate == exp718 oracle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE qwen30b@4096: full-state parity 4/4 units + A census == sealed structure_census",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE fused struct ratio == stored qwen30b|4096",
+   "ok": true,
+   "detail": "0.3742"
+  },
+  {
+   "check": "LIVE qwen30b@4096 fused thread ratio <= 1.10 (single ABBA unit, descriptive)",
+   "ok": true,
+   "detail": "null 1.0155, floor 1.2717, lean 1.4898, fused 0.9654"
+  }
+ ],
+ "gate_inputs": {
+  "sealed_ok": true,
+  "hr_ok": true,
+  "rounds": 8,
+  "null_pooled": 0.9991154422063353,
+  "null_cells_ok": true,
+  "F": 0.960519974162181,
+  "F_q25": 0.9481573883275236,
+  "F_q75": 0.9735378850924923,
+  "F_argmax": [
+   "qwen30b",
+   4096
+  ],
+  "lean_max": 1.5506614237915022
+ },
+ "null_cell_medians": {
+  "qwen30b|256": 0.9980275349494974,
+  "qwen30b|1024": 1.0062702748646335,
+  "qwen30b|4096": 1.0002033494631732,
+  "qwen30b|262144": 0.9908739410225968,
+  "granite|256": 1.0092662944693422,
+  "granite|1024": 0.994765060821608,
+  "granite|4096": 0.99556556016672,
+  "granite|262144": 1.0187226528396607
+ },
+ "struct_ratios": {
+  "null": {
+   "granite|262144": 1.0,
+   "granite|256": 1.0,
+   "granite|1024": 1.0,
+   "granite|4096": 1.0,
+   "qwen30b|262144": 1.0,
+   "qwen30b|256": 1.0,
+   "qwen30b|1024": 1.0,
+   "qwen30b|4096": 1.0
+  },
+  "floor": {
+   "granite|262144": 1.0,
+   "granite|256": 1.0,
+   "granite|1024": 1.0,
+   "granite|4096": 1.0,
+   "qwen30b|262144": 1.0,
+   "qwen30b|256": 1.0,
+   "qwen30b|1024": 1.0,
+   "qwen30b|4096": 1.0
+  },
+  "lean": {
+   "granite|262144": 0.4825070361550119,
+   "granite|256": 0.536002886002886,
+   "granite|1024": 0.4022633744855967,
+   "granite|4096": 0.4825070361550119,
+   "qwen30b|262144": 0.32582849704398764,
+   "qwen30b|256": 0.400994593151325,
+   "qwen30b|1024": 0.3833092992687689,
+   "qwen30b|4096": 0.32582849704398764
+  },
+  "fused": {
+   "granite|262144": 0.5644728296168001,
+   "granite|256": 0.6270562770562771,
+   "granite|1024": 0.4705977907732294,
+   "granite|4096": 0.5644728296168001,
+   "qwen30b|262144": 0.37422031783912785,
+   "qwen30b|256": 0.4605500300380482,
+   "qwen30b|1024": 0.44023812866094103,
+   "qwen30b|4096": 0.37422031783912785
+  }
+ },
+ "robustness": {
+  "proc": {
+   "F": 0.9605200652006467,
+   "argmax": [
+    "qwen30b",
+    4096
+   ],
+   "null_pooled": 0.9991154350111006
+  },
+  "wall": {
+   "F": 0.963516639786018,
+   "argmax": [
+    "qwen30b",
+    4096
+   ],
+   "null_pooled": 0.9978922329570613
+  }
+ },
+ "leave_one_round_out": [
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED"
+ ],
+ "exp723_fam3_cells": {
+  "granite|4096": 1.4841800685219722,
+  "granite|262144": 1.5392614705566727,
+  "granite|256": 1.3533718961950498,
+  "granite|1024": 1.6058626463294652,
+  "qwen30b|4096": 1.5489089502997917,
+  "qwen30b|262144": 1.5474645422586761,
+  "qwen30b|256": 1.2206759038253658,
+  "qwen30b|1024": 1.383926039429129
+ },
+ "live": {
+  "stream": "qwen30b",
+  "round": 0,
+  "qos_rc": 0,
+  "accesses": 1424640,
+  "loadavg_start": 5.9755859375,
+  "loadavg_end": 5.23486328125,
+  "ratios": {
+   "null": 1.0154549333777383,
+   "floor": 1.2716792999132704,
+   "lean": 1.489812135446047,
+   "fused": 0.9654488772349878
+  },
+  "loadavg": [
+   5.9755859375,
+   5.23486328125
+  ]
+ },
+ "predictions": {
+  "a": true,
+  "b_floor": false,
+  "b_lean": false,
+  "c": false
+ },
+ "null_units_over_10pct": [
+  0,
+  64
+ ],
+ "elapsed_s": 235.9
+}
