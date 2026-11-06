@@ -1,0 +1,16 @@
+SMOKE S0 sealed deps ok (13 files)
+SMOKE S7 ok: sealed-drift assertion bites
+SMOKE S5 anchors parsed 12 ratios ok True
+SMOKE S6 ladder self-test 12/12 ok True
+costfit   (178095, 21905, 0.890475, 0, None, 'lcnu')
+shared_costfit (178095, 21905, 0.890475, 0, None, 'lcnu')
+  victim/evict events: 44327 vs 44327, sequences equal=True; masses equal=True; resident order equal=True -> PARITY OK
+costfit3  (178095, 21905, 0.890475, 0, {'lcnu': 0, 's3fifo': 0, 'rothead': 0}, 'lcnu')
+shared_costfit3 (178095, 21905, 0.890475, 0, {'lcnu': 0, 's3fifo': 0, 'rothead': 0}, 'lcnu')
+  victim/evict events: 88654 vs 88654, sequences equal=True; masses equal=True; resident order equal=True -> PARITY OK
+SMOKE S1 sealed parity_smoke True [11s]
+SMOKE S2 costfit cell well-formed True {"tables": 5, "records": 6032, "hit_rate": 0.9628866666666667, "ns_per_access": 2842.9} [16s]
+SMOKE S3 shared_costfit3 tables=1 slots 12064 records 1252 struct 187192 < base 443232 hit-equal True ok True [29s]
+SMOKE S4 granite[:150k] costfit vs shared_costfit full-state parity True (hit 0.962887, diff []) [31s]
+SMOKE_OK
+SMOKE_EXIT=0

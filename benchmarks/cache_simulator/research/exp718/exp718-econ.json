@@ -1,0 +1,1511 @@
+{
+ "experiment": "exp718",
+ "date": "2026-11-05T13:32:12 EST",
+ "host": {
+  "platform": "macOS-15.6-arm64-arm-64bit-Mach-O",
+  "python": "3.14.8",
+  "torch": "2.15.0",
+  "loadavg_start": [
+   2.8017578125,
+   3.87744140625,
+   4.28466796875
+  ]
+ },
+ "design": {
+  "caps": [
+   256,
+   1024,
+   4096,
+   262144
+  ],
+  "policies": [
+   "costfit",
+   "costfit3",
+   "shared_costfit",
+   "shared_costfit3"
+  ],
+  "streams": {
+   "qwen30b": "/Users/mfethe/warp-work/moei-granite3b/data/belady/stream_qwen30b.pt",
+   "granite": "/Users/mfethe/warp-work/moei-granite3b/benchmarks/cache_simulator/data/handcrafted8-greedy512/belady/stream_granite3b.pt"
+  },
+  "quiet_start": 1.5,
+  "quiet_end": 2.5,
+  "repeats_timed": 5,
+  "wall_budget_s": 21600
+ },
+ "sealed_deps": {
+  "census_shared_costfit.py": "8001024c628070b229d4b666c4cd89acb65026c314bf7c5acaf88d33c625be98",
+  "policies_shared_costfit.py": "e50379fce3934eec7d0048b2adc8e7099ea32dba573cae8c526548eaf9b27bed",
+  "policies_costfit.py": "4bfff5bd4ada4b8ee0499d0c530261db72043a529432a79c16f3cb996e7e033e",
+  "policies_costfit3.py": "23bd944aa4919526dbe3aa4968fbcfd223811400b2da994fe0cd71032a52ba1a",
+  "policies_rothead.py": "01c79a2fdebcba2b674333a87db73fdf3449e52a707ab801cd7ad975b09268ca",
+  "policies.py": "b38c55b86b704d3d1b3ee7cffea37aa78614616e779e1d9ae91718b48b4dbf4c",
+  "run_policies_real.py": "46690edaaddf212868e854fd4120b5f0540afcdd176dcdc104ef36577ed2e98a",
+  "census_exp675-qwen30b.csv": "546f0059d7d22819c67f8f8dc8e61bddfa08705f05c4833439aaab7b16df3331",
+  "census_exp675-granite.csv": "a147cc8e819b364ad89f553a1d84419d19bf766eda4d86f6568d1a1356d137c3",
+  "exp675a-shared-costfit.json": "64a39b9909d2940dd650b44aae975c02a68122d41baab09100deb7e9739f8f4c",
+  "stream_qwen30b.pt": "08732f27ce6b5de19e79456a7e1318e88659ece243e8f2a73451b3dbd130b5c8",
+  "stream_granite3b.pt": "7f8e4303927d07bb5ac06e5398b5701ee307a80de43e11f047c94eb689a561be",
+  "run_bo.py": "35b2498a49a163843e5345c725d06ac1be239bdd1fa70ab063872cf1b0669191"
+ },
+ "parity": [
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 256,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.3272889993261456,
+   "resident_len": 256,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 256,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.3272889993261456,
+   "resident_len": 256,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 256,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.46816398415563576,
+   "resident_len": 256,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 256,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.46816398415563576,
+   "resident_len": 256,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 1024,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.6673896563342318,
+   "resident_len": 1024,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 1024,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.6673896563342318,
+   "resident_len": 1024,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 1024,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.972067100381067,
+   "resident_len": 1024,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 1024,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.972067100381067,
+   "resident_len": 1024,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 4096,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9886251965408805,
+   "resident_len": 4096,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 4096,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9886160714285714,
+   "resident_len": 0,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 4096,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9980225882470919,
+   "resident_len": 1262,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 4096,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9980225882470919,
+   "resident_len": 1262,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 262144,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9958249101527403,
+   "resident_len": 5948,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 262144,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9958249101527403,
+   "resident_len": 5948,
+   "detail": null,
+   "stream": "qwen30b"
+  },
+  {
+   "base": "costfit",
+   "shared": "shared_costfit",
+   "cap": 262144,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9980225882470919,
+   "resident_len": 1262,
+   "detail": null,
+   "stream": "granite"
+  },
+  {
+   "base": "costfit3",
+   "shared": "shared_costfit3",
+   "cap": 262144,
+   "equal": true,
+   "diff_fields": [],
+   "hit_rate": 0.9980225882470919,
+   "resident_len": 1262,
+   "detail": null,
+   "stream": "granite"
+  }
+ ],
+ "pass1": {
+  "qwen30b|256|costfit": {
+   "policy": "costfit",
+   "capacity": 256,
+   "accesses": 1424640,
+   "hit_rate": 0.3272889993261456,
+   "peak_bytes": 1847238,
+   "terminal_bytes": 1829102,
+   "tables": 5,
+   "records": 24048,
+   "slots": 24048,
+   "struct_bytes": 1198480,
+   "ns_per_access": 10676.1,
+   "loadavg": [
+    6.64990234375,
+    5.34423828125,
+    4.84765625
+   ]
+  },
+  "qwen30b|256|costfit3": {
+   "policy": "costfit3",
+   "capacity": 256,
+   "accesses": 1424640,
+   "hit_rate": 0.3272889993261456,
+   "peak_bytes": 4059474,
+   "terminal_bytes": 3682898,
+   "tables": 10,
+   "records": 48096,
+   "slots": 48096,
+   "struct_bytes": 2396960,
+   "ns_per_access": 21773.9,
+   "loadavg": [
+    13.75,
+    8.990234375,
+    6.41943359375
+   ]
+  },
+  "qwen30b|256|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 256,
+   "accesses": 1424640,
+   "hit_rate": 0.3272889993261456,
+   "peak_bytes": 1508759,
+   "terminal_bytes": 1490623,
+   "tables": 1,
+   "records": 5948,
+   "slots": 24048,
+   "struct_bytes": 770832,
+   "ns_per_access": 14291.5,
+   "loadavg": [
+    14.81640625,
+    10.21875,
+    7.1298828125
+   ]
+  },
+  "qwen30b|256|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 256,
+   "accesses": 1424640,
+   "hit_rate": 0.3272889993261456,
+   "peak_bytes": 2745033,
+   "terminal_bytes": 2373073,
+   "tables": 1,
+   "records": 5948,
+   "slots": 48096,
+   "struct_bytes": 1008752,
+   "ns_per_access": 26451.2,
+   "loadavg": [
+    11.6748046875,
+    12.1884765625,
+    8.6708984375
+   ]
+  },
+  "granite|256|costfit": {
+   "policy": "costfit",
+   "capacity": 256,
+   "accesses": 638208,
+   "hit_rate": 0.46816398415563576,
+   "peak_bytes": 487494,
+   "terminal_bytes": 468974,
+   "tables": 5,
+   "records": 5304,
+   "slots": 5304,
+   "struct_bytes": 166320,
+   "ns_per_access": 8086.6,
+   "loadavg": [
+    12.37939453125,
+    12.31201171875,
+    8.83642578125
+   ]
+  },
+  "granite|256|costfit3": {
+   "policy": "costfit3",
+   "capacity": 256,
+   "accesses": 638208,
+   "hit_rate": 0.46816398415563576,
+   "peak_bytes": 1124762,
+   "terminal_bytes": 960842,
+   "tables": 10,
+   "records": 10608,
+   "slots": 10608,
+   "struct_bytes": 332640,
+   "ns_per_access": 17761.7,
+   "loadavg": [
+    11.18212890625,
+    11.8291015625,
+    8.900390625
+   ]
+  },
+  "granite|256|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 256,
+   "accesses": 638208,
+   "hit_rate": 0.46816398415563576,
+   "peak_bytes": 548319,
+   "terminal_bytes": 529799,
+   "tables": 1,
+   "records": 1262,
+   "slots": 5304,
+   "struct_bytes": 137912,
+   "ns_per_access": 13297.3,
+   "loadavg": [
+    13.9208984375,
+    12.43359375,
+    9.25341796875
+   ]
+  },
+  "granite|256|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 256,
+   "accesses": 638208,
+   "hit_rate": 0.46816398415563576,
+   "peak_bytes": 1058961,
+   "terminal_bytes": 895041,
+   "tables": 1,
+   "records": 1262,
+   "slots": 10608,
+   "struct_bytes": 188392,
+   "ns_per_access": 24518.8,
+   "loadavg": [
+    16.0234375,
+    13.5029296875,
+    9.96337890625
+   ]
+  },
+  "qwen30b|1024|costfit": {
+   "policy": "costfit",
+   "capacity": 1024,
+   "accesses": 1424640,
+   "hit_rate": 0.6673896563342318,
+   "peak_bytes": 2439566,
+   "terminal_bytes": 2362422,
+   "tables": 5,
+   "records": 24816,
+   "slots": 24816,
+   "struct_bytes": 1253776,
+   "ns_per_access": 10475.6,
+   "loadavg": [
+    12.76220703125,
+    13.2421875,
+    10.2587890625
+   ]
+  },
+  "qwen30b|1024|costfit3": {
+   "policy": "costfit3",
+   "capacity": 1024,
+   "accesses": 1424640,
+   "hit_rate": 0.6673896563342318,
+   "peak_bytes": 5134386,
+   "terminal_bytes": 4749858,
+   "tables": 10,
+   "records": 49632,
+   "slots": 49632,
+   "struct_bytes": 2507552,
+   "ns_per_access": 23208.9,
+   "loadavg": [
+    6.23583984375,
+    9.7021484375,
+    9.35595703125
+   ]
+  },
+  "qwen30b|1024|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 1024,
+   "accesses": 1424640,
+   "hit_rate": 0.6673896563342318,
+   "peak_bytes": 2045775,
+   "terminal_bytes": 1968711,
+   "tables": 1,
+   "records": 5948,
+   "slots": 24816,
+   "struct_bytes": 770832,
+   "ns_per_access": 14015.2,
+   "loadavg": [
+    6.44580078125,
+    8.666015625,
+    8.9833984375
+   ]
+  },
+  "qwen30b|1024|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 1024,
+   "accesses": 1424640,
+   "hit_rate": 0.6673896563342318,
+   "peak_bytes": 3709801,
+   "terminal_bytes": 3329473,
+   "tables": 1,
+   "records": 5948,
+   "slots": 49632,
+   "struct_bytes": 1008752,
+   "ns_per_access": 30630.0,
+   "loadavg": [
+    6.44091796875,
+    7.4384765625,
+    8.36962890625
+   ]
+  },
+  "granite|1024|costfit": {
+   "policy": "costfit",
+   "capacity": 1024,
+   "accesses": 638208,
+   "hit_rate": 0.972067100381067,
+   "peak_bytes": 936326,
+   "terminal_bytes": 861998,
+   "tables": 5,
+   "records": 6072,
+   "slots": 6072,
+   "struct_bytes": 221616,
+   "ns_per_access": 3195.7,
+   "loadavg": [
+    6.72314453125,
+    7.44970703125,
+    8.3564453125
+   ]
+  },
+  "granite|1024|costfit3": {
+   "policy": "costfit3",
+   "capacity": 1024,
+   "accesses": 638208,
+   "hit_rate": 0.972067100381067,
+   "peak_bytes": 1911842,
+   "terminal_bytes": 1746194,
+   "tables": 10,
+   "records": 12144,
+   "slots": 12144,
+   "struct_bytes": 443232,
+   "ns_per_access": 6605.2,
+   "loadavg": [
+    7.197265625,
+    7.48681640625,
+    8.33642578125
+   ]
+  },
+  "granite|1024|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 1024,
+   "accesses": 638208,
+   "hit_rate": 0.972067100381067,
+   "peak_bytes": 941823,
+   "terminal_bytes": 867495,
+   "tables": 1,
+   "records": 1262,
+   "slots": 6072,
+   "struct_bytes": 137912,
+   "ns_per_access": 5631.8,
+   "loadavg": [
+    7.7255859375,
+    7.58447265625,
+    8.3505859375
+   ]
+  },
+  "granite|1024|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 1024,
+   "accesses": 638208,
+   "hit_rate": 0.972067100381067,
+   "peak_bytes": 1735385,
+   "terminal_bytes": 1569737,
+   "tables": 1,
+   "records": 1262,
+   "slots": 12144,
+   "struct_bytes": 188392,
+   "ns_per_access": 13275.6,
+   "loadavg": [
+    8.1259765625,
+    7.716796875,
+    8.35791015625
+   ]
+  },
+  "qwen30b|4096|costfit": {
+   "policy": "costfit",
+   "capacity": 4096,
+   "accesses": 1424640,
+   "hit_rate": 0.9886251965408805,
+   "peak_bytes": 4367670,
+   "terminal_bytes": 4087494,
+   "tables": 5,
+   "records": 27888,
+   "slots": 27888,
+   "struct_bytes": 1474960,
+   "ns_per_access": 5324.4,
+   "loadavg": [
+    7.93603515625,
+    7.79931640625,
+    8.34375
+   ]
+  },
+  "qwen30b|4096|costfit3": {
+   "policy": "costfit3",
+   "capacity": 4096,
+   "accesses": 1424640,
+   "hit_rate": 0.9886160714285714,
+   "peak_bytes": 8587698,
+   "terminal_bytes": 8198450,
+   "tables": 10,
+   "records": 55776,
+   "slots": 55776,
+   "struct_bytes": 2949920,
+   "ns_per_access": 14421.4,
+   "loadavg": [
+    10.82373046875,
+    8.51220703125,
+    8.515625
+   ]
+  },
+  "qwen30b|4096|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 4096,
+   "accesses": 1424640,
+   "hit_rate": 0.9886251965408805,
+   "peak_bytes": 3752458,
+   "terminal_bytes": 3472522,
+   "tables": 1,
+   "records": 5948,
+   "slots": 27888,
+   "struct_bytes": 770832,
+   "ns_per_access": 10879.6,
+   "loadavg": [
+    10.56982421875,
+    9.1015625,
+    8.74462890625
+   ]
+  },
+  "qwen30b|4096|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 4096,
+   "accesses": 1424640,
+   "hit_rate": 0.9886160714285714,
+   "peak_bytes": 6720687,
+   "terminal_bytes": 6335607,
+   "tables": 1,
+   "records": 5948,
+   "slots": 55776,
+   "struct_bytes": 1008752,
+   "ns_per_access": 18184.0,
+   "loadavg": [
+    9.77685546875,
+    9.32177734375,
+    8.88232421875
+   ]
+  },
+  "granite|4096|costfit": {
+   "policy": "costfit",
+   "capacity": 4096,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 654246,
+   "terminal_bytes": 653958,
+   "tables": 5,
+   "records": 6310,
+   "slots": 6310,
+   "struct_bytes": 184760,
+   "ns_per_access": 1299.8,
+   "loadavg": [
+    10.03466796875,
+    9.3828125,
+    8.90625
+   ]
+  },
+  "granite|4096|costfit3": {
+   "policy": "costfit3",
+   "capacity": 4096,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 1496658,
+   "terminal_bytes": 1331778,
+   "tables": 10,
+   "records": 12620,
+   "slots": 12620,
+   "struct_bytes": 369520,
+   "ns_per_access": 2361.7,
+   "loadavg": [
+    9.7822265625,
+    9.3525390625,
+    8.90087890625
+   ]
+  },
+  "granite|4096|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 4096,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 696759,
+   "terminal_bytes": 696471,
+   "tables": 1,
+   "records": 1262,
+   "slots": 6310,
+   "struct_bytes": 137912,
+   "ns_per_access": 1666.1,
+   "loadavg": [
+    9.63916015625,
+    9.330078125,
+    8.8955078125
+   ]
+  },
+  "granite|4096|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 4096,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 1393305,
+   "terminal_bytes": 1228425,
+   "tables": 1,
+   "records": 1262,
+   "slots": 12620,
+   "struct_bytes": 188392,
+   "ns_per_access": 3213.1,
+   "loadavg": [
+    9.86083984375,
+    9.384765625,
+    8.919921875
+   ]
+  },
+  "qwen30b|262144|costfit": {
+   "policy": "costfit",
+   "capacity": 262144,
+   "accesses": 1424640,
+   "hit_rate": 0.9958249101527403,
+   "peak_bytes": 4152902,
+   "terminal_bytes": 4152614,
+   "tables": 5,
+   "records": 29740,
+   "slots": 29740,
+   "struct_bytes": 1474960,
+   "ns_per_access": 997.8,
+   "loadavg": [
+    9.51318359375,
+    9.32275390625,
+    8.90283203125
+   ]
+  },
+  "qwen30b|262144|costfit3": {
+   "policy": "costfit3",
+   "capacity": 262144,
+   "accesses": 1424640,
+   "hit_rate": 0.9958249101527403,
+   "peak_bytes": 8706370,
+   "terminal_bytes": 8331938,
+   "tables": 10,
+   "records": 59480,
+   "slots": 59480,
+   "struct_bytes": 2949920,
+   "ns_per_access": 2059.5,
+   "loadavg": [
+    8.8857421875,
+    9.1962890625,
+    8.86279296875
+   ]
+  },
+  "qwen30b|262144|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 262144,
+   "accesses": 1424640,
+   "hit_rate": 0.9958249101527403,
+   "peak_bytes": 3538103,
+   "terminal_bytes": 3537815,
+   "tables": 1,
+   "records": 5948,
+   "slots": 29740,
+   "struct_bytes": 770832,
+   "ns_per_access": 1510.6,
+   "loadavg": [
+    8.1337890625,
+    9.02490234375,
+    8.80517578125
+   ]
+  },
+  "qwen30b|262144|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 262144,
+   "accesses": 1424640,
+   "hit_rate": 0.9958249101527403,
+   "peak_bytes": 6838764,
+   "terminal_bytes": 6468532,
+   "tables": 1,
+   "records": 5948,
+   "slots": 59480,
+   "struct_bytes": 1008752,
+   "ns_per_access": 3046.1,
+   "loadavg": [
+    6.80615234375,
+    8.66552734375,
+    8.68115234375
+   ]
+  },
+  "granite|262144|costfit": {
+   "policy": "costfit",
+   "capacity": 262144,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 654246,
+   "terminal_bytes": 653958,
+   "tables": 5,
+   "records": 6310,
+   "slots": 6310,
+   "struct_bytes": 184760,
+   "ns_per_access": 1032.7,
+   "loadavg": [
+    6.5810546875,
+    8.587890625,
+    8.6533203125
+   ]
+  },
+  "granite|262144|costfit3": {
+   "policy": "costfit3",
+   "capacity": 262144,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 1496658,
+   "terminal_bytes": 1331778,
+   "tables": 10,
+   "records": 12620,
+   "slots": 12620,
+   "struct_bytes": 369520,
+   "ns_per_access": 2032.3,
+   "loadavg": [
+    6.2939453125,
+    8.4951171875,
+    8.6201171875
+   ]
+  },
+  "granite|262144|shared_costfit": {
+   "policy": "shared_costfit",
+   "capacity": 262144,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 696759,
+   "terminal_bytes": 696471,
+   "tables": 1,
+   "records": 1262,
+   "slots": 6310,
+   "struct_bytes": 137912,
+   "ns_per_access": 1628.3,
+   "loadavg": [
+    5.94970703125,
+    8.38720703125,
+    8.5810546875
+   ]
+  },
+  "granite|262144|shared_costfit3": {
+   "policy": "shared_costfit3",
+   "capacity": 262144,
+   "accesses": 638208,
+   "hit_rate": 0.9980225882470919,
+   "peak_bytes": 1393215,
+   "terminal_bytes": 1228335,
+   "tables": 1,
+   "records": 1262,
+   "slots": 12620,
+   "struct_bytes": 188392,
+   "ns_per_access": 3272.9,
+   "loadavg": [
+    6.908203125,
+    8.52001953125,
+    8.62646484375
+   ]
+  }
+ },
+ "pass2_groups": [
+  {
+   "stream": "qwen30b",
+   "cap": 256,
+   "quiet_waited_s": 2705,
+   "loadavg_start": 4.86,
+   "loadavg_end": 4.33,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 256,
+     "accesses": 1424640,
+     "hit_rate": 0.3272889993261456,
+     "peak_bytes": 1847238,
+     "terminal_bytes": 1829102,
+     "tables": 5,
+     "records": 24048,
+     "slots": 24048,
+     "struct_bytes": 1198480,
+     "ns_per_access": 11022.1
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 256,
+     "accesses": 1424640,
+     "hit_rate": 0.3272889993261456,
+     "peak_bytes": 4059474,
+     "terminal_bytes": 3682898,
+     "tables": 10,
+     "records": 48096,
+     "slots": 48096,
+     "struct_bytes": 2396960,
+     "ns_per_access": 21206.6
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 256,
+     "accesses": 1424640,
+     "hit_rate": 0.3272889993261456,
+     "peak_bytes": 1508759,
+     "terminal_bytes": 1490623,
+     "tables": 1,
+     "records": 5948,
+     "slots": 24048,
+     "struct_bytes": 770832,
+     "ns_per_access": 11963.2
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 256,
+     "accesses": 1424640,
+     "hit_rate": 0.3272889993261456,
+     "peak_bytes": 2745033,
+     "terminal_bytes": 2373073,
+     "tables": 1,
+     "records": 5948,
+     "slots": 48096,
+     "struct_bytes": 1008752,
+     "ns_per_access": 26401.0
+    }
+   }
+  },
+  {
+   "stream": "granite",
+   "cap": 256,
+   "quiet_waited_s": 2704,
+   "loadavg_start": 4.31,
+   "loadavg_end": 5.82,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 256,
+     "accesses": 638208,
+     "hit_rate": 0.46816398415563576,
+     "peak_bytes": 487494,
+     "terminal_bytes": 468974,
+     "tables": 5,
+     "records": 5304,
+     "slots": 5304,
+     "struct_bytes": 166320,
+     "ns_per_access": 7767.0
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 256,
+     "accesses": 638208,
+     "hit_rate": 0.46816398415563576,
+     "peak_bytes": 1124762,
+     "terminal_bytes": 960842,
+     "tables": 10,
+     "records": 10608,
+     "slots": 10608,
+     "struct_bytes": 332640,
+     "ns_per_access": 15662.7
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 256,
+     "accesses": 638208,
+     "hit_rate": 0.46816398415563576,
+     "peak_bytes": 548319,
+     "terminal_bytes": 529799,
+     "tables": 1,
+     "records": 1262,
+     "slots": 5304,
+     "struct_bytes": 137912,
+     "ns_per_access": 10373.2
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 256,
+     "accesses": 638208,
+     "hit_rate": 0.46816398415563576,
+     "peak_bytes": 1058961,
+     "terminal_bytes": 895041,
+     "tables": 1,
+     "records": 1262,
+     "slots": 10608,
+     "struct_bytes": 188392,
+     "ns_per_access": 21670.0
+    }
+   }
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 1024,
+   "quiet_waited_s": 2705,
+   "loadavg_start": 5.93,
+   "loadavg_end": 5.68,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 1024,
+     "accesses": 1424640,
+     "hit_rate": 0.6673896563342318,
+     "peak_bytes": 2439566,
+     "terminal_bytes": 2362422,
+     "tables": 5,
+     "records": 24816,
+     "slots": 24816,
+     "struct_bytes": 1253776,
+     "ns_per_access": 10766.4
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 1024,
+     "accesses": 1424640,
+     "hit_rate": 0.6673896563342318,
+     "peak_bytes": 5134386,
+     "terminal_bytes": 4749858,
+     "tables": 10,
+     "records": 49632,
+     "slots": 49632,
+     "struct_bytes": 2507552,
+     "ns_per_access": 20694.2
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 1024,
+     "accesses": 1424640,
+     "hit_rate": 0.6673896563342318,
+     "peak_bytes": 2045775,
+     "terminal_bytes": 1968711,
+     "tables": 1,
+     "records": 5948,
+     "slots": 24816,
+     "struct_bytes": 770832,
+     "ns_per_access": 13670.8
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 1024,
+     "accesses": 1424640,
+     "hit_rate": 0.6673896563342318,
+     "peak_bytes": 3709756,
+     "terminal_bytes": 3329428,
+     "tables": 1,
+     "records": 5948,
+     "slots": 49632,
+     "struct_bytes": 1008752,
+     "ns_per_access": 29130.3
+    }
+   }
+  },
+  {
+   "stream": "granite",
+   "cap": 1024,
+   "quiet_waited_s": 2705,
+   "loadavg_start": 6.2,
+   "loadavg_end": 3.83,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 1024,
+     "accesses": 638208,
+     "hit_rate": 0.972067100381067,
+     "peak_bytes": 936326,
+     "terminal_bytes": 861998,
+     "tables": 5,
+     "records": 6072,
+     "slots": 6072,
+     "struct_bytes": 221616,
+     "ns_per_access": 2857.0
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 1024,
+     "accesses": 638208,
+     "hit_rate": 0.972067100381067,
+     "peak_bytes": 1911842,
+     "terminal_bytes": 1746194,
+     "tables": 10,
+     "records": 12144,
+     "slots": 12144,
+     "struct_bytes": 443232,
+     "ns_per_access": 5831.0
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 1024,
+     "accesses": 638208,
+     "hit_rate": 0.972067100381067,
+     "peak_bytes": 941778,
+     "terminal_bytes": 867450,
+     "tables": 1,
+     "records": 1262,
+     "slots": 6072,
+     "struct_bytes": 137912,
+     "ns_per_access": 4526.5
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 1024,
+     "accesses": 638208,
+     "hit_rate": 0.972067100381067,
+     "peak_bytes": 1735340,
+     "terminal_bytes": 1569692,
+     "tables": 1,
+     "records": 1262,
+     "slots": 12144,
+     "struct_bytes": 188392,
+     "ns_per_access": 9064.8
+    }
+   }
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 4096,
+   "quiet_waited_s": 2705,
+   "loadavg_start": 6.15,
+   "loadavg_end": 5.56,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 4096,
+     "accesses": 1424640,
+     "hit_rate": 0.9886251965408805,
+     "peak_bytes": 4367670,
+     "terminal_bytes": 4087494,
+     "tables": 5,
+     "records": 27888,
+     "slots": 27888,
+     "struct_bytes": 1474960,
+     "ns_per_access": 4832.6
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 4096,
+     "accesses": 1424640,
+     "hit_rate": 0.9886160714285714,
+     "peak_bytes": 8587698,
+     "terminal_bytes": 8198450,
+     "tables": 10,
+     "records": 55776,
+     "slots": 55776,
+     "struct_bytes": 2949920,
+     "ns_per_access": 10837.3
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 4096,
+     "accesses": 1424640,
+     "hit_rate": 0.9886251965408805,
+     "peak_bytes": 3752503,
+     "terminal_bytes": 3472567,
+     "tables": 1,
+     "records": 5948,
+     "slots": 27888,
+     "struct_bytes": 770832,
+     "ns_per_access": 7260.6
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 4096,
+     "accesses": 1424640,
+     "hit_rate": 0.9886160714285714,
+     "peak_bytes": 6720777,
+     "terminal_bytes": 6335652,
+     "tables": 1,
+     "records": 5948,
+     "slots": 55776,
+     "struct_bytes": 1008752,
+     "ns_per_access": 14460.9
+    }
+   }
+  },
+  {
+   "stream": "granite",
+   "cap": 4096,
+   "quiet_waited_s": 2706,
+   "loadavg_start": 4.79,
+   "loadavg_end": 5.41,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 4096,
+     "accesses": 638208,
+     "hit_rate": 0.9980225882470919,
+     "peak_bytes": 654246,
+     "terminal_bytes": 653958,
+     "tables": 5,
+     "records": 6310,
+     "slots": 6310,
+     "struct_bytes": 184760,
+     "ns_per_access": 981.3
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 4096,
+     "accesses": 638208,
+     "hit_rate": 0.9980225882470919,
+     "peak_bytes": 1496658,
+     "terminal_bytes": 1331778,
+     "tables": 10,
+     "records": 12620,
+     "slots": 12620,
+     "struct_bytes": 369520,
+     "ns_per_access": 2047.6
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 4096,
+     "accesses": 638208,
+     "hit_rate": 0.9980225882470919,
+     "peak_bytes": 696759,
+     "terminal_bytes": 696471,
+     "tables": 1,
+     "records": 1262,
+     "slots": 6310,
+     "struct_bytes": 137912,
+     "ns_per_access": 1582.8
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 4096,
+     "accesses": 638208,
+     "hit_rate": 0.9980225882470919,
+     "peak_bytes": 1393305,
+     "terminal_bytes": 1228425,
+     "tables": 1,
+     "records": 1262,
+     "slots": 12620,
+     "struct_bytes": 188392,
+     "ns_per_access": 3062.7
+    }
+   }
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 262144,
+   "quiet_waited_s": 2705,
+   "loadavg_start": 4.2,
+   "loadavg_end": 5.21,
+   "quiet": false,
+   "error": null,
+   "rows": {
+    "costfit": {
+     "policy": "costfit",
+     "capacity": 262144,
+     "accesses": 1424640,
+     "hit_rate": 0.9958249101527403,
+     "peak_bytes": 4152902,
+     "terminal_bytes": 4152614,
+     "tables": 5,
+     "records": 29740,
+     "slots": 29740,
+     "struct_bytes": 1474960,
+     "ns_per_access": 975.0
+    },
+    "costfit3": {
+     "policy": "costfit3",
+     "capacity": 262144,
+     "accesses": 1424640,
+     "hit_rate": 0.9958249101527403,
+     "peak_bytes": 8706370,
+     "terminal_bytes": 8331938,
+     "tables": 10,
+     "records": 59480,
+     "slots": 59480,
+     "struct_bytes": 2949920,
+     "ns_per_access": 2004.5
+    },
+    "shared_costfit": {
+     "policy": "shared_costfit",
+     "capacity": 262144,
+     "accesses": 1424640,
+     "hit_rate": 0.9958249101527403,
+     "peak_bytes": 3538103,
+     "terminal_bytes": 3537815,
+     "tables": 1,
+     "records": 5948,
+     "slots": 29740,
+     "struct_bytes": 770832,
+     "ns_per_access": 1498.4
+    },
+    "shared_costfit3": {
+     "policy": "shared_costfit3",
+     "capacity": 262144,
+     "accesses": 1424640,
+     "hit_rate": 0.9958249101527403,
+     "peak_bytes": 6838764,
+     "terminal_bytes": 6468532,
+     "tables": 1,
+     "records": 5948,
+     "slots": 59480,
+     "struct_bytes": 1008752,
+     "ns_per_access": 3145.3
+    }
+   }
+  }
+ ],
+ "ratios": {
+  "qwen30b|costfit|256": {
+   "struct": 0.6431746879380549,
+   "terminal": 0.8149479908720235,
+   "peak": 0.8167648131967835,
+   "records_base": 24048,
+   "records_shared": 5948,
+   "slots_base": 24048,
+   "slots_shared": 24048
+  },
+  "qwen30b|costfit|1024": {
+   "struct": 0.6148083868250788,
+   "terminal": 0.8333443389876999,
+   "peak": 0.8385815345844302,
+   "records_base": 24816,
+   "records_shared": 5948,
+   "slots_base": 24816,
+   "slots_shared": 24816
+  },
+  "qwen30b|costfit|4096": {
+   "struct": 0.522612138634268,
+   "terminal": 0.8495479137094758,
+   "peak": 0.8591441203204454,
+   "records_base": 27888,
+   "records_shared": 5948,
+   "slots_base": 27888,
+   "slots_shared": 27888
+  },
+  "qwen30b|costfit|262144": {
+   "struct": 0.522612138634268,
+   "terminal": 0.8519489169954154,
+   "peak": 0.8519591842042022,
+   "records_base": 29740,
+   "records_shared": 5948,
+   "slots_base": 29740,
+   "slots_shared": 29740
+  },
+  "qwen30b|costfit3|256": {
+   "struct": 0.4208464054468994,
+   "terminal": 0.6443493683506847,
+   "peak": 0.6762041092023252,
+   "records_base": 48096,
+   "records_shared": 5948,
+   "slots_base": 48096,
+   "slots_shared": 48096
+  },
+  "qwen30b|costfit3|1024": {
+   "struct": 0.4022855757328263,
+   "terminal": 0.7009626393041645,
+   "peak": 0.7225403388058474,
+   "records_base": 49632,
+   "records_shared": 5948,
+   "slots_base": 49632,
+   "slots_shared": 49632
+  },
+  "qwen30b|costfit3|4096": {
+   "struct": 0.34195910397570106,
+   "terminal": 0.772781074471394,
+   "peak": 0.7825947069866686,
+   "records_base": 55776,
+   "records_shared": 5948,
+   "slots_base": 55776,
+   "slots_shared": 55776
+  },
+  "qwen30b|costfit3|262144": {
+   "struct": 0.34195910397570106,
+   "terminal": 0.7763538326857449,
+   "peak": 0.7854897046645157,
+   "records_base": 59480,
+   "records_shared": 5948,
+   "slots_base": 59480,
+   "slots_shared": 59480
+  },
+  "granite|costfit|256": {
+   "struct": 0.8291967291967292,
+   "terminal": 1.1296980216387262,
+   "peak": 1.1247707664094326,
+   "records_base": 5304,
+   "records_shared": 1262,
+   "slots_base": 5304,
+   "slots_shared": 5304
+  },
+  "granite|costfit|1024": {
+   "struct": 0.6223016388708397,
+   "terminal": 1.006377044958341,
+   "peak": 1.0058708184969765,
+   "records_base": 6072,
+   "records_shared": 1262,
+   "slots_base": 6072,
+   "slots_shared": 6072
+  },
+  "granite|costfit|4096": {
+   "struct": 0.7464386230785884,
+   "terminal": 1.065008762030589,
+   "peak": 1.064980145083042,
+   "records_base": 6310,
+   "records_shared": 1262,
+   "slots_base": 6310,
+   "slots_shared": 6310
+  },
+  "granite|costfit|262144": {
+   "struct": 0.7464386230785884,
+   "terminal": 1.065008762030589,
+   "peak": 1.064980145083042,
+   "records_base": 6310,
+   "records_shared": 1262,
+   "slots_base": 6310,
+   "slots_shared": 6310
+  },
+  "granite|costfit3|256": {
+   "struct": 0.5663540163540164,
+   "terminal": 0.93151735665177,
+   "peak": 0.9414978457664821,
+   "records_base": 10608,
+   "records_shared": 1262,
+   "slots_base": 10608,
+   "slots_shared": 10608
+  },
+  "granite|costfit3|1024": {
+   "struct": 0.42504151324814093,
+   "terminal": 0.8989476541552657,
+   "peak": 0.9077031470173791,
+   "records_base": 12144,
+   "records_shared": 1262,
+   "slots_base": 12144,
+   "slots_shared": 12144
+  },
+  "granite|costfit3|4096": {
+   "struct": 0.5098289673089413,
+   "terminal": 0.9223947234448985,
+   "peak": 0.9309441435518335,
+   "records_base": 12620,
+   "records_shared": 1262,
+   "slots_base": 12620,
+   "slots_shared": 12620
+  },
+  "granite|costfit3|262144": {
+   "struct": 0.5098289673089413,
+   "terminal": 0.9223271446141924,
+   "peak": 0.9308840095733294,
+   "records_base": 12620,
+   "records_shared": 1262,
+   "slots_base": 12620,
+   "slots_shared": 12620
+  }
+ },
+ "anchors_stageA": {
+  "qwen30b": {
+   "costfit|256": {
+    "struct_ratio": 0.6431746879380549,
+    "terminal_ratio": 0.8078840161114301,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit|1024": {
+    "struct_ratio": 0.6148083868250788,
+    "terminal_ratio": 0.8279129448389525,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit|4096": {
+    "struct_ratio": 0.522612138634268,
+    "terminal_ratio": 0.8464416605290375,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|256": {
+    "struct_ratio": 0.4208464054468994,
+    "terminal_ratio": 0.6407267584429212,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|1024": {
+    "struct_ratio": 0.4022855757328263,
+    "terminal_ratio": 0.69815264852737,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|4096": {
+    "struct_ratio": 0.34195910397570106,
+    "terminal_ratio": 0.7711708665514689,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   }
+  },
+  "granite": {
+   "costfit|256": {
+    "struct_ratio": 0.8291967291967292,
+    "terminal_ratio": 1.1049201645094955,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit|1024": {
+    "struct_ratio": 0.6223016388708397,
+    "terminal_ratio": 0.9921868701562275,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit|4096": {
+    "struct_ratio": 0.7464386230785884,
+    "terminal_ratio": 1.0466005726910308,
+    "tables_base": 5,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|256": {
+    "struct_ratio": 0.5663540163540164,
+    "terminal_ratio": 0.917511186295548,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|1024": {
+    "struct_ratio": 0.42504151324814093,
+    "terminal_ratio": 0.8912022508138202,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   },
+   "costfit3|4096": {
+    "struct_ratio": 0.5098289673089413,
+    "terminal_ratio": 0.9124140255527117,
+    "tables_base": 10,
+    "tables_shared": 1,
+    "hit_equal": true
+   }
+  }
+ },
+ "drift_detail": [],
+ "ceiling_detail": [],
+ "time_ratios_quiet": [],
+ "quiet_groups": 0,
+ "R2": null,
+ "R3": null,
+ "state": {
+  "parity_ok": true,
+  "parity_smoke_ok": true,
+  "hitrate_consistent": true,
+  "budget_exceeded": true,
+  "cells_missing": false,
+  "accounting_ok": false,
+  "drift_ok": true,
+  "ceiling_ok": true,
+  "quiet_groups": 0,
+  "R3": null,
+  "R2": null
+ },
+ "ladder_trace": [
+  "rung1 parity ok (16 full-state pairs + sealed smoke + census hit_rate consistency)",
+  "rung2 INCOMPLETE-BUDGET fired"
+ ],
+ "verdict": "INCOMPLETE-BUDGET",
+ "elapsed_s": 24392.7
+}
