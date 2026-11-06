@@ -4,7 +4,7 @@ cd ~/exp728; source ~/venvs/moei-engine/bin/activate; mkdir -p out
 w=0; while systemctl --user is-active -q exp724 || systemctl --user is-active -q exp725 || systemctl --user is-active -q exp726 || systemctl --user is-active -q exp727; do
   w=$((w+1)); [ $w -gt 1080 ] && { echo "ABORT waited 18h"; exit 8; }; sleep 60; done
 echo "== $(date -u +%FT%TZ) start"
-sha256sum AMENDMENT1.md engine_arm.py fixrun.py fix.patch prompts.json cells.json analyze.py run_exp728.sh > out/RUN_SHA256
+sha256sum AMENDMENT1.md AMENDMENT2.md quietwait.sh engine_arm.py fixrun.py fix.patch prompts.json cells.json analyze.py run_exp728.sh > out/RUN_SHA256
 U=~/moei-engine/MoE-Infinity
 ( cd $U; echo "UNPATCHED $(git rev-parse --short HEAD)"; git status --porcelain | grep -v '^??' ; git diff --stat ) > out/unpatched_tree.txt
 if [ ! -s ~/moei-fix728/moe_infinity/_store.cpython-312-x86_64-linux-gnu.so ]; then
@@ -25,6 +25,7 @@ mon(){ while [ -e out/.cell ]; do echo "$(date -u +%FT%TZ),$(cat out/.cell),$($N
 python3 -c "import json;[print(c['id'],c['build'],c['gpus'],c['ratio']) for c in json.load(open('cells.json'))]" |
 while read ID B GPUS RAT; do
   [ -s out/$ID.json ] && { echo "skip $ID"; continue; }
+  QW=$(bash quietwait.sh "$GPUS" 2700); echo "$ID,$QW" >> out/quietwait.csv   # AMENDMENT2
   echo "$ID,$($NS --query-gpu=index,memory.used --format=csv,noheader,nounits | tr '\n' ';'),$(oll)" >> out/precell.csv
   echo "== $(date -u +%FT%TZ) $ID build=$B gpus=$GPUS r=$RAT"
   echo $ID > out/.cell; mon & MP=$!
