@@ -1,0 +1,86 @@
+[
+ {
+  "gpus": "1",
+  "ratio": 0.2,
+  "block": 1,
+  "policy": "lcnu",
+  "id": "b1_g1_r20"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "block": 1,
+  "policy": "lcnu",
+  "id": "b1_g01_r20"
+ },
+ {
+  "gpus": "1",
+  "ratio": 0.4,
+  "block": 1,
+  "policy": "lcnu",
+  "id": "b1_g1_r40"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "block": 1,
+  "policy": "lcnu",
+  "id": "b1_g01_r10"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "block": 2,
+  "policy": "lcnu",
+  "id": "b2_g01_r20"
+ },
+ {
+  "gpus": "1",
+  "ratio": 0.2,
+  "block": 2,
+  "policy": "lcnu",
+  "id": "b2_g1_r20"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "block": 2,
+  "policy": "lcnu",
+  "id": "b2_g01_r10"
+ },
+ {
+  "gpus": "1",
+  "ratio": 0.4,
+  "block": 2,
+  "policy": "lcnu",
+  "id": "b2_g1_r40"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "block": 3,
+  "policy": "lcnu",
+  "id": "b3_g01_r10"
+ },
+ {
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "block": 3,
+  "policy": "lcnu",
+  "id": "b3_g01_r20"
+ },
+ {
+  "gpus": "1",
+  "ratio": 0.4,
+  "block": 3,
+  "policy": "lcnu",
+  "id": "b3_g1_r40"
+ },
+ {
+  "gpus": "1",
+  "ratio": 0.2,
+  "block": 3,
+  "policy": "lcnu",
+  "id": "b3_g1_r20"
+ }
+]
