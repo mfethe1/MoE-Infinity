@@ -1,0 +1,9 @@
+engine r=0.35 n=3 tok/s=  7.69 cv=0.465 blocks=[2.65, 9.85, 10.58]
+engine r=0.75 n=3 tok/s= 10.39 cv=0.007 blocks=[10.35, 10.33, 10.5]
+hf     r=None n=3 tok/s= 30.17 cv=0.028 blocks=[30.34, 29.05, 31.13]
+floor ratio engine@0.75 / hf = 0.344
+descriptive residency gain engine@0.75 / engine@0.35 = 1.351
+descriptive ms/token: hf 33.1 | engine@0.75 96.2 (overhead vs hf 63.1) | engine@0.35 130.0 (miss-driven vs @0.75 33.8)
+
+VERDICT NOISY|ENGINE-OVERHEAD-DOMINANT [COMPLETE]
+FLAGGED(AMENDMENT1): 
