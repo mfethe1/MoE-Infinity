@@ -1,0 +1,11 @@
+[      0s] sealed deps ok (15 files)
+[      0s] ladder self-test 15/15
+[      0s] round 0 qwen30b caps [256, 4096] loadavg 6.60
+[     20s]   done qwen30b r0 qos=0 first-cap thread ratios {'null': 1.0118, 'floor': 1.1283, 'lean': 1.1815, 'fused': 0.8454}
+[     20s] round 0 granite caps [256, 4096] loadavg 6.44
+[     35s]   done granite r0 qos=0 first-cap thread ratios {'null': 0.9591, 'floor': 1.1204, 'lean': 1.2546, 'fused': 0.9549}
+[     35s] round 1 granite caps [4096, 256] loadavg 7.66
+[     49s]   done granite r1 qos=0 first-cap thread ratios {'null': 1.0429, 'floor': 1.0114, 'lean': 1.5084, 'fused': 0.9772}
+[     49s] round 1 qwen30b caps [4096, 256] loadavg 7.63
+[     67s]   done qwen30b r1 qos=0 first-cap thread ratios {'null': 0.7585, 'floor': 1.2158, 'lean': 1.465, 'fused': 1.1698}
+SMOKE_OK=True records=4 cells=16 det=True fam_eq=True parity_bad=0/16 econ=NO-SAVING 67s
