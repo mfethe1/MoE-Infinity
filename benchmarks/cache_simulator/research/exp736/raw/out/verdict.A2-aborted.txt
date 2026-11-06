@@ -1,0 +1,5 @@
+m_g1_A: launch_add_inplace_us=17.27 mul_bf16_1x2048_us=22.69 rmsnorm_unfused_1x2048_us=164.79 empty_cached_alloc_1x2048_us=3.22 launch_plus_sync_us=64.11 item_roundtrip_us=75.29 d2h_16KB_pageable_us=70.39 d2h_16KB_pinned_sync_us=63.11 h2d_16KB_pageable_us=50.60 h2d_16KB_pinned_nonblocking_us=18.15 h2d_expert_pageable_us=1050.57 h2d_expert_pageable_GBps=11.98 h2d_expert_pinned_us=824.17 h2d_expert_pinned_GBps=15.27 d2h_expert_pageable_us=1326.83 d2h_expert_pageable_GBps=9.48 d2h_expert_pinned_us=812.13 d2h_expert_pinned_GBps=15.49 FLAGGED
+power eng: Balanced [None, None] HighPerf [None, None]
+power hf: Balanced [None, None] HighPerf [None, None]
+FLAGGED: m_g1_A
+VERDICT BUDGET:INCOMPLETE|POWER-ENG:INCOMPLETE|POWER-HF:INCOMPLETE [MISSING m_g0_A p_hf p_eng t1_A_eng t1_A_hf t2_B_eng t2_B_hf t3_B_hf t3_B_eng t4_A_hf t4_A_eng m_g1_B]

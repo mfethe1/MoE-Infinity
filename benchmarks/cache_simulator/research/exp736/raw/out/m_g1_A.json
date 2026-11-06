@@ -1,0 +1,27 @@
+{
+ "launch_add_inplace_us": 17.26529920124449,
+ "mul_bf16_1x2048_us": 22.691540198866278,
+ "rmsnorm_unfused_1x2048_us": 164.79012950730976,
+ "empty_cached_alloc_1x2048_us": 3.217939200112596,
+ "launch_plus_sync_us": 64.10830748791341,
+ "item_roundtrip_us": 75.28691399784293,
+ "d2h_16KB_pageable_us": 70.39064349373803,
+ "d2h_16KB_pinned_sync_us": 63.11168799584266,
+ "h2d_16KB_pageable_us": 50.5977129942039,
+ "h2d_16KB_pinned_nonblocking_us": 18.147899507312104,
+ "h2d_expert_pageable_us": 1050.5726000701543,
+ "h2d_expert_pageable_GBps": 11.977194150275526,
+ "h2d_expert_pinned_us": 824.1681753133889,
+ "h2d_expert_pinned_GBps": 15.267408251010618,
+ "d2h_expert_pageable_us": 1326.8303002405446,
+ "d2h_expert_pageable_GBps": 9.483437330093238,
+ "d2h_expert_pinned_us": 812.1320250211284,
+ "d2h_expert_pinned_GBps": 15.493677890208362,
+ "meta": {
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "visible": "1",
+  "torch": "2.11.0+cu128",
+  "host": "DESKTOP-PBE7J2V",
+  "scale": 1.0
+ }
+}

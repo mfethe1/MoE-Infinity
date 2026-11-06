@@ -1,0 +1,13 @@
+m_g1_A,Balanced,690 QUIET,321,0,1.80
+m_g0_A,Balanced,955 QUIET,23,0,0.65
+p_hf,Balanced,297 QUIET,279,0,0.03
+p_eng,Balanced,0 QUIET,279,0,0.65
+t1_A_eng,Balanced,0 QUIET,282,0,1.06
+t1_A_hf,Balanced,96 QUIET,237,0,1.98
+t2_B_eng,Highperformance,0 QUIET,243,0,1.86
+t2_B_hf,Highperformance,1 QUIET,244,0,1.94
+t3_B_hf,Highperformance,0 QUIET,244,0,1.98
+t3_B_eng,Highperformance,0 QUIET,244,0,1.74
+t4_A_hf,Balanced,0 QUIET,240,0,2.38
+t4_A_eng,Balanced,0 QUIET,240,0,1.94
+m_g1_B,Highperformance,0 QUIET,246,0,1.75

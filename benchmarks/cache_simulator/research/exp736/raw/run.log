@@ -1,0 +1,111 @@
+== 2026-11-06T14:20:49Z start
+skip m_g1_A
+
+== 2026-11-06T14:37:07Z m_g0_A arm=micro gpu=0 plan=Balanced
+m_g0_A RC=0
+{"launch_add_inplace_us": 18.29, "mul_bf16_1x2048_us": 18.21, "rmsnorm_unfused_1x2048_us": 219.28, "empty_cached_alloc_1x2048_us": 2.93, "launch_plus_sync_us": 258.79, "item_roundtrip_us": 56.59, "d2h_16KB_pageable_us": 103.49, "d2h_16KB_pinned_sync_us": 73.57, "h2d_16KB_pageable_us": 99.8, "h2d_16K
+
+== 2026-11-06T14:42:55Z p_hf arm=prof_hf gpu=1 plan=Balanced
+p_hf RC=0
+PROF2 hf ms/tok=33.7 aten/tok=3829 copy/tok=191.0 copy_ms/tok=3.7 owner={'other': 191.0}
+PROF2-DISPATCH hf {"cuda->cuda": [166.0, 8.11], "cuda->sync": [1.0, 0.075]} top: [["_to_copy", "cuda->cuda", "modeling_olmoe.py:54:forward", 65.0, 3.218], ["_to_copy", "cuda->cuda", "modeling_olmoe.py:57:forward", 65.0, 3.073], ["_to_copy", "cuda->cuda", "modeling_olmoe.py:329:forward", 16.0, 0.824]
+
+== 2026-11-06T14:44:05Z p_eng arm=prof_eng gpu=1 plan=Balanced
+p_eng RC=0
+PROF2 engine ms/tok=124.2 aten/tok=4189 copy/tok=199.0 copy_ms/tok=29.1 owner={'other': 199.0}
+PROF2-DISPATCH engine {"cuda->cpu": [17.0, 23.074], "cuda->cuda": [181.0, 9.143], "cpu->cuda": [1.0, 0.149], "cpu->sync": [1.0, 0.008]} top: [["_to_copy", "cuda->cpu", "big_modeling.py:879:_native_model_forward", 1.0, 22.263], ["_to_copy", "cuda->cuda", "modeling_olmoe.py:54:forward", 65.0, 3.444], 
+PROF2-EXEC [["DistributedExpertExecutor.wait_dispatch_local", 32.0, 73.095], ["DistributedExpertExecutor.dispatch_local", 32.0, 7.601], ["DistributedExpertExecutor._dispatch_native", 32.0, 3.915], ["DistributedExpertExecutor._maybe_route_ahead_prefetch", 32.0, 0.65], ["DistributedExpertExecutor._can
+
+== 2026-11-06T14:46:19Z t1_A_eng arm=eng gpu=1 plan=Balanced
+t1_A_eng RC=0
+[lcnu r=0.75] prompt 0: 1.10 tok/s hits+9505 miss+319
+[lcnu r=0.75] prompt 1: 2.30 tok/s hits+9623 miss+59
+[lcnu r=0.75] prompt 2: 9.64 tok/s hits+9630 miss+100
+[lcnu r=0.75] prompt 3: 9.77 tok/s hits+9560 miss+218
+[lcnu r=0.75] prompt 4: 0.99 tok/s hits+4159 miss+99
+[lcnu r=0.75] prompt 5: 1.27 tok/s hits+9750 miss+174
+
+== 2026-11-06T14:53:43Z t1_A_hf arm=hf gpu=1 plan=Balanced
+t1_A_hf RC=0
+[hf] prompt 0: 22.53 tok/s
+[hf] prompt 1: 24.15 tok/s
+[hf] prompt 2: 25.49 tok/s
+[hf] prompt 3: 23.51 tok/s
+[hf] prompt 4: 24.10 tok/s
+[hf] prompt 5: 22.26 tok/s
+
+== 2026-11-06T14:54:40Z t2_B_eng arm=eng gpu=1 plan=Highperformance
+t2_B_eng RC=0
+[lcnu r=0.75] prompt 0: 8.47 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 9.07 tok/s hits+9644 miss+38
+[lcnu r=0.75] prompt 2: 8.78 tok/s hits+9660 miss+70
+[lcnu r=0.75] prompt 3: 9.73 tok/s hits+9618 miss+160
+[lcnu r=0.75] prompt 4: 9.72 tok/s hits+4187 miss+71
+[lcnu r=0.75] prompt 5: 9.71 tok/s hits+9807 miss+117
+
+== 2026-11-06T14:56:56Z t2_B_hf arm=hf gpu=1 plan=Highperformance
+t2_B_hf RC=0
+[hf] prompt 0: 24.29 tok/s
+[hf] prompt 1: 23.31 tok/s
+[hf] prompt 2: 24.76 tok/s
+[hf] prompt 3: 22.78 tok/s
+[hf] prompt 4: 23.81 tok/s
+[hf] prompt 5: 24.63 tok/s
+
+== 2026-11-06T14:57:48Z t3_B_hf arm=hf gpu=1 plan=Highperformance
+t3_B_hf RC=0
+[hf] prompt 0: 22.97 tok/s
+[hf] prompt 1: 25.66 tok/s
+[hf] prompt 2: 24.44 tok/s
+[hf] prompt 3: 25.51 tok/s
+[hf] prompt 4: 25.23 tok/s
+[hf] prompt 5: 23.08 tok/s
+
+== 2026-11-06T14:58:41Z t3_B_eng arm=eng gpu=1 plan=Highperformance
+t3_B_eng RC=0
+[lcnu r=0.75] prompt 0: 8.56 tok/s hits+9537 miss+287
+[lcnu r=0.75] prompt 1: 9.29 tok/s hits+9660 miss+22
+[lcnu r=0.75] prompt 2: 8.63 tok/s hits+9683 miss+47
+[lcnu r=0.75] prompt 3: 9.25 tok/s hits+9666 miss+112
+[lcnu r=0.75] prompt 4: 9.60 tok/s hits+4208 miss+50
+[lcnu r=0.75] prompt 5: 9.93 tok/s hits+9843 miss+81
+
+== 2026-11-06T15:00:56Z t4_A_hf arm=hf gpu=1 plan=Balanced
+t4_A_hf RC=0
+[hf] prompt 0: 26.82 tok/s
+[hf] prompt 1: 24.47 tok/s
+[hf] prompt 2: 21.13 tok/s
+[hf] prompt 3: 24.40 tok/s
+[hf] prompt 4: 23.01 tok/s
+[hf] prompt 5: 24.19 tok/s
+
+== 2026-11-06T15:01:49Z t4_A_eng arm=eng gpu=1 plan=Balanced
+t4_A_eng RC=0
+[lcnu r=0.75] prompt 0: 8.11 tok/s hits+9534 miss+290
+[lcnu r=0.75] prompt 1: 9.38 tok/s hits+9648 miss+34
+[lcnu r=0.75] prompt 2: 8.96 tok/s hits+9666 miss+64
+[lcnu r=0.75] prompt 3: 9.30 tok/s hits+9632 miss+146
+[lcnu r=0.75] prompt 4: 9.33 tok/s hits+4193 miss+65
+[lcnu r=0.75] prompt 5: 9.79 tok/s hits+9814 miss+110
+
+== 2026-11-06T15:04:04Z m_g1_B arm=micro gpu=1 plan=Highperformance
+m_g1_B RC=0
+{"launch_add_inplace_us": 13.78, "mul_bf16_1x2048_us": 13.33, "rmsnorm_unfused_1x2048_us": 146.17, "empty_cached_alloc_1x2048_us": 2.65, "launch_plus_sync_us": 43.72, "item_roundtrip_us": 55.29, "d2h_16KB_pageable_us": 81.02, "d2h_16KB_pinned_sync_us": 60.78, "h2d_16KB_pageable_us": 53.75, "h2d_16KB
+m_g1_A: launch_add_inplace_us=17.27 mul_bf16_1x2048_us=22.69 rmsnorm_unfused_1x2048_us=164.79 empty_cached_alloc_1x2048_us=3.22 launch_plus_sync_us=64.11 item_roundtrip_us=75.29 d2h_16KB_pageable_us=70.39 d2h_16KB_pinned_sync_us=63.11 h2d_16KB_pageable_us=50.60 h2d_16KB_pinned_nonblocking_us=18.15 h2d_expert_pageable_us=1050.57 h2d_expert_pageable_GBps=11.98 h2d_expert_pinned_us=824.17 h2d_expert_pinned_GBps=15.27 d2h_expert_pageable_us=1326.83 d2h_expert_pageable_GBps=9.48 d2h_expert_pinned_us=812.13 d2h_expert_pinned_GBps=15.49 FLAGGED
+m_g0_A: launch_add_inplace_us=18.29 mul_bf16_1x2048_us=18.21 rmsnorm_unfused_1x2048_us=219.28 empty_cached_alloc_1x2048_us=2.93 launch_plus_sync_us=258.79 item_roundtrip_us=56.59 d2h_16KB_pageable_us=103.49 d2h_16KB_pinned_sync_us=73.57 h2d_16KB_pageable_us=99.80 h2d_16KB_pinned_nonblocking_us=25.71 h2d_expert_pageable_us=15072.55 h2d_expert_pageable_GBps=0.83 h2d_expert_pinned_us=7468.48 h2d_expert_pinned_GBps=1.68 d2h_expert_pageable_us=7197.91 d2h_expert_pageable_GBps=1.75 d2h_expert_pinned_us=7009.44 d2h_expert_pinned_GBps=1.80 FLAGGED
+m_g1_B: launch_add_inplace_us=13.78 mul_bf16_1x2048_us=13.33 rmsnorm_unfused_1x2048_us=146.17 empty_cached_alloc_1x2048_us=2.65 launch_plus_sync_us=43.72 item_roundtrip_us=55.29 d2h_16KB_pageable_us=81.02 d2h_16KB_pinned_sync_us=60.78 h2d_16KB_pageable_us=53.75 h2d_16KB_pinned_nonblocking_us=17.27 h2d_expert_pageable_us=1386.31 h2d_expert_pageable_GBps=9.08 h2d_expert_pinned_us=822.32 h2d_expert_pinned_GBps=15.30 d2h_expert_pageable_us=1402.85 d2h_expert_pageable_GBps=8.97 d2h_expert_pinned_us=810.99 d2h_expert_pinned_GBps=15.52
+hf  ms/tok=33.7 aten/tok=3829 aten_cpu_ms/tok(profiled)=33.8 d2h-sync=0.00 d2d-casts=8.1
+eng ms/tok=124.2 aten/tok=4189 aten_cpu_ms/tok(profiled)=68.3 | overhead vs hf = 90.6 ms/tok
+eng pass4 ms/tok=120.7: wait_dispatch_local 73.1 (32 calls/tok, 61%) | dispatch_local 7.6 (6%)
+eng pass3 ms/tok=197.8: end-of-step d2h sync 22.3 (11%) | d2d casts 9.1 (5%)
+eng executor top: wait_dispatch_local 32 73.09 | dispatch_local 32 7.60 | _dispatch_native 32 3.92 | _maybe_route_ahead_prefetch 32 0.65 | _can_use_gpu_only_routing 32 0.20 | _apply_expert_drop 32 0.07
+eng dispatch top: cuda->cpu big_modeling.py:879:_native_model_forward 1.0 22.26 | cuda->cuda modeling_olmoe.py:54:forward 65.0 3.44 | cuda->cuda modeling_olmoe.py:57:forward 65.0 3.02 | cuda->cuda olmoe.py:68:forward 16.0 0.93 | cuda->cuda olmoe.py:41:forward 16.0 0.86 | cuda->cpu expert_executor.py:415:_dispatch_native 16.0 0.81
+component shares: EXPERT-WAIT-BARRIER=0.61 END-STEP-SYNC=0.11 DISPATCH-CALL=0.06 DTYPE-CASTS=0.01
+power eng: Balanced [None, 9.31617647188339] HighPerf [9.390562282220568, 9.265212556152019]
+power hf: Balanced [23.805378310607537, 24.29190188523195] HighPerf [24.048473694152285, 24.83682741341972]
+parity engine vs hf (t1): 2/6 identical greedy outputs
+FLAGGED: m_g0_A m_g1_A t1_A_eng
+VERDICT BUDGET:EXPERT-WAIT-BARRIER(0.61;unexplained~0.21)|POWER-ENG:INCOMPLETE|POWER-HF:POWER-RULED-OUT(1.016) [COMPLETE]
+== 2026-11-06T15:04:13Z EXP736-DONE
+
+== restored Balanced: Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)

@@ -1,0 +1,262 @@
+{
+ "mode": "hf",
+ "ratio": null,
+ "device": "cuda:0",
+ "ntok": 16,
+ "ms_per_tok_unprofiled": 33.67867743872921,
+ "t1_s": [
+  0.09337865799898282,
+  0.09086243700585328,
+  0.09364330701646395
+ ],
+ "tN_s": [
+  0.643451379990438,
+  0.6322374970186502,
+  0.6298730349808466
+ ],
+ "aten_events_per_tok": 3829.0,
+ "aten_selfcpu_ms_per_tok": 33.775026437499946,
+ "copy_per_tok": 191.0,
+ "copy_selfcpu_ms_per_tok": 3.6874475000000198,
+ "copy_owner_per_tok": {
+  "other": [
+   191.0,
+   3687.4475000000198
+  ]
+ },
+ "copy_numel_buckets_per_tok": {
+  "le4K": 170.0,
+  "le1M": 21.0
+ },
+ "top_ops": [
+  [
+   "aten::mul",
+   231.0,
+   4.464908812499933
+  ],
+  [
+   "aten::copy_",
+   191.0,
+   3.6874475000000198
+  ],
+  [
+   "aten::mm",
+   81.0,
+   2.7137030625000147
+  ],
+  [
+   "aten::add",
+   132.0,
+   2.6119631249998765
+  ],
+  [
+   "aten::pow",
+   65.0,
+   1.5690124375000836
+  ],
+  [
+   "aten::mean",
+   65.0,
+   1.4136386249999455
+  ],
+  [
+   "aten::cat",
+   67.0,
+   1.4098463749998404
+  ],
+  [
+   "aten::_to_copy",
+   166.0,
+   1.1587041249998564
+  ],
+  [
+   "aten::bmm",
+   32.0,
+   1.1370481249999902
+  ],
+  [
+   "aten::rsqrt",
+   65.0,
+   1.098589437500039
+  ],
+  [
+   "aten::index",
+   32.0,
+   1.0741978750001286
+  ],
+  [
+   "aten::empty_strided",
+   184.0,
+   0.8338666875001577
+  ],
+  [
+   "aten::neg",
+   32.0,
+   0.7327507500000469
+  ],
+  [
+   "aten::transpose",
+   209.0,
+   0.6578529374999748
+  ],
+  [
+   "aten::view",
+   281.0,
+   0.630575312500012
+  ],
+  [
+   "aten::topk",
+   16.0,
+   0.6201856250000283
+  ],
+  [
+   "aten::matmul",
+   81.0,
+   0.6167561249997962
+  ],
+  [
+   "aten::as_strided",
+   512.0,
+   0.6019158124999044
+  ],
+  [
+   "aten::_flash_attention_forward",
+   16.0,
+   0.5422905625000023
+  ],
+  [
+   "aten::slice",
+   101.0,
+   0.5325356249998779
+  ],
+  [
+   "aten::sum",
+   16.0,
+   0.47473675000002324
+  ],
+  [
+   "aten::unsqueeze",
+   101.0,
+   0.4708232499999298
+  ],
+  [
+   "aten::silu",
+   16.0,
+   0.4705171875000201
+  ],
+  [
+   "aten::to",
+   253.0,
+   0.3964389375001985
+  ],
+  [
+   "aten::reshape",
+   178.0,
+   0.3238045625000468
+  ],
+  [
+   "aten::linear",
+   81.0,
+   0.31672731250028946
+  ],
+  [
+   "aten::empty",
+   93.0,
+   0.2799986874999778
+  ],
+  [
+   "aten::_softmax",
+   16.0,
+   0.2796914375000607
+  ],
+  [
+   "aten::t",
+   81.0,
+   0.2647968124999506
+  ],
+  [
+   "aten::squeeze",
+   32.0,
+   0.176481937499997
+  ]
+ ],
+ "top_copy_sites": [
+  [
+   "?",
+   191.0,
+   3.6874475000000198
+  ]
+ ],
+ "torch": "2.11.0+cu128",
+ "visible": "1",
+ "dispatch_copies_per_tok": [
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:54:forward",
+   65.0,
+   3.218
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:57:forward",
+   65.0,
+   3.073
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:329:forward",
+   16.0,
+   0.824
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:333:forward",
+   16.0,
+   0.807
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:107:forward",
+   2.0,
+   0.084
+  ],
+  [
+   "_local_scalar_dense",
+   "cuda->sync",
+   "utils.py:396:__call__",
+   1.0,
+   0.075
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:102:forward",
+   1.0,
+   0.053
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "utils.py:3240:_sample",
+   1.0,
+   0.051
+  ]
+ ],
+ "dispatch_by_direction_per_tok": {
+  "cuda->cuda": [
+   166.0,
+   8.11
+  ],
+  "cuda->sync": [
+   1.0,
+   0.075
+  ]
+ },
+ "dispatch_wall_ms_per_tok": 8.185,
+ "pass3_ms_per_tok": 96.71209450061724
+}

@@ -1,0 +1,8 @@
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   2%|▏         | 4/179 [00:00<00:06, 28.56it/s]Loading weights:   8%|▊         | 15/179 [00:00<00:03, 52.90it/s]Loading weights:  15%|█▍        | 26/179 [00:00<00:02, 61.99it/s]Loading weights:  21%|██        | 37/179 [00:00<00:02, 66.41it/s]Loading weights:  27%|██▋       | 48/179 [00:00<00:01, 67.83it/s]Loading weights:  33%|███▎      | 59/179 [00:00<00:01, 69.82it/s]Loading weights:  39%|███▉      | 70/179 [00:01<00:01, 70.93it/s]Loading weights:  45%|████▌     | 81/179 [00:01<00:01, 71.66it/s]Loading weights:  51%|█████▏    | 92/179 [00:01<00:01, 71.78it/s]Loading weights:  58%|█████▊    | 103/179 [00:01<00:01, 72.42it/s]Loading weights:  64%|██████▎   | 114/179 [00:01<00:00, 72.79it/s]Loading weights:  70%|██████▉   | 125/179 [00:01<00:00, 72.70it/s]Loading weights:  76%|███████▌  | 136/179 [00:01<00:00, 72.77it/s]Loading weights:  82%|████████▏ | 147/179 [00:02<00:00, 72.65it/s]Loading weights:  88%|████████▊ | 158/179 [00:02<00:00, 73.04it/s]Loading weights:  94%|█████████▍| 169/179 [00:02<00:00, 71.93it/s]Loading weights: 100%|██████████| 179/179 [00:02<00:00, 73.45it/s]
+[hf] prompt 0: 22.97 tok/s
+[hf] prompt 1: 25.66 tok/s
+[hf] prompt 2: 24.44 tok/s
+[hf] prompt 3: 25.51 tok/s
+[hf] prompt 4: 25.23 tok/s
+[hf] prompt 5: 23.08 tok/s
+DONE out/t3_B_hf.json

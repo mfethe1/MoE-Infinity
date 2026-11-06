@@ -1,0 +1,325 @@
+{
+ "mode": "engine",
+ "ratio": 0.75,
+ "device": "cuda:0",
+ "ntok": 16,
+ "ms_per_tok_unprofiled": 124.23599512476358,
+ "t1_s": [
+  0.8585855679993983,
+  0.7422101350093726,
+  0.7974145420012064
+ ],
+ "tN_s": [
+  3.356918779987609,
+  2.7851904639974236,
+  2.590876688977005
+ ],
+ "aten_events_per_tok": 4189.0,
+ "aten_selfcpu_ms_per_tok": 68.28706781250024,
+ "copy_per_tok": 199.0,
+ "copy_selfcpu_ms_per_tok": 29.060133249999996,
+ "copy_owner_per_tok": {
+  "other": [
+   199.0,
+   29060.133249999995
+  ]
+ },
+ "copy_numel_buckets_per_tok": {
+  "le1M": 1.0,
+  "gt1M": 0.0,
+  "le4K": 198.0
+ },
+ "top_ops": [
+  [
+   "aten::copy_",
+   199.0,
+   29.060133249999996
+  ],
+  [
+   "aten::mul",
+   213.0,
+   5.799381687500737
+  ],
+  [
+   "aten::mm",
+   81.0,
+   4.4913153124999186
+  ],
+  [
+   "aten::add",
+   130.0,
+   3.776717750000187
+  ],
+  [
+   "aten::pow",
+   65.0,
+   2.4409608749996243
+  ],
+  [
+   "aten::mean",
+   65.0,
+   2.03653000000043
+  ],
+  [
+   "aten::cat",
+   65.0,
+   1.9767265625001609
+  ],
+  [
+   "aten::rsqrt",
+   65.0,
+   1.6010098125000123
+  ],
+  [
+   "aten::_to_copy",
+   183.0,
+   1.489738812501082
+  ],
+  [
+   "aten::empty_strided",
+   215.0,
+   1.4102193749986092
+  ],
+  [
+   "aten::any",
+   32.0,
+   1.1383823124997299
+  ],
+  [
+   "aten::neg",
+   32.0,
+   0.9204536875005224
+  ],
+  [
+   "aten::_flash_attention_forward",
+   16.0,
+   0.8790804999999645
+  ],
+  [
+   "aten::topk",
+   16.0,
+   0.8574896249997828
+  ],
+  [
+   "aten::transpose",
+   177.0,
+   0.8474204999999374
+  ],
+  [
+   "aten::empty",
+   253.0,
+   0.8304749375000056
+  ],
+  [
+   "aten::zeros",
+   163.0,
+   0.7840795625004794
+  ],
+  [
+   "aten::fill_",
+   32.0,
+   0.7683569375000597
+  ],
+  [
+   "aten::matmul",
+   81.0,
+   0.7304912499999364
+  ],
+  [
+   "aten::to",
+   360.0,
+   0.6175076249997401
+  ],
+  [
+   "aten::view",
+   164.0,
+   0.5681496874995537
+  ],
+  [
+   "aten::sum",
+   16.0,
+   0.5547379374997782
+  ],
+  [
+   "aten::as_strided",
+   407.0,
+   0.51358849999923
+  ],
+  [
+   "aten::scatter_",
+   16.0,
+   0.5097496249999267
+  ],
+  [
+   "aten::slice",
+   65.0,
+   0.42831981250008355
+  ],
+  [
+   "aten::_softmax",
+   16.0,
+   0.41256237499989945
+  ],
+  [
+   "aten::t",
+   81.0,
+   0.2978303750006935
+  ],
+  [
+   "aten::unsqueeze",
+   66.0,
+   0.2950429375009417
+  ],
+  [
+   "aten::linear",
+   81.0,
+   0.2921664999994182
+  ],
+  [
+   "aten::zero_",
+   179.0,
+   0.24418331249944095
+  ]
+ ],
+ "top_copy_sites": [
+  [
+   "?",
+   199.0,
+   29.060133249999996
+  ]
+ ],
+ "torch": "2.11.0+cu128",
+ "visible": "1",
+ "dispatch_copies_per_tok": [
+  [
+   "_to_copy",
+   "cuda->cpu",
+   "big_modeling.py:879:_native_model_forward",
+   1.0,
+   22.263
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:54:forward",
+   65.0,
+   3.444
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:57:forward",
+   65.0,
+   3.016
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "olmoe.py:68:forward",
+   16.0,
+   0.927
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "olmoe.py:41:forward",
+   16.0,
+   0.856
+  ],
+  [
+   "copy_",
+   "cuda->cpu",
+   "expert_executor.py:415:_dispatch_native",
+   16.0,
+   0.811
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "olmoe.py:47:forward",
+   16.0,
+   0.75
+  ],
+  [
+   "_to_copy",
+   "cpu->cuda",
+   "big_modeling.py:810:_native_model_forward",
+   1.0,
+   0.149
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:107:forward",
+   2.0,
+   0.089
+  ],
+  [
+   "_to_copy",
+   "cuda->cuda",
+   "modeling_olmoe.py:102:forward",
+   1.0,
+   0.061
+  ],
+  [
+   "_local_scalar_dense",
+   "cpu->sync",
+   "generation_loop.py:287:_sample",
+   1.0,
+   0.008
+  ]
+ ],
+ "dispatch_by_direction_per_tok": {
+  "cuda->cpu": [
+   17.0,
+   23.074
+  ],
+  "cuda->cuda": [
+   181.0,
+   9.143
+  ],
+  "cpu->cuda": [
+   1.0,
+   0.149
+  ],
+  "cpu->sync": [
+   1.0,
+   0.008
+  ]
+ },
+ "dispatch_wall_ms_per_tok": 32.374,
+ "pass3_ms_per_tok": 197.77139512370923,
+ "executor_wall_per_tok": [
+  [
+   "DistributedExpertExecutor.wait_dispatch_local",
+   32.0,
+   73.095
+  ],
+  [
+   "DistributedExpertExecutor.dispatch_local",
+   32.0,
+   7.601
+  ],
+  [
+   "DistributedExpertExecutor._dispatch_native",
+   32.0,
+   3.915
+  ],
+  [
+   "DistributedExpertExecutor._maybe_route_ahead_prefetch",
+   32.0,
+   0.65
+  ],
+  [
+   "DistributedExpertExecutor._can_use_gpu_only_routing",
+   32.0,
+   0.2
+  ],
+  [
+   "DistributedExpertExecutor._apply_expert_drop",
+   32.0,
+   0.069
+  ]
+ ],
+ "pass4_ms_per_tok": 120.7162708760734
+}

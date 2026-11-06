@@ -1,0 +1,15 @@
+m_g1_A: launch_add_inplace_us=17.27 mul_bf16_1x2048_us=22.69 rmsnorm_unfused_1x2048_us=164.79 empty_cached_alloc_1x2048_us=3.22 launch_plus_sync_us=64.11 item_roundtrip_us=75.29 d2h_16KB_pageable_us=70.39 d2h_16KB_pinned_sync_us=63.11 h2d_16KB_pageable_us=50.60 h2d_16KB_pinned_nonblocking_us=18.15 h2d_expert_pageable_us=1050.57 h2d_expert_pageable_GBps=11.98 h2d_expert_pinned_us=824.17 h2d_expert_pinned_GBps=15.27 d2h_expert_pageable_us=1326.83 d2h_expert_pageable_GBps=9.48 d2h_expert_pinned_us=812.13 d2h_expert_pinned_GBps=15.49 FLAGGED
+m_g0_A: launch_add_inplace_us=18.29 mul_bf16_1x2048_us=18.21 rmsnorm_unfused_1x2048_us=219.28 empty_cached_alloc_1x2048_us=2.93 launch_plus_sync_us=258.79 item_roundtrip_us=56.59 d2h_16KB_pageable_us=103.49 d2h_16KB_pinned_sync_us=73.57 h2d_16KB_pageable_us=99.80 h2d_16KB_pinned_nonblocking_us=25.71 h2d_expert_pageable_us=15072.55 h2d_expert_pageable_GBps=0.83 h2d_expert_pinned_us=7468.48 h2d_expert_pinned_GBps=1.68 d2h_expert_pageable_us=7197.91 d2h_expert_pageable_GBps=1.75 d2h_expert_pinned_us=7009.44 d2h_expert_pinned_GBps=1.80 FLAGGED
+m_g1_B: launch_add_inplace_us=13.78 mul_bf16_1x2048_us=13.33 rmsnorm_unfused_1x2048_us=146.17 empty_cached_alloc_1x2048_us=2.65 launch_plus_sync_us=43.72 item_roundtrip_us=55.29 d2h_16KB_pageable_us=81.02 d2h_16KB_pinned_sync_us=60.78 h2d_16KB_pageable_us=53.75 h2d_16KB_pinned_nonblocking_us=17.27 h2d_expert_pageable_us=1386.31 h2d_expert_pageable_GBps=9.08 h2d_expert_pinned_us=822.32 h2d_expert_pinned_GBps=15.30 d2h_expert_pageable_us=1402.85 d2h_expert_pageable_GBps=8.97 d2h_expert_pinned_us=810.99 d2h_expert_pinned_GBps=15.52
+hf  ms/tok=33.7 aten/tok=3829 aten_cpu_ms/tok(profiled)=33.8 d2h-sync=0.00 d2d-casts=8.1
+eng ms/tok=124.2 aten/tok=4189 aten_cpu_ms/tok(profiled)=68.3 | overhead vs hf = 90.6 ms/tok
+eng pass4 ms/tok=120.7: wait_dispatch_local 73.1 (32 calls/tok, 61%) | dispatch_local 7.6 (6%)
+eng pass3 ms/tok=197.8: end-of-step d2h sync 22.3 (11%) | d2d casts 9.1 (5%)
+eng executor top: wait_dispatch_local 32 73.09 | dispatch_local 32 7.60 | _dispatch_native 32 3.92 | _maybe_route_ahead_prefetch 32 0.65 | _can_use_gpu_only_routing 32 0.20 | _apply_expert_drop 32 0.07
+eng dispatch top: cuda->cpu big_modeling.py:879:_native_model_forward 1.0 22.26 | cuda->cuda modeling_olmoe.py:54:forward 65.0 3.44 | cuda->cuda modeling_olmoe.py:57:forward 65.0 3.02 | cuda->cuda olmoe.py:68:forward 16.0 0.93 | cuda->cuda olmoe.py:41:forward 16.0 0.86 | cuda->cpu expert_executor.py:415:_dispatch_native 16.0 0.81
+component shares: EXPERT-WAIT-BARRIER=0.61 END-STEP-SYNC=0.11 DISPATCH-CALL=0.06 DTYPE-CASTS=0.01
+power eng: Balanced [None, 9.31617647188339] HighPerf [9.390562282220568, 9.265212556152019]
+power hf: Balanced [23.805378310607537, 24.29190188523195] HighPerf [24.048473694152285, 24.83682741341972]
+parity engine vs hf (t1): 2/6 identical greedy outputs
+FLAGGED: m_g0_A m_g1_A t1_A_eng
+VERDICT BUDGET:EXPERT-WAIT-BARRIER(0.61;unexplained~0.21)|POWER-ENG:INCOMPLETE|POWER-HF:POWER-RULED-OUT(1.016) [COMPLETE]
