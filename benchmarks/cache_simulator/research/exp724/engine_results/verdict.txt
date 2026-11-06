@@ -1,0 +1,25 @@
+gpu0 lcnu    r=0.2   n=3 tok/s=  2.10 cv=0.004 miss=0.5159
+gpu0 s3fifo  r=0.2   n=3 tok/s=  1.90 cv=0.001 miss=0.5704
+gpu1 lcnu    r=0.12  n=3 tok/s=  9.15 cv=0.003 miss=0.6561
+gpu1 lcnu    r=0.2   n=3 tok/s=  7.60 cv=0.448 miss=0.5158
+gpu1 lcnu    r=0.35  n=3 tok/s= 10.07 cv=0.119 miss=0.3524
+gpu1 lru     r=0.12  n=3 tok/s=  8.97 cv=0.003 miss=0.7054
+gpu1 lru     r=0.2   n=3 tok/s=  9.18 cv=0.039 miss=0.5953
+gpu1 lru     r=0.35  n=3 tok/s=  8.10 cv=0.417 miss=0.4134
+gpu1 s3fifo  r=0.12  n=3 tok/s=  8.77 cv=0.005 miss=0.7082
+gpu1 s3fifo  r=0.2   n=3 tok/s=  9.64 cv=0.001 miss=0.5702
+gpu1 s3fifo  r=0.35  n=3 tok/s= 10.59 cv=0.013 miss=0.3734
+
+G0 correctness identical outputs: True distinct-per-prompt=[1, 1, 1, 1, 1, 1]
+V validity: 0.73 of 11 complete cells CV<=0.10 -> False
+  r=0.12: best-miss lcnu tok/s 9.15 vs best 9.15 -> agree
+  r=0.2: best-miss lcnu tok/s 7.60 vs best 9.64 -> DISAGREE
+  r=0.35: best-miss lcnu tok/s 10.07 vs best 10.59 -> DISAGREE
+H1 within-ratio pearson(miss, rel tok/s) = 0.007, agree 1/3 -> REJECTED
+  lcnu: gpu1 7.60 / gpu0 2.10 = x3.61
+  s3fifo: gpu1 9.64 / gpu0 1.90 = x5.06
+H2 link placement min ratio 3.61 -> CONFIRMED
+descriptive gpu0: s/token = 174.5 ms + 3.983 ms per miss/token (n=36)
+descriptive gpu1: s/token = 137.5 ms + -0.189 ms per miss/token (n=162)
+
+VERDICT NOISY|SIM2REAL:REJECTED|LINK:CONFIRMED [COMPLETE]
