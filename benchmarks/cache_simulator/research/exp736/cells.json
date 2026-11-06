@@ -1,0 +1,80 @@
+[
+ {
+  "id": "m_g1_A",
+  "arm": "micro",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "m_g0_A",
+  "arm": "micro",
+  "gpu": "0",
+  "plan": "A"
+ },
+ {
+  "id": "p_hf",
+  "arm": "prof_hf",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "p_eng",
+  "arm": "prof_eng",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "t1_A_eng",
+  "arm": "eng",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "t1_A_hf",
+  "arm": "hf",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "t2_B_eng",
+  "arm": "eng",
+  "gpu": "1",
+  "plan": "B"
+ },
+ {
+  "id": "t2_B_hf",
+  "arm": "hf",
+  "gpu": "1",
+  "plan": "B"
+ },
+ {
+  "id": "t3_B_hf",
+  "arm": "hf",
+  "gpu": "1",
+  "plan": "B"
+ },
+ {
+  "id": "t3_B_eng",
+  "arm": "eng",
+  "gpu": "1",
+  "plan": "B"
+ },
+ {
+  "id": "t4_A_hf",
+  "arm": "hf",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "t4_A_eng",
+  "arm": "eng",
+  "gpu": "1",
+  "plan": "A"
+ },
+ {
+  "id": "m_g1_B",
+  "arm": "micro",
+  "gpu": "1",
+  "plan": "B"
+ }
+]
