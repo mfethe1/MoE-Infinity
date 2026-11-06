@@ -1,0 +1,484 @@
+{
+ "verdict": "PAYOFF-REJECTED",
+ "checks_ok": 73,
+ "checks_total": 73,
+ "checks": [
+  {
+   "check": "artifact sha PREREG.md",
+   "ok": true,
+   "detail": "da27c7c7f76a"
+  },
+  {
+   "check": "freeze commit fcba7bb carries PREREG.md byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha run_cpupair.py",
+   "ok": true,
+   "detail": "e518c6757d3f"
+  },
+  {
+   "check": "freeze commit fcba7bb carries run_cpupair.py byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha smoke.log",
+   "ok": true,
+   "detail": "b04a5fab9ba3"
+  },
+  {
+   "check": "freeze commit fcba7bb carries smoke.log byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha sealed_deps.sha256",
+   "ok": true,
+   "detail": "21f8cb6cce03"
+  },
+  {
+   "check": "freeze commit fcba7bb carries sealed_deps.sha256 byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "committed ARTIFACT.sha256 == local ARTIFACT.sha256",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "freeze commit time precedes result mtime",
+   "ok": true,
+   "detail": "freeze 1793929496 < result 1793938428"
+  },
+  {
+   "check": "sealed dep census_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "8001024c6280"
+  },
+  {
+   "check": "result JSON records sealed dep census_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "e50379fce393"
+  },
+  {
+   "check": "result JSON records sealed dep policies_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit.py unchanged",
+   "ok": true,
+   "detail": "4bfff5bd4ada"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit3.py unchanged",
+   "ok": true,
+   "detail": "23bd944aa491"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit3.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_rothead.py unchanged",
+   "ok": true,
+   "detail": "01c79a2fdebc"
+  },
+  {
+   "check": "result JSON records sealed dep policies_rothead.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies.py unchanged",
+   "ok": true,
+   "detail": "b38c55b86b70"
+  },
+  {
+   "check": "result JSON records sealed dep policies.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_policies_real.py unchanged",
+   "ok": true,
+   "detail": "46690edaaddf"
+  },
+  {
+   "check": "result JSON records sealed dep run_policies_real.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-qwen30b.csv unchanged",
+   "ok": true,
+   "detail": "546f0059d7d2"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-qwen30b.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-granite.csv unchanged",
+   "ok": true,
+   "detail": "a147cc8e819b"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-granite.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp675a-shared-costfit.json unchanged",
+   "ok": true,
+   "detail": "64a39b9909d2"
+  },
+  {
+   "check": "result JSON records sealed dep exp675a-shared-costfit.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_qwen30b.pt unchanged",
+   "ok": true,
+   "detail": "08732f27ce6b"
+  },
+  {
+   "check": "result JSON records sealed dep stream_qwen30b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_granite3b.pt unchanged",
+   "ok": true,
+   "detail": "7f8e4303927d"
+  },
+  {
+   "check": "result JSON records sealed dep stream_granite3b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_bo.py unchanged",
+   "ok": true,
+   "detail": "35b2498a49a1"
+  },
+  {
+   "check": "result JSON records sealed dep run_bo.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp718-econ.json unchanged",
+   "ok": true,
+   "detail": "392128938508"
+  },
+  {
+   "check": "result JSON records sealed dep exp718-econ.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_econ.py unchanged",
+   "ok": true,
+   "detail": "3d92941ebf82"
+  },
+  {
+   "check": "result JSON records sealed dep run_econ.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "15 sealed deps (13 exp718 + run_econ.py + exp718-econ.json)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log RUN_EXIT=0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log sealed deps ok (15 files)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log ladder self-test 15/15 before measurement",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log settled verdict == JSON verdict",
+   "ok": true,
+   "detail": "PAYOFF-REJECTED"
+  },
+  {
+   "check": "stored ladder_selftest 15/15",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "design == PREREG (8 rounds, min 5, caps, streams, seed 723, 5.5h, null [0.97,1.03]/[0.93,1.07], 1.10/1.35)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "16 worker records = 8 rounds x 2 streams",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "Random(723) stream/cap schedule reproduced exactly (16/16 records)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker replayed the FULL stream (qwen30b 1,424,640 / granite 638,208)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker QOS rc == 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every unit: fixed fam2/fam3/null order, 4 reps, ABBA even / BAAB odd rounds (192/192 units)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "budget not hit; elapsed < 5.5h",
+   "ok": true,
+   "detail": "8920.0"
+  },
+  {
+   "check": "rung 1: every timed replay hit_rate == exp718 PASS-1 exactly (768/768)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored hit_rate_mismatches empty",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "oracle: shared == base hit_rate in all 16 (stream,cap,family) pairs",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "24 cells (2 streams x 4 caps x 3 units), n=8 rounds each",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored cell stats == re-derived from raw ns (24 cells x 3 clocks x 3 stats, |d| <= 1e-12)",
+   "ok": true,
+   "detail": "max |d| 0.00e+00"
+  },
+  {
+   "check": "rung 2: complete rounds 8 >= MIN 5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rung 3 null pooled in [0.97,1.03]",
+   "ok": true,
+   "detail": "0.9968"
+  },
+  {
+   "check": "rung 3 every cell null median in [0.93,1.07] (8/8)",
+   "ok": true,
+   "detail": "range 0.9775-1.0164"
+  },
+  {
+   "check": "gate input null_pooled re-derived == stored",
+   "ok": true,
+   "detail": "0.996827"
+  },
+  {
+   "check": "gate input R3 re-derived == stored",
+   "ok": true,
+   "detail": "1.605863"
+  },
+  {
+   "check": "gate input R3_q25 re-derived == stored",
+   "ok": true,
+   "detail": "1.573100"
+  },
+  {
+   "check": "gate input R3_q75 re-derived == stored",
+   "ok": true,
+   "detail": "1.637971"
+  },
+  {
+   "check": "gate input R2 re-derived == stored",
+   "ok": true,
+   "detail": "1.596610"
+  },
+  {
+   "check": "argmax cell re-derived == stored",
+   "ok": true,
+   "detail": "('granite', 1024)"
+  },
+  {
+   "check": "rung 4: argmax IQR does not straddle 1.10 or 1.35",
+   "ok": true,
+   "detail": "[1.5731,1.6380]"
+  },
+  {
+   "check": "independent ladder boundary self-test 15/15",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "re-adjudicated verdict == stored verdict",
+   "ok": true,
+   "detail": "PAYOFF-REJECTED"
+  },
+  {
+   "check": "descriptive: leave-one-round-out verdict stable (8/8 == stored)",
+   "ok": true,
+   "detail": "['PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED', 'PAYOFF-REJECTED']"
+  },
+  {
+   "check": "LIVE granite@1024: 12/12 fresh replays hit_rate == exp718 oracle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE granite@1024 fam3 thread ratio > 1.35 (single ABBA unit, descriptive)",
+   "ok": true,
+   "detail": "fam3 1.5918 fam2 1.5874 null 0.9616"
+  }
+ ],
+ "gate_inputs": {
+  "sealed_ok": true,
+  "hr_ok": true,
+  "rounds": 8,
+  "null_pooled": 0.9968265741843695,
+  "null_cells_ok": true,
+  "R3": 1.6058626463294652,
+  "R3_q25": 1.5730997880712918,
+  "R3_q75": 1.6379705650591148,
+  "R3_argmax": [
+   "granite",
+   1024
+  ],
+  "R2": 1.5966099754554588
+ },
+ "null_cell_medians": {
+  "qwen30b|256": 0.996814938537369,
+  "qwen30b|1024": 0.9775483449665783,
+  "qwen30b|4096": 0.9925541681343041,
+  "qwen30b|262144": 1.0164482619507658,
+  "granite|256": 0.99683820983137,
+  "granite|1024": 0.9941165778740527,
+  "granite|4096": 1.0100005893776491,
+  "granite|262144": 1.0075102792549697
+ },
+ "robustness": {
+  "proc": {
+   "R3": 1.6058631410221098,
+   "argmax": [
+    "granite",
+    1024
+   ],
+   "null_pooled": 0.9968266016381979
+  },
+  "wall": {
+   "R3": 1.6258575203807375,
+   "argmax": [
+    "granite",
+    1024
+   ],
+   "null_pooled": 0.9952809841981649
+  }
+ },
+ "leave_one_round_out": [
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED",
+  "PAYOFF-REJECTED"
+ ],
+ "exp718_loaded_R3": [
+  {
+   "stream": "qwen30b",
+   "cap": 256,
+   "R3": 1.2449426122056342
+  },
+  {
+   "stream": "granite",
+   "cap": 256,
+   "R3": 1.3835417903681995
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 1024,
+   "R3": 1.407655285055716
+  },
+  {
+   "stream": "granite",
+   "cap": 1024,
+   "R3": 1.5545875493054364
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 4096,
+   "R3": 1.3343637252821274
+  },
+  {
+   "stream": "granite",
+   "cap": 4096,
+   "R3": 1.495751123266263
+  },
+  {
+   "stream": "qwen30b",
+   "cap": 262144,
+   "R3": 1.5691194811673734
+  }
+ ],
+ "live": {
+  "stream": "granite",
+  "round": 0,
+  "qos_rc": 0,
+  "accesses": 638208,
+  "loadavg_start": 3.4892578125,
+  "loadavg_end": 4.91015625,
+  "ratios": {
+   "fam2": 1.587397785767614,
+   "fam3": 1.5917581673126338,
+   "null": 0.9616060668360517
+  },
+  "loadavg": [
+   3.4892578125,
+   4.91015625
+  ]
+ },
+ "null_units_over_10pct": [
+  5,
+  64
+ ],
+ "elapsed_s": 48.6
+}
