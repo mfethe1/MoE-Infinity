@@ -7,10 +7,10 @@ PC=pc; BAL=381b4222-f694-41f0-9685-ff5bb260df2e; HIP=8c5e7fda-e8bf-4a96-9a85-a6e
 trap '$PC /setactive $BAL; echo "== restored Balanced: $($PC /getactivescheme | tr -d "\r")"' EXIT
 while systemctl --user is-active -q exp734 || systemctl --user is-active -q exp735 || systemctl --user is-active -q exp727g1; do sleep 60; done
 echo "== $(date -u +%FT%TZ) start"
-sha256sum AMENDMENT1.md AMENDMENT2.md quietwait.sh mon.sh micro.py prof2.py engine_arm.py hf_arm.py prompts.json cells.json analyze.py run_exp736.sh > out/RUN_SHA256
+[ -e out/RUN_SHA256 ] && mv out/RUN_SHA256 out/RUN_SHA256.prev-$(date -u +%H%M%S)
+sha256sum AMENDMENT1.md AMENDMENT2.md AMENDMENT3.md quietwait.sh mon.sh micro.py prof2.py engine_arm.py hf_arm.py prompts.json cells.json analyze.py run_exp736.sh > out/RUN_SHA256
 M=~/models/OLMoE-1B-7B-0125-Instruct
-python3 -c "import json;[print(c['id'],c['arm'],c['gpu'],c['plan']) for c in json.load(open('cells.json'))]" |
-while read ID ARM G PLAN; do
+while read -u 3 ID ARM G PLAN; do  # AMENDMENT3: cell list on fd 3; loop body cannot consume it
   [ -s out/$ID.json ] && { echo "skip $ID"; continue; }
   if [ $PLAN = B ]; then $PC /setactive $HIP; else $PC /setactive $BAL; fi; sleep 20
   PS=$($PC /getactivescheme | grep -oE '\(.*\)' | tr -d '()\r ')
@@ -35,6 +35,6 @@ while read ID ARM G PLAN; do
   RC=$?; kill $MP 2>/dev/null; wait $MP 2>/dev/null
   echo "$ID RC=$RC"; grep -E "prompt [0-9]:|PROF2|launch" out/$ID.log | tail -6 | cut -c1-300
   [ $RC -ne 0 ] && { tail -5 out/$ID.log; echo "$ID FAILED" >> out/FAILED; }
-done
+done 3< <(python3 -c "import json;[print(c['id'],c['arm'],c['gpu'],c['plan']) for c in json.load(open('cells.json'))]")
 python3 analyze.py out > out/verdict.txt 2>&1; cat out/verdict.txt
 echo "== $(date -u +%FT%TZ) EXP736-DONE"
