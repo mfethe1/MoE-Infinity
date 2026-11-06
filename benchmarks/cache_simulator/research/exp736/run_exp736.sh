@@ -1,12 +1,13 @@
 #!/bin/bash
 # exp736 runner (Winnie). Serial; one model process at a time. Restores Windows power plan Balanced on any exit.
 cd ~/exp736; source ~/venvs/moei-engine/bin/activate; mkdir -p out
-export WSL_INTEROP=/run/WSL/1_interop; [ -S $WSL_INTEROP ] || export WSL_INTEROP=$(ls -t /run/WSL/*_interop | head -1)  # AMENDMENT1
-PC=/mnt/c/Windows/System32/powercfg.exe; BAL=381b4222-f694-41f0-9685-ff5bb260df2e; HIP=8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+PCX=/mnt/c/Windows/System32/powercfg.exe
+pc() { local s o; for s in $(ls -tr /run/WSL/*_interop); do o=$(WSL_INTEROP=$s $PCX "$@" 2>&1) && { printf '%s\n' "$o"; return 0; }; done; echo "powercfg-failed $*" >&2; return 1; }  # AMENDMENT2
+PC=pc; BAL=381b4222-f694-41f0-9685-ff5bb260df2e; HIP=8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
 trap '$PC /setactive $BAL; echo "== restored Balanced: $($PC /getactivescheme | tr -d "\r")"' EXIT
 while systemctl --user is-active -q exp734 || systemctl --user is-active -q exp735 || systemctl --user is-active -q exp727g1; do sleep 60; done
 echo "== $(date -u +%FT%TZ) start"
-sha256sum AMENDMENT1.md quietwait.sh mon.sh micro.py prof2.py engine_arm.py hf_arm.py prompts.json cells.json analyze.py run_exp736.sh > out/RUN_SHA256
+sha256sum AMENDMENT1.md AMENDMENT2.md quietwait.sh mon.sh micro.py prof2.py engine_arm.py hf_arm.py prompts.json cells.json analyze.py run_exp736.sh > out/RUN_SHA256
 M=~/models/OLMoE-1B-7B-0125-Instruct
 python3 -c "import json;[print(c['id'],c['arm'],c['gpu'],c['plan']) for c in json.load(open('cells.json'))]" |
 while read ID ARM G PLAN; do
