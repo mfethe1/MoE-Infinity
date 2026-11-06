@@ -1,0 +1,35 @@
+diff --git a/core/parallel/expert_dispatcher.cpp b/core/parallel/expert_dispatcher.cpp
+index 71cc01d..49b1ef8 100644
+--- a/core/parallel/expert_dispatcher.cpp
++++ b/core/parallel/expert_dispatcher.cpp
+@@ -1211,6 +1211,12 @@ void ExpertDispatcher::GPUFetchFunc(int gpu_id) {
+         expert_node->node->pending_dispatches.fetch_sub(
+             1, std::memory_order_acq_rel);
+         if (expert_node->node->device.is_cuda()) {
++          // The prefetch we waited on may have placed the expert on a
++          // different GPU than this fetch worker's (multi-GPU round-robin
++          // placement). Execute where the weights are, as the Enqueue
++          // cache-hit path does; otherwise the exec worker moves the inputs
++          // to gpu_id while the weights stay on the resident device.
++          const int resident_gpu = expert_node->node->device.index();
+           expert_node->node->incache_visit_count += 1;
+           expert_node->SetTensorsFromBlob(expert_node->node->device);
+           ExecArgs exec_args;
+@@ -1235,7 +1241,7 @@ void ExpertDispatcher::GPUFetchFunc(int gpu_id) {
+           exec_args.pending_counted_down = true;
+           if (manager_enabled_ && kExpertResidencyManager != nullptr) {
+             auto active = kExpertResidencyManager->ActiveGeneration(
+-                gpu_id, LogicalExpertKey(layer_idx, expert_idx));
++                resident_gpu, LogicalExpertKey(layer_idx, expert_idx));
+             if (active.has_value()) {
+               exec_args.execution_key = *active;
+               exec_args.execution_lease_id =
+@@ -1243,7 +1249,7 @@ void ExpertDispatcher::GPUFetchFunc(int gpu_id) {
+                                                        LeaseKind::EXECUTION);
+             }
+           }
+-          exec_queue_[gpu_id].Push(exec_args);
++          exec_queue_[resident_gpu].Push(exec_args);
+           continue;
+         }
+       }

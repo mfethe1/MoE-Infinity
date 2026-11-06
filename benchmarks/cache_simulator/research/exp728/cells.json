@@ -1,0 +1,146 @@
+[
+ {
+  "build": "U",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_U_g01_r20"
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_U_g1_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.4,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_P_g1_r40"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_P_g01_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_P_g1_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "policy": "lcnu",
+  "block": 1,
+  "id": "b1_P_g01_r10"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_P_g01_r20"
+ },
+ {
+  "build": "U",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_U_g01_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.4,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_P_g1_r40"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_P_g01_r10"
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_U_g1_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "id": "b2_P_g1_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_P_g1_r20"
+ },
+ {
+  "build": "U",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_U_g01_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "1",
+  "ratio": 0.4,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_P_g1_r40"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_P_g01_r20"
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_U_g1_r20"
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.1,
+  "policy": "lcnu",
+  "block": 3,
+  "id": "b3_P_g01_r10"
+ }
+]
