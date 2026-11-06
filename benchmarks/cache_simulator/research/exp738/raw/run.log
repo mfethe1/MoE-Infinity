@@ -1,0 +1,101 @@
+== 2026-11-06T16:44:36Z start
+== 2026-11-06T16:44:36Z hf_1 arm=hf threads=4 gpu=1 plan=Balanced qw=0 QUIET
+hf_1 RC=0
+[hf] prompt 0: 31.16 tok/s
+[hf] prompt 1: 32.73 tok/s
+[hf] prompt 2: 32.97 tok/s
+[hf] prompt 3: 30.38 tok/s
+[hf] prompt 4: 31.97 tok/s
+[hf] prompt 5: 32.65 tok/s
+== 2026-11-06T16:45:10Z base_1 arm=eng threads=4 gpu=1 plan=Balanced qw=0 QUIET
+base_1 RC=0
+[lcnu r=0.75] prompt 0: 9.69 tok/s hits+9535 miss+289
+[lcnu r=0.75] prompt 1: 11.30 tok/s hits+9649 miss+33
+[lcnu r=0.75] prompt 2: 10.22 tok/s hits+9671 miss+59
+[lcnu r=0.75] prompt 3: 11.01 tok/s hits+9646 miss+132
+[lcnu r=0.75] prompt 4: 10.76 tok/s hits+4197 miss+61
+[lcnu r=0.75] prompt 5: 11.08 tok/s hits+9821 miss+103
+== 2026-11-06T16:46:53Z grp_1 arm=grp threads=4 gpu=1 plan=Balanced qw=0 QUIET
+grp_1 RC=0
+[lcnu r=0.75] prompt 0: 1.11 tok/s hits+9533 miss+294
+[lcnu r=0.75] prompt 1: 6.30 tok/s hits+9650 miss+31
+[lcnu r=0.75] prompt 2: 10.17 tok/s hits+9692 miss+43
+[lcnu r=0.75] prompt 3: 10.32 tok/s hits+9638 miss+142
+[lcnu r=0.75] prompt 4: 1.11 tok/s hits+4209 miss+54
+[lcnu r=0.75] prompt 5: 1.60 tok/s hits+9829 miss+96
+== 2026-11-06T16:52:53Z t1_1 arm=eng threads=1 gpu=1 plan=Balanced qw=99 QUIET
+t1_1 RC=0
+[lcnu r=0.75] prompt 0: 6.50 tok/s hits+9534 miss+290
+[lcnu r=0.75] prompt 1: 6.82 tok/s hits+9648 miss+34
+[lcnu r=0.75] prompt 2: 6.98 tok/s hits+9667 miss+63
+[lcnu r=0.75] prompt 3: 7.17 tok/s hits+9632 miss+146
+[lcnu r=0.75] prompt 4: 6.04 tok/s hits+4192 miss+66
+[lcnu r=0.75] prompt 5: 6.38 tok/s hits+9815 miss+109
+== 2026-11-06T17:18:49Z t8_1 arm=eng threads=8 gpu=1 plan=Balanced qw=1425 QUIET
+t8_1 RC=0
+[lcnu r=0.75] prompt 0: 8.32 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 9.72 tok/s hits+9644 miss+38
+[lcnu r=0.75] prompt 2: 8.42 tok/s hits+9660 miss+70
+[lcnu r=0.75] prompt 3: 10.09 tok/s hits+9617 miss+161
+[lcnu r=0.75] prompt 4: 8.42 tok/s hits+4185 miss+73
+[lcnu r=0.75] prompt 5: 10.30 tok/s hits+9806 miss+118
+== 2026-11-06T17:20:36Z t8_2 arm=eng threads=8 gpu=1 plan=Balanced qw=0 QUIET
+t8_2 RC=0
+[lcnu r=0.75] prompt 0: 8.62 tok/s hits+9534 miss+290
+[lcnu r=0.75] prompt 1: 9.74 tok/s hits+9648 miss+34
+[lcnu r=0.75] prompt 2: 9.69 tok/s hits+9667 miss+63
+[lcnu r=0.75] prompt 3: 9.05 tok/s hits+9631 miss+147
+[lcnu r=0.75] prompt 4: 9.85 tok/s hits+4195 miss+63
+[lcnu r=0.75] prompt 5: 9.60 tok/s hits+9818 miss+106
+== 2026-11-06T17:22:24Z t1_2 arm=eng threads=1 gpu=1 plan=Balanced qw=0 QUIET
+t1_2 RC=0
+[lcnu r=0.75] prompt 0: 6.05 tok/s hits+9520 miss+304
+[lcnu r=0.75] prompt 1: 7.20 tok/s hits+9634 miss+48
+[lcnu r=0.75] prompt 2: 6.27 tok/s hits+9650 miss+80
+[lcnu r=0.75] prompt 3: 6.54 tok/s hits+9595 miss+183
+[lcnu r=0.75] prompt 4: 6.81 tok/s hits+4173 miss+85
+[lcnu r=0.75] prompt 5: 6.28 tok/s hits+9781 miss+143
+== 2026-11-06T17:24:31Z grp_2 arm=grp threads=4 gpu=1 plan=Balanced qw=0 QUIET
+grp_2 RC=0
+[lcnu r=0.75] prompt 0: 9.44 tok/s hits+9534 miss+293
+[lcnu r=0.75] prompt 1: 11.92 tok/s hits+9661 miss+21
+[lcnu r=0.75] prompt 2: 9.97 tok/s hits+9697 miss+37
+[lcnu r=0.75] prompt 3: 11.17 tok/s hits+9642 miss+138
+[lcnu r=0.75] prompt 4: 10.55 tok/s hits+4211 miss+52
+[lcnu r=0.75] prompt 5: 10.94 tok/s hits+9834 miss+91
+== 2026-11-06T17:26:07Z base_2 arm=eng threads=4 gpu=1 plan=Balanced qw=0 QUIET
+base_2 RC=0
+[lcnu r=0.75] prompt 0: 9.66 tok/s hits+9513 miss+311
+[lcnu r=0.75] prompt 1: 10.88 tok/s hits+9629 miss+53
+[lcnu r=0.75] prompt 2: 10.78 tok/s hits+9639 miss+91
+[lcnu r=0.75] prompt 3: 10.46 tok/s hits+9576 miss+202
+[lcnu r=0.75] prompt 4: 11.57 tok/s hits+4163 miss+95
+[lcnu r=0.75] prompt 5: 11.04 tok/s hits+9760 miss+164
+== 2026-11-06T17:27:50Z hf_2 arm=hf threads=4 gpu=1 plan=Balanced qw=0 QUIET
+hf_2 RC=0
+[hf] prompt 0: 28.08 tok/s
+[hf] prompt 1: 29.94 tok/s
+[hf] prompt 2: 31.64 tok/s
+[hf] prompt 3: 31.62 tok/s
+[hf] prompt 4: 32.11 tok/s
+[hf] prompt 5: 32.06 tok/s
+cell hf_1: arm=hf t=4 ms/tok=30.95 grouped_experts=0 threads_eff=None routing_getter=None CLEAN
+cell base_1: arm=eng t=4 ms/tok=91.86 grouped_experts=0 threads_eff=4 routing_getter=True CLEAN
+cell grp_1: arm=grp t=4 ms/tok=392.24 grouped_experts=52551 threads_eff=4 routing_getter=True FLAGGED
+cell t1_1: arm=eng t=1 ms/tok=150.27 grouped_experts=0 threads_eff=1 routing_getter=True FLAGGED
+cell t8_1: arm=eng t=8 ms/tok=110.80 grouped_experts=0 threads_eff=8 routing_getter=True CLEAN
+cell t8_2: arm=eng t=8 ms/tok=103.64 grouped_experts=0 threads_eff=8 routing_getter=True CLEAN
+cell t1_2: arm=eng t=1 ms/tok=156.10 grouped_experts=0 threads_eff=1 routing_getter=True CLEAN
+cell grp_2: arm=grp t=4 ms/tok=93.10 grouped_experts=52579 threads_eff=4 routing_getter=True CLEAN
+cell base_2: arm=eng t=4 ms/tok=92.35 grouped_experts=0 threads_eff=4 routing_getter=True CLEAN
+cell hf_2: arm=hf t=4 ms/tok=31.61 grouped_experts=0 threads_eff=None routing_getter=None CLEAN
+arms ms/tok: hf=31.28451719466183 base=92.10624399670957 grp=93.10338912830395 t1=156.10418736538296 t8=107.22173560729031
+noise(max within-arm rel spread)=0.06678926869490587 threshold=0.1336
+engine gap base-hf = 60.82 ms/tok
+MANIP threads_effective==requested: True
+MANIP grouped_experts: base/t1/t8 total=0 grp per-cell=[52551, 52579]
+PARITY grp-vs-hf=0.747 base-vs-hf=0.708 grp-vs-base=0.846 early-divergence-prompts=[]
+GROUPED rel speedup=-0.0108 gap_closed=-0.016394554775462374
+THREADS t1->t4 gain=0.4100 t4->t8 gain=-0.1641 t1->t8 gain=0.3131
+VERDICT GROUPED-FLAT|THREADS-MIXED
+== 2026-11-06T17:28:27Z EXP738-DONE

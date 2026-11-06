@@ -1,0 +1,19 @@
+cell hf_1: arm=hf t=4 ms/tok=30.95 grouped_experts=0 threads_eff=None routing_getter=None CLEAN
+cell base_1: arm=eng t=4 ms/tok=91.86 grouped_experts=0 threads_eff=4 routing_getter=True CLEAN
+cell grp_1: arm=grp t=4 ms/tok=392.24 grouped_experts=52551 threads_eff=4 routing_getter=True FLAGGED
+cell t1_1: arm=eng t=1 ms/tok=150.27 grouped_experts=0 threads_eff=1 routing_getter=True FLAGGED
+cell t8_1: arm=eng t=8 ms/tok=110.80 grouped_experts=0 threads_eff=8 routing_getter=True CLEAN
+cell t8_2: arm=eng t=8 ms/tok=103.64 grouped_experts=0 threads_eff=8 routing_getter=True CLEAN
+cell t1_2: arm=eng t=1 ms/tok=156.10 grouped_experts=0 threads_eff=1 routing_getter=True CLEAN
+cell grp_2: arm=grp t=4 ms/tok=93.10 grouped_experts=52579 threads_eff=4 routing_getter=True CLEAN
+cell base_2: arm=eng t=4 ms/tok=92.35 grouped_experts=0 threads_eff=4 routing_getter=True CLEAN
+cell hf_2: arm=hf t=4 ms/tok=31.61 grouped_experts=0 threads_eff=None routing_getter=None CLEAN
+arms ms/tok: hf=31.28451719466183 base=92.10624399670957 grp=93.10338912830395 t1=156.10418736538296 t8=107.22173560729031
+noise(max within-arm rel spread)=0.06678926869490587 threshold=0.1336
+engine gap base-hf = 60.82 ms/tok
+MANIP threads_effective==requested: True
+MANIP grouped_experts: base/t1/t8 total=0 grp per-cell=[52551, 52579]
+PARITY grp-vs-hf=0.747 base-vs-hf=0.708 grp-vs-base=0.846 early-divergence-prompts=[]
+GROUPED rel speedup=-0.0108 gap_closed=-0.016394554775462374
+THREADS t1->t4 gain=0.4100 t4->t8 gain=-0.1641 t1->t8 gain=0.3131
+VERDICT GROUPED-FLAT|THREADS-MIXED
