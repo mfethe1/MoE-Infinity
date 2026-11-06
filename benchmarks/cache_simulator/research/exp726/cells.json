@@ -1,0 +1,56 @@
+[
+ {
+  "arm": "engine",
+  "ratio": 0.75,
+  "block": 1,
+  "id": "b1_engine_r75"
+ },
+ {
+  "arm": "engine",
+  "ratio": 0.35,
+  "block": 1,
+  "id": "b1_engine_r35"
+ },
+ {
+  "arm": "hf",
+  "ratio": null,
+  "block": 1,
+  "id": "b1_hf"
+ },
+ {
+  "arm": "hf",
+  "ratio": null,
+  "block": 2,
+  "id": "b2_hf"
+ },
+ {
+  "arm": "engine",
+  "ratio": 0.75,
+  "block": 2,
+  "id": "b2_engine_r75"
+ },
+ {
+  "arm": "engine",
+  "ratio": 0.35,
+  "block": 2,
+  "id": "b2_engine_r35"
+ },
+ {
+  "arm": "engine",
+  "ratio": 0.35,
+  "block": 3,
+  "id": "b3_engine_r35"
+ },
+ {
+  "arm": "engine",
+  "ratio": 0.75,
+  "block": 3,
+  "id": "b3_engine_r75"
+ },
+ {
+  "arm": "hf",
+  "ratio": null,
+  "block": 3,
+  "id": "b3_hf"
+ }
+]
