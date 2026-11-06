@@ -20,7 +20,7 @@ def flagged(c):
     pm = precell_mem(c["id"])
     if pm is None: return True
     mem, oll = pm
-    if oll > 0 or any(mem.get(g, 0) > 1024 for g in gp): return True
+    if oll != 0 or any(mem.get(g, 0) > 1024 for g in gp): return True  # -1 = probe failed -> flagged
     f = D / "monitor.csv"
     if f.exists():
         for l in open(f):
