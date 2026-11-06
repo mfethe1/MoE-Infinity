@@ -1,0 +1,733 @@
+{
+ "verdict": "PAYOFF-CONFIRMED",
+ "economics": "NO-SAVING",
+ "checks_ok": 109,
+ "checks_total": 109,
+ "checks": [
+  {
+   "check": "ARTIFACT.sha256 lists PREREG, runner, policies, sealed_deps, smoke.log",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha PREREG.md",
+   "ok": true,
+   "detail": "c4695858967c"
+  },
+  {
+   "check": "freeze commit fc36c8c carries PREREG.md byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha run_fused2.py",
+   "ok": true,
+   "detail": "1958fe4a836c"
+  },
+  {
+   "check": "freeze commit fc36c8c carries run_fused2.py byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha policies_fused2.py",
+   "ok": true,
+   "detail": "f9597ed0138f"
+  },
+  {
+   "check": "freeze commit fc36c8c carries policies_fused2.py byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha sealed_deps.sha256",
+   "ok": true,
+   "detail": "14cc199753dc"
+  },
+  {
+   "check": "freeze commit fc36c8c carries sealed_deps.sha256 byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "artifact sha smoke.log",
+   "ok": true,
+   "detail": "cfe8bbc65df0"
+  },
+  {
+   "check": "freeze commit fc36c8c carries smoke.log byte-exact",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy PREREG.md == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy run_fused2.py == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy policies_fused2.py == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy sealed_deps.sha256 == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy smoke.log == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy exp732-fused2.json == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "published copy run.log == run dir copy",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "committed ARTIFACT.sha256 == local ARTIFACT.sha256",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "freeze commit time precedes result mtime",
+   "ok": true,
+   "detail": "freeze 1793954150 < result 1793957024"
+  },
+  {
+   "check": "running.json registration shas == ARTIFACT (PREREG + runner)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "8001024c6280"
+  },
+  {
+   "check": "result JSON records sealed dep census_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_shared_costfit.py unchanged",
+   "ok": true,
+   "detail": "e50379fce393"
+  },
+  {
+   "check": "result JSON records sealed dep policies_shared_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit.py unchanged",
+   "ok": true,
+   "detail": "4bfff5bd4ada"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_costfit3.py unchanged",
+   "ok": true,
+   "detail": "23bd944aa491"
+  },
+  {
+   "check": "result JSON records sealed dep policies_costfit3.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_rothead.py unchanged",
+   "ok": true,
+   "detail": "01c79a2fdebc"
+  },
+  {
+   "check": "result JSON records sealed dep policies_rothead.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies.py unchanged",
+   "ok": true,
+   "detail": "b38c55b86b70"
+  },
+  {
+   "check": "result JSON records sealed dep policies.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_policies_real.py unchanged",
+   "ok": true,
+   "detail": "46690edaaddf"
+  },
+  {
+   "check": "result JSON records sealed dep run_policies_real.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-qwen30b.csv unchanged",
+   "ok": true,
+   "detail": "546f0059d7d2"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-qwen30b.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep census_exp675-granite.csv unchanged",
+   "ok": true,
+   "detail": "a147cc8e819b"
+  },
+  {
+   "check": "result JSON records sealed dep census_exp675-granite.csv",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp675a-shared-costfit.json unchanged",
+   "ok": true,
+   "detail": "64a39b9909d2"
+  },
+  {
+   "check": "result JSON records sealed dep exp675a-shared-costfit.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_qwen30b.pt unchanged",
+   "ok": true,
+   "detail": "08732f27ce6b"
+  },
+  {
+   "check": "result JSON records sealed dep stream_qwen30b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep stream_granite3b.pt unchanged",
+   "ok": true,
+   "detail": "7f8e4303927d"
+  },
+  {
+   "check": "result JSON records sealed dep stream_granite3b.pt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_bo.py unchanged",
+   "ok": true,
+   "detail": "35b2498a49a1"
+  },
+  {
+   "check": "result JSON records sealed dep run_bo.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep exp718-econ.json unchanged",
+   "ok": true,
+   "detail": "392128938508"
+  },
+  {
+   "check": "result JSON records sealed dep exp718-econ.json",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep run_econ.py unchanged",
+   "ok": true,
+   "detail": "3d92941ebf82"
+  },
+  {
+   "check": "result JSON records sealed dep run_econ.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "sealed dep policies_fused.py unchanged",
+   "ok": true,
+   "detail": "050aa1b53538"
+  },
+  {
+   "check": "result JSON records sealed dep policies_fused.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "16 sealed deps (incl. exp729 policies_fused.py)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log RUN_EXIT=0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log sealed deps ok (16 files)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log ladder self-test 15/15 before measurement",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "run.log settled verdict + economics == JSON",
+   "ok": true,
+   "detail": "PAYOFF-CONFIRMED NO-SAVING"
+  },
+  {
+   "check": "stored ladder_selftest 15/15",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "PREREG claim: _FusedLCNU and _FusedS3 class source byte-identical to exp729 sealed policies_fused.py",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "module-global NSLOT 10 -> 5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "FusedCostFit carries no parameter override (MARGIN/GAMMA/HALF_LIFE absent from policies_fused2.py)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "design == PREREG (8 rounds, min 5, caps incl. ceiling, streams, seed 732, 5.5h, null bars, 1.10/1.35, 0.80)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "C-model constants == PREREG (load 0.75; SoA last 8/ema 16/count 8/first 8/freq 8; AoS 32 B)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "16 worker records = 8 rounds x 2 streams",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "Random(732) stream/cap schedule reproduced exactly (16/16 records)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker replayed the FULL stream (qwen30b 1,424,640 / granite 638,208)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every worker QOS rc == 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "every unit: fixed null/fused2 order, 4 reps, ABBA even / BAAB odd (128/128 units)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "budget not hit; elapsed < 5.5h",
+   "ok": true,
+   "detail": "2863.9"
+  },
+  {
+   "check": "rung 1: every timed replay hit_rate == exp718 PASS-1 costfit exactly (512/512)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored hit_rate_mismatches empty",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "round-0 census complete: 16/16 (2 streams x 4 caps x 2 units), only in round 0",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rung 1: round-0 terminal FULL STATE of every B arm == sealed costfit A (16/16)",
+   "ok": true,
+   "detail": "16"
+  },
+  {
+   "check": "rung 1: A-arm census == sealed structure_census (16/16)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "A-arm (costfit) census identical across the 2 units of each cell (8/8)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "struct ratios re-derived from census == stored (16/16, |d| <= 1e-15)",
+   "ok": true,
+   "detail": "0.0e+00"
+  },
+  {
+   "check": "null struct ratio == 1.0 at all cells",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "economics qualifier re-derived (fused2/costfit struct_bytes <= 0.80 at all 8 cells) == stored",
+   "ok": true,
+   "detail": "NO-SAVING; 5/8 cells <= 0.80; max 0.9506 @ granite|256"
+  },
+  {
+   "check": "C model granite|4096 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.6667"
+  },
+  {
+   "check": "C model granite|262144 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.6667"
+  },
+  {
+   "check": "C model granite|1024 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.6883"
+  },
+  {
+   "check": "C model granite|256 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.7688"
+  },
+  {
+   "check": "C model qwen30b|4096 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.7032"
+  },
+  {
+   "check": "C model qwen30b|262144 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.6667"
+  },
+  {
+   "check": "C model qwen30b|1024 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.7734"
+  },
+  {
+   "check": "C model qwen30b|256 re-derived == stored",
+   "ok": true,
+   "detail": "AoS/SoA 0.7932"
+  },
+  {
+   "check": "fused2 census: one record per key == LCNU occupancy (every seen key is LCNU-resident in metadata)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "16 cells (2 streams x 4 caps x 2 units), n=8 rounds each",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "stored cell stats == re-derived from raw ns (16 cells x 3 clocks x 3 stats, |d| <= 1e-12)",
+   "ok": true,
+   "detail": "max |d| 0.00e+00"
+  },
+  {
+   "check": "rung 2: complete rounds 8 >= MIN 5",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rung 3 null pooled in [0.97,1.03]",
+   "ok": true,
+   "detail": "0.9954"
+  },
+  {
+   "check": "rung 3 every cell null median in [0.93,1.07] (8/8)",
+   "ok": true,
+   "detail": "range 0.9741-1.0052"
+  },
+  {
+   "check": "gate input null_pooled re-derived == stored null_pooled",
+   "ok": true,
+   "detail": "0.995417"
+  },
+  {
+   "check": "gate input F re-derived == stored R3",
+   "ok": true,
+   "detail": "0.968150"
+  },
+  {
+   "check": "gate input F_q25 re-derived == stored R3_q25",
+   "ok": true,
+   "detail": "0.963933"
+  },
+  {
+   "check": "gate input F_q75 re-derived == stored R3_q75",
+   "ok": true,
+   "detail": "0.973395"
+  },
+  {
+   "check": "fused2 argmax cell re-derived == stored",
+   "ok": true,
+   "detail": "('qwen30b', 256)"
+  },
+  {
+   "check": "rung 4: fused2 argmax IQR does not straddle 1.10 or 1.35",
+   "ok": true,
+   "detail": "[0.9639,0.9734]"
+  },
+  {
+   "check": "rung 5: F <= 1.10",
+   "ok": true,
+   "detail": "0.9681"
+  },
+  {
+   "check": "independent ladder boundary self-test 16/16",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "independent economics qualifier self-test 4/4",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "re-adjudicated verdict == stored verdict",
+   "ok": true,
+   "detail": "PAYOFF-CONFIRMED"
+  },
+  {
+   "check": "descriptive: leave-one-round-out verdict stable (8/8 == stored)",
+   "ok": true,
+   "detail": "['PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED', 'PAYOFF-CONFIRMED']"
+  },
+  {
+   "check": "exp729 sealed result parsed: 8 N=3 fused cells + 8 struct ratios",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE qwen30b@256: 8/8 fresh replays hit_rate == exp718 oracle",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE qwen30b@256: full-state parity 2/2 units + A census == sealed structure_census",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LIVE fused2 struct ratio == stored qwen30b|256",
+   "ok": true,
+   "detail": "0.7226"
+  },
+  {
+   "check": "LIVE qwen30b@256 fused2 thread ratio <= 1.10 (single ABBA unit, descriptive)",
+   "ok": true,
+   "detail": "null 1.0078, fused2 0.9818"
+  }
+ ],
+ "gate_inputs": {
+  "sealed_ok": true,
+  "hr_ok": true,
+  "rounds": 8,
+  "null_pooled": 0.9954171200235127,
+  "null_cells_ok": true,
+  "F": 0.9681498578129947,
+  "F_q25": 0.9639325623311658,
+  "F_q75": 0.9733952650718345,
+  "F_argmax": [
+   "qwen30b",
+   256
+  ]
+ },
+ "null_cell_medians": {
+  "qwen30b|256": 0.995951578814363,
+  "qwen30b|1024": 0.9920343446773595,
+  "qwen30b|4096": 1.0040994228372109,
+  "qwen30b|262144": 0.9948826612326623,
+  "granite|256": 0.9741409308390545,
+  "granite|1024": 1.0052120252265793,
+  "granite|4096": 0.9931211081247453,
+  "granite|262144": 0.9993979021315946
+ },
+ "struct_ratios": {
+  "null": {
+   "granite|4096": 1.0,
+   "granite|262144": 1.0,
+   "granite|1024": 1.0,
+   "granite|256": 1.0,
+   "qwen30b|4096": 1.0,
+   "qwen30b|262144": 1.0,
+   "qwen30b|1024": 1.0,
+   "qwen30b|256": 1.0
+  },
+  "fused2": {
+   "granite|4096": 0.8557263476943061,
+   "granite|262144": 0.8557263476943061,
+   "granite|1024": 0.7134141939210166,
+   "granite|256": 0.9506012506012506,
+   "qwen30b|4096": 0.5871345663611217,
+   "qwen30b|262144": 0.5871345663611217,
+   "qwen30b|1024": 0.6907134926813083,
+   "qwen30b|256": 0.7225819371203525
+  }
+ },
+ "c_model": {
+  "granite|4096": {
+   "keys": 1262,
+   "occ_lcnu": 1262,
+   "occ_s3": 1262,
+   "soa": 80768.0,
+   "aos": 53845.333333333336,
+   "aos_over_soa": 0.6666666666666667
+  },
+  "granite|262144": {
+   "keys": 1262,
+   "occ_lcnu": 1262,
+   "occ_s3": 1262,
+   "soa": 80768.0,
+   "aos": 53845.333333333336,
+   "aos_over_soa": 0.6666666666666667
+  },
+  "granite|1024": {
+   "keys": 1262,
+   "occ_lcnu": 1262,
+   "occ_s3": 1024,
+   "soa": 78229.33333333333,
+   "aos": 53845.333333333336,
+   "aos_over_soa": 0.6883010635396782
+  },
+  "granite|256": {
+   "keys": 1262,
+   "occ_lcnu": 1262,
+   "occ_s3": 256,
+   "soa": 70037.33333333333,
+   "aos": 53845.333333333336,
+   "aos_over_soa": 0.7688090161437711
+  },
+  "qwen30b|4096": {
+   "keys": 5948,
+   "occ_lcnu": 5948,
+   "occ_s3": 4096,
+   "soa": 360917.3333333333,
+   "aos": 253781.33333333334,
+   "aos_over_soa": 0.7031564014658944
+  },
+  "qwen30b|262144": {
+   "keys": 5948,
+   "occ_lcnu": 5948,
+   "occ_s3": 5948,
+   "soa": 380672.0,
+   "aos": 253781.33333333334,
+   "aos_over_soa": 0.6666666666666667
+  },
+  "qwen30b|1024": {
+   "keys": 5948,
+   "occ_lcnu": 5948,
+   "occ_s3": 1024,
+   "soa": 328149.3333333333,
+   "aos": 253781.33333333334,
+   "aos_over_soa": 0.7733714731504356
+  },
+  "qwen30b|256": {
+   "keys": 5948,
+   "occ_lcnu": 5948,
+   "occ_s3": 256,
+   "soa": 319957.3333333333,
+   "aos": 253781.33333333334,
+   "aos_over_soa": 0.793172422989732
+  }
+ },
+ "robustness": {
+  "proc": {
+   "F": 0.9681497900068732,
+   "argmax": [
+    "qwen30b",
+    256
+   ],
+   "null_pooled": 0.9954172824050425
+  },
+  "wall": {
+   "F": 0.965639847894123,
+   "argmax": [
+    "qwen30b",
+    256
+   ],
+   "null_pooled": 0.9919436529411615
+  }
+ },
+ "leave_one_round_out": [
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED",
+  "PAYOFF-CONFIRMED"
+ ],
+ "exp729_fused_cells": {
+  "granite|262144": 0.9185443131933404,
+  "granite|256": 0.9339096996531534,
+  "granite|1024": 0.9516483117309215,
+  "granite|4096": 0.905524550349194,
+  "qwen30b|262144": 0.9032768124293811,
+  "qwen30b|256": 0.9555796870702282,
+  "qwen30b|1024": 0.923270036039469,
+  "qwen30b|4096": 0.960519974162181
+ },
+ "live": {
+  "stream": "qwen30b",
+  "round": 0,
+  "qos_rc": 0,
+  "accesses": 1424640,
+  "loadavg_start": 4.11279296875,
+  "loadavg_end": 4.29150390625,
+  "ratios": {
+   "null": 1.007758198578094,
+   "fused2": 0.9817903105405322
+  },
+  "loadavg": [
+   4.11279296875,
+   4.29150390625
+  ]
+ },
+ "median_cpu_saving": {
+  "n2_exp732": 0.0630417601616704,
+  "n3_exp729": 0.07141013215368885
+ },
+ "predictions": {
+  "a": true,
+  "b": false,
+  "c": false
+ },
+ "null_units_over_10pct": [
+  0,
+  64
+ ],
+ "elapsed_s": 115.6
+}
