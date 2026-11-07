@@ -1,0 +1,50 @@
+[
+ {
+  "id": "hf_1",
+  "arm": "hf",
+  "threads": 4,
+  "gpu": 1
+ },
+ {
+  "id": "t4_1",
+  "arm": "eng",
+  "threads": 4,
+  "gpu": 1
+ },
+ {
+  "id": "grp_1",
+  "arm": "grp",
+  "threads": 4,
+  "gpu": 1
+ },
+ {
+  "id": "t1_1",
+  "arm": "eng",
+  "threads": 1,
+  "gpu": 1
+ },
+ {
+  "id": "t1_2",
+  "arm": "eng",
+  "threads": 1,
+  "gpu": 1
+ },
+ {
+  "id": "grp_2",
+  "arm": "grp",
+  "threads": 4,
+  "gpu": 1
+ },
+ {
+  "id": "t4_2",
+  "arm": "eng",
+  "threads": 4,
+  "gpu": 1
+ },
+ {
+  "id": "hf_2",
+  "arm": "hf",
+  "threads": 4,
+  "gpu": 1
+ }
+]
