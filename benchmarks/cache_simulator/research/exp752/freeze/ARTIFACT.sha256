@@ -1,0 +1,26 @@
+83c6f65934b95855b3b1979f96f99955ba044dfeeacbabf3790c4d1ad0e30702  ./PREREG.md
+1dfc07c500e51e495fa07ef4bb30682e6acf494e32ee16578c661172c5eea22d  ./allquiet746.sh
+ae01532151656b0f0d470f60794df1cc939e26a6b77c773c1cff0377a741082d  ./analyze752.py
+75d76e88903fa6a7d1c49dd4cedf0431b68d82d79354493af9e419e77fc04b4b  ./build752.sh
+969bb729d0db276070156f5920d95ffe0d4dadfda722478db64fadf2365e15bc  ./cells.json
+fee327fe1ab3ab33daf16a32038b9a9d4d25301dc6e7cc000d50a44bcfc0dfbd  ./engine_arm.py
+0673c99109914037300a10415ff9b4a2df2b88ca163e78382805cb936d626978  ./exp752.patch
+84098671930e9a96c88099886e5f09d41393214d3e466fb16c67a22a9c6f9d22  ./hf_arm.py
+0d260ba427d797be884adf65b725d65f9fcc91bd03b254116e947acdedfda9e4  ./mon752.sh
+12c1f05fa112e9f6fb09da6b563e1ba635d17470f224d2f4fd6f6a0eda47f5f5  ./nvsamp.py
+6d06ff563dd9f24ec17da9e7ea5b9910f76dfaebc536d638bff45dddad7f4468  ./prompts.json
+0535192cb92b94be3d7ac8e7e26181b6fd4efa53c16b0aa041f84e37e35b4968  ./run_exp752.sh
+3c66651fca00e833b4a1a749914a6be07395380dd9fd871f96cbe1e45484d67f  ./smoke752.sh
+0c4e1bf6066f1cb533dab538ba252ad5d00ba23b55b84d6679e191276a9d9319  ./smoke_pre/H.json
+9a992777e174cd299f8b0d222b526ad3eca196809a4d06e60c0ff877856679b9  ./smoke_pre/NOTE
+9c0c2e6bec010fc74757c6882ef796543fc13b1e470b247f8f8f17f08fd60ef5  ./smoke_pre/R.json
+99a682e8c4fdf85d7ec4ca731273afe087d203716284da75e8cc1f0657da01b4  ./smoke_pre/RC.json
+2f67b3182dbc398cef0a09c1c3a6fa4d6219c12e954894cb780ddc44b46207e6  ./smoke_pre/rc.txt
+1c42704f4cc10423306f5d42d84387dd23d1d692bb9ad660b0dde3a59a20cfda  ./smoke_prompts.json
+339b0fe4af215e27a38a4fbb15f43a8ef29bde08992f312dc3db3a4a9fa580d6  ./src_orig/expert_dispatcher.cpp
+863de3182150b81f19a981f209c3ca8d5ca75f409e112a3d300885162d32dc57  ./src_orig/expert_dispatcher.h
+694f289273e018ca76cc4180dcca107f3830c67f09bf2d944ef304f95843ed07  ./src_patched/expert_dispatcher.cpp
+cce6cdde171bc6f2de0e47ee4ffcfee42999aa1156a25b7a131e8e5c2ff75c2e  ./src_patched/expert_dispatcher.h
+95da1b70b99fbec905c1e8ec6d8a90172d68fcbf69ccacc668adff9005fd20e1  [winnie]/home/mfeth/exp752/src/moe_infinity/_store.cpython-312-x86_64-linux-gnu.so (patched build, BUILD RC=0 2026-11-07T19:29:37Z)
+d252620baf73c339346cfd220f59aa8d3f36e0da8ef9e2a4618cf3db8b0838da  [winnie]/home/mfeth/moei-engine/MoE-Infinity/moe_infinity/_store...so (shared upstream build, untouched)
+winnie moei-engine HEAD 0337988

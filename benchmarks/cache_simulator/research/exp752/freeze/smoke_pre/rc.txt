@@ -1,0 +1,8 @@
+H RC=0
+R RC=0
+RC RC=0
+parity R==H True RC==H True
+H [8.89, 4.47] True
+R [2.39, 0.59] True
+RC [0.79, 0.88] True
+SMOKE-DONE
