@@ -1,0 +1,48 @@
+== 2026-11-07T01:17:52Z start
+== 2026-11-07T01:22:51Z micro_1 arm=micro gpu=1 plan=Balanced qw=286 QUIET
+micro_1 RC=0
+== 2026-11-07T01:23:10Z on_1 arm=on gpu=1 plan=Balanced qw=0 QUIET
+on_1 RC=0
+[lcnu r=0.75] prompt 0: 5.48 tok/s hits+9520 miss+304
+[lcnu r=0.75] prompt 1: 6.10 tok/s hits+9637 miss+45
+[lcnu r=0.75] prompt 2: 5.61 tok/s hits+9649 miss+81
+[lcnu r=0.75] prompt 3: 5.43 tok/s hits+9597 miss+181
+[lcnu r=0.75] prompt 4: 5.41 tok/s hits+4176 miss+82
+[lcnu r=0.75] prompt 5: 4.84 tok/s hits+9783 miss+141
+== 2026-11-07T01:26:16Z off_1 arm=off gpu=1 plan=Balanced qw=0 QUIET
+off_1 RC=0
+[lcnu r=0.75] prompt 0: 5.35 tok/s hits+9534 miss+290
+[lcnu r=0.75] prompt 1: 5.53 tok/s hits+9648 miss+34
+[lcnu r=0.75] prompt 2: 5.70 tok/s hits+9667 miss+63
+[lcnu r=0.75] prompt 3: 6.15 tok/s hits+9633 miss+145
+[lcnu r=0.75] prompt 4: 6.16 tok/s hits+4196 miss+62
+[lcnu r=0.75] prompt 5: 9.12 tok/s hits+9816 miss+108
+== 2026-11-07T01:29:08Z off_2 arm=off gpu=1 plan=Balanced qw=0 QUIET
+off_2 RC=0
+[lcnu r=0.75] prompt 0: 9.30 tok/s hits+9537 miss+287
+[lcnu r=0.75] prompt 1: 7.70 tok/s hits+9660 miss+22
+[lcnu r=0.75] prompt 2: 8.42 tok/s hits+9683 miss+47
+[lcnu r=0.75] prompt 3: 9.09 tok/s hits+9666 miss+112
+[lcnu r=0.75] prompt 4: 9.44 tok/s hits+4208 miss+50
+[lcnu r=0.75] prompt 5: 9.16 tok/s hits+9840 miss+84
+== 2026-11-07T01:31:11Z on_2 arm=on gpu=1 plan=Balanced qw=0 QUIET
+on_2 RC=0
+[lcnu r=0.75] prompt 0: 7.38 tok/s hits+9537 miss+287
+[lcnu r=0.75] prompt 1: 7.45 tok/s hits+9663 miss+19
+[lcnu r=0.75] prompt 2: 7.08 tok/s hits+9685 miss+45
+[lcnu r=0.75] prompt 3: 7.58 tok/s hits+9674 miss+104
+[lcnu r=0.75] prompt 4: 8.94 tok/s hits+4216 miss+42
+[lcnu r=0.75] prompt 5: 8.89 tok/s hits+9850 miss+74
+== 2026-11-07T01:33:26Z micro_2 arm=micro gpu=1 plan=Balanced qw=0 QUIET
+micro_2 RC=0
+cell micro_1: micro kern_sync=80.9us hostfn_cost=86.4us hostfn_tail>1ms=0.148 mm_notify=68.1us launch=24.4us CLEAN
+cell on_1: arm=on ms/tok=183.29 busy=41.99 idle=139.93 route_eff=True CLEAN
+cell off_1: arm=off ms/tok=169.07 busy=40.35 idle=126.77 route_eff=False CLEAN
+cell off_2: arm=off ms/tok=109.58 busy=42.16 idle=68.74 route_eff=False CLEAN
+cell on_2: arm=on ms/tok=133.01 busy=42.55 idle=84.76 route_eff=True CLEAN
+cell micro_2: micro kern_sync=73.4us hostfn_cost=104.5us hostfn_tail>1ms=0.076 mm_notify=21.8us launch=15.4us CLEAN
+PRIM kern_sync=[80.898, 73.38550000000001] stable=True hostfn_cost_mean=95.5us mm_notify_mean=44.9us
+MANIP gpu_route_effective matches request: True; token-id parity across engine cells: True
+ROUTE on={'ms': 158.1520504046311, 'busy': 42.266777889298496, 'idle': 112.34482053928937} off={'ms': 139.32465834128266, 'busy': 41.25499410712095, 'idle': 97.75475200114784} d_ms(off-on)=-18.83 d_idle=-14.59 d_busy=-1.01
+VERDICT PRIM:NOTIFY-LOW|HOSTFN:COSTLY|ROUTE:OFF-FASTER
+== 2026-11-07T01:33:33Z EXP738-DONE

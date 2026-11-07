@@ -1,0 +1,16 @@
+cell hf_1: arm=hf t=4 ms/tok=62.41 busy_ms=15.95 idle_ms=46.46 busy_frac=0.256 base_util=1.0 grouped_experts=0 threads_eff=None CLEAN
+cell t4_1: arm=eng t=4 ms/tok=584.42 busy_ms=248.48 idle_ms=344.83 busy_frac=0.353 base_util=1.0 grouped_experts=0 threads_eff=4 EXCLUDED:contamination
+cell grp_1: arm=grp t=4 ms/tok=154.23 busy_ms=40.70 idle_ms=112.44 busy_frac=0.272 base_util=0.0 grouped_experts=119829 threads_eff=4 EXCLUDED:contamination
+cell t1_1: arm=eng t=1 ms/tok=153.65 busy_ms=39.06 idle_ms=115.94 busy_frac=0.253 base_util=0.0 grouped_experts=0 threads_eff=1 CLEAN
+cell t1_2: arm=eng t=1 ms/tok=158.83 busy_ms=38.13 idle_ms=119.91 busy_frac=0.245 base_util=0.0 grouped_experts=0 threads_eff=1 EXCLUDED:contamination
+cell grp_2: arm=grp t=4 ms/tok=168.86 busy_ms=90.02 idle_ms=74.29 busy_frac=0.506 base_util=0.0 grouped_experts=122415 threads_eff=4 EXCLUDED:contamination
+cell t4_2: arm=eng t=4 ms/tok=99.99 busy_ms=40.69 idle_ms=57.98 busy_frac=0.410 base_util=0.0 grouped_experts=0 threads_eff=4 CLEAN
+cell hf_2: arm=hf t=4 ms/tok=32.49 busy_ms=14.15 idle_ms=18.33 busy_frac=0.436 base_util=0.34375 grouped_experts=0 threads_eff=None EXCLUDED:contamination
+arm hf: {'ms': 62.407736808896004, 'busy': 15.952418825892476, 'idle': 46.45531798300353, 'bf': 0.2560723916560831, 'n': 1}
+arm t4: {'ms': 99.9922610809283, 'busy': 40.685365727603106, 'idle': 57.97854530338565, 'bf': 0.40963715080919494, 'n': 1}
+arm t1: {'ms': 153.647904232262, 'busy': 39.06106516542165, 'idle': 115.93903345171057, 'bf': 0.2525468743921889, 'n': 1}
+arm grp: None
+MANIP threads_effective==requested: True; grouped engaged only in grp: True
+GAP t4-hf=37.58 ms/tok = idle 11.52 + busy 24.73 (idle share 0.307)
+T1 vs t4: d_ms=+53.66 d_idle=+57.96 d_busy=-1.62
+VERDICT GAP-IS-GPU-BUSY|GRP:INCONCLUSIVE|T1:IDLE-UP

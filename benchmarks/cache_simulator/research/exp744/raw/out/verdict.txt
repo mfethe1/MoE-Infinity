@@ -1,0 +1,10 @@
+cell micro_1: micro kern_sync=80.9us hostfn_cost=86.4us hostfn_tail>1ms=0.148 mm_notify=68.1us launch=24.4us CLEAN
+cell on_1: arm=on ms/tok=183.29 busy=41.99 idle=139.93 route_eff=True CLEAN
+cell off_1: arm=off ms/tok=169.07 busy=40.35 idle=126.77 route_eff=False CLEAN
+cell off_2: arm=off ms/tok=109.58 busy=42.16 idle=68.74 route_eff=False CLEAN
+cell on_2: arm=on ms/tok=133.01 busy=42.55 idle=84.76 route_eff=True CLEAN
+cell micro_2: micro kern_sync=73.4us hostfn_cost=104.5us hostfn_tail>1ms=0.076 mm_notify=21.8us launch=15.4us CLEAN
+PRIM kern_sync=[80.898, 73.38550000000001] stable=True hostfn_cost_mean=95.5us mm_notify_mean=44.9us
+MANIP gpu_route_effective matches request: True; token-id parity across engine cells: True
+ROUTE on={'ms': 158.1520504046311, 'busy': 42.266777889298496, 'idle': 112.34482053928937} off={'ms': 139.32465834128266, 'busy': 41.25499410712095, 'idle': 97.75475200114784} d_ms(off-on)=-18.83 d_idle=-14.59 d_busy=-1.01
+VERDICT PRIM:NOTIFY-LOW|HOSTFN:COSTLY|ROUTE:OFF-FASTER

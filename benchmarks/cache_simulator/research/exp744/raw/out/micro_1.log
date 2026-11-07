@@ -1,0 +1,11 @@
+launch_tiny {'median_us': 24.393, 'p90_us': 62.001, 'min_us': 17.314, 'n': 20}
+sync_idle {'median_us': 1.278, 'p10_us': 1.14, 'p25_us': 1.176, 'p75_us': 1.415, 'p90_us': 1.479, 'min_us': 1.029, 'frac_gt_1ms': 0.0, 'n': 2000}
+kern_sync {'median_us': 80.898, 'p10_us': 55.941, 'p25_us': 64.294, 'p75_us': 98.264, 'p90_us': 117.515, 'min_us': 45.493, 'frac_gt_1ms': 0.0, 'n': 2000}
+kern_hostfn_sync {'median_us': 167.272, 'p10_us': 119.316, 'p25_us': 136.057, 'p75_us': 287.212, 'p90_us': 1218.802, 'min_us': 69.098, 'frac_gt_1ms': 0.148, 'n': 2000}
+hostfn_sync {'median_us': 11.21, 'p10_us': 2.435, 'p25_us': 3.106, 'p75_us': 14.215, 'p90_us': 17.274, 'min_us': 1.957, 'frac_gt_1ms': 0.001, 'n': 2000}
+kern_evpoll {'median_us': 86.74, 'p10_us': 64.2, 'p25_us': 74.804, 'p75_us': 102.158, 'p90_us': 124.064, 'min_us': 45.575, 'frac_gt_1ms': 0.001, 'n': 2000}
+mm_sync {'wall_median_us': 967.595, 'gpu_median_us': 893.568, 'notify_median_us': 68.08, 'notify_p10_us': 24.753, 'notify_p90_us': 115.699, 'n': 480}
+torch_sync_after_tiny {'median_us': 80.872, 'p10_us': 57.419, 'p25_us': 67.149, 'p75_us': 101.514, 'p90_us': 127.811, 'min_us': 41.614, 'frac_gt_1ms': 0.001, 'n': 2000}
+set_device {'median_us': 0.69, 'p10_us': 0.68, 'p25_us': 0.689, 'p75_us': 0.946, 'p90_us': 1.038, 'min_us': 0.671, 'frac_gt_1ms': 0.0, 'n': 2000}
+hostfn_cost_us 86.374
+DONE

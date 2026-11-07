@@ -1,0 +1,98 @@
+{
+ "results": {
+  "launch_tiny": {
+   "median_us": 15.361135,
+   "p90_us": 29.149614999999997,
+   "min_us": 13.376005,
+   "n": 20
+  },
+  "sync_idle": {
+   "median_us": 1.125,
+   "p10_us": 0.772,
+   "p25_us": 0.781,
+   "p75_us": 1.268,
+   "p90_us": 1.294,
+   "min_us": 0.753,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "kern_sync": {
+   "median_us": 73.38550000000001,
+   "p10_us": 54.087,
+   "p25_us": 59.974,
+   "p75_us": 91.159,
+   "p90_us": 134.474,
+   "min_us": 40.873,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "kern_hostfn_sync": {
+   "median_us": 177.918,
+   "p10_us": 137.559,
+   "p25_us": 152.996,
+   "p75_us": 212.455,
+   "p90_us": 348.398,
+   "min_us": 102.453,
+   "frac_gt_1ms": 0.0765,
+   "n": 2000
+  },
+  "hostfn_sync": {
+   "median_us": 21.961,
+   "p10_us": 2.837,
+   "p25_us": 17.429,
+   "p75_us": 46.447,
+   "p90_us": 57.696,
+   "min_us": 1.827,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "kern_evpoll": {
+   "median_us": 81.47,
+   "p10_us": 52.223,
+   "p25_us": 59.633,
+   "p75_us": 129.239,
+   "p90_us": 149.983,
+   "min_us": 35.528,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "mm_sync": {
+   "wall_median_us": 889.1585,
+   "gpu_median_us": 867.1199977397919,
+   "notify_median_us": 21.788498298645038,
+   "notify_p10_us": 0.9910104103088315,
+   "notify_p90_us": 86.15700915908815,
+   "n": 480
+  },
+  "torch_sync_after_tiny": {
+   "median_us": 69.243,
+   "p10_us": 49.477,
+   "p25_us": 56.181,
+   "p75_us": 96.998,
+   "p90_us": 140.911,
+   "min_us": 35.244,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "set_device": {
+   "median_us": 0.661,
+   "p10_us": 0.652,
+   "p25_us": 0.652,
+   "p75_us": 0.662,
+   "p90_us": 0.671,
+   "min_us": 0.642,
+   "frac_gt_1ms": 0.0,
+   "n": 2000
+  },
+  "hostfn_cost_us": 104.5325
+ },
+ "meta": {
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "visible": "1",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "host": "DESKTOP-PBE7J2V",
+  "kernel": "6.6.87.1-microsoft-standard-WSL2",
+  "x_final": 12800.0
+ }
+}
