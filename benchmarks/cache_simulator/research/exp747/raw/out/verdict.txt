@@ -1,0 +1,19 @@
+cell k0_1: spin=0 hostfn_stall med=524.8 p90=556.0 >1ms=0.001 | kern_sync med=48.2 p90=59.5 | notify med=-7.6 | load_mean=1.45 CLEAN
+cell k6_1: spin=6 hostfn_stall med=541.8 p90=647.6 >1ms=0.002 | kern_sync med=66.8 p90=89.3 | notify med=2.6 | load_mean=2.41 CLEAN
+cell k12_1: spin=12 hostfn_stall med=470.0 p90=606.3 >1ms=0.029 | kern_sync med=82.0 p90=153.9 | notify med=9.3 | load_mean=5.33 CLEAN
+cell k18_1: spin=18 hostfn_stall med=391.6 p90=533.5 >1ms=0.049 | kern_sync med=76.2 p90=118.3 | notify med=91.2 | load_mean=7.14 CLEAN
+cell k18_2: spin=18 hostfn_stall med=519.0 p90=1878.4 >1ms=0.111 | kern_sync med=71.8 p90=90.0 | notify med=10.8 | load_mean=6.9 CLEAN
+cell k12_2: spin=12 hostfn_stall med=382.0 p90=514.0 >1ms=0.017 | kern_sync med=73.9 p90=91.4 | notify med=86.5 | load_mean=4.81 CLEAN
+cell k6_2: spin=6 hostfn_stall med=535.6 p90=605.2 >1ms=0.002 | kern_sync med=59.9 p90=87.4 | notify med=3.4 | load_mean=3.07 CLEAN
+cell k0_2: spin=0 hostfn_stall med=519.2 p90=548.9 >1ms=0.001 | kern_sync med=44.5 p90=53.6 | notify med=-9.7 | load_mean=1.74 CLEAN
+level spin=0: {'hs': 521.968, 'hs90': 552.448, 'hs1ms': 0.001, 'ks': 46.344, 'ks90': 56.565, 'nt': -8.645, 'n': 2}
+level spin=6: {'hs': 538.672, 'hs90': 626.384, 'hs1ms': 0.002, 'ks': 63.369, 'ks90': 88.36, 'nt': 2.991, 'n': 2}
+level spin=12: {'hs': 426.016, 'hs90': 560.16, 'hs1ms': 0.023, 'ks': 77.945, 'ks90': 122.682, 'nt': 47.888, 'n': 2}
+level spin=18: {'hs': 455.288, 'hs90': 1205.952, 'hs1ms': 0.08, 'ks': 73.998, 'ks90': 104.121, 'nt': 51.002, 'n': 2}
+QUIET hostfn_stall/kern_sync = 11.26
+CONTENTION spin12/spin0 ratio: hostfn_stall 0.82, kern_sync 1.68
+PROJ spin=0: 144 serialized callbacks/token x 522 us = 75.2 ms/token (upper bound)
+PROJ spin=6: 144 serialized callbacks/token x 539 us = 77.6 ms/token (upper bound)
+PROJ spin=12: 144 serialized callbacks/token x 426 us = 61.3 ms/token (upper bound)
+PROJ spin=18: 144 serialized callbacks/token x 455 us = 65.6 ms/token (upper bound)
+VERDICT QUIET:HOSTFN-STALL-EXCEEDS-SYNC|CONTENTION:HOSTFN-ROBUST

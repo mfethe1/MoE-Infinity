@@ -1,0 +1,7 @@
+stall_base {'median_us': 6.144, 'p10_us': 6.144, 'p90_us': 6.176, 'p99_us': 6.176, 'min_us': 5.28, 'frac_gt_250us': 0.0, 'frac_gt_1ms': 0.0, 'n': 1500}
+stall_hostfn {'median_us': 530.912, 'p10_us': 520.192, 'p90_us': 562.176, 'p99_us': 630.816, 'min_us': 323.584, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.001, 'n': 1500}
+hostfn_stall {'median_us': 524.768, 'p10_us': 514.048, 'p90_us': 556.032, 'p99_us': 624.672, 'min_us': 317.44, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.001, 'n': 1500}
+gate_overrun_frac {'frac_base_gt_50us': 0.0}
+kern_sync {'median_us': 48.181, 'p10_us': 45.444, 'p90_us': 59.54, 'p99_us': 105.25, 'min_us': 40.743, 'frac_gt_250us': 0.001, 'frac_gt_1ms': 0.0, 'n': 1500}
+mm_notify {'median_us': -7.591, 'p10_us': -17.533, 'p90_us': 4.638, 'p99_us': 48.704, 'min_us': -19.845, 'frac_gt_250us': 0.0, 'frac_gt_1ms': 0.0, 'n': 280}
+DONE

@@ -1,0 +1,53 @@
+== 2026-11-07T04:47:27Z start
+== 2026-11-07T05:07:52Z k0_1 spin=0 qw=1188 QUIET
+k0_1 RC=0
+hostfn_stall {'median_us': 524.768, 'p10_us': 514.048, 'p90_us': 556.032, 'p99_us': 624.672, 'min_us': 317.44, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.001, 'n': 
+kern_sync {'median_us': 48.181, 'p10_us': 45.444, 'p90_us': 59.54, 'p99_us': 105.25, 'min_us': 40.743, 'frac_gt_250us': 0.001, 'frac_gt_1ms': 0.0, 'n': 1500}
+== 2026-11-07T05:08:32Z k6_1 spin=6 qw=1 QUIET
+k6_1 RC=0
+hostfn_stall {'median_us': 541.792, 'p10_us': 503.296, 'p90_us': 647.584, 'p99_us': 879.616, 'min_us': 217.632, 'frac_gt_250us': 0.999, 'frac_gt_1ms': 0.002, 'n
+kern_sync {'median_us': 66.834, 'p10_us': 58.522, 'p90_us': 89.304, 'p99_us': 121.792, 'min_us': 48.422, 'frac_gt_250us': 0.002, 'frac_gt_1ms': 0.0, 'n': 1500}
+== 2026-11-07T05:09:40Z k12_1 spin=12 qw=23 QUIET
+k12_1 RC=0
+hostfn_stall {'median_us': 470.048, 'p10_us': 435.488, 'p90_us': 606.272, 'p99_us': 3970.432, 'min_us': 287.808, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.029, 'n'
+kern_sync {'median_us': 81.991, 'p10_us': 67.804, 'p90_us': 153.918, 'p99_us': 179.877, 'min_us': 59.374, 'frac_gt_250us': 0.006, 'frac_gt_1ms': 0.003, 'n': 150
+== 2026-11-07T05:11:27Z k18_1 spin=18 qw=61 QUIET
+k18_1 RC=0
+hostfn_stall {'median_us': 391.584, 'p10_us': 359.424, 'p90_us': 533.504, 'p99_us': 4345.792, 'min_us': 51.2, 'frac_gt_250us': 0.997, 'frac_gt_1ms': 0.049, 'n':
+kern_sync {'median_us': 76.239, 'p10_us': 69.671, 'p90_us': 118.293, 'p99_us': 4108.712, 'min_us': 52.719, 'frac_gt_250us': 0.021, 'frac_gt_1ms': 0.016, 'n': 15
+== 2026-11-07T05:13:39Z k18_2 spin=18 qw=85 QUIET
+k18_2 RC=0
+hostfn_stall {'median_us': 518.992, 'p10_us': 438.656, 'p90_us': 1878.4, 'p99_us': 6523.264, 'min_us': 12.736, 'frac_gt_250us': 0.997, 'frac_gt_1ms': 0.111, 'n'
+kern_sync {'median_us': 71.757, 'p10_us': 65.869, 'p90_us': 89.95, 'p99_us': 4107.304, 'min_us': 55.785, 'frac_gt_250us': 0.02, 'frac_gt_1ms': 0.019, 'n': 1500}
+== 2026-11-07T05:15:55Z k12_2 spin=12 qw=92 QUIET
+k12_2 RC=0
+hostfn_stall {'median_us': 381.984, 'p10_us': 349.216, 'p90_us': 514.048, 'p99_us': 2385.952, 'min_us': 117.76, 'frac_gt_250us': 0.995, 'frac_gt_1ms': 0.017, 'n
+kern_sync {'median_us': 73.898, 'p10_us': 67.946, 'p90_us': 91.446, 'p99_us': 158.851, 'min_us': 57.935, 'frac_gt_250us': 0.002, 'frac_gt_1ms': 0.0, 'n': 1500}
+== 2026-11-07T05:37:38Z k6_2 spin=6 qw=1259 QUIET
+k6_2 RC=0
+hostfn_stall {'median_us': 535.552, 'p10_us': 502.336, 'p90_us': 605.184, 'p99_us': 700.544, 'min_us': 346.144, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.002, 'n':
+kern_sync {'median_us': 59.904, 'p10_us': 52.672, 'p90_us': 87.416, 'p99_us': 119.965, 'min_us': 42.634, 'frac_gt_250us': 0.001, 'frac_gt_1ms': 0.0, 'n': 1500}
+== 2026-11-07T05:39:06Z k0_2 spin=0 qw=46 QUIET
+k0_2 RC=0
+hostfn_stall {'median_us': 519.168, 'p10_us': 510.976, 'p90_us': 548.864, 'p99_us': 671.744, 'min_us': 274.432, 'frac_gt_250us': 1.0, 'frac_gt_1ms': 0.001, 'n':
+kern_sync {'median_us': 44.508, 'p10_us': 42.662, 'p90_us': 53.59, 'p99_us': 90.297, 'min_us': 38.876, 'frac_gt_250us': 0.0, 'frac_gt_1ms': 0.0, 'n': 1500}
+cell k0_1: spin=0 hostfn_stall med=524.8 p90=556.0 >1ms=0.001 | kern_sync med=48.2 p90=59.5 | notify med=-7.6 | load_mean=1.45 CLEAN
+cell k6_1: spin=6 hostfn_stall med=541.8 p90=647.6 >1ms=0.002 | kern_sync med=66.8 p90=89.3 | notify med=2.6 | load_mean=2.41 CLEAN
+cell k12_1: spin=12 hostfn_stall med=470.0 p90=606.3 >1ms=0.029 | kern_sync med=82.0 p90=153.9 | notify med=9.3 | load_mean=5.33 CLEAN
+cell k18_1: spin=18 hostfn_stall med=391.6 p90=533.5 >1ms=0.049 | kern_sync med=76.2 p90=118.3 | notify med=91.2 | load_mean=7.14 CLEAN
+cell k18_2: spin=18 hostfn_stall med=519.0 p90=1878.4 >1ms=0.111 | kern_sync med=71.8 p90=90.0 | notify med=10.8 | load_mean=6.9 CLEAN
+cell k12_2: spin=12 hostfn_stall med=382.0 p90=514.0 >1ms=0.017 | kern_sync med=73.9 p90=91.4 | notify med=86.5 | load_mean=4.81 CLEAN
+cell k6_2: spin=6 hostfn_stall med=535.6 p90=605.2 >1ms=0.002 | kern_sync med=59.9 p90=87.4 | notify med=3.4 | load_mean=3.07 CLEAN
+cell k0_2: spin=0 hostfn_stall med=519.2 p90=548.9 >1ms=0.001 | kern_sync med=44.5 p90=53.6 | notify med=-9.7 | load_mean=1.74 CLEAN
+level spin=0: {'hs': 521.968, 'hs90': 552.448, 'hs1ms': 0.001, 'ks': 46.344, 'ks90': 56.565, 'nt': -8.645, 'n': 2}
+level spin=6: {'hs': 538.672, 'hs90': 626.384, 'hs1ms': 0.002, 'ks': 63.369, 'ks90': 88.36, 'nt': 2.991, 'n': 2}
+level spin=12: {'hs': 426.016, 'hs90': 560.16, 'hs1ms': 0.023, 'ks': 77.945, 'ks90': 122.682, 'nt': 47.888, 'n': 2}
+level spin=18: {'hs': 455.288, 'hs90': 1205.952, 'hs1ms': 0.08, 'ks': 73.998, 'ks90': 104.121, 'nt': 51.002, 'n': 2}
+QUIET hostfn_stall/kern_sync = 11.26
+CONTENTION spin12/spin0 ratio: hostfn_stall 0.82, kern_sync 1.68
+PROJ spin=0: 144 serialized callbacks/token x 522 us = 75.2 ms/token (upper bound)
+PROJ spin=6: 144 serialized callbacks/token x 539 us = 77.6 ms/token (upper bound)
+PROJ spin=12: 144 serialized callbacks/token x 426 us = 61.3 ms/token (upper bound)
+PROJ spin=18: 144 serialized callbacks/token x 455 us = 65.6 ms/token (upper bound)
+VERDICT QUIET:HOSTFN-STALL-EXCEEDS-SYNC|CONTENTION:HOSTFN-ROBUST
+== 2026-11-07T05:39:14Z EXP747-DONE
