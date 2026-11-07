@@ -1,0 +1,41 @@
+2026-11-07T16:41:32Z START nproc=192
+2026-11-07T16:41:44Z APT-OK Python 3.12.3
+2026-11-07T16:43:25Z TOOLS-OK
+/root/venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+TORCH 2.11.0+cu128 12.8 True NVIDIA GeForce RTX 5060 Ti (12, 0)
+2026-11-07T16:48:31Z TORCH-OK
+2026-11-07T17:13:23Z REQS-OK
+2026-11-07T17:13:31Z CUTLASS 954c8d7b
+2026-11-07T17:13:34Z SRC 0337988 diff-lines=22
+          self.build_extensions()
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1184, in build_extensions
+          build_ext.build_extensions(self)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 483, in build_extensions
+          self._build_extensions_serial()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 509, in _build_extensions_serial
+          self.build_extension(ext)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/build_ext.py", line 262, in build_extension
+          _build_ext.build_extension(self, ext)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 564, in build_extension
+          objects = self.compiler.compile(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 924, in unix_wrap_ninja_compile
+          _write_ninja_file_and_compile_objects(
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2361, in _write_ninja_file_and_compile_objects
+          _run_ninja_build(
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2791, in _run_ninja_build
+          raise RuntimeError(message) from e
+      RuntimeError: Error compiling objects for extension
+      An error occurred when building editable wheel for moe_infinity.
+      See debugging tips in: https://setuptools.pypa.io/en/latest/userguide/development_mode.html#debugging-tips
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for moe_infinity
+Failed to build moe_infinity
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> moe_infinity
+2026-11-07T17:14:13Z FATAL build

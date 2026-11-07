@@ -1,0 +1,191 @@
+Obtaining file:///root/MoE-Infinity
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+  /root/venv/lib/python3.12/site-packages/setuptools/dist.py:765: BuildBackendWarning: License classifiers are deprecated.
+  !!
+  
+          ********************************************************************************
+          Please consider removing the following classifiers in favor of a SPDX license expression:
+  
+          License :: OSI Approved :: Apache Software License
+  
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+  
+  !!
+    self._finalize_license_expression()
+Building wheels for collected packages: moe_infinity
+  Building editable for moe_infinity (pyproject.toml): started
+  Building editable for moe_infinity (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Building editable for moe_infinity (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [156 lines of output]
+      find_packages: ['moe_infinity', 'tests', 'moe_infinity.boundary', 'moe_infinity.common', 'moe_infinity.distributed', 'moe_infinity.engine', 'moe_infinity.entrypoints', 'moe_infinity.kernel', 'moe_infinity.memory', 'moe_infinity.profiling', 'moe_infinity.runtime', 'moe_infinity.serving', 'moe_infinity.spec_decode', 'moe_infinity.utils', 'moe_infinity.entrypoints.openai', 'moe_infinity.kernel._compiled', 'tests.python', 'tests.python.contextpilot', 'tests.python.e2e', 'tests.python.integration', 'tests.python.ops', 'tests.python.perf_model', 'tests.python.serving', 'tests.python.v41']
+      running editable_wheel
+      creating /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info
+      writing /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      no previously-included directories found matching 'results'
+      no previously-included directories found matching 'logs'
+      adding license file 'LICENSE'
+      writing manifest file '/tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity-0.2.3.dev58.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-khule0z9/wheels/e3/7e/f7/f5b1626ca5d8b45adefcdda16dbdae1c0c17055c47a4d5830d/tmppmqwk8ki/.tmp-vw_zeymv/moe_infinity-0.2.3.dev58.dist-info/WHEEL
+      running build_py
+      running build_ext
+      building 'moe_infinity._store' extension
+      creating /tmp/tmpnh7w4y2a.build-temp/build/moe_store_csrc
+      creating /tmp/tmpnh7w4y2a.build-temp/core/aio
+      creating /tmp/tmpnh7w4y2a.build-temp/core/base
+      creating /tmp/tmpnh7w4y2a.build-temp/core/memory
+      creating /tmp/tmpnh7w4y2a.build-temp/core/model
+      creating /tmp/tmpnh7w4y2a.build-temp/core/parallel
+      creating /tmp/tmpnh7w4y2a.build-temp/core/prefetch
+      creating /tmp/tmpnh7w4y2a.build-temp/core/python
+      creating /tmp/tmpnh7w4y2a.build-temp/core/store
+      creating /tmp/tmpnh7w4y2a.build-temp/core/utils
+      creating /tmp/tmpnh7w4y2a.build-temp/extensions/kernel
+      creating /tmp/tmpnh7w4y2a.build-temp/extensions/kernel/fp8_moe
+      creating /tmp/tmpnh7w4y2a.build-temp/extensions/kernel/v4_fp4
+      [1/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_prio_aio_handle.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_prio_aio_handle.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_prio_aio_handle.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      FAILED: [code=1] /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_prio_aio_handle.o
+      c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_prio_aio_handle.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_prio_aio_handle.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_prio_aio_handle.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      /root/MoE-Infinity/core/aio/archer_prio_aio_handle.cpp:16:12: fatal error: nvtx3/nvtx3.hpp: No such file or directory
+         16 |   #include <nvtx3/nvtx3.hpp>
+            |            ^~~~~~~~~~~~~~~~~
+      compilation terminated.
+      [2/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/date.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/date.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/date.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [3/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/exception.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/exception.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/exception.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [4/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/file_util.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/file_util.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/file_util.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      In file included from /usr/include/features.h:502,
+                       from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                       from /usr/include/string.h:26,
+                       from /root/MoE-Infinity/core/base/string_piece.h:43,
+                       from /root/MoE-Infinity/core/base/file_util.h:14,
+                       from /root/MoE-Infinity/core/base/file_util.cc:10:
+      In function ‘ssize_t read(int, void*, size_t)’,
+          inlined from ‘int base::FileUtil::ReadSmallFile::readToString(int, String*, int64_t*, int64_t*, int64_t*) [with String = std::__cxx11::basic_string<char>]’ at /root/MoE-Infinity/core/base/file_util.cc:109:25:
+      /usr/include/x86_64-linux-gnu/bits/unistd.h:28:10: warning: argument 2 is null but the corresponding size argument 3 value is [1, 65536] [-Wnonnull]
+         28 |   return __glibc_fortify (read, __nbytes, sizeof (char),
+            |          ^~~~~~~~~~~~~~~
+      /usr/include/x86_64-linux-gnu/bits/unistd-decl.h: In member function ‘int base::FileUtil::ReadSmallFile::readToString(int, String*, int64_t*, int64_t*, int64_t*) [with String = std::__cxx11::basic_string<char>]’:
+      /usr/include/x86_64-linux-gnu/bits/unistd-decl.h:29:16: note: in a call to function ‘ssize_t __read_alias(int, void*, size_t)’ declared with attribute ‘access (write_only, 2, 3)’
+         29 | extern ssize_t __REDIRECT_FORTIFY (__read_alias, (int __fd, void *__buf,
+            |                ^~~~~~~~~~~~~~~~~~
+      [5/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/log_stream.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/log_stream.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/log_stream.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [6/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/countdown_latch.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/countdown_latch.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/countdown_latch.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [7/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/process_info.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/process_info.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/process_info.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [8/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/log_file.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/log_file.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/log_file.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [9/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_threadpool.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_aio_threadpool.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_threadpool.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [10/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/thread.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/thread.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/thread.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [11/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_thread.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_aio_thread.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_thread.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [12/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/base/logging.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/base/logging.cc -o /tmp/tmpnh7w4y2a.build-temp/core/base/logging.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [13/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_handle.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_tensor_handle.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_handle.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      FAILED: [code=1] /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_handle.o
+      c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_handle.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_tensor_handle.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_handle.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      In file included from /root/MoE-Infinity/core/prefetch/task_scheduler.h:23,
+                       from /root/MoE-Infinity/core/aio/archer_tensor_handle.cpp:17:
+      /root/MoE-Infinity/core/model/model_topology.h:18:12: fatal error: nvtx3/nvtx3.hpp: No such file or directory
+         18 |   #include <nvtx3/nvtx3.hpp>
+            |            ^~~~~~~~~~~~~~~~~
+      compilation terminated.
+      [14/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/build/moe_store_csrc/index_v2.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/build/moe_store_csrc/index_v2.cc -o /tmp/tmpnh7w4y2a.build-temp/build/moe_store_csrc/index_v2.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [15/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_utils.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_aio_utils.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_aio_utils.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      [16/54] c++ -MMD -MF /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_index.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/root/MoE-Infinity/core -I/root/MoE-Infinity/core/include -I/root/MoE-Infinity/extensions -I/root/cutlass/include -I/root/cutlass/tools/util/include -I/root/MoE-Infinity/build/moe_store_csrc -I/root/venv/lib/python3.12/site-packages/torch/include -I/root/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/root/venv/include -I/usr/include/python3.12 -c -c /root/MoE-Infinity/core/aio/archer_tensor_index.cpp -o /tmp/tmpnh7w4y2a.build-temp/core/aio/archer_tensor_index.o -O3 -std=c++20 -Wall -Wno-reorder -fPIC -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_store
+      ninja: build stopped: subcommand failed.
+      Traceback (most recent call last):
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2774, in _run_ninja_build
+          subprocess.run(
+        File "/usr/lib/python3.12/subprocess.py", line 571, in run
+          raise CalledProcessError(retcode, process.args,
+      subprocess.CalledProcessError: Command '['ninja', '-v', '-j', '16']' returned non-zero exit status 1.
+      
+      The above exception was the direct cause of the following exception:
+      
+      Traceback (most recent call last):
+        File "/root/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 406, in <module>
+          main()
+        File "/root/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 381, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 309, in build_editable
+          return hook(wheel_directory, config_settings, metadata_directory)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 474, in build_editable
+          return self._build_with_temp_dir(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 410, in _build_with_temp_dir
+          self.run_setup()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 553, in <module>
+        File "/root/venv/lib/python3.12/site-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+                 ^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1000, in run_commands
+          self.run_command(cmd)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py", line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py", line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py", line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/editable_wheel.py", line 300, in _run_build_subcommands
+          self.run_command(name)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/cmd.py", line 341, in run_command
+          self.distribution.run_command(command)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/build_ext.py", line 97, in run
+          _build_ext.run(self)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 367, in run
+          self.build_extensions()
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1184, in build_extensions
+          build_ext.build_extensions(self)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 483, in build_extensions
+          self._build_extensions_serial()
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 509, in _build_extensions_serial
+          self.build_extension(ext)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/command/build_ext.py", line 262, in build_extension
+          _build_ext.build_extension(self, ext)
+        File "/root/venv/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 564, in build_extension
+          objects = self.compiler.compile(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 924, in unix_wrap_ninja_compile
+          _write_ninja_file_and_compile_objects(
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2361, in _write_ninja_file_and_compile_objects
+          _run_ninja_build(
+        File "/root/venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2791, in _run_ninja_build
+          raise RuntimeError(message) from e
+      RuntimeError: Error compiling objects for extension
+      An error occurred when building editable wheel for moe_infinity.
+      See debugging tips in: https://setuptools.pypa.io/en/latest/userguide/development_mode.html#debugging-tips
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for moe_infinity
+Failed to build moe_infinity
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> moe_infinity

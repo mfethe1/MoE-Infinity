@@ -1,0 +1,37 @@
+== 2026-11-07T18:09:38Z start
+skip m0_1
+skip m6_1
+skip m6_2
+skip m0_2
+skip q_hf_1
+== 2026-11-07T18:10:02Z q_on_1 arm=on
+q_on_1 RC=0
+== 2026-11-07T18:11:33Z q_off_1 arm=off
+q_off_1 RC=0
+== 2026-11-07T18:12:58Z q_off_2 arm=off
+q_off_2 RC=0
+== 2026-11-07T18:14:24Z q_on_2 arm=on
+q_on_2 RC=0
+skip q_hf_2
+cell m0_1: spin=0 hostfn_stall med=102.4 p90=114.7 >1ms=0.000 | kern_sync med=28.4 | notify med=24.2 | load_mean=0.31 CLEAN
+cell m6_1: spin=6 hostfn_stall med=90.1 p90=92.2 >1ms=0.000 | kern_sync med=27.7 | notify med=24.2 | load_mean=5.92 CLEAN
+cell m6_2: spin=6 hostfn_stall med=79.9 p90=90.1 >1ms=0.000 | kern_sync med=28.6 | notify med=24.1 | load_mean=5.93 CLEAN
+cell m0_2: spin=0 hostfn_stall med=114.7 p90=115.7 >1ms=0.000 | kern_sync med=26.5 | notify med=23.3 | load_mean=0.28 CLEAN
+cell q_hf_1: arm=hf ms/tok=22.62 busy=14.24 idle=8.34 load_mean=0.88 route_ok=True CLEAN
+cell q_on_1: arm=on ms/tok=61.55 busy=20.74 idle=39.14 load_mean=1.36 route_ok=True CLEAN
+cell q_off_1: arm=off ms/tok=53.79 busy=22.44 idle=31.07 load_mean=1.36 route_ok=True CLEAN
+cell q_off_2: arm=off ms/tok=54.40 busy=25.73 idle=28.03 load_mean=1.35 route_ok=True CLEAN
+cell q_on_2: arm=on ms/tok=60.15 busy=23.74 idle=36.64 load_mean=1.33 route_ok=True CLEAN
+cell q_hf_2: arm=hf ms/tok=22.14 busy=14.14 idle=7.98 load_mean=0.92 route_ok=True CLEAN
+level spin=0: {'hs': 108.52800076827407, 'hs90': 115.20000314339995, 'hs1': 0.0, 'ks': 27.484499999999997, 'nt': 23.767007823944084, 'n': 2}
+level spin=6: {'hs': 84.99200036749244, 'hs90': 91.13600244745612, 'hs1': 0.0, 'ks': 28.1445, 'nt': 24.188004899978665, 'n': 2}
+HOSTFN native/WSL = 0.208 (native 108.5 us vs WSL 521.968 us); kern_sync native/WSL = 0.593; native hostfn/kern_sync = 3.95
+PROJ native: 144 serialized callbacks/token x 109 us = 15.6 ms/token (upper bound)
+arm hf: {'ms': 22.38087582268885, 'busy': 14.188995937811617, 'idle': 8.156200880617424, 'n': 2}
+arm on: {'ms': 60.850572887168724, 'busy': 22.236569045780858, 'idle': 37.89075093000062, 'n': 2}
+arm off: {'ms': 54.09571280636426, 'busy': 24.084355375116758, 'idle': 29.55281391692553, 'n': 2}
+MANIP gpu_route_effective matches request: True; engine token-id parity across engine cells: True; hf token-id parity: True
+GAP on-hf native = 38.47 ms/tok = idle 29.73 + busy 8.05 (idle share 0.773); WSL gap 60.14 (idle 36.95); native/WSL gap = 0.640; on/hf ratio native 2.72 vs WSL 2.74
+ROUTE off-on native = -6.75 ms/tok (idle -8.34, busy +1.85)
+VERDICT HOSTFN:WSL-INFLATED|GAP:PARTIAL|ROUTE:OFF-FASTER
+== 2026-11-07T18:15:33Z EXP751-DONE

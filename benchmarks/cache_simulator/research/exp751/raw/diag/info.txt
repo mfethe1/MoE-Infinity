@@ -1,0 +1,4 @@
+memgetinfo free 15712.6875 total 15849.75
+prep_prompts.json RC=1 peak=15840
+prompts.json RC=1 peak=15840
+DIAG-DONE

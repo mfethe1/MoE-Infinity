@@ -1,0 +1,4 @@
+ratio=0.70 RC=1 peak=15838 
+ratio=0.65 RC=1 peak=15838 
+ratio=0.60 RC=0 peak=15242 
+DIAG2-DONE

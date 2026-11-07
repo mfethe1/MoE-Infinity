@@ -1,0 +1,19 @@
+cell m0_1: spin=0 hostfn_stall med=102.4 p90=114.7 >1ms=0.000 | kern_sync med=28.4 | notify med=24.2 | load_mean=0.31 CLEAN
+cell m6_1: spin=6 hostfn_stall med=90.1 p90=92.2 >1ms=0.000 | kern_sync med=27.7 | notify med=24.2 | load_mean=5.92 CLEAN
+cell m6_2: spin=6 hostfn_stall med=79.9 p90=90.1 >1ms=0.000 | kern_sync med=28.6 | notify med=24.1 | load_mean=5.93 CLEAN
+cell m0_2: spin=0 hostfn_stall med=114.7 p90=115.7 >1ms=0.000 | kern_sync med=26.5 | notify med=23.3 | load_mean=0.28 CLEAN
+cell q_hf_1: arm=hf ms/tok=22.62 busy=14.24 idle=8.34 load_mean=0.88 route_ok=True CLEAN
+cell q_on_1: MISSING/FAILED
+cell q_off_1: MISSING/FAILED
+cell q_off_2: MISSING/FAILED
+cell q_on_2: MISSING/FAILED
+cell q_hf_2: arm=hf ms/tok=22.14 busy=14.14 idle=7.98 load_mean=0.92 route_ok=True CLEAN
+level spin=0: {'hs': 108.52800076827407, 'hs90': 115.20000314339995, 'hs1': 0.0, 'ks': 27.484499999999997, 'nt': 23.767007823944084, 'n': 2}
+level spin=6: {'hs': 84.99200036749244, 'hs90': 91.13600244745612, 'hs1': 0.0, 'ks': 28.1445, 'nt': 24.188004899978665, 'n': 2}
+HOSTFN native/WSL = 0.208 (native 108.5 us vs WSL 521.968 us); kern_sync native/WSL = 0.593; native hostfn/kern_sync = 3.95
+PROJ native: 144 serialized callbacks/token x 109 us = 15.6 ms/token (upper bound)
+arm hf: {'ms': 22.38087582268885, 'busy': 14.188995937811617, 'idle': 8.156200880617424, 'n': 2}
+arm on: None
+arm off: None
+MANIP gpu_route_effective matches request: True; engine token-id parity across engine cells: False; hf token-id parity: True
+VERDICT HOSTFN:WSL-INFLATED|GAP:INCONCLUSIVE|ROUTE:INCONCLUSIVE

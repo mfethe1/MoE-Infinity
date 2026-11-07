@@ -1,0 +1,26 @@
+2026-11-07T17:25:46Z START nproc=192
+2026-11-07T17:25:50Z APT-OK Python 3.12.3
+2026-11-07T17:25:52Z TOOLS-OK
+TORCH 2.11.0+cu128 12.8 True NVIDIA GeForce RTX 5060 Ti (12, 0)
+2026-11-07T17:25:55Z TORCH-OK
+2026-11-07T17:25:56Z REQS-OK
+2026-11-07T17:25:56Z CUTLASS 954c8d7b
+2026-11-07T17:25:56Z SRC 0337988 diff-lines=22
+2026-11-07T17:25:56Z NVTX3 /opt/nvidia/nsight-compute/2025.1.1/host/target-linux-x64/nvtx/include sha=db716da53a37
+2026-11-07T17:41:53Z BUILD-OK
+IMPORT-OK /root/MoE-Infinity/moe_infinity/__init__.py
+2026-11-07T17:41:55Z IMPORT-OK
+  path: /root/models/OLMoE-1B-7B-0125-Instruct
+DL-EXIT=0
+13G	/root/models/OLMoE-1B-7B-0125-Instruct
+model-00001-of-00003.safetensors: OK
+model-00002-of-00003.safetensors: OK
+model-00003-of-00003.safetensors: OK
+config.json: OK
+generation_config.json: OK
+model.safetensors.index.json: OK
+special_tokens_map.json: OK
+tokenizer.json: OK
+tokenizer_config.json: OK
+2026-11-07T17:42:06Z MODEL-SHA-OK
+2026-11-07T17:42:06Z DONE
