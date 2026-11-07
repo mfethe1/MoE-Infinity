@@ -1,0 +1,22 @@
+diff --git a/extensions/kernel/grouped_moe_prefill.cu b/extensions/kernel/grouped_moe_prefill.cu
+index fdc307a..7240831 100644
+--- a/extensions/kernel/grouped_moe_prefill.cu
++++ b/extensions/kernel/grouped_moe_prefill.cu
+@@ -474,7 +474,7 @@ void grouped_moe_prefill_pro6000(
+     using Hm = Heights<Configs>;
+     if (cfg < 0) {
+       double best = 0;
+-      for (int c = 0; c < int(std::size(Hm::big)); ++c) {
++      for (int c = 0; c < int(std::tuple_size_v<Configs>); ++c) {
+         double t = cost(rate[c], split_of(rate[c], Hm::big[c], Hm::small[c]));
+         if (cfg < 0 || t < best) {
+           best = t;
+@@ -482,7 +482,7 @@ void grouped_moe_prefill_pro6000(
+         }
+       }
+     }
+-    TORCH_CHECK(cfg < int(std::size(Hm::big)),
++    TORCH_CHECK(cfg < int(std::tuple_size_v<Configs>),
+                 "grouped_moe_prefill: invalid tile config ", cfg);
+     return split_of(rate[cfg], Hm::big[cfg], Hm::small[cfg]);
+   };

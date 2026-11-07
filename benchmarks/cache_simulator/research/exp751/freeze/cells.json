@@ -1,0 +1,46 @@
+[
+ {
+  "id": "m0_1",
+  "arm": "micro",
+  "spin": 0
+ },
+ {
+  "id": "m6_1",
+  "arm": "micro",
+  "spin": 6
+ },
+ {
+  "id": "m6_2",
+  "arm": "micro",
+  "spin": 6
+ },
+ {
+  "id": "m0_2",
+  "arm": "micro",
+  "spin": 0
+ },
+ {
+  "id": "q_hf_1",
+  "arm": "hf"
+ },
+ {
+  "id": "q_on_1",
+  "arm": "on"
+ },
+ {
+  "id": "q_off_1",
+  "arm": "off"
+ },
+ {
+  "id": "q_off_2",
+  "arm": "off"
+ },
+ {
+  "id": "q_on_2",
+  "arm": "on"
+ },
+ {
+  "id": "q_hf_2",
+  "arm": "hf"
+ }
+]
