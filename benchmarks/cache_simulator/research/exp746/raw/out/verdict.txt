@@ -1,0 +1,22 @@
+cell q_hf_1: arm=hf stress=0 ms/tok=33.12 busy=14.12 idle=18.95 load_mean=1.18 psi_mean=0.1 route_ok=True EXCLUDED:gpu-contamination
+cell q_on_1: arm=on stress=0 ms/tok=95.53 busy=39.70 idle=57.33 load_mean=1.21 psi_mean=1.81 route_ok=True CLEAN
+cell q_off_1: arm=off stress=0 ms/tok=91.16 busy=38.86 idle=50.85 load_mean=1.33 psi_mean=2.09 route_ok=True CLEAN
+cell s_hf_1: arm=hf stress=12 ms/tok=48.27 busy=14.27 idle=33.78 load_mean=7.0 psi_mean=3.27 route_ok=True EXCLUDED:row4-samples=0
+cell s_on_1: arm=on stress=12 ms/tok=289.95 busy=39.40 idle=254.31 load_mean=15.51 psi_mean=29.69 route_ok=True EXCLUDED:ci-runner-active
+cell s_off_1: arm=off stress=12 ms/tok=150.34 busy=37.47 idle=114.99 load_mean=9.93 psi_mean=9.28 route_ok=True CLEAN
+cell s_off_2: arm=off stress=12 ms/tok=226.67 busy=40.59 idle=186.75 load_mean=13.63 psi_mean=24.47 route_ok=True EXCLUDED:ci-runner-active
+cell s_on_2: arm=on stress=12 ms/tok=406.37 busy=56.45 idle=352.92 load_mean=32.52 psi_mean=61.11 route_ok=True EXCLUDED:ci-runner-active;gpu-contamination;load-mean=32.52>18.0
+cell s_hf_2: arm=hf stress=12 ms/tok=49.79 busy=14.22 idle=35.72 load_mean=7.71 psi_mean=3.55 route_ok=True CLEAN
+cell q_off_2: arm=off stress=0 ms/tok=90.09 busy=38.60 idle=50.91 load_mean=1.73 psi_mean=1.51 route_ok=True CLEAN
+cell q_on_2: arm=on stress=0 ms/tok=93.80 busy=39.61 idle=57.20 load_mean=1.47 psi_mean=1.93 route_ok=True CLEAN
+cell q_hf_2: arm=hf stress=0 ms/tok=34.53 busy=14.20 idle=20.32 load_mean=1.3 psi_mean=0.59 route_ok=True CLEAN
+arm hf stress=0: {'ms': 34.525034396903635, 'busy': 14.204495285108406, 'idle': 20.31594660402218, 'load': 1.3025, 'n': 1}
+arm hf stress=12: {'ms': 49.79307233357787, 'busy': 14.219309468595217, 'idle': 35.71950120318185, 'load': 7.714166666666666, 'n': 1}
+arm on stress=0: {'ms': 94.66688958850033, 'busy': 39.657632362381165, 'idle': 57.26646017365245, 'load': 1.339621212121212, 'n': 2}
+arm on stress=12: None
+arm off stress=0: {'ms': 90.62479662287163, 'busy': 38.72775330527972, 'idle': 50.87727524125978, 'load': 1.5336363636363637, 'n': 2}
+arm off stress=12: {'ms': 150.33601976202112, 'busy': 37.47191302524358, 'idle': 114.99421633117025, 'load': 9.928260869565218, 'n': 1}
+MANIP gpu_route_effective matches request (all engine cells): True; engine token-id parity across all cells: False
+GAP on-hf (quiet) = 60.14 = idle 36.95 + busy 25.45 (idle share 0.614)
+ROUTE-Q off-on = -4.04 ms/tok (idle -6.39, busy -0.93); n on=2 off=2
+VERDICT SPLIT:GAP-IS-GPU-IDLE|ROUTE-Q:OFF-FASTER(PARITY-FAIL)|SENS:INCONCLUSIVE|ROUTE-S:INCONCLUSIVE

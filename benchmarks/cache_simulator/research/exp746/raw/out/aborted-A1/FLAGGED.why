@@ -1,0 +1,37 @@
+q_hf_1 pre-start gpu=10260 ollama=0
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776441 timeout 1950 /home/mfeth/wsp/venv/bin/python gen.py
+q_hf_1 mid-cell foreign pid 1776443 /home/mfeth/wsp/venv/bin/python gen.py
