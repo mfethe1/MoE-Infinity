@@ -1,0 +1,74 @@
+[
+ {
+  "id": "q_hf_1",
+  "arm": "hf",
+  "stress": 0,
+  "gpu": 1
+ },
+ {
+  "id": "q_on_1",
+  "arm": "on",
+  "stress": 0,
+  "gpu": 1
+ },
+ {
+  "id": "q_off_1",
+  "arm": "off",
+  "stress": 0,
+  "gpu": 1
+ },
+ {
+  "id": "s_hf_1",
+  "arm": "hf",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "s_on_1",
+  "arm": "on",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "s_off_1",
+  "arm": "off",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "s_off_2",
+  "arm": "off",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "s_on_2",
+  "arm": "on",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "s_hf_2",
+  "arm": "hf",
+  "stress": 12,
+  "gpu": 1
+ },
+ {
+  "id": "q_off_2",
+  "arm": "off",
+  "stress": 0,
+  "gpu": 1
+ },
+ {
+  "id": "q_on_2",
+  "arm": "on",
+  "stress": 0,
+  "gpu": 1
+ },
+ {
+  "id": "q_hf_2",
+  "arm": "hf",
+  "stress": 0,
+  "gpu": 1
+ }
+]
