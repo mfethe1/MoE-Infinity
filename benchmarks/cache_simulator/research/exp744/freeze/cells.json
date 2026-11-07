@@ -1,0 +1,32 @@
+[
+ {
+  "id": "micro_1",
+  "arm": "micro",
+  "gpu": 1
+ },
+ {
+  "id": "on_1",
+  "arm": "on",
+  "gpu": 1
+ },
+ {
+  "id": "off_1",
+  "arm": "off",
+  "gpu": 1
+ },
+ {
+  "id": "off_2",
+  "arm": "off",
+  "gpu": 1
+ },
+ {
+  "id": "on_2",
+  "arm": "on",
+  "gpu": 1
+ },
+ {
+  "id": "micro_2",
+  "arm": "micro",
+  "gpu": 1
+ }
+]
