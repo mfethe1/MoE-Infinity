@@ -1,0 +1,212 @@
+[
+ {
+  "build": "H",
+  "gpus": "0,1",
+  "ratio": null,
+  "policy": "hf",
+  "block": 1,
+  "arm": "H2",
+  "id": "b1_H2",
+  "clb": ""
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "R1",
+  "id": "b1_R1",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "C2",
+  "id": "b1_C2",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "K2",
+  "id": "b1_K2",
+  "clb": "1"
+ },
+ {
+  "build": "F",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "S1",
+  "id": "b1_S1",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "P2",
+  "id": "b1_P2",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "0",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 1,
+  "arm": "S0",
+  "id": "b1_S0",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "P2",
+  "id": "b2_P2",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "C2",
+  "id": "b2_C2",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "S1",
+  "id": "b2_S1",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "K2",
+  "id": "b2_K2",
+  "clb": "1"
+ },
+ {
+  "build": "F",
+  "gpus": "0",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "S0",
+  "id": "b2_S0",
+  "clb": ""
+ },
+ {
+  "build": "H",
+  "gpus": "0,1",
+  "ratio": null,
+  "policy": "hf",
+  "block": 2,
+  "arm": "H2",
+  "id": "b2_H2",
+  "clb": ""
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 2,
+  "arm": "R1",
+  "id": "b2_R1",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "0",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "S0",
+  "id": "b3_S0",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "K2",
+  "id": "b3_K2",
+  "clb": "1"
+ },
+ {
+  "build": "F",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "S1",
+  "id": "b3_S1",
+  "clb": ""
+ },
+ {
+  "build": "U",
+  "gpus": "1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "R1",
+  "id": "b3_R1",
+  "clb": ""
+ },
+ {
+  "build": "P",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "C2",
+  "id": "b3_C2",
+  "clb": ""
+ },
+ {
+  "build": "H",
+  "gpus": "0,1",
+  "ratio": null,
+  "policy": "hf",
+  "block": 3,
+  "arm": "H2",
+  "id": "b3_H2",
+  "clb": ""
+ },
+ {
+  "build": "F",
+  "gpus": "0,1",
+  "ratio": 0.2,
+  "policy": "lcnu",
+  "block": 3,
+  "arm": "P2",
+  "id": "b3_P2",
+  "clb": ""
+ }
+]

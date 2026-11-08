@@ -1,0 +1,3 @@
+PATH=/home/mfeth/venvs/moei-engine/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+VIRTUAL_ENV=/home/mfeth/venvs/moei-engine
+VIRTUAL_ENV_PROMPT=(moei-engine) 

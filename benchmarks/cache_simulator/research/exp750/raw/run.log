@@ -1,0 +1,95 @@
+== 2026-11-07T12:32:52Z start (waited 0 min for other exp7* units)
+== 2026-11-07T12:35:34Z b1_H2 build=H gpus=0,1 r=None CUDA_LAUNCH_BLOCKING=unset timeout=1800
+b1_H2 RC=0
+== 2026-11-07T12:37:07Z b1_R1 build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+b1_R1 RC=0
+== 2026-11-07T12:43:35Z b1_C2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b1_C2 RC=0
+== 2026-11-07T12:54:50Z b1_K2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+b1_K2 RC=0
+== 2026-11-07T13:10:01Z b1_S1 build=F gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b1_S1 RC=0
+== 2026-11-07T13:14:37Z b1_P2 build=F gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b1_P2 RC=0
+== 2026-11-07T13:23:09Z b1_S0 build=F gpus=0 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b1_S0 RC=0
+== 2026-11-07T13:41:07Z b2_P2 build=F gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b2_P2 RC=0
+== 2026-11-07T13:49:53Z b2_C2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b2_C2 RC=0
+== 2026-11-07T13:58:30Z b2_S1 build=F gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b2_S1 RC=0
+== 2026-11-07T14:02:51Z b2_K2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+b2_K2 RC=0
+== 2026-11-07T14:15:17Z b2_S0 build=F gpus=0 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b2_S0 RC=0
+== 2026-11-07T14:32:00Z b2_H2 build=H gpus=0,1 r=None CUDA_LAUNCH_BLOCKING=unset timeout=1800
+b2_H2 RC=0
+== 2026-11-07T14:33:28Z b2_R1 build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+b2_R1 RC=0
+== 2026-11-07T14:37:41Z b3_S0 build=F gpus=0 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_S0 RC=0
+== 2026-11-07T15:08:51Z b3_K2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+b3_K2 RC=0
+== 2026-11-07T15:21:03Z b3_S1 build=F gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_S1 RC=0
+== 2026-11-07T15:25:31Z b3_R1 build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+b3_R1 RC=0
+== 2026-11-07T15:37:37Z b3_C2 build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_C2 RC=0
+== 2026-11-07T15:49:07Z b3_H2 build=H gpus=0,1 r=None CUDA_LAUNCH_BLOCKING=unset timeout=1800
+b3_H2 RC=0
+== 2026-11-07T15:50:57Z b3_P2 build=F gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_P2 RC=0
+== rerun b1_R1 as b1_R1_x (build=U gpus=1 r=0.2 clb= arm=R1)
+== 2026-11-07T15:59:37Z b1_R1_x build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+b1_R1_x RC=0
+== rerun b2_K2 as b2_K2_x (build=P gpus=0,1 r=0.2 clb=1 arm=K2)
+== 2026-11-07T16:03:52Z b2_K2_x build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+b2_K2_x RC=0
+== rerun b3_S0 as b3_S0_x (build=F gpus=0 r=0.2 clb= arm=S0)
+== 2026-11-07T16:15:52Z b3_S0_x build=F gpus=0 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_S0_x RC=0
+== rerun b3_S1 as b3_S1_x (build=F gpus=1 r=0.2 clb= arm=S1)
+== 2026-11-07T16:32:41Z b3_S1_x build=F gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+b3_S1_x RC=0
+== rerun b3_R1 as b3_R1_x (build=U gpus=1 r=0.2 clb= arm=R1)
+== 2026-11-07T16:36:52Z b3_R1_x build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+b3_R1_x RC=0
+b1_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=38.308149738614226 E=39.080898382962914 clean=True
+b1_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=118.89395817452746 E=137.3132283438281 clean=False REPLACED-BY b1_R1_x (D=99.64299481731678) x: present=True clean=True
+b1_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=268.65352342867976 E=327.5370422106789 clean=True
+b1_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=368.51401669010227 E=431.40511041383434 clean=True
+b1_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=102.78821350786731 E=119.06859739065112 clean=True
+b1_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=201.0865415717172 E=247.50288004725007 clean=True
+b1_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=455.0752245866331 E=540.2695142806806 clean=True
+b2_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=199.4676839764459 E=246.32273371025803 clean=True
+b2_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=194.33083711977352 E=240.9833500314562 clean=True
+b2_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=99.75799980955864 E=115.97944358618406 clean=True
+b2_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=308.1416357618143 E=364.3424855235935 clean=False REPLACED-BY b2_K2_x (D=306.7474827777395) x: present=True clean=True
+b2_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=448.834758714333 E=532.8339363904888 clean=True
+b2_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=40.7276555793249 E=41.49719635188376 clean=True
+b2_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=100.74069776197172 E=117.405177702949 clean=True
+b3_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=473.17548781690664 E=567.3642941169419 clean=False REPLACED-BY b3_S0_x (D=455.3239082539683) x: present=True clean=True
+b3_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=317.6691903730869 E=375.6022681486684 clean=True
+b3_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=104.28758723049663 E=120.48088732808537 clean=False REPLACED-BY b3_S1_x (D=101.46645322952065) x: present=True clean=True
+b3_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=152.07257455571497 E=170.60230719562242 clean=False x: present=True clean=False
+b3_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=275.87171078526546 E=336.74009786727765 clean=True
+b3_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=55.73913434913958 E=57.155470046836854 clean=True
+b3_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=202.3742474280187 E=249.4243790388282 clean=True
+arm R1: D per block=[99.64299481731678, 100.74069776197172, None] E per block=[115.70447791382321, 117.405177702949, None] CV(D)=0.007747069493559946 median-rep-spread=0.02446177937582219
+arm S1: D per block=[102.78821350786731, 99.75799980955864, 101.46645322952065] E per block=[119.06859739065112, 115.97944358618406, 117.57949722596095] CV(D)=0.014991614073580755 median-rep-spread=0.047691742172497706
+arm S0: D per block=[455.0752245866331, 448.834758714333, 455.3239082539683] E per block=[540.2695142806806, 532.8339363904888, 538.4318104529484] CV(D)=0.00811521816310415 median-rep-spread=0.036645576613774315
+arm P2: D per block=[201.0865415717172, 199.4676839764459, 202.3742474280187] E per block=[247.50288004725007, 246.32273371025803, 249.4243790388282] CV(D)=0.007246742225661898 median-rep-spread=0.017643283457378093
+arm K2: D per block=[368.51401669010227, 306.7474827777395, 317.6691903730869] E per block=[431.40511041383434, 363.69627438261887, 375.6022681486684] CV(D)=0.09959479995609383 median-rep-spread=0.048020706077795225
+arm C2: D per block=[268.65352342867976, 194.33083711977352, 275.87171078526546] E per block=[327.5370422106789, 240.9833500314562, 336.74009786727765] CV(D)=0.18327703491256261 median-rep-spread=0.05925259466213531
+arm H2: D per block=[38.308149738614226, 40.7276555793249, 55.73913434913958] E per block=[39.080898382962914, 41.49719635188376, 57.155470046836854] CV(D)=0.21019805204389627 median-rep-spread=0.050656681966622125
+link ratio D(S0)/D(S1) per block: [4.427309406946762, 4.4992357462175825, 4.4874329767298535]
+D1 q=D(K2)/D(P2) per block: [1.8326140268252231, 1.5378304728998693, 1.5697115340037362] -> FIX-FASTER
+D2 s=D(S1)/D(R1) per block: [1.031564875145683, 0.9902452735166181] -> INCOMPLETE
+D3 u=D(S1)/D(P2) per block: [0.5111640625198582, 0.5001211114545179, 0.5013802621581614] -> TWO-GPU-SLOWER
+noise floor: R1 across-block CV(D)=0.007747069493559946
+G-Q: PASS  G-M: MANIP-OK
+VERDICT750 FIX-FASTER|INCOMPLETE|TWO-GPU-SLOWER|PASS|MANIP-OK flags: R1:EXCLUDED(b3_R1:FOREIGN)
+classify750 rc=0
+== 2026-11-07T16:41:28Z EXP750-DONE
