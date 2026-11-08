@@ -94,7 +94,7 @@ def child_hostfn(a):
         cudart.cudaLaunchHostFunc.argtypes = [ctypes.c_void_p, CB, ctypes.c_void_p]
         cudart.cudaGetErrorString.restype = ctypes.c_char_p
         cudart.cudaGetErrorString.argtypes = [ctypes.c_int]
-        g2 = torch.cuda.CUDAGraph()
+        g2 = torch.cuda.CUDAGraph(keep_graph=True)  # torch 2.11: ctor flag; explicit instantiate() below
         stream = torch.cuda.current_stream().cuda_stream
         with torch.cuda.graph(g2):
             rc = cudart.cudaLaunchHostFunc(ctypes.c_void_p(stream), cb, None)
@@ -289,11 +289,13 @@ def main():
     ap.add_argument("--gpu-route", choices=["on", "off"], default="on")
     ap.add_argument("--prompts", required=True)
     ap.add_argument("--max-new", type=int, default=64)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out")  # required in driver mode only (children pass --step-out)
     ap.add_argument("--step", choices=list(PROBES))
     ap.add_argument("--step-out")
     ap.add_argument("--hidden", type=int, default=2048)
     a = ap.parse_args()
+    if a.step is None and not a.out:
+        ap.error("--out is required in driver mode")
     if a.step:
         {"pc": child_pc, "pinned": child_pinned, "hostfn": child_hostfn,
          "dispatch": child_dispatch}[a.step](a)
@@ -320,7 +322,11 @@ def main():
             out["steps"].append({"step": step, "error": f"result-missing:{e!r}", "rc": rc})
             missing += 1
 
-    by = {s.get("step"): s for s in out["steps"]}
+    step_alias = {"positive_control": "pc", "pinned_alloc_capture": "pinned",
+                  "hostfn_capture": "hostfn", "dispatch_capture": "dispatch"}
+    by = {}
+    for s in out["steps"]:
+        by[step_alias.get(s.get("step"), s.get("step"))] = s
     pc = by.get("pc", {})
     out["positive_control"] = "OK" if pc.get("ok") else "FAIL"
     pn = by.get("pinned", {})
