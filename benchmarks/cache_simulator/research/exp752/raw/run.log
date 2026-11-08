@@ -1,0 +1,130 @@
+== 2026-11-07T20:01:11Z start
+== 2026-11-07T21:31:44Z H_1 arm=H gpu=1 qw=5412 TIMEOUT la=3.73 foreign_any=0
+H_1 RC=0
+exp752 mode=0
+[lcnu r=0.75] prompt 0: 5.76 tok/s hits+9535 miss+289
+[lcnu r=0.75] prompt 1: 6.22 tok/s hits+9650 miss+32
+[lcnu r=0.75] prompt 2: 0.81 tok/s hits+9672 miss+58
+[lcnu r=0.75] prompt 3: 0.17 tok/s hits+9646 miss+132
+[lcnu r=0.75] prompt 4: 0.25 tok/s hits+4199 miss+59
+[lcnu r=0.75] prompt 5: 0.61 tok/s hits+9821 miss+103
+== 2026-11-07T23:07:19Z R_1 arm=R gpu=1 qw=4550 QUIET la=1.23 foreign_any=0
+R_1 RC=0
+exp752 mode=1
+[lcnu r=0.75] prompt 0: 10.55 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 11.87 tok/s hits+9644 miss+38
+[lcnu r=0.75] prompt 2: 9.92 tok/s hits+9660 miss+70
+[lcnu r=0.75] prompt 3: 10.45 tok/s hits+9618 miss+160
+[lcnu r=0.75] prompt 4: 9.31 tok/s hits+4184 miss+74
+[lcnu r=0.75] prompt 5: 11.72 tok/s hits+9807 miss+117
+== 2026-11-07T23:09:10Z RC_1 arm=RC gpu=1 qw=0 QUIET la=1.72 foreign_any=0
+RC_1 RC=0
+exp752 mode=2
+[lcnu r=0.75] prompt 0: 10.35 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 9.54 tok/s hits+9644 miss+38
+[lcnu r=0.75] prompt 2: 8.69 tok/s hits+9660 miss+70
+[lcnu r=0.75] prompt 3: 12.52 tok/s hits+9619 miss+159
+[lcnu r=0.75] prompt 4: 11.90 tok/s hits+4186 miss+72
+[lcnu r=0.75] prompt 5: 11.80 tok/s hits+9806 miss+118
+== 2026-11-07T23:37:59Z hf_1 arm=hf gpu=1 qw=1616 QUIET la=0.96 foreign_any=0
+hf_1 RC=0
+[hf] prompt 0: 30.04 tok/s
+[hf] prompt 1: 31.20 tok/s
+[hf] prompt 2: 32.30 tok/s
+[hf] prompt 3: 32.04 tok/s
+[hf] prompt 4: 31.82 tok/s
+[hf] prompt 5: 31.97 tok/s
+== 2026-11-07T23:38:47Z R_2 arm=R gpu=1 qw=0 QUIET la=0.89 foreign_any=0
+R_2 RC=0
+exp752 mode=1
+[lcnu r=0.75] prompt 0: 10.05 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 11.39 tok/s hits+9645 miss+37
+[lcnu r=0.75] prompt 2: 11.07 tok/s hits+9660 miss+70
+[lcnu r=0.75] prompt 3: 10.91 tok/s hits+9619 miss+159
+[lcnu r=0.75] prompt 4: 11.64 tok/s hits+4186 miss+72
+[lcnu r=0.75] prompt 5: 11.60 tok/s hits+9808 miss+116
+== 2026-11-07T23:40:43Z RC_2 arm=RC gpu=1 qw=0 QUIET la=1.42 foreign_any=0
+RC_2 RC=0
+exp752 mode=2
+[lcnu r=0.75] prompt 0: 10.39 tok/s hits+9530 miss+294
+[lcnu r=0.75] prompt 1: 11.70 tok/s hits+9644 miss+38
+[lcnu r=0.75] prompt 2: 9.05 tok/s hits+9659 miss+71
+[lcnu r=0.75] prompt 3: 11.77 tok/s hits+9618 miss+160
+[lcnu r=0.75] prompt 4: 12.24 tok/s hits+4186 miss+72
+[lcnu r=0.75] prompt 5: 12.08 tok/s hits+9806 miss+118
+== 2026-11-07T23:42:36Z hf_2 arm=hf gpu=1 qw=0 QUIET la=1.49 foreign_any=0
+hf_2 RC=0
+[hf] prompt 0: 30.80 tok/s
+[hf] prompt 1: 31.48 tok/s
+[hf] prompt 2: 31.75 tok/s
+[hf] prompt 3: 30.98 tok/s
+[hf] prompt 4: 29.83 tok/s
+[hf] prompt 5: 30.64 tok/s
+== 2026-11-07T23:43:22Z H_2 arm=H gpu=1 qw=0 QUIET la=1.13 foreign_any=0
+H_2 RC=0
+exp752 mode=0
+[lcnu r=0.75] prompt 0: 9.58 tok/s hits+9534 miss+290
+[lcnu r=0.75] prompt 1: 11.04 tok/s hits+9648 miss+34
+[lcnu r=0.75] prompt 2: 9.07 tok/s hits+9667 miss+63
+[lcnu r=0.75] prompt 3: 10.46 tok/s hits+9631 miss+147
+[lcnu r=0.75] prompt 4: 10.28 tok/s hits+4194 miss+64
+[lcnu r=0.75] prompt 5: 10.68 tok/s hits+9815 miss+109
+== 2026-11-07T23:45:22Z RC_3 arm=RC gpu=1 qw=1 QUIET la=1.28 foreign_any=0
+RC_3 RC=0
+exp752 mode=2
+[lcnu r=0.75] prompt 0: 10.46 tok/s hits+9536 miss+288
+[lcnu r=0.75] prompt 1: 12.09 tok/s hits+9659 miss+23
+[lcnu r=0.75] prompt 2: 10.26 tok/s hits+9675 miss+55
+[lcnu r=0.75] prompt 3: 11.19 tok/s hits+9653 miss+125
+[lcnu r=0.75] prompt 4: 12.12 tok/s hits+4202 miss+56
+[lcnu r=0.75] prompt 5: 12.05 tok/s hits+9827 miss+97
+== 2026-11-07T23:47:12Z hf_3 arm=hf gpu=1 qw=0 QUIET la=1.96 foreign_any=0
+hf_3 RC=0
+[hf] prompt 0: 31.42 tok/s
+[hf] prompt 1: 32.05 tok/s
+[hf] prompt 2: 31.52 tok/s
+[hf] prompt 3: 31.80 tok/s
+[hf] prompt 4: 31.68 tok/s
+[hf] prompt 5: 30.77 tok/s
+== 2026-11-07T23:47:59Z H_3 arm=H gpu=1 qw=0 QUIET la=1.32 foreign_any=0
+H_3 RC=0
+exp752 mode=0
+[lcnu r=0.75] prompt 0: 9.70 tok/s hits+9505 miss+319
+[lcnu r=0.75] prompt 1: 11.14 tok/s hits+9624 miss+58
+[lcnu r=0.75] prompt 2: 10.02 tok/s hits+9630 miss+100
+[lcnu r=0.75] prompt 3: 11.18 tok/s hits+9559 miss+219
+[lcnu r=0.75] prompt 4: 10.88 tok/s hits+4159 miss+99
+[lcnu r=0.75] prompt 5: 11.02 tok/s hits+9752 miss+172
+== 2026-11-07T23:49:51Z R_3 arm=R gpu=1 qw=0 QUIET la=2.07 foreign_any=0
+R_3 RC=0
+exp752 mode=1
+[lcnu r=0.75] prompt 0: 10.14 tok/s hits+9513 miss+311
+[lcnu r=0.75] prompt 1: 11.61 tok/s hits+9629 miss+53
+[lcnu r=0.75] prompt 2: 10.06 tok/s hits+9640 miss+90
+[lcnu r=0.75] prompt 3: 10.98 tok/s hits+9575 miss+203
+[lcnu r=0.75] prompt 4: 12.16 tok/s hits+4161 miss+97
+[lcnu r=0.75] prompt 5: 11.83 tok/s hits+9759 miss+165
+cell H_1: arm=H ms/tok=1439.06 busy=1069.55 idle=369.51 load_mean=21.52 foreign_other_gpu_max=0 EXCLUDED:ci-runner-active;gpu-contamination;load-mean=21.52>4.0
+cell R_1: arm=R ms/tok=95.26 busy=45.08 idle=52.94 load_mean=1.79 foreign_other_gpu_max=0 CLEAN
+cell RC_1: arm=RC ms/tok=90.66 busy=39.28 idle=47.29 load_mean=1.55 foreign_other_gpu_max=0 EXCLUDED:ci-runner-active
+cell hf_1: arm=hf ms/tok=31.35 busy=14.16 idle=17.13 load_mean=0.97 foreign_other_gpu_max=0 CLEAN
+cell R_2: arm=R ms/tok=89.07 busy=40.55 idle=49.07 load_mean=1.25 foreign_other_gpu_max=0 CLEAN
+cell RC_2: arm=RC ms/tok=85.21 busy=39.16 idle=46.74 load_mean=1.39 foreign_other_gpu_max=0 CLEAN
+cell hf_2: arm=hf ms/tok=32.37 busy=14.13 idle=18.23 load_mean=1.32 foreign_other_gpu_max=0 CLEAN
+cell H_2: arm=H ms/tok=96.48 busy=39.94 idle=56.83 load_mean=1.15 foreign_other_gpu_max=0 CLEAN
+cell RC_3: arm=RC ms/tok=86.19 busy=39.32 idle=48.45 load_mean=1.6 foreign_other_gpu_max=0 CLEAN
+cell hf_3: arm=hf ms/tok=31.65 busy=14.15 idle=17.48 load_mean=1.66 foreign_other_gpu_max=0 CLEAN
+cell H_3: arm=H ms/tok=91.32 busy=36.81 idle=54.79 load_mean=1.5 foreign_other_gpu_max=0 CLEAN
+cell R_3: arm=R ms/tok=88.60 busy=38.20 idle=50.45 load_mean=1.61 foreign_other_gpu_max=0 CLEAN
+arm hf: {'ms': 31.790733352031253, 'busy': 14.147213757899843, 'idle': 17.61549188850559, 'load': 1.317, 'n': 3, 'all': [31.352695166817053, 31.64571448458388, 32.373790404692826]}
+arm H: {'ms': 93.90299961385261, 'busy': 38.37104024632698, 'idle': 55.81332086965059, 'load': 1.325909090909091, 'n': 2, 'all': [91.32281351143436, 96.48318571627088]}
+arm R: {'ms': 90.97815315327213, 'busy': 41.27816122536824, 'idle': 50.82102439165855, 'load': 1.55, 'n': 3, 'all': [88.60477111080573, 89.07152865902476, 95.25815968998589]}
+arm RC: {'ms': 85.69858717526095, 'busy': 39.240871548649416, 'idle': 47.59136963888109, 'load': 1.4936363636363637, 'n': 2, 'all': [85.20957286560184, 86.18760148492007]}
+PARITY H-self-consistent=False R=NA RC=NA
+RETIRE R-H = -2.92 ms/tok (idle -4.99, busy +2.91); n R=3 H=2; separated_fast=False separated_slow=False
+COMPL RC-R = -5.28 ms/tok (idle -3.23, busy -2.04); n RC=2 R=3; separated_fast=True separated_slow=False
+TOTAL RC-H = -8.20 ms/tok (idle -8.22, busy +0.87); n RC=2 H=2; separated_fast=True separated_slow=False
+GAP H-hf = 62.11 ms/tok; best patched arm closes 0.132 of it (descriptive)
+COVARIATE foreign_other_gpu_max across clean cells: [0]
+VERDICT RETIRE:NO-CHANGE(PARITY-NA)|COMPL:FASTER(PARITY-NA)|TOTAL:FASTER(PARITY-NA)
+== 2026-11-07T23:51:31Z EXP752-DONE

@@ -1,0 +1,23 @@
+cell H_1: arm=H ms/tok=1439.06 busy=1069.55 idle=369.51 load_mean=21.52 foreign_other_gpu_max=0 EXCLUDED:ci-runner-active;gpu-contamination;load-mean=21.52>4.0
+cell R_1: arm=R ms/tok=95.26 busy=45.08 idle=52.94 load_mean=1.79 foreign_other_gpu_max=0 CLEAN
+cell RC_1: arm=RC ms/tok=90.66 busy=39.28 idle=47.29 load_mean=1.55 foreign_other_gpu_max=0 EXCLUDED:ci-runner-active
+cell hf_1: arm=hf ms/tok=31.35 busy=14.16 idle=17.13 load_mean=0.97 foreign_other_gpu_max=0 CLEAN
+cell R_2: arm=R ms/tok=89.07 busy=40.55 idle=49.07 load_mean=1.25 foreign_other_gpu_max=0 CLEAN
+cell RC_2: arm=RC ms/tok=85.21 busy=39.16 idle=46.74 load_mean=1.39 foreign_other_gpu_max=0 CLEAN
+cell hf_2: arm=hf ms/tok=32.37 busy=14.13 idle=18.23 load_mean=1.32 foreign_other_gpu_max=0 CLEAN
+cell H_2: arm=H ms/tok=96.48 busy=39.94 idle=56.83 load_mean=1.15 foreign_other_gpu_max=0 CLEAN
+cell RC_3: arm=RC ms/tok=86.19 busy=39.32 idle=48.45 load_mean=1.6 foreign_other_gpu_max=0 CLEAN
+cell hf_3: arm=hf ms/tok=31.65 busy=14.15 idle=17.48 load_mean=1.66 foreign_other_gpu_max=0 CLEAN
+cell H_3: arm=H ms/tok=91.32 busy=36.81 idle=54.79 load_mean=1.5 foreign_other_gpu_max=0 CLEAN
+cell R_3: arm=R ms/tok=88.60 busy=38.20 idle=50.45 load_mean=1.61 foreign_other_gpu_max=0 CLEAN
+arm hf: {'ms': 31.790733352031253, 'busy': 14.147213757899843, 'idle': 17.61549188850559, 'load': 1.317, 'n': 3, 'all': [31.352695166817053, 31.64571448458388, 32.373790404692826]}
+arm H: {'ms': 93.90299961385261, 'busy': 38.37104024632698, 'idle': 55.81332086965059, 'load': 1.325909090909091, 'n': 2, 'all': [91.32281351143436, 96.48318571627088]}
+arm R: {'ms': 90.97815315327213, 'busy': 41.27816122536824, 'idle': 50.82102439165855, 'load': 1.55, 'n': 3, 'all': [88.60477111080573, 89.07152865902476, 95.25815968998589]}
+arm RC: {'ms': 85.69858717526095, 'busy': 39.240871548649416, 'idle': 47.59136963888109, 'load': 1.4936363636363637, 'n': 2, 'all': [85.20957286560184, 86.18760148492007]}
+PARITY H-self-consistent=False R=NA RC=NA
+RETIRE R-H = -2.92 ms/tok (idle -4.99, busy +2.91); n R=3 H=2; separated_fast=False separated_slow=False
+COMPL RC-R = -5.28 ms/tok (idle -3.23, busy -2.04); n RC=2 R=3; separated_fast=True separated_slow=False
+TOTAL RC-H = -8.20 ms/tok (idle -8.22, busy +0.87); n RC=2 H=2; separated_fast=True separated_slow=False
+GAP H-hf = 62.11 ms/tok; best patched arm closes 0.132 of it (descriptive)
+COVARIATE foreign_other_gpu_max across clean cells: [0]
+VERDICT RETIRE:NO-CHANGE(PARITY-NA)|COMPL:FASTER(PARITY-NA)|TOTAL:FASTER(PARITY-NA)
