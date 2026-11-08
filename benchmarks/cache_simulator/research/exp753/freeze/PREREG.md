@@ -180,6 +180,23 @@ frozen instrument exactly computable. [SC] = scientific consequence.
     flagged (ROW-SCHEMA), never KeyError. Refs are keyed `out_ids`
     (verified live: 6 rows [64,64,64,64,21,64]; engine p4 = the frozen
     21-ID divergence prefix from exp752 `out/H_1.json`).
+17. **Invocation-path activation (smoke finding 2026-11-08)**: the smoke run
+    (SMOKE-FAIL: kern15=0, si_exitid=0 with 175,529 records otherwise
+    healthy) proved the compute-timing invocation path never engaged: the
+    executor chooses SetInputsWithInvocation only when
+    `_dispatcher_timing_ready(prefetcher)` sees the prefetcher's overlap caps,
+    which are built only for `overlap_prefetch_policy != "off"` (default off);
+    without invocation ids no compute-timing pairs are acquired
+    (expert_dispatcher.cpp: `timing_enabled && args.invocation_id != 0`) and
+    EXP753_KERN_SAMPLE never retires. The harness (engine_arm753.py) now
+    activates the gate uniformly on ALL engine arms by shadowing
+    `ExpertExecutor._dispatcher_timing_ready`; source-verified
+    SetInputsWithInvocation == SetInputs + counter + one tracer record
+    (expert_dispatcher.cpp 3188-3198) — observation-equivalent, arms still
+    differ only in trace/timing toggles (the pair path itself remains gated on
+    the per-arm `--timing` flag). Provenance recorded per cell json
+    (`invocation_gate_flip`). The smoke's `si_enter==si_exitid (e>=0)` check
+    exercises exactly this path.
 
 Amendment author: lane owner (this fire), implementing the independent
 review's findings; the amended instrument is re-reviewed by the same

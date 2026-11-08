@@ -16,6 +16,26 @@ import argparse, hashlib, json, os, platform, subprocess, sys, time
 import torch
 from transformers import AutoTokenizer
 
+# exp753 smoke finding (2026-11-08): the compute-timing invocation path
+# (ExpertDispatcher::SetInputsWithInvocation) is gated on the prefetcher's
+# overlap caps (configure_overlap_policy builds caps only when
+# overlap_prefetch_policy != "off"); with the default "off" the executor calls
+# plain SetInputs, invocation_id stays 0, no compute-timing pairs are ever
+# acquired (expert_dispatcher.cpp gate: timing_enabled && invocation_id != 0)
+# and the tracer's EXP753_KERN_SAMPLE events never retire (smoke: kern15=0).
+# SetInputsWithInvocation is observation-equivalent to SetInputs (verified in
+# expert_dispatcher.cpp 3188-3198: it calls SetInputs, bumps a counter, emits
+# one tracer record and returns the id). Activating it UNIFORMLY on all engine
+# arms preserves arm parity (arms still differ only in trace/timing toggles;
+# the timing pair path remains gated on the --timing arm toggle itself).
+invocation_gate_flip = "not-installed"
+try:
+    from moe_infinity.distributed.expert_executor import ExpertExecutor as _Exp753EE
+    _Exp753EE._dispatcher_timing_ready = staticmethod(lambda prefetcher: True)
+    invocation_gate_flip = True
+except Exception as _e:
+    invocation_gate_flip = f"FAILED:{_e!r}"
+
 
 def find_stats(obj, depth=0, seen=None):
     """Locate the native engine's get_expert_policy_stats() under the MoE object."""
@@ -180,6 +200,7 @@ def main():
            "stats_start": s0, "stats_end": s1, "rows": rows,
            "torch": torch.__version__, "cuda": torch.version.cuda,
            "allow_tf32": allow_tf32,
+           "invocation_gate_flip": invocation_gate_flip,
            "gpu": torch.cuda.get_device_name(0), "host": platform.node(),
            "visible": os.environ.get("CUDA_VISIBLE_DEVICES"),
            "threads_requested": a.threads, "threads_effective": eff_threads,
