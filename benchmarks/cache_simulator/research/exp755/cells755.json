@@ -1,0 +1,11 @@
+[
+ {"id": "H_1",  "arm": "H",  "stress": 0, "gpu": 0},
+ {"id": "R_1",  "arm": "R",  "stress": 0, "gpu": 0},
+ {"id": "RC_1", "arm": "RC", "stress": 0, "gpu": 0},
+ {"id": "RC_2", "arm": "RC", "stress": 0, "gpu": 0},
+ {"id": "R_2",  "arm": "R",  "stress": 0, "gpu": 0},
+ {"id": "H_2",  "arm": "H",  "stress": 0, "gpu": 0},
+ {"id": "H_3",  "arm": "H",  "stress": 0, "gpu": 0},
+ {"id": "R_3",  "arm": "R",  "stress": 0, "gpu": 0},
+ {"id": "RC_3", "arm": "RC", "stress": 0, "gpu": 0}
+]
