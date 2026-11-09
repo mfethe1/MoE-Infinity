@@ -1,0 +1,55 @@
+--- ../exp753-moei-execpath-handoff/engine_arm753.py	2026-11-08 14:49:06
++++ engine_arm753_p4.py	2026-11-09 09:46:10
+@@ -105,6 +105,10 @@
+     ap.add_argument("--gpu-route", choices=["on", "off"], required=True)
+     ap.add_argument("--arm-name", required=True)
+     ap.add_argument("--timing", choices=["on", "off"], default="off")
++    # exp753p4c (PREREG-P4C.md §3): suppress the native engine's EOS stop-break
++    # (step-past-EOS; sampled tokens kept in-stream). The ONLY behavioral delta
++    # vs engine_arm753.py; recorded per cell json as res["force_steps"].
++    ap.add_argument("--force-steps", action="store_true")
+     a = ap.parse_args()
+ 
+     trace_on = os.environ.get("MOEI_EXP753_TRACE") == "1"
+@@ -148,6 +152,26 @@
+             timing_set_error = repr(e)
+     print(f"exp753 timing_setter_found={timing_setter_found} err={timing_set_error}", flush=True)
+ 
++    # exp753p4c (PREREG-P4C.md §3): step-past-EOS forcing. The native engine's
++    # ONLY decode stop-check is `output_ids[-1] == self.eos_token_id`
++    # (moe_infinity/engine/generation_loop.py _generate_standard); no logits
++    # masking exists on this path. Flip the attribute to -1 so exactly
++    # max_tokens steps run with sampled tokens kept in-stream (EOS preserved).
++    # Readback recorded per cell json (res["force_steps"]).
++    force_steps = None
++    if a.force_steps:
++        nge = getattr(model, "_native_generation_engine", None)
++        if nge is None:
++            raise RuntimeError("--force-steps: native generation engine not found on MoE model")
++        force_steps = {"cls": type(nge).__name__,
++                       "eos_before": getattr(nge, "eos_token_id", None)}
++        nge.eos_token_id = -1
++        force_steps["eos_after"] = getattr(nge, "eos_token_id", None)
++        if force_steps["eos_after"] != -1:
++            raise RuntimeError("--force-steps: eos_token_id flip failed")
++        print(f"exp753p4c force-steps cls={force_steps['cls']} "
++              f"eos_before={force_steps['eos_before']} eos_after={force_steps['eos_after']}", flush=True)
++
+     LASTWIN = [0, 0]  # CLOCK_MONOTONIC ns (same clock as C++ steady_clock on Linux)
+ 
+     def gen(p, n):
+@@ -195,11 +219,14 @@
+               f"hits+{rows[-1]['stats_delta'].get('policy_routed_hits')} "
+               f"miss+{rows[-1]['stats_delta'].get('policy_routed_misses')}", flush=True)
+     s1 = snap(getter)
++    if force_steps is not None:
++        force_steps["row_lens"] = [r["n_new"] for r in rows]
+     res = {"arm": a.arm_name, "policy": a.policy, "ratio": a.ratio, "model": a.model, "max_new": a.max_new,
+            "load_s": load_s, "stats_getter": getattr(getter, "__qualname__", repr(getter)),
+            "stats_start": s0, "stats_end": s1, "rows": rows,
+            "torch": torch.__version__, "cuda": torch.version.cuda,
+            "allow_tf32": allow_tf32,
++           "force_steps": force_steps,
+            "invocation_gate_flip": invocation_gate_flip,
+            "gpu": torch.cuda.get_device_name(0), "host": platform.node(),
+            "visible": os.environ.get("CUDA_VISIBLE_DEVICES"),

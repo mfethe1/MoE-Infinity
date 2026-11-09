@@ -1,0 +1,11 @@
+[
+ {"id":"hf_1","arm":"hf","stress":0,"gpu":1},
+ {"id":"a_1","arm":"A","stress":0,"gpu":1},
+ {"id":"b_1","arm":"B","stress":0,"gpu":1},
+ {"id":"c_1","arm":"C","stress":0,"gpu":1},
+ {"id":"g_probe","arm":"G","stress":0,"gpu":1},
+ {"id":"c_2","arm":"C","stress":0,"gpu":1},
+ {"id":"b_2","arm":"B","stress":0,"gpu":1},
+ {"id":"a_2","arm":"A","stress":0,"gpu":1},
+ {"id":"hf_2","arm":"hf","stress":0,"gpu":1}
+]

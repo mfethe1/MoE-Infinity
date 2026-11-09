@@ -1,0 +1,51 @@
+exp753p4c FREEZE — frozen BEFORE measurement-cell execution (smoke v2 passed 2026-11-09T15:14Z,
+verdict out/SMOKE-P4C.txt = SMOKE-P4C-PASS; pre-freeze smoke, disclosed per exp753 §10 precedent).
+
+Experiment: stack1001-contrib-exp753p4c-p4-clean-clearance-winnie-v1-20261109 (working id
+exp753p4c; coordinator may renumber). Lane 79990-tier1-7687a6bf1295.
+
+Purpose: clean-clearance rerun of the exp753 engine cells to settle the reclass753-framed
+alternative explanation for the p4 parity failure class (instrument defect: the MoE-Infinity
+native generate ignores min_new_tokens and stops at EOS). Single intervention: `--force-steps`
+flips GenerationEngine.eos_token_id 50279 -> -1 post-construction (provenance recorded per run),
+so the decode runs exactly 64 steps with EOS kept in-stream at its sampled index; the p4 row is
+judged by the UNCHANGED frozen analyzer predicate:
+    engine p4 pass <=> n_new==64 and len(out_ids)==64 and out_ids[:21]==engine_ref[4]  (EOS at 20)
+Non-p4 rows are unchanged-stream by construction (only p4 emitted EOS before step 63 in the
+sealed run); the same analyzer judges them strictly.
+
+CHANGE DISPOSITIONS vs sealed exp753 (sha pins in out/RUN_SHA256 at runtime):
+- engine_arm753.py -> engine_arm753_p4.py (engine_arm753_p4.patch): ONLY additions are the
+  --force-steps arg, the eos flip + provenance, and force_steps/row_lens in the run json. Closed
+  by independent review REVIEW-P4C (Q2: minimal, behaviorally inert without the flag).
+- run_exp753p4.sh (adapted from run_exp753.sh 00233144...): new work dir ~/exp753p4 (sealed
+  ~/exp753 tree untouched); engine arms gain --force-steps; RUN_SHA256 additionally pins
+  moe_infinity/engine/generation_loop.py + moe_infinity/entrypoints/big_modeling.py; per-cell
+  FORCED-LEN fail-fast -> out/ANOMALY. Same runner pattern, arms, configs, env.
+- smoke753p4.sh: v2 (identity-matched rows, presence + negative-banner checks, S3 C-style path).
+- refs: reclass753/refs_v2 (fixed probe strip 048b5648, R1 != R2, analyzer unchanged) — hashes
+  engine_ref cb9fe5fa..., hf_ref 45ef5bc9..., same refs the reclass recomputation used.
+- analyze753.py UNCHANGED (sha256 18e1d3990f60622f93d7ba8ab468b8b5a576af257b9b020d3f2110719c2be35f);
+  graph_probe.py = reclass-fixed strip (048b5648...); hf_arm.py UNCHANGED; prompts.json/cells.json
+  UNCHANGED (prompts sha 6d06ff56..., cells sha 7e9c1eab...).
+
+REVIEW (pi --print --provider mimo --model mimo --no-tools; see REVIEW-P4C.md): Q1 mechanism yes,
+Q2 diff minimal yes, Q3 gate satisfiable yes, Q4 smoke sound (hygiene fixed in v2), Q5 no P0 in
+mechanism/diff. Findings 1-11 dispositioned in PREREG-P4C.md §8.5; pass B verdict: FINDING-1-
+DOWNGRADED: yes / BLOCKING: none.
+
+FROZEN RULES (in addition to PREREG-P4C.md): exactly one attempt per cell; no selective reruns;
+whole-run void + new UID on documented external invalidation only. Engine p4 stream suffix
+(indices 21..63) quarantined from downstream consumers. No cross-run median comparison.
+
+Run identity: Winnie (Harrisons-Mac-mini, WSL2 Ubuntu 22.04, kernel 6.18.33.2-microsoft-standard-
+WSL2), GPU1 = NVIDIA GeForce RTX 5060 Ti 16GB (CUDA_VISIBLE_DEVICES=1); model
+~/models/OLMoE-1B-7B-0125-Instruct; offload dir ~/moe-offload; nproc=20; venv ~/venvs/moei-engine;
+private build /home/mfeth/exp753/src (pin heads in out/ENV.txt + out/RUN_SHA256). MoE-Infinity
+artifact: ref bc95ccb (benchmark fork). HOST=inventory-only (no GRAPH_FENCE).
+
+Each runner run SHA256s (out/RUN_SHA256) before any cell: allquiet746.sh mon753.sh nvsamp.py
+engine_arm753_p4.py hf_arm.py graph_probe.py prompts.json cells.json analyze753.py run_exp753p4.sh
+smoke753p4.sh PREREG-P4C.md FREEZE expert_dispatcher.cpp infra753.inc _store*.so generation_loop.py
+big_modeling.py refs/engine_ref.json refs/hf_ref.json. HASH MATCHES REFERENCED SEALS (analyze753
+18e1d399...) EXPECTED AND MECHANICALLY CHECKED BY THE FROZEN ANALYZER.
