@@ -1,0 +1,48 @@
+--- a/expert_dispatcher.cpp	2026-11-07 15:00:30
++++ b/expert_dispatcher.cpp	2026-11-08 20:36:18
+@@ -1756,7 +1756,17 @@
+       throw std::runtime_error("injected retirement_launch failure");
+     }
+     if (Exp752Mode() >= 1) {
+-      cudaEvent_t retire_event = AcquireCompletionEvent(gpu_id);
++      cudaEvent_t retire_event;
++      // Fix752-D1: AcquireCompletionEvent may throw (event pool creation);
++      // without this guard the pending_retirement_callbacks_ increment above
++      // would never be undone and ~ExpertDispatcher would hang on the cv.
++      try {
++        retire_event = AcquireCompletionEvent(gpu_id);
++      } catch (...) {
++        pending_retirement_callbacks_.fetch_sub(1, std::memory_order_acq_rel);
++        delete retire;
++        throw;
++      }
+       cudaError_t ev_status = cudaEventRecord(retire_event, exec_stream);
+       if (ev_status != cudaSuccess) {
+         ReleaseCompletionEvent(retire_event, gpu_id);
+@@ -2879,7 +2889,25 @@
+     }
+     if (!retry.empty()) {
+       std::this_thread::sleep_for(std::chrono::microseconds(50));
+-      completion_retirement_queue_.Push(retry);
++      // Fix752-D2: ThreadSafeQueue::Push silently drops when closed, so a
++      // re-push racing the destructor's Close() leaked the batch's cuda event
++      // handles. Serialize against Close: a batch is either re-queued (and the
++      // closed queue still drains its remaining items) or routed to
++      // destructor_fallback_events_, which ~ExpertDispatcher releases.
++      bool requeued = false;
++      {
++        std::lock_guard<std::mutex> lock(completion_repush_mutex_);
++        if (!completion_repush_closed_) {
++          completion_retirement_queue_.Push(retry);
++          requeued = true;
++        }
++      }
++      if (!requeued) {
++        std::lock_guard<std::mutex> lock(route_state_mutex_);
++        for (auto& item : retry) {
++          destructor_fallback_events_.push_back(std::move(item.record));
++        }
++      }
+     }
+     items.clear();
+   }

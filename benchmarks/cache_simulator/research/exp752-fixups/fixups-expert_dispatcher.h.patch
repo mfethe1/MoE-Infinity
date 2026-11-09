@@ -1,0 +1,28 @@
+--- a/expert_dispatcher.h	2026-11-07 15:00:30
++++ b/expert_dispatcher.h	2026-11-08 20:36:18
+@@ -228,7 +228,13 @@
+       exec_queue_[i].Close();
+     }
+     route_queue_.Close();
+-    completion_retirement_queue_.Close();
++    {
++      // Fix752-D2: set the closed flag and Close atomically wrt the
++      // retirement thread's re-push path.
++      std::lock_guard<std::mutex> lock(completion_repush_mutex_);
++      completion_repush_closed_ = true;
++      completion_retirement_queue_.Close();
++    }
+     retirement_queue_.Close();
+     for (int i = 0; i < static_cast<int>(cache_cv_.size()); ++i) {
+       NotifyCacheWaiters(i);
+@@ -629,6 +635,10 @@
+   std::vector<CompletionEventRecord> destructor_fallback_events_;
+   ThreadSafeQueue<std::vector<CompletionRetireItem>>
+       completion_retirement_queue_;
++  // Fix752-D2: serializes the retirement thread's batch re-push against the
++  // destructor's queue Close() (see CompletionRetirementFunc).
++  std::mutex completion_repush_mutex_;
++  bool completion_repush_closed_{false};
+   std::atomic<std::int64_t> pending_completion_retirement_callbacks_{0};
+   std::mutex completion_retirement_callback_mutex_;
+   std::condition_variable completion_retirement_callback_cv_;
