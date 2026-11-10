@@ -30,7 +30,7 @@ if [ ! -d /root/MoE-Infinity ]; then git clone -q https://github.com/EfficientMo
 cd /root/MoE-Infinity && git checkout -q 033798811664f5d89cae58049ff16e912ebc5862 || die checkout
 git diff --quiet && { git apply $W/winnie-local.diff || die diff-apply; }
 # exp755 overlay: the exp752-fixups sources (retire-by-event + D1/D2 teardown fixes) must be byte-exact.
-sha256sum -c $W/SRC_FIXED.sha256 || die src-fixed-sha
+(cd $W && sha256sum -c SRC_FIXED.sha256) || die src-fixed-sha
 cp $W/src_fixed/expert_dispatcher.cpp $W/src_fixed/expert_dispatcher.h core/parallel/
 log "SRC $(git rev-parse --short HEAD) diff-lines=$(git diff | wc -l) + overlay src_fixed"
 # AMENDMENT3 (exp751): CUDA 12.8 ships only legacy NVTX C headers; mirror Winnie's header-only NVTX v3 on CPATH.
