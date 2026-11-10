@@ -1,0 +1,38 @@
+== exp760 verdict (analyzer A2) ==
+anchor: valid Q cells ['Q1', 'Q2', 'Q3'] == sealed refs (byte-identical)
+cells (valid/total per arm): Q:3/3, C:3/3, G:3/3, CG:1/3
+C1 arm=C valid=True why=[] loadavg=9.59945945945946 util=9.558869701726845 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3617052'] foreign=[]
+C2 arm=C valid=True why=[] loadavg=10.704871794871796 util=9.163564159841151 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=[] foreign=[]
+C3 arm=C valid=True why=[] loadavg=9.668684210526317 util=9.427029804727647 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3662156'] foreign=[]
+CG1 arm=CG valid=False why=['manip-fail-gpu(co-tenant absent)'] loadavg=12.32942857142857 util=61.941887621926085 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3627451'] foreign=[]
+CG2 arm=CG valid=True why=[] loadavg=12.24764705882353 util=61.00028256569652 qw=112 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3637054'] foreign=[]
+CG3 arm=CG valid=False why=['manip-fail-gpu(co-tenant absent)'] loadavg=12.127611940298507 util=60.02425799086758 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3672322'] foreign=[]
+G1 arm=G valid=True why=[] loadavg=2.34 util=73.86865515436943 qw=109 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3622913'] foreign=[]
+G2 arm=G valid=True why=[] loadavg=2.185945945945946 util=71.40252897787144 qw=110 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3646606'] foreign=[]
+G3 arm=G valid=True why=[] loadavg=2.28972972972973 util=72.2636095467954 qw=114 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3667947'] foreign=[]
+Q1 arm=Q valid=True why=[] loadavg=0.8530434782608696 util=15.243838028169014 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3614557'] foreign=[]
+Q2 arm=Q valid=True why=[] loadavg=1.799090909090909 util=15.941751889728769 qw=110 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3657158'] foreign=[]
+Q3 arm=Q valid=True why=[] loadavg=1.355 util=15.893428063943162 qw=0 QUIET diverged_prompts=[] counters={'route_failures': 0, 'comp_retired': 0} own=['3659705'] foreign=[]
+VERDICT: CONTENTION-SAFE (bounded; no divergence observed)
+  arm Q: 0/3 divergent cells; one-sided 95% CP upper bound on per-cell divergence p = 0.632
+  arm C: 0/3 divergent cells; one-sided 95% CP upper bound on per-cell divergence p = 0.632
+  arm G: 0/3 divergent cells; one-sided 95% CP upper bound on per-cell divergence p = 0.632
+  arm CG: 0/1 divergent cells; one-sided 95% CP upper bound on per-cell divergence p = 0.950
+  pooled: 0/10; 95% CP upper bound p = 0.259
+  Claim limit: 'no divergence observed in n cells under these manipulations' - never 'deterministic'.
+invalid/flagged cells (excluded from verdict counts, per PREREG):
+  CG1: manip-fail-gpu(co-tenant absent)
+  CG3: manip-fail-gpu(co-tenant absent)
+Timing descriptive only (no perf claim):
+  C1 (C): mean decode 5.09 tok/s
+  C2 (C): mean decode 5.01 tok/s
+  C3 (C): mean decode 4.93 tok/s
+  CG1 (CG): mean decode 1.66 tok/s
+  CG2 (CG): mean decode 1.62 tok/s
+  CG3 (CG): mean decode 1.74 tok/s
+  G1 (G): mean decode 3.54 tok/s
+  G2 (G): mean decode 3.61 tok/s
+  G3 (G): mean decode 3.62 tok/s
+  Q1 (Q): mean decode 11.47 tok/s
+  Q2 (Q): mean decode 11.53 tok/s
+  Q3 (Q): mean decode 11.57 tok/s
