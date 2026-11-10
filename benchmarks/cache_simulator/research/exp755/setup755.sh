@@ -36,7 +36,7 @@ log "SRC $(git rev-parse --short HEAD) diff-lines=$(git diff | wc -l) + overlay 
 # AMENDMENT3 (exp751): CUDA 12.8 ships only legacy NVTX C headers; mirror Winnie's header-only NVTX v3 on CPATH.
 NVTXH=$(find /opt/nvidia /usr/local/cuda/ -path '*nvtx/include/nvtx3/nvtx3.hpp' 2>/dev/null | head -1); [ -n "$NVTXH" ] || die nvtx3-header
 export CPATH=$(dirname $(dirname $NVTXH)); log "NVTX3 $CPATH sha=$(sha256sum $NVTXH | cut -c1-12)"
-MOE_ENABLE_SM120=1 MOE_ENABLE_SM90=0 CUTLASS_DIR=/root/cutlass MAX_JOBS=16 $P/pip install --no-build-isolation --no-deps -e . > $W/build.log 2>&1 || { tail -30 $W/build.log >> $LOG; die build; }
+MOE_ENABLE_SM120=1 MOE_ENABLE_SM90=0 CUTLASS_DIR=/root/cutlass MAX_JOBS=4 $P/pip install --no-build-isolation --no-deps -e . > $W/build.log 2>&1 || { tail -30 $W/build.log >> $LOG; die build; }
 log BUILD-OK
 cd /root && $P/python -c "from moe_infinity import MoE; import moe_infinity; print('IMPORT-OK', moe_infinity.__file__)" >>$LOG 2>&1 || die import
 log IMPORT-OK
