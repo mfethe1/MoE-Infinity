@@ -1,0 +1,12 @@
+# FREEZE-759 2026-11-10T16:15Z
+# exp759: head-to-head PR #353 (b7f6ca4) vs PR #354 (827019db) vs sealed H, one envelope, Winnie GPU1
+fbc57c800549d40163d54e118efc028fd74351e2410e6873d2eb17c8a9208203  PREREG.md
+d0aaf33ee8431897a50fa1e211aa3f969924f473e877f91d39c1e26dc15139b4  cells759.json
+1aa20979db3f4d51b106b7cc6715ba2ccdbb101b0301f4ddd3ed266fd3baae56  run_exp759.sh
+fb6757b8df619d37dae0518567df7f7f9817cdb2bd0a227f23243bc0fa03d9da  analyze759.py
+c814b11b4e6a9853bdc0d646ce613312a720df71ceb38018c265eba2821c57f1  build759.sh
+44d28426c3dcc26f9b6ebd9e3592bff781256e680f263f17da189a4306dc4ba4  refs/H_2.json
+9532e04b4655d2c68847bfd697cafb07ad946f507969a688dbf484df5d9d6322  refs/H_3.json
+da15254592de3a8812e28dcb4719e0567a750108bbbc9c99a5d9a91d46ea4ac2  refs/RC_2.json
+95dd72dd0f7d36f7faf4dc4570dc5703060c2ab8f92a9f7f05f32c909a760bea  refs/RC_3.json
+# envelope files (engine_arm.py, hf_arm.py, prompts.json, allquiet746.sh, mon752.sh, nvsamp.py, grouped_moe_prefill_local.diff) copied byte-identical from /home/mfeth/exp756 on Winnie at ship time; recorded in out/RUN_SHA256 at run start.

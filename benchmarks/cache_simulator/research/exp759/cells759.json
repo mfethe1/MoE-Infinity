@@ -1,0 +1,12 @@
+[
+ {"id": "hf_1",  "arm": "hf",  "stress": 0, "gpu": 1},
+ {"id": "H_1",   "arm": "H",   "stress": 0, "gpu": 1},
+ {"id": "P34_1", "arm": "P34", "stress": 0, "gpu": 1},
+ {"id": "RC_1",  "arm": "RC",  "stress": 0, "gpu": 1},
+ {"id": "H_2",   "arm": "H",   "stress": 0, "gpu": 1},
+ {"id": "P34_2", "arm": "P34", "stress": 0, "gpu": 1},
+ {"id": "RC_2",  "arm": "RC",  "stress": 0, "gpu": 1},
+ {"id": "H_3",   "arm": "H",   "stress": 0, "gpu": 1},
+ {"id": "P34_3", "arm": "P34", "stress": 0, "gpu": 1},
+ {"id": "RC_3",  "arm": "RC",  "stress": 0, "gpu": 1}
+]
