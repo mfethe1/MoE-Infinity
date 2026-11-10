@@ -1,0 +1,7 @@
+# VOID: exp762 launch attempt 1 (2026-11-10T20:27:52Z) - exit 9 at IDENTITY gate, ZERO cells ran.
+# Cause: runner grep pattern could not match ENV.txt two-path format; identity itself was CORRECT
+# (build /home/mfeth/exp759/src753 with _store.cpython-312). Fail-closed gate worked as designed.
+# Also strengthened busy-gate: unit list missed tier1 DETACHED exp761 CG3 rerun (bash 3834035,
+# launched 20:17:45Z outside systemd); busy() now also scans foreign run_expNNN.sh processes
+# (single-arg pgrep pattern; WSL pgrep -f does not match across argv NUL boundary).
+# Freeze attempt-1 VOID. Attempt-2 re-freezes all artifacts with fixed runner. No measurement occurred.

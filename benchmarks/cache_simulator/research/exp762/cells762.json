@@ -1,0 +1,14 @@
+[
+ {"id": "LGC_1", "arm": "LGC", "spec_prefetch": "off", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "SPEC_1", "arm": "SPEC", "spec_prefetch": "on", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "OVR_1", "arm": "OVR", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "off"},
+ {"id": "ENF_1", "arm": "ENF", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "enforce"},
+ {"id": "LGC_2", "arm": "LGC", "spec_prefetch": "off", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "SPEC_2", "arm": "SPEC", "spec_prefetch": "on", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "OVR_2", "arm": "OVR", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "off"},
+ {"id": "ENF_2", "arm": "ENF", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "enforce"},
+ {"id": "LGC_3", "arm": "LGC", "spec_prefetch": "off", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "SPEC_3", "arm": "SPEC", "spec_prefetch": "on", "spec_overlap": "off", "overlap_policy": "off"},
+ {"id": "OVR_3", "arm": "OVR", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "off"},
+ {"id": "ENF_3", "arm": "ENF", "spec_prefetch": "on", "spec_overlap": "on", "overlap_policy": "enforce"}
+]

@@ -1,0 +1,7 @@
+# VOID: exp762 attempt 2 (2026-11-10T20:31:19Z-...) - ALL 12 cells failed at argparse in <1s each.
+# Cause: variable-name collision inherited from exp759 runner (verbatim-plus-additive): nvsamp
+# sampler assigned SP=$! clobbering the spec_prefetch flag -> engine got --spec-prefetch <pid>.
+# Zero model loads, zero GPU work, zero json outputs, zero measurements. Evidence: out.attempt2-*/
+# (FAILED lists 12 cells; logs show argparse 'invalid choice' for every cell).
+# Fixes for attempt 3: sampler pid renamed SMP; fail-closed per-cell config validation gate
+# (ARM/SP/SO/OP literals). Freeze attempt-2 VOID; attempt-3 re-freezes below.

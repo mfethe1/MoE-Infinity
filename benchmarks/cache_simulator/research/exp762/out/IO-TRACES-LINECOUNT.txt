@@ -1,0 +1,13 @@
+   28400 ENF_1.io.jsonl
+   28400 ENF_2.io.jsonl
+   28400 ENF_3.io.jsonl
+   28400 LGC_1.io.jsonl
+   28400 LGC_2.io.jsonl
+   28400 LGC_3.io.jsonl
+   28400 OVR_1.io.jsonl
+   28400 OVR_2.io.jsonl
+   28400 OVR_3.io.jsonl
+   28400 SPEC_1.io.jsonl
+   28400 SPEC_2.io.jsonl
+   28400 SPEC_3.io.jsonl
+  340800 total

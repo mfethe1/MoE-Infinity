@@ -1,0 +1,8 @@
+# exp762 FREEZE attempt-3 2026-11-10T20:43:27Z (attempt-1 identity-grep void, attempt-2 SP-collision void; zero measurements in both)
+# unit exp762run; busy-gated units + /proc foreign-runner scan
+9e874ab2e5a7b66e60fb8424b165c6862de9e9902a8c63f816e5996206d1414e  engine_arm762.py
+d5270dd28290224488e65ad6bf11b315a95535b408ff02fe944a1ea15208f6f5  cells762.json
+c273c9b2710288d5a872b14bb933a3109f86996655f65faa31fb03f18127fcb1  run_exp762.sh
+ba2cf1f482c84eb5568815613decfce39bea0f3bb9975c58d1d719b063fea0dc  analyze762.py
+6d06ff563dd9f24ec17da9e7ea5b9910f76dfaebc536d638bff45dddad7f4468  prompts.json
+3c98d2bc2f1a5f8eff09eec8acdc875f0fa5d0fa11c25edefedf75f2066e6bc6  DECISION-TREE-762.md

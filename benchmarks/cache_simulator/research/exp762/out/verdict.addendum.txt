@@ -1,0 +1,15 @@
+ADDENDUM: banner re-adjudicated (true 'exp752 mode=2' in log): ENF_1,ENF_2,ENF_3,LGC_1,LGC_2,LGC_3,OVR_1,OVR_2,OVR_3,SPEC_1,SPEC_2,SPEC_3
+exp762 analyzer (ADDENDUM banner re-adjudication)
+LGC: valid=3 LGC_1=84.060 LGC_2=84.873 LGC_3=81.985
+SPEC: valid=3 SPEC_1=101.276 SPEC_2=103.533 SPEC_3=99.369
+OVR: valid=3 OVR_1=91.421 OVR_2=90.862 OVR_3=91.908
+ENF: valid=3 ENF_1=92.685 ENF_2=96.178 ENF_3=90.973
+PRIMARY OVR-vs-LGC: +-9.28% ms/tok [CI95 -10.97, -7.81]  (LGC 83.639 -> OVR 91.397)
+SPEC-vs-LGC: +-21.23% ms/tok [CI95 -23.79, -18.72]  (LGC 83.639 -> SPEC 101.392)
+OVR-vs-SPEC (timing): +9.86% ms/tok [CI95 8.37, 11.39]  (SPEC 101.392 -> OVR 91.397)
+ENF-vs-OVR (budget): +-2.06% ms/tok [CI95 -4.36, 0.08]  (OVR 91.397 -> ENF 93.279)
+LGC: cold=89.916 warm=80.969 ms/tok  lockwarn=0
+SPEC: cold=116.774 warm=97.699 ms/tok  lockwarn=0
+OVR: cold=97.158 warm=88.453 ms/tok  lockwarn=0
+ENF: cold=104.049 warm=91.218 ms/tok  lockwarn=0
+VERDICT: NO-GAIN (CI95lo < 5%)
