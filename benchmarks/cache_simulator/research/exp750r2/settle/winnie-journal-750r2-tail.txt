@@ -1,0 +1,14 @@
+Nov 09 22:16:38 DESKTOP-PBE7J2V bash[2248292]: == 2026-11-09T22:16:38Z b2_S1_x build=F gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=3600
+Nov 09 22:20:51 DESKTOP-PBE7J2V bash[2248292]: b2_S1_x RC=0
+Nov 09 22:20:51 DESKTOP-PBE7J2V bash[2248292]: == rerun b2_K2 as b2_K2_x (build=P gpus=0,1 r=0.2 clb=1 arm=K2)
+Nov 09 22:20:52 DESKTOP-PBE7J2V bash[2248292]: == 2026-11-09T22:20:52Z b2_K2_x build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+Nov 09 22:32:58 DESKTOP-PBE7J2V bash[2248292]: b2_K2_x RC=0
+Nov 09 22:32:58 DESKTOP-PBE7J2V bash[2248292]: == rerun b3_K2 as b3_K2_x (build=P gpus=0,1 r=0.2 clb=1 arm=K2)
+Nov 09 22:32:59 DESKTOP-PBE7J2V bash[2248292]: == 2026-11-09T22:32:59Z b3_K2_x build=P gpus=0,1 r=0.2 CUDA_LAUNCH_BLOCKING=1 timeout=5400
+Nov 09 22:45:01 DESKTOP-PBE7J2V bash[2248292]: b3_K2_x RC=0
+Nov 09 22:45:01 DESKTOP-PBE7J2V bash[2248292]: == rerun b3_R1 as b3_R1_x (build=U gpus=1 r=0.2 clb= arm=R1)
+Nov 09 22:45:01 DESKTOP-PBE7J2V bash[2248292]: == 2026-11-09T22:45:01Z b3_R1_x build=U gpus=1 r=0.2 CUDA_LAUNCH_BLOCKING=unset timeout=2400
+Nov 09 22:49:18 DESKTOP-PBE7J2V bash[2248292]: b3_R1_x RC=0
+Nov 09 22:49:18 DESKTOP-PBE7J2V bash[2248292]: == 2026-11-09T22:49:18Z EXP750-DONE
+Nov 09 22:49:18 DESKTOP-PBE7J2V systemd[340]: Finished exp750.service - /usr/bin/bash /home/mfeth/exp750/run_exp750.sh.
+Nov 09 22:49:18 DESKTOP-PBE7J2V systemd[340]: exp750.service: Consumed 6h 14min 30.387s CPU time, 47.2G memory peak, 0B memory swap peak.

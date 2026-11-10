@@ -1,0 +1,30 @@
+== date ==
+2026-11-10T00:21:39Z
+== unit state ==
+inactive
+Result=success
+ExecMainExitTimestamp=
+ExecMainStatus=0
+ActiveState=inactive
+SubState=dead
+== tgz sha (Winnie-side) ==
+cd362bc2d88afbaaf95623cfd1e800288911e512318c3579c0e6f1e3cc3ceb93  /home/mfeth/exp750r2-final-20261109T2339Z.tgz
+== out/ count + class verdict ==
+118
+G-Q: PASS  G-M: MANIP-OK
+VERDICT750 FIX-FASTER|NOREGRESS-T|TWO-GPU-SLOWER|PASS|MANIP-OK
+classify750 rc=0
+== run.log tail ==
+noise floor: R1 across-block CV(D)=0.007747069493559946
+G-Q: PASS  G-M: MANIP-OK
+VERDICT750 FIX-FASTER|INCOMPLETE|TWO-GPU-SLOWER|PASS|MANIP-OK flags: R1:EXCLUDED(b3_R1:FOREIGN)
+classify750 rc=0
+== 2026-11-07T16:41:28Z EXP750-DONE
+== R1 archive intact ==
+109
+== gpu state ==
+0, 0, 0
+1, 0, 370
+== busy exclusions ==
+== disk ==
+/dev/sdd       1007G  626G  330G  66% /

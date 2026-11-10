@@ -1,0 +1,37 @@
+== per-cell (independent recompute)
+  b1_C2 b1_C2: orig[D=196.261 E=241.650 q=0 GT=False GV=True FR=True(ollama=1) clean=False]  x[D=197.561 E=245.829 q=0 GT=False GV=True FR=False(clean) clean=False]
+  b1_H2 b1_H2: orig[D=37.970 E=38.715 q=0 GT=True GV=True FR=False(clean) clean=True]
+  b1_K2 b1_K2: orig[D=312.090 E=365.508 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b1_P2 b1_P2: orig[D=208.238 E=257.833 q=6 GT=True GV=True FR=True(ollama=1) clean=False]  x[D=197.882 E=243.573 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b1_R1 b1_R1: orig[D=98.458 E=113.909 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b1_S0 b1_S0: orig[D=450.450 E=533.018 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b1_S1 b1_S1: orig[D=98.104 E=114.661 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b2_C2 b2_C2: orig[D=193.161 E=239.617 q=0 GT=False GV=True FR=True(ollama=1) clean=False]  x[D=197.572 E=244.173 q=0 GT=False GV=True FR=False(clean) clean=False]
+  b2_H2 b2_H2: orig[D=38.088 E=38.887 q=0 GT=True GV=True FR=False(clean) clean=True]
+  b2_K2 b2_K2: orig[D=318.021 E=388.175 q=6 GT=True GV=True FR=True(ollama=1) clean=False]  x[D=307.910 E=364.095 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b2_P2 b2_P2: orig[D=201.453 E=248.649 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b2_R1 b2_R1: orig[D=98.437 E=114.651 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b2_S0 b2_S0: orig[D=451.350 E=535.310 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b2_S1 b2_S1: orig[D=99.572 E=114.834 q=6 GT=True GV=True FR=True(ollama=1;gpu0-gain=9176MiB) clean=False]  x[D=98.748 E=115.161 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b3_C2 b3_C2: orig[D=201.520 E=248.377 q=0 GT=False GV=True FR=False(clean) clean=False]
+  b3_H2 b3_H2: orig[D=38.305 E=39.039 q=0 GT=True GV=True FR=False(clean) clean=True]
+  b3_K2 b3_K2: orig[D=311.358 E=365.160 q=6 GT=True GV=True FR=True(ollama=1) clean=False]  x[D=308.893 E=364.441 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b3_P2 b3_P2: orig[D=199.042 E=245.285 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b3_R1 b3_R1: orig[D=99.062 E=114.739 q=6 GT=True GV=True FR=True(gpu0-gain=4642MiB) clean=False]  x[D=98.645 E=114.840 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b3_S0 b3_S0: orig[D=450.935 E=533.782 q=6 GT=True GV=True FR=False(clean) clean=True]
+  b3_S1 b3_S1: orig[D=97.244 E=113.366 q=6 GT=True GV=True FR=False(clean) clean=True]
+== replacements used:
+  b1_P2 -> b1_P2_x  (orig dirty: ollama=1)
+  b2_S1 -> b2_S1_x  (orig dirty: ollama=1;gpu0-gain=9176MiB)
+  b2_K2 -> b2_K2_x  (orig dirty: ollama=1)
+  b3_K2 -> b3_K2_x  (orig dirty: ollama=1)
+  b3_R1 -> b3_R1_x  (orig dirty: gpu0-gain=4642MiB)
+== missing effective cells: [('C2', 1), ('C2', 2), ('C2', 3)]
+D1 q=D(K2)/D(P2) per block: [1.5771533548254064, 1.5284444858607418, 1.5519030048554763] -> FIX-FASTER
+D2 s=D(S1)/D(R1) per block: [0.9964033868870893, 1.0031639210274876, 0.9858000028069304] -> NOREGRESS-T
+D3 u=D(S1)/D(P2) per block: [0.4957693068976477, 0.49018127187629246, 0.48856089330068686] -> TWO-GPU-SLOWER
+link D(S0)/D(S1) per block: [4.591567558934169, 4.570702013765378, 4.63714976017113]
+G-Q(indep): PASS  (ref prompts=6); C2/H2 quality (descriptive): b1_C2:0 b1_H2:0 b2_C2:0 b2_H2:0 b3_C2:0 b3_H2:0
+noise floor: R1 across-block CV(D)=0.001161
+POOLED-SENSITIVITY: run1 s=[1.031564875145683, 0.9902452735166181] run2 s=[0.9964033868870893, 1.0031639210274876, 0.9858000028069304] pooled s(D-median over 5 blocks)=1.001052
+  (run-1 D(S1) blocks=[102.78821350786731, 99.75799980955864], D(R1) blocks=[99.64299481731678, 100.74069776197172])

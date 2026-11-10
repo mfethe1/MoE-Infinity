@@ -1,0 +1,1 @@
+2026-11-09T18:46:42Z ollama_loaded_models=0 (-1 = API unreachable)

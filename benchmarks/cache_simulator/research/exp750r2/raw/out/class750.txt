@@ -1,0 +1,36 @@
+b1_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=37.97004534909132 E=38.71547358585303 clean=True
+b1_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=98.45781900794319 E=113.90935149984216 clean=True
+b1_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=FOREIGN D=196.26149172212797 E=241.65001842175116 clean=False REPLACED-BY b1_C2_x (D=197.56051803207288) x: present=True clean=True
+b1_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=312.0898858487924 E=365.5084646093201 clean=True
+b1_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=98.10370432503063 E=114.66128207030124 clean=True
+b1_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=208.23796483362833 E=257.8332944376598 clean=False REPLACED-BY b1_P2_x (D=197.8817626668532) x: present=True clean=True
+b1_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=450.4497861900803 E=533.0184691797513 clean=True
+b2_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=201.45285704786642 E=248.6492120310686 clean=True
+b2_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=FOREIGN D=193.1612667140721 E=239.6174953987611 clean=False REPLACED-BY b2_C2_x (D=197.57224429289752) x: present=True clean=True
+b2_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=99.57200914366348 E=114.83431374199427 clean=False REPLACED-BY b2_S1_x (D=98.74841769083609) x: present=True clean=True
+b2_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=318.0207219288965 E=388.1753210862371 clean=False REPLACED-BY b2_K2_x (D=307.9095085157037) x: present=True clean=True
+b2_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=451.3495915956492 E=535.3102388985462 clean=True
+b2_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=38.08763450785865 E=38.887208335836476 clean=True
+b2_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=98.43697088875896 E=114.65111425013674 clean=True
+b3_S0: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=450.93466111944826 E=533.7817492345494 clean=True
+b3_K2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=311.35840256354726 E=365.1596637578223 clean=False REPLACED-BY b3_K2_x (D=308.8932155237888) x: present=True clean=True
+b3_S1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=97.2439288013866 E=113.36592323459627 clean=True
+b3_R1: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=FOREIGN D=99.06170991275252 E=114.7389521011064 clean=False REPLACED-BY b3_R1_x (D=98.64468302343056) x: present=True clean=True
+b3_C2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=201.52014260280077 E=248.37712684347935 clean=True
+b3_H2: present=True rc=0 quality=0 timed_ok=True timer_ok=True foreign=CLEAN D=38.30473370700409 E=39.03947003163921 clean=True
+b3_P2: present=True rc=0 quality=6 timed_ok=True timer_ok=True foreign=CLEAN D=199.04157318939855 E=245.28479812443038 clean=True
+arm R1: D per block=[98.45781900794319, 98.43697088875896, 98.64468302343056] E per block=[113.90935149984216, 114.65111425013674, 114.83952750768367] CV(D)=0.0011610663507607847 median-rep-spread=0.03430249748844484
+arm S1: D per block=[98.10370432503063, 98.74841769083609, 97.2439288013866] E per block=[114.66128207030124, 115.16103136773381, 113.36592323459627] CV(D)=0.007699545461588299 median-rep-spread=0.022477939598077243
+arm S0: D per block=[450.4497861900803, 451.3495915956492, 450.93466111944826] E per block=[533.0184691797513, 535.3102388985462, 533.7817492345494] CV(D)=0.0009987674084213378 median-rep-spread=0.03538692245629414
+arm P2: D per block=[197.8817626668532, 201.45285704786642, 199.04157318939855] E per block=[243.57301021927924, 248.6492120310686, 245.28479812443038] CV(D)=0.009133359839438193 median-rep-spread=0.024486553092395107
+arm K2: D per block=[312.0898858487924, 307.9095085157037, 308.8932155237888] E per block=[365.5084646093201, 364.0951821407725, 364.44089013275516] CV(D)=0.007058832513265826 median-rep-spread=0.032307829179102174
+arm C2: D per block=[197.56051803207288, 197.57224429289752, 201.52014260280077] E per block=[245.8290835002117, 244.17343012464698, 248.37712684347935] CV(D)=0.01147759145764744 median-rep-spread=0.04141063624641661
+arm H2: D per block=[37.97004534909132, 38.08763450785865, 38.30473370700409] E per block=[38.71547358585303, 38.887208335836476, 39.03947003163921] CV(D)=0.004454046037911049 median-rep-spread=0.017684102733391136
+link ratio D(S0)/D(S1) per block: [4.591567558934169, 4.570702013765378, 4.63714976017113]
+D1 q=D(K2)/D(P2) per block: [1.5771533548254064, 1.5284444858607418, 1.5519030048554763] -> FIX-FASTER
+D2 s=D(S1)/D(R1) per block: [0.9964033868870893, 1.0031639210274876, 0.9858000028069304] -> NOREGRESS-T
+D3 u=D(S1)/D(P2) per block: [0.4957693068976477, 0.49018127187629246, 0.48856089330068686] -> TWO-GPU-SLOWER
+noise floor: R1 across-block CV(D)=0.0011610663507607847
+G-Q: PASS  G-M: MANIP-OK
+VERDICT750 FIX-FASTER|NOREGRESS-T|TWO-GPU-SLOWER|PASS|MANIP-OK
+classify750 rc=0
