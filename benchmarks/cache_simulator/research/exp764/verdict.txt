@@ -1,0 +1,20 @@
+samples: LGC 19923 (199.2s) SPEC 20447 (204.5s)
+F1_spec_policy   LGC    0.10s  SPEC    0.16s  Δ    +0.06s
+F2_verify        LGC    0.00s  SPEC    0.00s  Δ    +0.00s
+F3_reshape_sched LGC   44.68s  SPEC   45.94s  Δ    +1.26s
+F4_kernel_glue   LGC   39.25s  SPEC   35.31s  Δ    -3.94s
+F5_other         LGC  115.20s  SPEC  123.06s  Δ    +7.86s
+positive delta total P = 9.18s
+top-family share F5_other = 85.6%; top-2 = 99.3%
+SPEC top-10 leaves by self-time:
+    39.97s  OffloadEngine.setup_archer_hooks (moe_infinity/runtime/model_offload.py:2519)
+    21.14s  DistributedExpertExecutor.wait_dispatch_local (moe_infinity/distributed/expert_executor.py:1033)
+     9.69s  Linear.forward (torch/nn/modules/linear.py:134)
+     9.11s  DistributedExpertExecutor._dispatch_eager_local (moe_infinity/distributed/expert_executor.py:438)
+     7.11s  rotate_half (transformers/models/olmoe/modeling_olmoe.py:130)
+     6.74s  OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:56)
+     6.47s  ExpertPrefetcher.speculative_prefetch (moe_infinity/memory/expert_prefetcher.py:450)
+     5.50s  apply_rotary_pos_emb (transformers/models/olmoe/modeling_olmoe.py:154)
+     4.98s  OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:57)
+     4.85s  OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:55)
+VERDICT: ATTRIBUTED-A5 F5_other (85.6% of positive delta)
