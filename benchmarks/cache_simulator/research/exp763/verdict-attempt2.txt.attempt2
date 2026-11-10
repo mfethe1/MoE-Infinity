@@ -1,0 +1,20 @@
+LGC_1: wall=28.50s N_disp=5680 cov(sync)=12.50 cov(handoff)=12.46 cov(disp)=4.34 unattrib=12.16s
+LGC_2: wall=28.75s N_disp=5680 cov(sync)=13.33 cov(handoff)=13.28 cov(disp)=4.37 unattrib=11.04s
+LGC_3: wall=27.87s N_disp=5680 cov(sync)=12.98 cov(handoff)=12.94 cov(disp)=4.41 unattrib=10.46s
+SPEC_1: wall=34.40s N_disp=5680 cov(sync)=13.03 cov(handoff)=13.00 cov(disp)=2.45 unattrib=18.90s
+SPEC_2: wall=35.08s N_disp=5680 cov(sync)=12.83 cov(handoff)=12.79 cov(disp)=2.53 unattrib=19.71s
+SPEC_3: wall=34.05s N_disp=5680 cov(sync)=13.20 cov(handoff)=13.16 cov(disp)=2.55 unattrib=18.28s
+OVR_1: wall=31.00s N_disp=5680 cov(sync)=10.47 cov(handoff)=10.44 cov(disp)=3.23 unattrib=17.66s
+OVR_2: wall=30.80s N_disp=5680 cov(sync)=10.49 cov(handoff)=10.45 cov(disp)=3.24 unattrib=17.05s
+OVR_3: wall=31.13s N_disp=5680 cov(sync)=10.71 cov(handoff)=10.67 cov(disp)=3.29 unattrib=17.11s
+ENF_1: wall=31.60s N_disp=5680 cov(sync)=10.69 cov(handoff)=10.65 cov(disp)=3.09 unattrib=17.80s
+ENF_2: wall=32.94s N_disp=5680 cov(sync)=10.57 cov(handoff)=10.54 cov(disp)=3.27 unattrib=19.30s
+ENF_3: wall=30.92s N_disp=5680 cov(sync)=10.32 cov(handoff)=10.28 cov(disp)=3.12 unattrib=17.47s
+
+CONTRAST SPEC-vs-LGC: count_ratio med=1.000 Δcov_sync=+0.22s Δcov_handoff=+0.22s Δunattrib=+7.82s (tau=1.42s)
+BREAK-EVEN traffic h* = 1 - N_LGC/N_SPEC (necessary condition): med 0.000 [0.000,0.000]
+OVR-recovery cell1: Δcov_sync -2.56s Δunattrib -1.23s ΔN_disp +0
+OVR-recovery cell2: Δcov_sync -2.34s Δunattrib -2.66s ΔN_disp +0
+OVR-recovery cell3: Δcov_sync -2.49s Δunattrib -1.17s ΔN_disp +0
+FOLLOW-UP: D1->prefetch-policy-break-even D2->scheduling D3->exec-path D4->exec-path(policy CPU)
+VERDICT: DIAGNOSIS-D4-POLICY-CPU-DOMINATED

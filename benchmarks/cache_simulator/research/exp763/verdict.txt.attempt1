@@ -1,0 +1,18 @@
+LGC_1: wall=28.50s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1545, 'handoff': 0.4546, 'sync': 0.4562, 'routing': 0.0005, 'gpu': 0.1527}
+LGC_2: wall=28.75s B=0.0MiB GiB/s=0.00 shares={'expert': 0.152, 'handoff': 0.462, 'sync': 0.4636, 'routing': 0.0005, 'gpu': 0.1503}
+LGC_3: wall=27.87s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1582, 'handoff': 0.4644, 'sync': 0.4658, 'routing': 0.0005, 'gpu': 0.1566}
+SPEC_1: wall=34.40s B=0.0MiB GiB/s=0.00 shares={'expert': 0.0712, 'handoff': 0.3778, 'sync': 0.3789, 'routing': 0.0004, 'gpu': 0.07}
+SPEC_2: wall=35.08s B=0.0MiB GiB/s=0.00 shares={'expert': 0.072, 'handoff': 0.3646, 'sync': 0.3657, 'routing': 0.0005, 'gpu': 0.0707}
+SPEC_3: wall=34.05s B=0.0MiB GiB/s=0.00 shares={'expert': 0.075, 'handoff': 0.3865, 'sync': 0.3877, 'routing': 0.0005, 'gpu': 0.0737}
+OVR_1: wall=31.00s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1069, 'handoff': 0.3456, 'sync': 0.3468, 'routing': 0.0005, 'gpu': 0.1054}
+OVR_2: wall=30.80s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1053, 'handoff': 0.3394, 'sync': 0.3406, 'routing': 0.0005, 'gpu': 0.1038}
+OVR_3: wall=31.13s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1056, 'handoff': 0.3429, 'sync': 0.3441, 'routing': 0.0005, 'gpu': 0.1041}
+ENF_1: wall=31.60s B=0.0MiB GiB/s=0.00 shares={'expert': 0.0978, 'handoff': 0.3372, 'sync': 0.3384, 'routing': 0.0005, 'gpu': 0.0964}
+ENF_2: wall=32.94s B=0.0MiB GiB/s=0.00 shares={'expert': 0.1, 'handoff': 0.3271, 'sync': 0.3282, 'routing': 0.0005, 'gpu': 0.0985}
+ENF_3: wall=30.92s B=0.0MiB GiB/s=0.00 shares={'expert': 0.101, 'handoff': 0.3325, 'sync': 0.3337, 'routing': 0.0005, 'gpu': 0.0996}
+
+CONTRAST SPEC-vs-LGC: bytes_ratio med[range]=inf[inf,inf] Δsync=-0.0781 Δhandoff=-0.0778 Δfallback=-0.0828
+BREAK-EVEN traffic h* = fraction of SPEC expert traffic that must be useful: med 0.000 [0.000,0.000] (necessary condition for time break-even, not sufficient)
+implied added-traffic rate med nan GiB/s
+FOLLOW-UP: D1->prefetch-policy-break-even D2->scheduling D3->exec-path-handoff
+VERDICT: DIAGNOSIS-D1-OVER-FETCH-DOMINATED
