@@ -1,0 +1,14 @@
+[
+ {"id":"Q1","arm":"Q","stress":0,"gpu":1},
+ {"id":"C1","arm":"C","stress":12,"gpu":1},
+ {"id":"G1","arm":"G","stress":1,"gpu":1},
+ {"id":"CG1","arm":"CG","stress":12,"gpu":1},
+ {"id":"CG2","arm":"CG","stress":12,"gpu":1},
+ {"id":"G2","arm":"G","stress":1,"gpu":1},
+ {"id":"C2","arm":"C","stress":12,"gpu":1},
+ {"id":"Q2","arm":"Q","stress":0,"gpu":1},
+ {"id":"Q3","arm":"Q","stress":0,"gpu":1},
+ {"id":"C3","arm":"C","stress":12,"gpu":1},
+ {"id":"G3","arm":"G","stress":1,"gpu":1},
+ {"id":"CG3","arm":"CG","stress":12,"gpu":1}
+]

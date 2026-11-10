@@ -1,0 +1,16 @@
+FREEZE-760 — 2026-11-10T16:53:08Z — prereg BEFORE run (no data seen)
+512b11be4c493eb5f936dc0dcbb0e3857aa3b60a7c01c6537a89ec904064c923  PREREG.md
+ed7cdedbbece6c16cbe70c4769742eda4423ca4eb8fe71538c143c65fefeef80  cells760.json
+e2da640e0db9523c2df03f96f0a2a8fb4266365a6a0246be2fb5253c3be68fae  run_exp760.sh
+412e3f825087c0049bd4a1ed56b3315342da6e7ef56e63a6e2cebbc12744551e  analyze760.py
+fee327fe1ab3ab33daf16a32038b9a9d4d25301dc6e7cc000d50a44bcfc0dfbd  engine_arm.py (envelope, staged ~/exp760)
+6d06ff563dd9f24ec17da9e7ea5b9910f76dfaebc536d638bff45dddad7f4468  prompts.json (envelope)
+1dfc07c500e51e495fa07ef4bb30682e6acf494e32ee16578c661172c5eea22d  allquiet746.sh (envelope)
+12c1f05fa112e9f6fb09da6b563e1ba635d17470f224d2f4fd6f6a0eda47f5f5  nvsamp.py (envelope)
+fadf519fc8ec3e314dae8d732c8d88e0f4015fc7dbd21766282a80d1a3795603  gcol757.py (envelope, byte-reuse exp757)
+ab8f319c14ad1e9d4a82e6e3065880a967fc3e43bfa32476c81000c5dc6b8716  mon760.sh (byte-copy of mon757.sh renamed)
+da15254592de3a8812e28dcb4719e0567a750108bbbc9c99a5d9a91d46ea4ac2  refs/RC_2.json (sealed exp752 ref, via exp757)
+95dd72dd0f7d36f7faf4dc4570dc5703060c2ab8f92a9f7f05f32c909a760bea  refs/RC_3.json (sealed exp752 ref, via exp757)
+f54e5756ee182bcf7b5b887586791b9940d8f0addf8aab5cb35a7df192cc53ac  /home/mfeth/exp759/src753/moe_infinity/_store.cpython-312-x86_64-linux-gnu.so (build, no rebuild)
+src753 HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd = PR #353 head (matches SEAL-759)
+Analyzer: derived exp757 A2 (fixture-reviewed there) + no-rc-banner/no-log addition; local fixture PASS 2026-11-10 (C2 no-rc-banner fires, Q anchor valid, G/CG co-tenant gate fires, CP bounds print).
