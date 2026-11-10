@@ -12,9 +12,10 @@ for R in 0.75 0.70 0.65 0.60; do
      timeout 1800 $P/python engine_arm.py --model $M --offload $S --policy lcnu --ratio $R \
        --threads 4 --gpu-route on --prompts prompts.json --max-new 64 --warmup 1 \
        --out out/ladder-$R.json > out/ladder-$R.log 2>&1 </dev/null; then
-    # rc=0 alone false-passed before: require all rows present AND no OOM anywhere in the log
+    # rc=0 alone false-passed before: require ALL prompts' rows present AND no OOM anywhere in the log
+    N=$($P/python -c "import json;d=json.load(open('prompts.json'));print(len(d) if isinstance(d,list) else len(d.get('prompts',d)))")
     ROWS=$($P/python -c "import json;print(len(json.load(open('out/ladder-$R.json'))['rows']))" 2>/dev/null || echo 0)
-    if [ "$ROWS" -ge 10 ] && ! grep -q "out of memory" out/ladder-$R.log; then
+    if [ "$ROWS" -ge "$N" ] && ! grep -q "out of memory" out/ladder-$R.log; then
       echo "$R" > out/RATIO755
       echo "ratio $R FITS full workload (rows=$ROWS) at $(date -u +%FT%TZ); host=$(hostname); gpu=$(nvidia-smi --query-gpu=name --format=csv,noheader -i 0)" > out/AMENDMENT-ratio.txt
       cat out/AMENDMENT-ratio.txt; break
