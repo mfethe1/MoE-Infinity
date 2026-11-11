@@ -1,0 +1,12 @@
+exp769 unprofiled OS-counter differential
+SRC_HEAD=b7f6ca4d2caa
+OS_LGC: rows=6 inwin=700
+OS_SPEC: rows=6 inwin=845
+W(gen wall, unprofiled): LGC 36.05s SPEC 43.11s  DW=+7.06s (tau=2.0)
+window CPU-time: LGC 71.66s SPEC 84.14s  Dcpu=+12.48s (177% of DW)
+faults: minflt D=+0  majflt D=+0
+ctx switches: vol D=+1,997  nonvol D=-8
+covariates: RSSpeak LGC 15,320,156 SPEC 15,322,028 kB; threads 54/54; io R/W LGC 0/24,576 SPEC 0/12,288 kB
+tok/s mean: LGC 12.16 SPEC 9.65
+D1 CPU-DOMINATED: Dcpu +12.48s >= 0.8*DW -> cost is real CPU work; successor: which thread burns it (per-task /proc, perf)
+rc=1

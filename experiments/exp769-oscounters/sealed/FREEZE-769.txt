@@ -1,0 +1,8 @@
+FREEZE-769 2026-11-11T04:23:29Z
+engine_arm769.py 1f119bd017985083 (engine_arm767.py 9e874ab2e5a7b66e + additive --pidfile)
+sampler769.py    be1d6e88d620b29a (separate-process 20Hz procfs)
+run_exp769.sh    97f9c0b38e562313 (from run_exp767.sh 8f2bd52d980a8a32; py-spy removed; mfeth paths fixed after staging-attempt-1 identity-grep typo)
+analyze769.py    4cdfa976c0fd945f (fixtures 10/10 PASS on Mac)
+PREREG-769.md    05a9dcd680b1fe62
+fixtures769.py   f55421bc6645aece
+tau_wall=2.0; bars: cpu>=0.8*DW; maj>=100000; min>=5000000; nonvol>=500000
