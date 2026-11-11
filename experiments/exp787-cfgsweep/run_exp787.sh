@@ -1,0 +1,48 @@
+#!/bin/bash
+# exp787 runner (Winnie, WSL). Serial; GPU1 only; all cells QUIET; uhw=on everywhere.
+# Question: does any shipped MOE_GROUPED_MOE_CFG launch config beat the default table
+# for OLMoE batch-1 decode on sm_120 @ ratio 0.25 (exp786 regime)? Secondary: does
+# WK=1 reduce grouped-path nondeterminism? Engine sets env BEFORE importing
+# moe_infinity; runner scrubs MOE_GROUPED_MOE_CFG outside cells.
+cd ~/exp787 || exit 1
+source ~/venvs/moei-engine/bin/activate
+mkdir -p out
+busy(){ local u; for u in exp746 exp747 exp748 exp749 exp750 exp752build exp753 exp753p4 exp753p4build exp755 exp756 exp756build exp756build2 exp757 exp759 exp759build exp759run exp760 exp777 exp778 exp779 exp780 exp781 exp782 exp783 exp784 exp785 exp786; do systemctl --user is-active -q $u && return 0; done; return 1; }
+while busy; do sleep 60; done
+echo "== $(date -u +%FT%TZ) start"
+sha256sum engine_arm787.py cells787.json analyze787.py fixtures787.py run_exp787.sh PREREG-787.md prompts24.json \
+  allquiet746.sh mon760.sh nvsamp.py probe787.py /home/mfeth/exp759/src753/moe_infinity/_store*.so > out/RUN_SHA256
+PYTHONPATH=/home/mfeth/exp759/src753 python3 -c "import torch, moe_infinity, moe_infinity._store as s;print('moei-RC753', moe_infinity.__file__, s.__file__); print('torch', torch.__version__)" > out/ENV.txt 2>&1
+git -C /home/mfeth/exp759/src753 rev-parse HEAD >> out/ENV.txt 2>&1
+nproc >> out/ENV.txt; /usr/lib/wsl/lib/nvidia-smi -L >> out/ENV.txt
+grep -q "moei-RC753 /home/mfeth/exp759/src753/.* /home/mfeth/exp759/src753/moe_infinity/_store" out/ENV.txt \
+  || { echo "IDENTITY-FAIL: import path is not /home/mfeth/exp759/src753"; cat out/ENV.txt; exit 9; }
+grep -q "b7f6ca4d2caa5229698d78deb03b454fc20947dd" out/ENV.txt \
+  || { echo "IDENTITY-FAIL: src753 HEAD is not b7f6ca4"; cat out/ENV.txt; exit 9; }
+M=~/models/OLMoE-1B-7B-0125-Instruct
+
+while read -u 3 ID UHW CFG RATIO G; do
+  [ "$CFG" = "-" ] && CFG=""
+  [ -s out/$ID.json ] && { echo "skip $ID"; continue; }
+  QW=$(bash allquiet746.sh $G 5400 </dev/null)
+  MG=$(/usr/lib/wsl/lib/nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -i $G | tr -d ' ')
+  LA=$(cut -d' ' -f1 /proc/loadavg)
+  echo "$ID,$QW,$MG,$LA" >> out/precell.csv
+  [ "$MG" -gt 1024 ] && { echo "$ID gpu=$MG" >> out/FLAGGED.why; }
+  bash mon760.sh $G out/$ID.mon.csv </dev/null & MP=$!
+  python3 nvsamp.py $G out/$ID.util.csv 0.05 </dev/null & SP=$!; sleep 10
+  export CUDA_VISIBLE_DEVICES=$G
+  echo "== $(date -u +%FT%TZ) $ID cfg='$CFG' ratio=$RATIO gpu=$G qw=$QW la=$LA"
+  env -u MOE_INFINITY_UNVALIDATED_HW -u MOE_GROUPED_DECODE -u MOE_GROUPED_MOE_CFG -u MOEI_EXP752_MODE PYTHONPATH=/home/mfeth/exp759/src753 \
+    timeout 1800 python3 engine_arm787.py --model $M --offload ~/moe-offload --policy lcnu --ratio $RATIO \
+      --threads 4 --gpu-route on --prompts prompts24.json --max-new 32 --warmup 1 \
+      --resident-mode legacy --unvalidated-hw $UHW --grouped-cfg "$CFG" --out out/$ID.json > out/$ID.log 2>&1 </dev/null & WPID=$!
+  sleep 2; EPID=$(pgrep -P $WPID -f engine_arm787 | head -1)
+  [ -n "$EPID" ] && echo "$EPID" > out/$ID.eng.pid
+  wait $WPID; RC=$?
+  sleep 3; kill $MP $SP 2>/dev/null; wait $MP $SP 2>/dev/null
+  echo "$ID RC=$RC cfg='$CFG' ratio=$RATIO"; grep -E "prompt [0-9]+:" out/$ID.log | tail -2 | cut -c1-120
+  [ $RC -ne 0 ] && { tail -8 out/$ID.log; echo "$ID FAILED" >> out/FAILED; }
+done 3< <(python3 -c "import json;[print(c['id'],c['uhw'],c['cfg'] or '-',c['ratio'],c['gpu']) for c in json.load(open('cells787.json'))]")
+python3 analyze787.py . > out/verdict.txt 2>&1; cat out/verdict.txt
+echo "== $(date -u +%FT%TZ) EXP787-DONE"

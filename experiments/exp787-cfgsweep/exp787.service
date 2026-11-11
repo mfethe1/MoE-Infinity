@@ -1,0 +1,8 @@
+[Unit]
+Description=exp787 grouped-decode launch-config sweep sm120
+[Service]
+Type=oneshot
+WorkingDirectory=%h/exp787
+ExecStart=/bin/bash -lc 'bash /home/mfeth/exp787/run_exp787.sh'
+StandardOutput=append:/home/mfeth/exp787/out/unit.log
+StandardError=append:/home/mfeth/exp787/out/unit.log

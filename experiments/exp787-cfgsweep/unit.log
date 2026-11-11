@@ -1,0 +1,33 @@
+== 2026-11-11T20:15:22Z start
+== 2026-11-11T20:15:35Z C25a cfg='' ratio=0.25 gpu=1 qw=0 QUIET la=0.25
+C25a RC=0 cfg='' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 11.09 tok/s hits+2786 miss+2788
+[lcnu r=0.25 uhw=on] prompt 23: 10.87 tok/s hits+3174 miss+2420
+== 2026-11-11T20:18:52Z W25a cfg='1,8,1,2;1,8,1,2' ratio=0.25 gpu=1 qw=0 QUIET la=1.47
+W25a RC=0 cfg='1,8,1,2;1,8,1,2' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.71 tok/s hits+2769 miss+2808
+[lcnu r=0.25 uhw=on] prompt 23: 11.81 tok/s hits+3176 miss+2420
+== 2026-11-11T20:22:10Z B25a cfg='1,2,4,4;1,1,8,2' ratio=0.25 gpu=1 qw=0 QUIET la=1.60
+B25a RC=0 cfg='1,2,4,4;1,1,8,2' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.71 tok/s hits+2628 miss+2947
+[lcnu r=0.25 uhw=on] prompt 23: 11.31 tok/s hits+3156 miss+2442
+== 2026-11-11T20:25:26Z C25b cfg='' ratio=0.25 gpu=1 qw=0 QUIET la=1.76
+C25b RC=0 cfg='' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.04 tok/s hits+2794 miss+2782
+[lcnu r=0.25 uhw=on] prompt 23: 11.50 tok/s hits+3137 miss+2459
+== 2026-11-11T20:28:42Z W25b cfg='1,8,1,2;1,8,1,2' ratio=0.25 gpu=1 qw=0 QUIET la=1.37
+W25b RC=0 cfg='1,8,1,2;1,8,1,2' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 11.23 tok/s hits+2771 miss+2805
+[lcnu r=0.25 uhw=on] prompt 23: 11.54 tok/s hits+3183 miss+2414
+== 2026-11-11T20:32:02Z B25b cfg='1,2,4,4;1,1,8,2' ratio=0.25 gpu=1 qw=0 QUIET la=1.51
+B25b RC=0 cfg='1,2,4,4;1,1,8,2' ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.96 tok/s hits+2772 miss+2805
+[lcnu r=0.25 uhw=on] prompt 23: 11.76 tok/s hits+3180 miss+2413
+C (shipped table) pooled mean 11.237 tok/s n=48
+W (1,8,1,2;1,8,1,2) pooled mean 11.147 tok/s n=48 -> -0.80% rc=3
+B (1,2,4,4;1,1,8,2) pooled mean 11.100 tok/s n=48 -> -1.22% rc=3
+det[C] same-sha across reps: 18/24
+det[W] same-sha across reps: 17/24
+det[B] same-sha across reps: 11/24
+EXP787 rc=3
+== 2026-11-11T20:35:11Z EXP787-DONE

@@ -1,0 +1,7 @@
+C (shipped table) pooled mean 11.237 tok/s n=48
+W (1,8,1,2;1,8,1,2) pooled mean 11.147 tok/s n=48 -> -0.80% rc=3
+B (1,2,4,4;1,1,8,2) pooled mean 11.100 tok/s n=48 -> -1.22% rc=3
+det[C] same-sha across reps: 18/24
+det[W] same-sha across reps: 17/24
+det[B] same-sha across reps: 11/24
+EXP787 rc=3
