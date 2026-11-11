@@ -1,0 +1,20 @@
+FREEZE-772 (pre-launch)
+date: 2026-11-11 UTC
+files (sha256[:16]):
+  engine_arm772.py 1f119bd017985083  (== exp769/770/771 engine, byte-identical)
+  sampler772.py    9c39353053718c1c  (== sampler770/771, byte-identical; cross-check only)
+  run_exp772.sh    fc28f2c691a492b1  (3 cells: PY_LGC/PY_SPEC src753, PY_K4 src772 EXP772_K=4)
+  analyze772.py    83888bd4c8c9959b  (frozen decision rule, PREREG-772)
+  PREREG-772.md    640018b851223d8d
+  fixtures772.py   1e293dacbc269867  (9/9 PASS local AND remote)
+intervention: src772 = cp -a src753 + ONE guard in
+  ExpertPrefetcher.speculative_prefetch (before topk block; marker 'exp772 k-stride');
+  patched file sha 52ee6296f5e3fb36; anchor count 1 asserted; ast.parse gate;
+  import under PYTHONPATH OK; stride pattern verified (fresh topk on steps 1,5,9 for k=4).
+  src753 carries pre-existing dirty extensions/kernel/grouped_moe_prefill.cu —
+  inherited identically by src772 (same build both arms; HEAD b7f6ca4 unchanged).
+input: prompts.json 6d06ff563dd9f24e (cmp-identical to exp769)
+envelope: OLMoE-1B-7B, lcnu r=0.75, threads 4, gpu-route off, CUDA_VISIBLE_DEVICES=1,
+  venv moei-engine, py-spy 0.4.3 spawn 50Hz raw, 6 prompts x 64 tok, warmup 1.
+decision rule frozen in analyze772.py (tau_w=2.0; rc1 RECOVER / rc2 PARTIAL / rc7 NO-GAIN /
+  rc8 REGRESS / rc5 NO-BASELINE / rc4 / rc9). Busy-gate roster exp746..exp767 + exp771 + exp772.

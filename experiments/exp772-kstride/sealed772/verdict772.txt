@@ -1,0 +1,10 @@
+exp772 k-stride speculative prediction (k=4)
+SRC_HEAD=b7f6ca4d2caa
+PY_LGC: W=44.78s samples=4081 specleaf=0.00s tok/s=9.637694831723321
+PY_SPEC: W=52.48s samples=4362 specleaf=5.24s tok/s=7.759394786810474
+PY_K4: W=51.98s samples=4145 specleaf=4.92s tok/s=8.21884659731404
+D = W(SPEC)-W(LGC) = +7.70s (tau_w=2.0)
+W(K4)-W(SPEC) = -0.50s   specleaf ratio K4/SPEC = 0.94
+recovery R = 0.06
+NO-GAIN: R=0.06 -> successor: non-blocking/pinned copy or device-resident indices
+rc=7
