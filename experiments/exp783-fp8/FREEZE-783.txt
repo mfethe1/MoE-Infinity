@@ -1,0 +1,18 @@
+FREEZE-783 (2026-11-11) — sealed before first A/B cell run
+Question: uniform-FP8 expert residency vs BF16 store decode A/B (see PREREG-783.md, sha 5a460db27f19482e)
+Harness/files (sha256, local==remote verified):
+  engine_arm783.py  8e4f41879f62f2c7...  (= exp782 engine_arm.py + --resident-mode flag + offload/resident_mode in res)
+  cells783.json     6ee5d33113efbb4f...  (B1,F1,B2,F2 interleaved, quiet, GPU1)
+  run_exp783.sh     1667a82354595d21...
+  analyze783.py     684ff38fceb35ecd...  (fixtures 11/11 local py3.14 + remote py3.12)
+  fixtures783.py    bea80cc20d2a7a10...
+Build identity:
+  PYTHONPATH=/home/mfeth/exp759/src753; HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd (PR #353 head)
+  _store.cpython-312-x86_64-linux-gnu.so f54e5756ee182bcf7b5b887586791b9940d8f0addf8aab5cb35a7df192cc53ac
+  (IDENTICAL to exp782 frozen build; 0337988 native-FP8-sm_120 is ancestor of b7f6ca4 -> FP8 machinery present)
+Stores:
+  ~/moe-offload-fp8  7409513928 B (0.535x of bf16; converted 2026-11-11T11:29:06Z, rc=0, --quantize-experts fp8)
+  ~/moe-offload     13838673780 B (bf16, unchanged since exp781/782)
+GPUs: 2x RTX 5060 Ti; cells pinned CUDA_VISIBLE_DEVICES=1
+Smoke (pre-freeze, load-only, no A/B numbers): uniform_fp8 active, load 24.6 s, 48-tok cold gen coherent.
+Prereg attempt-1 budget: 3. No post-hoc gate edits on sealed data.

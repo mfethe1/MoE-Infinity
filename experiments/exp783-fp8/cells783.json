@@ -1,0 +1,6 @@
+[
+  {"id": "B1", "arm": "B", "store": "bf16", "gpu": 1},
+  {"id": "F1", "arm": "F", "store": "fp8",  "gpu": 1},
+  {"id": "B2", "arm": "B", "store": "bf16", "gpu": 1},
+  {"id": "F2", "arm": "F", "store": "fp8",  "gpu": 1}
+]

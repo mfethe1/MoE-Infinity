@@ -1,0 +1,78 @@
+{
+ "rc": 3,
+ "b_mean_tok_s": 10.605819247831159,
+ "f_mean_tok_s": 10.860750646641979,
+ "delta": 0.024036936030467526,
+ "det_b": true,
+ "det_f": true,
+ "cells": {
+  "B1": {
+   "arm": "B",
+   "n": 6,
+   "mean_tok_s": 10.6624094042438,
+   "shas": [
+    "50e0d0f37aa5d937",
+    "a415ea8f45ae7c0d",
+    "5c26a5b7d5492030",
+    "965d64f143ed11ce",
+    "1203c12ec77bc039",
+    "a1cf75473bf25807"
+   ],
+   "mode": "legacy",
+   "offload": "/home/mfeth/moe-offload",
+   "load_s": 44.132660002913326,
+   "util_mean": 15.902981753449042
+  },
+  "B2": {
+   "arm": "B",
+   "n": 6,
+   "mean_tok_s": 10.549229091418518,
+   "shas": [
+    "50e0d0f37aa5d937",
+    "a415ea8f45ae7c0d",
+    "5c26a5b7d5492030",
+    "965d64f143ed11ce",
+    "1203c12ec77bc039",
+    "a1cf75473bf25807"
+   ],
+   "mode": "legacy",
+   "offload": "/home/mfeth/moe-offload",
+   "load_s": 37.5688372500008,
+   "util_mean": 16.77128157156221
+  },
+  "F1": {
+   "arm": "F",
+   "n": 6,
+   "mean_tok_s": 10.95394660884086,
+   "shas": [
+    "b80dbc1985c2b11a",
+    "6dacd68e49617b6c",
+    "bf0e542afdbfccb3",
+    "965d64f143ed11ce",
+    "7d2f1a26df439d9d",
+    "fd90fadb1f0b009a"
+   ],
+   "mode": "uniform_fp8",
+   "offload": "/home/mfeth/moe-offload-fp8",
+   "load_s": 24.170561608974822,
+   "util_mean": 10.505456634118323
+  },
+  "F2": {
+   "arm": "F",
+   "n": 6,
+   "mean_tok_s": 10.767554684443096,
+   "shas": [
+    "b80dbc1985c2b11a",
+    "6dacd68e49617b6c",
+    "bf0e542afdbfccb3",
+    "965d64f143ed11ce",
+    "7d2f1a26df439d9d",
+    "fd90fadb1f0b009a"
+   ],
+   "mode": "uniform_fp8",
+   "offload": "/home/mfeth/moe-offload-fp8",
+   "load_s": 24.36344967095647,
+   "util_mean": 10.467621776504298
+  }
+ }
+}
