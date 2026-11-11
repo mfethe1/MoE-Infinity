@@ -1,0 +1,9 @@
+exp781 async-dbuf vs blocking topk wall test (manual-loop decode)
+PY_ADBUF  W=148.75 env_db=1
+PY_BLOCK  W=171.39 env_db=0
+covariate: W(adbuf)=148.75 vs gate [142.50, 237.50] (exp779/780 manual-loop refs)
+delta = (W_block - W_adbuf)/W_block = +0.1321
+out_sha agreement adbuf/block: 24/24 (report-only)
+tok/s adbuf=10.326 block=8.962
+MILD: async double-buffering saves 5-15% wall
+rc=2
