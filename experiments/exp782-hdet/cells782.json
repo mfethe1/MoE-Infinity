@@ -1,0 +1,12 @@
+[
+ {"id":"QH1","arm":"Q","mode":"H","stress":0,"gpu":1},
+ {"id":"QR1","arm":"Q","mode":"RC","stress":0,"gpu":1},
+ {"id":"GH1","arm":"G","mode":"H","stress":1,"gpu":1},
+ {"id":"GR1","arm":"G","mode":"RC","stress":1,"gpu":1},
+ {"id":"GH2","arm":"G","mode":"H","stress":1,"gpu":1},
+ {"id":"CH1","arm":"C","mode":"H","stress":12,"gpu":1},
+ {"id":"CR1","arm":"C","mode":"RC","stress":12,"gpu":1},
+ {"id":"GH3","arm":"G","mode":"H","stress":1,"gpu":1},
+ {"id":"CGH1","arm":"CG","mode":"H","stress":12,"gpu":1},
+ {"id":"CGR1","arm":"CG","mode":"RC","stress":12,"gpu":1}
+]

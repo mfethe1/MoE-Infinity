@@ -1,0 +1,23 @@
+== exp782 verdict (analyzer, derived from exp760 A2) ==
+invalid cells (excluded):
+  CGH1: manip-fail-gpu(co-tenant absent)
+  CGR1: manip-fail-gpu(co-tenant absent)
+  GH1: manip-fail-gpu(co-tenant absent)
+  GH2: manip-fail-gpu(co-tenant absent)
+  GH3: manip-fail-gpu(co-tenant absent)
+  GR1: manip-fail-gpu(co-tenant absent)
+arm H: 0/1 valid contended cells diverged; one-sided 95% CP upper bound p = 0.950
+arm RC: 0/1 valid contended cells diverged; one-sided 95% CP upper bound p = 0.950
+VERDICT: BOTH-STABLE (bounded; no divergence observed in either arm)
+rc=7
+CGH1 arm=CG mode=H valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[2] loadavg=12.551184210526316 util=63.23785360903209
+CGR1 arm=CG mode=RC valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[] loadavg=12.643529411764705 util=63.074362300043234
+CH1 arm=C mode=H valid=True why=[] diverged=[] loadavg=9.69025 util=9.19202363367799
+CR1 arm=C mode=RC valid=True why=[] diverged=[] loadavg=9.719722222222224 util=9.840793352988475
+GH1 arm=G mode=H valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[] loadavg=1.76475 util=73.11570862239842
+GH2 arm=G mode=H valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[] loadavg=2.033 util=74.0963560772805
+GH3 arm=G mode=H valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[] loadavg=2.3166666666666664 util=72.96529175050301
+GR1 arm=G mode=RC valid=False why=['manip-fail-gpu(co-tenant absent)'] diverged=[] loadavg=2.356578947368421 util=73.8021978021978
+QH1 arm=Q mode=H valid=True why=[] diverged=[] loadavg=0.6392 util=14.075404658507699
+QR1 arm=Q mode=RC valid=True why=[] diverged=[] loadavg=1.27 util=15.496010638297872
+Claim limit: 'no divergence observed in n cells under these manipulations' - never 'deterministic'.

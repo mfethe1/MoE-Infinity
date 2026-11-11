@@ -1,0 +1,16 @@
+== exp782 verdict (analyzer, derived from exp760 A2) ==
+arm H: 0/5 valid contended cells diverged; one-sided 95% CP upper bound p = 0.451
+arm RC: 0/3 valid contended cells diverged; one-sided 95% CP upper bound p = 0.632
+VERDICT: BOTH-STABLE (bounded; no divergence observed in either arm)
+rc=7
+CGH1 arm=CG mode=H valid=True why=[] diverged=[] loadavg=12.221486486486487 util=61.97381384495722
+CGR1 arm=CG mode=RC valid=True why=[] diverged=[] loadavg=12.810735294117647 util=62.954898911353034
+CH1 arm=C mode=H valid=True why=[] diverged=[] loadavg=10.032564102564102 util=9.171855226524931
+CR1 arm=C mode=RC valid=True why=[] diverged=[] loadavg=10.068684210526316 util=9.519345624513113
+GH1 arm=G mode=H valid=True why=[] diverged=[] loadavg=2.1077500000000002 util=74.38623561107029
+GH2 arm=G mode=H valid=True why=[] diverged=[] loadavg=1.995128205128205 util=73.9396659187235
+GH3 arm=G mode=H valid=True why=[] diverged=[] loadavg=2.2325641025641025 util=72.90480961923848
+GR1 arm=G mode=RC valid=True why=[] diverged=[] loadavg=1.986153846153846 util=75.03417944207087
+QH1 arm=Q mode=H valid=True why=[] diverged=[] loadavg=0.5643478260869565 util=15.17953091684435
+QR1 arm=Q mode=RC valid=True why=[] diverged=[] loadavg=1.1272727272727272 util=15.678331090174966
+Claim limit: 'no divergence observed in n cells under these manipulations' - never 'deterministic'.

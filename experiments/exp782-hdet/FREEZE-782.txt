@@ -1,0 +1,45 @@
+FREEZE-782 v2 (attempt-2) — supersedes v1 (24fe6262f31eb6e8).
+
+WHAT CHANGED vs v1 and WHY (all before any attempt-2 data existed):
+- analyze782.py v1 gated G/CG cell validity on the co-tenant's pid appearing in
+  mon.csv's nvidia-smi compute-apps trace. During attempt-1 (2026-11-11 09:40Z)
+  that instrument listed NOTHING all run, while independent evidence shows every
+  co-tenant ran: per-cell col.log banner (alloc_tensors>0), live col.pid, GPU util
+  mean 63-74% vs 9-15% quiet. A LIVE probe after the run (venv co-tenant up,
+  banner printed, `nvidia-smi --query-compute-apps=pid` -> empty) proves the smi
+  process listing itself stopped reporting; exp760's Nov-10 artifacts (G1.col.pid
+  == mon.csv pid 3622913) show it worked the day before. WSL/WDDM flake.
+- v1 attempt-1 therefore invalidated all 6 G/CG cells on instrument failure, not
+  manipulation failure (verdict printed rc=7 on only CH1/CR1 valid; CGH1, an
+  excluded H cell, shows a real divergence at prompt 2 — motivating a clean
+  rerun rather than post-hoc gate surgery on sealed data).
+- analyze782.py v2 replaces ONLY the presence channel for G/CG cells:
+  col.pid file pid == col.log banner pid (`exp757-col pid=X`), plus the existing
+  util-mean >= 20 gate. Foreign-app smi exclusion retained (uninformative today,
+  guards if smi recovers). rc map, anchors, divergence definition, CP bounds:
+  byte-for-byte the same logic.
+- Full attempt-2 rerun (fresh cells, fresh interleaving) so the verdict never
+  rests on re-analyzed attempt-1 data. Attempt-1 evidence preserved verbatim in
+  out.att1/ (67 files) + out.att1-unit.log.
+
+Analyzer v2 sha256:  287e64191ae2d9e47d01a5c4614ecd3a38ddcb195ac62add833593e1851a79d5
+Fixtures v2 sha256:  27c5988ea6df05e615f98f9fb9d82b14ae628a2555a39aade04b8214fa25deb0
+Batteries: local (Mac) 11/11 PASS; remote (Winnie py3.12) 11/11 PASS.
+
+Unchanged from v1 (shas re-verified on Winnie 2026-11-11):
+run_exp782.sh  b3bdd47fd3d1c7f899df53206f28b34ffdeafae49a07645e357f33b93ef2296c
+cells782.json  6e614ed0696de7bdff9c8b57e54b034672e86b6c715cf2dfdab32a9c15307383
+PREREG-782.md  65f7da8b5f25501b8106fba978bc6f8e2f44614734c563da8104bbbf668a7a7a
+engine_arm.py  fee327fe1ab3ab33daf16a32038b9a9d4d25301dc6e7cc000d50a44bcfc0dfbd
+prompts.json   6d06ff563dd9f24ec17da9e7ea5b9910f76dfaebc536d638bff45dddad7f4468
+allquiet746.sh 1dfc07c500e51e495fa07ef4bb30682e6acf494e32ee16578c661172c5eea22d
+mon760.sh      ab8f319c14ad1e9d4a82e6e3065880a967fc3e43bfa32476c81000c5dc6b8716
+nvsamp.py      12c1f05fa112e9f6fb09da6b563e1ba635d17470f224d2f4fd6f6a0eda47f5f5
+gcol757.py     fadf519fc8ec3e314dae8d732c8d88e0f4015fc7dbd21766282a80d1a3795603
+refs/RC_2.json da15254592de3a8812e28dcb4719e0567a750108bbbc9c99a5d9a91d46ea4ac2
+refs/RC_3.json 95dd72dd0f7d36f7faf4dc4570dc5703060c2ab8f92a9f7f05f32c909a760bea
+Build: /home/mfeth/exp759/src753 HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd
+_store.cpython-312-x86_64-linux-gnu.so f54e5756ee182bcf7b5b887586791b9940d8f0addf8aab5cb35a7df192cc53ac
+
+Attempt-2 launched 2026-11-11T10:31:43Z (unit exp782). Attempt cap: this is attempt 2 of ~3.
+FREEZE782V2
