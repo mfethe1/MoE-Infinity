@@ -1,0 +1,15 @@
+FREEZE-775 (frozen before launch; 2026-11-11)
+1f119bd017985083  engine_arm775.py
+9c39353053718c1c  sampler775.py
+8c2745289c928c82  prompts774.json
+ea3989b551a91de1  patch775.py
+8860014070e6649f  run_exp775.sh
+9108c74a614b6fca  analyze775.py
+43b88e067cc75c9c  PREREG-775.md
+577c4a270777bdf9  fixtures775.py
+e237b7681b002ca4  src775 patched expert_prefetcher.py (remote)
+b7f6ca4d2caa5229698d78deb03b454fc20947dd  SRC_HEAD (src753 == src775 HEAD)
+5cdda2054f183786  stage775.b64 sha16 (8 files)
+fixtures 8/8 local + 8/8 remote
+smoke probe: DB=0 RC=0 45 lines {issued}; DB=1 RC=0 45 lines {consumed}; first lists identical [6,38]; banners 1/1
+refs: exp774 verdict bf4f12eef38039b1 W SPEC 212.13 / DB 179.72; gates D>=-0.02 rc1 / >=-0.10 rc2 / else rc7

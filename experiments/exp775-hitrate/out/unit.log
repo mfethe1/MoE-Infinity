@@ -1,0 +1,7 @@
+/home/mfeth/exp775/run_exp775.sh: line 26: /proc/258386/cmdline: No such file or directory
+== 2026-11-11T06:09:40Z start
+PY_SPEC RC=0
+DONE out/PY_SPEC.json
+PY_DB RC=0
+DONE out/PY_DB.json
+== done 2026-11-11T06:18:41Z ==

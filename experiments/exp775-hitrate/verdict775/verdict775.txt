@@ -1,0 +1,10 @@
+exp775 hit-rate retention: stale-list coverage vs fresh-list coverage
+PY_SPEC: W=206.82s (ref 212.13, dev -2.5%)
+PY_SPEC: hitlog 20175 calls
+PY_DB: W=182.66s (ref 179.72, dev +1.6%)
+PY_DB: hitlog 20175 calls
+hit(SPEC, lag1) = 0.0285 over 20150 pairs (mean k=2.0)
+hit(DB,   lag2) = 0.0281 over 20121 pairs (mean k=2.0)
+D = hit(DB) - hit(SPEC) = -0.0004
+RETAINED: staleness costs <= 2% coverage — upstream story complete; successor: upstream PR (exp773 patch) with exp774+775 evidence
+rc=1
