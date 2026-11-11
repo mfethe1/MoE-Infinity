@@ -1,0 +1,24 @@
+FREEZE exp773 — async double-buffered expert indices (EXP773_DB=1)
+Date: 2026-11-11 (UTC)
+Envelope: verbatim exp769-772 (OLMoE-1B-7B, lcnu r=0.75, threads 4, gpu-route off,
+CUDA_VISIBLE_DEVICES=1, venv moei-engine, 6 prompts x 64 tok, warmup 1, py-spy spawn
+50 Hz raw, engine 1f119bd017985083, sampler 9c39353053718c1c, prompts 6d06ff563dd9f24e)
+Cells: PY_LGC (src753 off/off/off), PY_SPEC (src753 on/off/off),
+       PY_DB (src773 on/off/off EXP773_DB=1)
+src773 = cp -a src753 @ b7f6ca4d2caa5229698d78deb03b454fc20947dd + patch773.py
+       single-region replacement of the topk block (src lines 443-452);
+       patched expert_prefetcher.py sha16 c5996708db8f9ffb; marker
+       'exp773 async-dbuf' x1; HEAD identical; import-ok; DB idiom probe OK
+       (torch 2.11.0+cu128: pinned buf + non_blocking copy_ + Event; slice == topk(n))
+Frozen artifacts (sha16):
+  run_exp773.sh    449679b47eb5760c
+  analyze773.py    1c038039a6d79724
+  PREREG-773.md    a9f97e1ba584e665
+  fixtures773.py   763f2370f8b69b90   (battery 9/9 local AND remote pre-freeze)
+  patch773.py      f2d9478b3c5862f2
+  engine_arm773.py 1f119bd017985083   (byte-identical lineage)
+  sampler773.py    9c39353053718c1c   (byte-identical lineage)
+Decision rule frozen in analyze773.py / PREREG-773.md
+  (tau_w=2.0; R gates 0.7/0.3; specleaf gate 0.5; rc 1/2/4/5/7/8/9)
+Void: any post-freeze change to the above; py-spy version != PYSPY.txt; busy-gate trip.
+freeze sha16: 8f0d2e0a219d8529

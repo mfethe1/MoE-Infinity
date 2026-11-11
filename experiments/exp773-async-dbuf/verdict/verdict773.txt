@@ -1,0 +1,10 @@
+exp773 async double-buffered expert indices (EXP773_DB=1)
+SRC_HEAD=b7f6ca4d2caa
+PY_LGC: W=45.54s samples=4383 specleaf=0.00s tok/s=9.597440904527394
+PY_SPEC: W=54.01s samples=4350 specleaf=5.22s tok/s=7.869218834134167
+PY_DB: W=48.09s samples=4235 specleaf=0.34s tok/s=8.855933344977434
+D = W(SPEC)-W(LGC) = +8.47s (tau_w=2.0)
+W(DB)-W(SPEC) = -5.91s   specleaf ratio DB/SPEC = 0.07
+recovery R = 0.70
+PARTIAL: R=0.70, leaf_ok=True -> successor: ring depth 2 consumption or host-side logits prediction
+rc=2
