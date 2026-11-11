@@ -1,0 +1,11 @@
+[Unit]
+Description=exp786 grouped-decode pro6000 gate-lift A/B (Winnie GPU1)
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -lc 'cd /home/mfeth/exp786 && bash run_exp786.sh > out/unit.log 2>&1'
+StandardOutput=append:/home/mfeth/exp786/out/unit.log
+StandardError=append:/home/mfeth/exp786/out/unit.log
+
+[Install]
+WantedBy=default.target

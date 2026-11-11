@@ -1,0 +1,37 @@
+== 2026-11-11T19:06:45Z start
+== 2026-11-11T19:10:39Z C75a uhw=off ratio=0.75 gpu=1 qw=219 QUIET la=0.12
+C75a RC=0 uhw=off ratio=0.75
+[lcnu r=0.75 uhw=off] prompt 22: 9.86 tok/s hits+5525 miss+49
+[lcnu r=0.75 uhw=off] prompt 23: 8.87 tok/s hits+5557 miss+37
+== 2026-11-11T19:13:52Z S75a uhw=on ratio=0.75 gpu=1 qw=0 QUIET la=2.29
+S75a RC=0 uhw=on ratio=0.75
+[lcnu r=0.75 uhw=on] prompt 22: 11.40 tok/s hits+5526 miss+47
+[lcnu r=0.75 uhw=on] prompt 23: 9.16 tok/s hits+5560 miss+37
+== 2026-11-11T19:16:45Z C25a uhw=off ratio=0.25 gpu=1 qw=0 QUIET la=1.40
+C25a RC=0 uhw=off ratio=0.25
+[lcnu r=0.25 uhw=off] prompt 22: 9.26 tok/s hits+2771 miss+2803
+[lcnu r=0.25 uhw=off] prompt 23: 10.26 tok/s hits+3189 miss+2405
+== 2026-11-11T19:20:19Z S25a uhw=on ratio=0.25 gpu=1 qw=0 QUIET la=1.71
+S25a RC=0 uhw=on ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.87 tok/s hits+2679 miss+2894
+[lcnu r=0.25 uhw=on] prompt 23: 11.82 tok/s hits+3196 miss+2400
+== 2026-11-11T19:23:35Z C75b uhw=off ratio=0.75 gpu=1 qw=0 QUIET la=1.86
+C75b RC=0 uhw=off ratio=0.75
+[lcnu r=0.75 uhw=off] prompt 22: 10.30 tok/s hits+5514 miss+60
+[lcnu r=0.75 uhw=off] prompt 23: 8.96 tok/s hits+5549 miss+45
+== 2026-11-11T19:27:02Z S75b uhw=on ratio=0.75 gpu=1 qw=1 QUIET la=2.26
+S75b RC=0 uhw=on ratio=0.75
+[lcnu r=0.75 uhw=on] prompt 22: 12.16 tok/s hits+5520 miss+53
+[lcnu r=0.75 uhw=on] prompt 23: 9.54 tok/s hits+5553 miss+44
+== 2026-11-11T19:29:45Z C25b uhw=off ratio=0.25 gpu=1 qw=0 QUIET la=1.41
+C25b RC=0 uhw=off ratio=0.25
+[lcnu r=0.25 uhw=off] prompt 22: 9.05 tok/s hits+2768 miss+2806
+[lcnu r=0.25 uhw=off] prompt 23: 10.40 tok/s hits+3186 miss+2408
+== 2026-11-11T19:33:15Z S25b uhw=on ratio=0.25 gpu=1 qw=0 QUIET la=1.93
+S25b RC=0 uhw=on ratio=0.25
+[lcnu r=0.25 uhw=on] prompt 22: 10.10 tok/s hits+2767 miss+2809
+[lcnu r=0.25 uhw=on] prompt 23: 11.53 tok/s hits+3196 miss+2401
+EXP786 rc=9 DATA-FAIL
+PROBLEM: NONDET configs: S75,S25
+NONDET configs: S75, S25
+== 2026-11-11T19:36:22Z EXP786-DONE

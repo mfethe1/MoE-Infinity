@@ -1,0 +1,10 @@
+[
+ {"id":"C75a","uhw":"off","ratio":0.75,"gpu":1},
+ {"id":"S75a","uhw":"on","ratio":0.75,"gpu":1},
+ {"id":"C25a","uhw":"off","ratio":0.25,"gpu":1},
+ {"id":"S25a","uhw":"on","ratio":0.25,"gpu":1},
+ {"id":"C75b","uhw":"off","ratio":0.75,"gpu":1},
+ {"id":"S75b","uhw":"on","ratio":0.75,"gpu":1},
+ {"id":"C25b","uhw":"off","ratio":0.25,"gpu":1},
+ {"id":"S25b","uhw":"on","ratio":0.25,"gpu":1}
+]

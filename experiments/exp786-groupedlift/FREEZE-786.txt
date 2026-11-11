@@ -1,0 +1,28 @@
+FREEZE-786 (all sha256 FULL 64-char; frozen 2026-11-11 pre-launch)
+
+harness (in /home/mfeth/exp786/):
+30af9e5b2689f6029b3ff2bd6b1d35a577f5a30f5786409c49ccaf4f1c17798f  engine_arm786.py
+e85b5adb826b587fe919fe350b75473ba26dd1ee721fccdd0c1c7aa782ee7711  cells786.json
+590b426fb141c7535438f3a091e19245b852816659132402173617a41ec5b7a4  analyze786.py
+67d52c33bb432d84d04be808d065882dc31f42fca171cf1b053d71ad54ba1280  fixtures786.py
+708627a75a211155b39cc8319b94a533eddf9c14c99dae4f70e71bcfed151239  PREREG-786.md
+ea205e3762b160b391a1d766f3ab44b93f1c9b434bf2a8077f970911704297e0  run_exp786.sh
+
+shared inputs (copied from exp785, byte-identical):
+c1752a13b01e06b456cb6d769dcb18fb9462fcf7010d79471e60e440738a3e98  prompts24.json
+de0da14e5b9264e161b335ed9b7fc01747ab8d27ce6441f7b693671a55ca1e21  probe8.json
+1dfc07c500e51e495fa07ef4bb30682e6acf494e32ee16578c661172c5eea22d  allquiet746.sh
+ab8f319c14ad1e9d4a82e6e3065880a967fc3e43bfa32476c81000c5dc6b8716  mon760.sh
+12c1f05fa112e9f6fb09da6b563e1ba635d17470f224d2f4fd6f6a0eda47f5f5  nvsamp.py
+
+pre-freeze probes (8 prompts x 24 tok; qualification only, not sealed data):
+1be27df318bcefa1c9fc755a9622f3c57297d8d6c9593f95c4ad912b3afbcf29  p_ctl75.json
+d0a585ce10e9c749b7c4f31b1be07cc69cf88863f4d312e668300aba7c5d5fcd  p_uhw75.json
+7dabfa03eb4aaa4e2f49745f41e6acaa1f9ef0e4151b78728443c90598b1a661  p_ctl25.json
+0c0599394257dfadae491e64377bbf296a382c711291285a0e959bceb71da398  p_uhw25.json
+
+build identity (unmodified src753, no patch, no rebuild):
+f54e5756ee182bcf7b5b887586791b9940d8f0addf8aab5cb35a7df192cc53ac  _store.cpython-312-x86_64-linux-gnu.so
+git HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd (enforced by run_exp786.sh identity gate)
+
+fixtures: 7/7 local (macOS py3) + 7/7 remote (WSL py3.12) PASS
