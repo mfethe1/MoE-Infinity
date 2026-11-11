@@ -1,0 +1,427 @@
+py-spy> Sampling process 100 times a second. Press Control-C to exit.
+
+[WARNING] FlashAttention is not available in the current environment. Using GQA-native SDPA attention.
+Loading model from offload_path ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+OlmoeConfig {
+  "architectures": [
+    "OlmoeForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": null,
+  "clip_qkv": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 50279,
+  "hidden_act": "silu",
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "intermediate_size": 1024,
+  "max_position_embeddings": 4096,
+  "model_type": "olmoe",
+  "norm_topk_prob": false,
+  "num_attention_heads": 16,
+  "num_experts": 64,
+  "num_experts_per_tok": 8,
+  "num_hidden_layers": 16,
+  "num_key_value_heads": 16,
+  "output_router_logits": false,
+  "pad_token_id": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 10000.0,
+    "rope_type": "default"
+  },
+  "router_aux_loss_coef": 0.01,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.22.1",
+  "use_cache": false,
+  "vocab_size": 50304
+}
+
+TOPO: 35 stages, 16 sparse
+py-spy> 1.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 2.31s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 2.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 3.42s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 3.97s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 4.55s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 5.22s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 5.73s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 6.36s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 6.92s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 7.61s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 8.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 9.06s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 9.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 10.14s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 10.89s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 11.44s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 12.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 12.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 13.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 13.67s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 14.24s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 15.13s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 16.37s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 17.62s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 18.89s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 20.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 21.45s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 22.70s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 23.66s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 24.92s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.20s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 25.82s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 24.81s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 23.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 23.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 23.11s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 25.58s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.64s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.38s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+TOPO: set_topology done
+py-spy> 25.95s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 25.63s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 25.88s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.04s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+exp752 mode=2
+py-spy> 26.05s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.18s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 26.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 27.07s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 27.43s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 27.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 28.23s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 28.52s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 28.91s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 29.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 28.92s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 28.84s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 28.75s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 29.18s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 29.49s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 29.78s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 30.13s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 30.55s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 30.88s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 31.24s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 31.62s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 31.97s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 32.25s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 32.56s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 33.09s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 33.36s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 33.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 34.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 34.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 34.34s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 34.63s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 35.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 35.37s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 35.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 35.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 36.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 36.52s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 36.83s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 37.03s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 37.36s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 37.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 38.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 38.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 38.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 39.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 39.66s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 40.05s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 40.38s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 40.83s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 41.29s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 41.46s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 41.91s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 42.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 42.54s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 42.82s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 43.31s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 43.81s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 44.20s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 44.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 44.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 44.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 45.33s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 0: 1.29 tok/s hits+9639 miss+185
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 45.53s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 45.38s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 45.21s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 45.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 45.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 45.76s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 46.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 46.56s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 47.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 47.38s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 47.84s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 48.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 48.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 48.89s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 49.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 49.54s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 49.92s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 50.20s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 50.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 51.04s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 51.41s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 51.81s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 52.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 52.35s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 52.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 53.21s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 53.47s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 53.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 54.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 54.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 54.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 55.17s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 55.72s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 55.99s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 56.26s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 56.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 57.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 57.35s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 57.52s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 57.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 58.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 58.70s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 59.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 59.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 59.67s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 59.82s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 60.26s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 60.79s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 61.23s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 1: 1.36 tok/s hits+9641 miss+41
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 61.28s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 61.42s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 61.58s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 61.60s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 62.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 62.17s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 62.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 62.74s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 63.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 63.29s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 63.60s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 63.85s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 64.17s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 64.56s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 64.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 65.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 65.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 66.14s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 66.21s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 66.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 66.98s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 67.33s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 67.63s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 68.02s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 68.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 68.61s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 68.98s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 69.46s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 69.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 69.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 70.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 70.28s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 70.54s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 70.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 71.23s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 71.63s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 71.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 72.43s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 72.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 72.96s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 73.23s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 73.54s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 73.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 74.20s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 74.60s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 74.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 75.26s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 75.66s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 76.10s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 76.27s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 2: 1.33 tok/s hits+9676 miss+54
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 76.12s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 75.97s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 75.95s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 76.27s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 76.58s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 76.96s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 77.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 77.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 78.03s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 78.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 78.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 79.02s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 79.47s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 79.91s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 80.11s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 80.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 80.85s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 81.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 81.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 81.82s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 82.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 82.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 82.71s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 82.91s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 83.25s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 83.64s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 84.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 84.38s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 84.73s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 84.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 85.18s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 85.62s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 85.75s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 86.02s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 86.22s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 86.58s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 86.85s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 87.12s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 87.36s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 87.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 88.20s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 88.65s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 88.98s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 89.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 89.75s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 90.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 90.51s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 90.63s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 91.03s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 3: 1.34 tok/s hits+9665 miss+113
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 91.33s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 91.33s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 91.06s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 91.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 91.35s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 91.75s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 92.04s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 92.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 92.77s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 93.05s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 93.47s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 93.75s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 94.21s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 94.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 94.69s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 94.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.06s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.33s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 4: 1.37 tok/s hits+4208 miss+50
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 95.31s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+/home/mfeth/exp767/engine_arm767.py:122: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+py-spy> 95.11s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.10s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.23s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.48s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 95.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 96.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 96.37s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 96.76s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 97.07s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 97.39s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 97.68s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 98.00s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 98.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 98.50s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 98.72s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 99.16s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 99.47s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 99.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 100.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 100.54s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 100.86s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 101.22s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 101.64s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 101.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 102.30s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 102.64s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 102.90s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 103.32s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 103.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 103.87s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 104.30s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 104.58s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 104.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 105.24s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 105.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 105.81s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 106.18s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 106.47s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 106.83s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 107.21s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 107.49s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 107.94s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 108.22s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 108.41s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 108.85s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 109.15s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 109.57s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 109.84s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 110.12s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[lcnu r=0.75 sp=on so=off op=off] prompt 5: 1.32 tok/s hits+9838 miss+86
+DONE out/NAT_SPEC.json
+py-spy> 110.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 109.85s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 109.05s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+[20261111 03:42:09.200969Z ][90139 ][INFO  ]Creating I/O thread pool with  4  threads - archer_prio_aio_handle.cpp:234
+[20261111 03:42:09.200986Z ][90139 ][INFO  ]Create ArcherAioThread for thread:  0 - archer_aio_thread.cpp:12
+[20261111 03:42:09.200990Z ][90139 ][INFO  ]Create ArcherAioThread for thread:  1 - archer_aio_thread.cpp:12
+[20261111 03:42:09.200990Z ][90139 ][INFO  ]Create ArcherAioThread for thread:  2 - archer_aio_thread.cpp:12
+[20261111 03:42:09.200991Z ][90139 ][INFO  ]Create ArcherAioThread for thread:  3 - archer_aio_thread.cpp:12
+[20261111 03:42:09.201360Z ][90139 ][INFO  ]Creating pinned memory pool:  16  chunks of  1024  KB - pinned_memory_pool.cpp:16
+[20261111 03:42:09.349970Z ][90139 ][INFO  ]Loading index file from  /home/mfeth/moe-offload/archer_index - archer_tensor_handle.cpp:54
+[20261111 03:42:09.390012Z ][90139 ][INFO  ]Index file size  3219 - archer_tensor_handle.cpp:63
+[20261111 03:42:09.391139Z ][90139 ][INFO  ]Device count  1 - archer_prefetch_handle.cpp:66
+[20261111 03:42:09.391142Z ][90139 ][INFO  ]Enabled peer access for all devices - archer_prefetch_handle.cpp:89
+[20261111 03:42:10.820731Z ][90139 ][INFO  ]Moving dense parameters to CPU - model_topology.cpp:660
+18 left17 left16 left15 left14 left13 left12 left11 left10 left9 left8 left7 left6 left5 left4 left3 left2 left1 left
+finished: 19/19
+[20261111 03:42:13.263191Z ][90139 ][INFO  ]Moving sparse parameters to CPU - model_topology.cpp:674
+[20261111 03:42:52.195212Z ][90139 ][INFO  ]Processing partition  0  ( 10236  MB,  2364  tensors) - model_topology.cpp:746
+[20261111 03:43:03.437172Z ][90139 ][INFO  ]Processing partition  1  ( 2961  MB,  708  tensors) - model_topology.cpp:746
+py-spy> 107.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+
+py-spy> Stopped sampling because process exited
+py-spy> Wrote raw flamegraph data to 'out/NAT_SPEC.pyspy'. Samples: 19277 Errors: 9
+py-spy> You can use the flamegraph.pl script from https://github.com/brendangregg/flamegraph to generate a SVG

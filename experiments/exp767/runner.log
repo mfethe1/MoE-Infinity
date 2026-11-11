@@ -1,0 +1,12 @@
+== 2026-11-11T03:36:04Z start
+NAT_LGC RC=0
+[lcnu r=0.75 sp=off so=off op=off] prompt 4: 1.52 tok/s hits+4241 miss+17
+[lcnu r=0.75 sp=off so=off op=off] prompt 5: 1.53 tok/s hits+9895 miss+29
+DONE out/NAT_LGC.json
+NAT_SPEC RC=0
+[lcnu r=0.75 sp=on so=off op=off] prompt 4: 1.37 tok/s hits+4208 miss+50
+[lcnu r=0.75 sp=on so=off op=off] prompt 5: 1.32 tok/s hits+9838 miss+86
+DONE out/NAT_SPEC.json
+== done 2026-11-11T03:48:21Z ==
+RUNNER-EXIT=0
+ANALYZE-RC=5
