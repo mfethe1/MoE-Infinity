@@ -1,0 +1,16 @@
+exp779 generation-loop overhead (A=HF generate, B=manual DynamicCache)
+PY_A RC=0 W=172.42
+PY_B RC=0 W=190.00 arm=B-manual-dynamic
+covariate: W(A)=172.42 vs gate [137.00, 228.32] (exp775 DB ref 182.66 +/-25%)
+B n_new==64 all rows: yes
+delta = (W_A - W_B)/W_A = -0.1020
+out_sha agreement A/B: 20/24 (report-only)
+tok/s A=7.900 B=8.084
+NO-MOVE: <5% wall change — GENLOOP 52% was GPU-wait under Python frames; decode is compute/attention-bound; redirect lane to ATTN
+rc=7
+ADDENDUM (post-verdict audit, rule unchanged):
+  arm A stopped early on 4/24 prompts (n_new 18-24 vs min_new_tokens=64; rows 4,10,16,22;
+  sum A tokens 1362 vs B 1536). Likely MoE wrapper generate not enforcing min_new_tokens.
+  Effect: A did LESS work for W=172.42. Both normalizations give the same frozen rc:
+    raw-W delta -0.102; per-token A 7.900 vs B 8.084 tok/s (+2.3% B) -> |delta|<0.05 -> rc=7.
+  Out_sha divergence 4/24 = exactly the 4 early-stopped rows.

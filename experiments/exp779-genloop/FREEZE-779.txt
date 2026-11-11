@@ -1,0 +1,23 @@
+FREEZE-779 (registered before run; 2026-11-11)
+Experiment: exp779 generation-loop overhead behavioral wall test (A=HF generate, B=manual greedy DynamicCache)
+Prereg: PREREG-779.md (frozen decision rule rc 9/4/1/2/7; covariate gate [137.00, 228.33]; delta=(W_A-W_B)/W_A; gates 0.15/0.05)
+Artifacts (sha256/16):
+  engine_arm779b.py ba8b87059bf24e1b
+  run_exp779.sh 464517353b89673c
+  analyze779.py 745d6fb9276945f8
+  fixtures779.py (battery 9/9 local mac + 9/9 remote WSL py3.12)
+  stage779.tar fef2fd04a5a3b98a
+Environment identity (verified on device before freeze):
+  src753 HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd
+  src776 expert_prefetcher.py 3571f714c811e1c7 (routedlog+EXP773_DB markers)
+  engine_arm776.py 1f119bd017985083 (arm A, exp777 R075 configuration)
+  sampler776.py 9c39353053718c1c ; prompts774.json 8c2745289c928c82
+Envelope: OLMoE-1B-7B-0125-Instruct, lcnu r=0.75, threads 4, gpu-route off,
+  spec-prefetch on, spec-overlap off, overlap-policy off, 24 prompts x 64 tok,
+  warmup 1, CUDA_VISIBLE_DEVICES=1, py-spy 50 Hz raw + OS sampler 20ms both arms.
+Decision rule (verbatim from PREREG-779):
+  rc=1 LARGE-MOVE delta>=0.15; rc=2 MILD 0.05<=delta<0.15; rc=7 NO-MOVE delta<0.05;
+  rc=9 IDENTIFY-FAIL; rc=4 DATA-FAIL (BADIO/A-outside-gate/B-unclean/n_new!=64).
+Report-only: out_sha agreement, tok/s.
+Analyzer invocation: python3 analyze779.py RUNDIR VERDICTDIR -> verdict779.txt + rc.
+Failure discipline: nonzero-RC cells recorded not voided; VOID only premise-false.

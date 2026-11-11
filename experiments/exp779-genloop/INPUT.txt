@@ -1,0 +1,1 @@
+Inputs of record: Winnie /home/mfeth/exp779 (src776 shipped path, sha 3571f714c811e1c7; engine_arm776.py arm A 1f119bd017985083; prompts774.json 8c2745289c928c82; py-spy traces PY_A/PY_B 50Hz). Sealed tar sha16 25aae62ab986266b.
