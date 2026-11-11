@@ -1,0 +1,13 @@
+exp765 native-vs-python split of speculative_prefetch subtree
+samples: LGC=17666 SPEC=19277 combined=36943
+SRC_HEAD=b7f6ca4d2caa
+family secs (LGC -> SPEC, delta):
+  PY_PREF     0.000 ->    0.070  d=  +0.070
+  PY_EXEC     0.000 ->    0.020  d=  +0.020
+  PY_OTH      0.000 ->    0.000  d=  +0.000
+  N_TORCH     0.000 ->    0.200  d=  +0.200
+  N_LIBC      0.000 ->    0.200  d=  +0.200
+  N_HEX       0.000 ->    1.360  d=  +1.360
+  N_OTH       0.000 ->    0.030  d=  +0.030
+P (inside delta) = +1.880 s  raw_deltas={"PY_PREF": 0.07, "PY_EXEC": 0.02, "PY_OTH": 0.0, "N_TORCH": 0.2, "N_LIBC": 0.2, "N_HEX": 1.36, "N_OTH": 0.03}
+D5 NULL-TIME: P 1.880 < tau 2.0

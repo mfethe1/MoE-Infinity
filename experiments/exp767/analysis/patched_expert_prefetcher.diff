@@ -1,0 +1,47 @@
+--- src-ref/expert_prefetcher.py
++++ patched/expert_prefetcher.py
+@@ -385,7 +385,7 @@
+         return self.phase_policy.decode_prefetch_priority
+ 
+     def _record_prediction(
+-        self, phase: ExpertPhase, expert_ids: Set[int]
++        self, phase: ExpertPhase, expert_ids: List[int]
+     ) -> None:
+         if isinstance(self._last_speculative_prediction, dict):
+             self._last_speculative_prediction[phase] = set(expert_ids)
+@@ -414,7 +414,7 @@
+             self.prefetch_experts_list(
+                 target_layer, list(expert_ids), phase=ExpertPhase.DECODE
+             )
+-            self._record_prediction(ExpertPhase.DECODE, set(expert_ids))
++            self._record_prediction(ExpertPhase.DECODE, expert_ids)
+             return
+ 
+         if router_logits is None:
+@@ -451,9 +451,14 @@
+                 .tolist()
+             )
+         else:
+-            logits_np = (
+-                np.array(router_logits).reshape(-1, self.num_experts).mean(0)
+-            )
++            # Plain ndarrays need no defensive copy: reshape/mean only read.
++            # Preserve np.array conversion for subclasses and other inputs.
++            logits_array = (
++                router_logits
++                if type(router_logits) is np.ndarray
++                else np.array(router_logits)
++            )
++            logits_np = logits_array.reshape(-1, self.num_experts).mean(0)
+             topk_indices = np.argsort(logits_np)[-num_experts_to_prefetch:][
+                 ::-1
+             ].tolist()
+@@ -468,7 +473,7 @@
+         self.prefetch_experts_list(
+             next_layer, topk_indices, priority=priority, phase=phase
+         )
+-        self._record_prediction(phase, set(topk_indices))
++        self._record_prediction(phase, topk_indices)
+ 
+     def _consume_prediction(self, phase: ExpertPhase) -> Set[int]:
+         if isinstance(self._last_speculative_prediction, dict):
