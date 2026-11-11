@@ -1,0 +1,12 @@
+exp780 attempt-2 freeze (2026-11-11). Attempt-1 VOID premise-false (per-module _attn_implementation absent in transformers 5.22.1; banner gate exit 3 pre-data).
+Question/decision rule UNCHANGED: sdpa vs eager attention implementation wall test on manual-loop decode (engine_arm779b base). gain=(W_eager-W_sdpa)/W_eager; rc 1 KERNEL-MATTERS>=0.10; 2 MILD [0.03,0.10); 7 NO-KERNEL-GAIN <0.03; 3 SDPA-REGRESSION <=-0.03; 5 LARGE-REGRESSION <=-0.10; 9 DATA-FAIL.
+Mechanism attempt-2: shared config _attn_implementation patch + identity/module-sharing/registry verification; eager via modeling_olmoe.eager_attention_forward fallback.
+Engine sha16: 1c6427605f661bc9 (245 lines)
+Runner sha16: db247224cbf74397 (run_exp780.sh)
+Analyzer sha16: 83670300aeeb6cb5
+Fixtures sha16: 160a537563ec20d3 (10/10 local + remote)
+Prereg sha16: 5bfe35420877f097 (attempt-2 addendum)
+Stage tar sha16: 05c5b2bf4d898d84
+Environment: OLMoE-1B-7B-0125-Instruct; src776 AS-BUILT 3571f714c811e1c7 (expert_prefetcher.py); lcnu r=0.75; threads 4; gpu-route off; spec-prefetch on; spec-overlap off; overlap-policy off; 24 prompts x 64 tok; warmup 1; CUDA_VISIBLE_DEVICES=1; ~/venvs/moei-engine; torch 2.11.0+cu128; transformers 5.22.1.
+Covariate: sdpa arm W in [142.50, 237.50] (exp779 manual-loop W=190.00 +/-25%).
+Gates: n_new!=64 -> DATA-FAIL; banner 'exp780 impl=<impl> ... ok=True' required per cell.

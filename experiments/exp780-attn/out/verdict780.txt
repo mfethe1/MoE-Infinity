@@ -1,0 +1,9 @@
+exp780 attention-implementation wall test (manual-loop decode, sdpa vs eager)
+PY_SDPA RC=0 W=184.93 default=sdpa
+PY_EAGER RC=0 W=194.45 default=sdpa
+covariate: W(sdpa)=184.93 vs gate [142.50, 237.50] (exp779 manual-loop ref 190.0 +/-25%)
+gain = (W_eager - W_sdpa)/W_eager = +0.0490
+out_sha agreement sdpa/eager: 10/24 (report-only)
+tok/s sdpa=8.306 eager=7.899
+MILD: sdpa saves 4.9% vs eager; kernel headroom modest at this context length
+rc=2
