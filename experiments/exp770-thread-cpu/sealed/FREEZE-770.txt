@@ -1,0 +1,15 @@
+FREEZE-770 (pre-launch, after 9/9 local+remote battery and live /proc probe)
+date: 2026-11-11 UTC (staging)
+files (sha256[:16]):
+  engine_arm770.py 1f119bd017985083  (== exp769 engine, byte-identical)
+  sampler770.py    9c39353053718c1c  (sampler769 + per-task /proc aggregation)
+  run_exp770.sh    65da743e3221fa0d  (exp769 runner + tidcsv outputs/guards)
+  analyze770.py    00e3f9ef0890f1d0  (frozen decision rule, PREREG-770)
+  PREREG-770.md    0b5bd0a327bc2e09
+  fixtures770.py   8f66b01641b91172  (9/9 PASS local AND remote, battery_rc=0)
+probe: sampler770.py against live 4-thread python target: oscsv+tidcsv written,
+  MAIN bucket (tid==pid) present, comm aggregation confirmed (python3,n=2).
+envelope: OLMoE-1B-7B, src753 @ b7f6ca4, lcnu r=0.75, threads 4, gpu-route off,
+  CUDA_VISIBLE_DEVICES=1, venv moei-engine, 6 prompts x 64 tok, warmup 1,
+  unprofiled (no py-spy). Cells OS_LGC / OS_SPEC. Busy-gate exp746..exp767 + exp770.
+decision rule frozen in analyze770.py (tau_cpu=4.0, tau_b=2.0, f=0.5).

@@ -1,0 +1,14 @@
+exp770 per-thread CPU attribution
+SRC_HEAD=b7f6ca4d2caa
+OS_LGC: rows=6 tidrows=8460
+OS_SPEC: rows=6 tidrows=9816
+DW=+5.49s  Dcpu=+9.24s (tau_cpu=4.0)  coverage=1.10 (sum positive bucket deltas / Dcpu)
+dbucket (SPEC-LGC, top 5 by delta):
+  MAIN                            +6.21s   67.2% of Dcpu
+  python3                         +3.90s   42.2% of Dcpu
+  GPUFetchFunc0                   +0.02s    0.2% of Dcpu
+  cuda-EvtHandlr                  +0.02s    0.2% of Dcpu
+  ExpertRouteFunc                 +0.00s    0.0% of Dcpu
+covariates: RSSpeak LGC 15,322,040 SPEC 15,321,884 kB; threads 54/54; tok/s LGC 12.06 SPEC 10.10
+D1 MAIN-BOUND: MAIN +6.21s (67% of Dcpu) -> cost burns the GIL/python main path; successor: py-level targeted profile of main thread (spec predictor loop)
+rc=1
