@@ -1,0 +1,26 @@
+FREEZE-778 (2026-11-11, thread 79990) — residual attribution (analysis-only)
+Purpose: exp777 closed expert residency (headroom 0.04%); exp776b closed
+prediction. The decode residual lives outside expert handling. Attribute it
+from exp777's py-spy raw traces (50 Hz) — no new run, no new code on device.
+
+Frozen inputs (unchanged since exp777 completion, identity-gated by sha):
+  /home/mfeth/exp777/out/PY_R075.pyspy  sha16 3b0dac1d4487be3a (primary)
+  /home/mfeth/exp777/out/PY_R100.pyspy  sha16 77b5225ce0896c96 (consistency)
+Accessed via symlink /home/mfeth/exp778/out -> /home/mfeth/exp777/out.
+
+Analyzer: analyze778.py; battery fixtures778.py 5/5 local + 5/5 remote.
+Buckets (first-match priority, whole-stack regex, names from SOURCE code):
+  LOAD | EXPERT | ATTN | MLPRT | NORMEMB | GENLOOP | OTHER
+Denominator = non-LOAD samples (model load outside timed W). LOAD share
+reported separately. PY_R100 rank agreement report-only. EXPERT share
+report-only (consistency vs exp777).
+
+Frozen decision rule (thresholds set BEFORE running; <0.10 gate was
+unreachable by construction — floor 1/6 = 16.7% with six non-LOAD buckets):
+  rc=1 ATTRIBUTED  top non-LOAD bucket share >= 0.30 -> successor lane
+                   targets that bucket
+  rc=2 PARTIAL     top share in [0.17, 0.30) -> instrument deeper first
+  rc=7 DIFFUSE     top share < 0.17 -> successor = native (--native) profiling
+  rc=4 DATA-FAIL   zero samples / zero non-LOAD
+  rc=9 IDENTIFY    input sha mismatch / unparseable
+No changes after this line.
