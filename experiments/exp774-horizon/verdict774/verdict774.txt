@@ -1,0 +1,13 @@
+exp774 4x-horizon replicate of exp773 async-dbuf + residual attribution
+SRC_HEAD=b7f6ca4d2caa
+PY_LGC: W=169.11s samples=8451 specleaf=0.00s tok/s=10.050432459135818
+PY_SPEC: W=212.13s samples=10344 specleaf=19.56s tok/s=7.810697130507122
+PY_DB: W=179.72s samples=8809 specleaf=1.36s tok/s=9.344597879346361
+RESIDUAL DB-LGC net+=28.56s top: OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:56):1.62s; DistributedExpertExecutor._dispatch_eager_local (moe_infinity/distributed/expert_executor.py:438):1.48s; OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:57):1.36s; update_wrapper (functools.py:58):1.18s; OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:54):1.08s
+RESIDUAL-DIFFUSE: max 1.62s < gate 8.56s (noise-consistent)
+REMOVED SPEC-DB net+=46.48s top: ExpertPrefetcher.speculative_prefetch (moe_infinity/memory/expert_prefetcher.py:450):18.56s; DistributedExpertExecutor.wait_dispatch_local (moe_infinity/distributed/expert_executor.py:1033):1.54s; OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:55):1.30s
+D = W(SPEC)-W(LGC) = +43.02s (tau_w=5.0)
+W(DB)-W(SPEC) = -32.41s   specleaf ratio DB/SPEC = 0.07
+recovery R = 0.75 (unrounded 0.7533)
+RECOVER: 75% of wall gap reclaimed at 4x horizon, specleaf cut to 7% -> exp773 fix confirmed at scale; upstream-able; successor: PR + hit-rate retention study
+rc=1

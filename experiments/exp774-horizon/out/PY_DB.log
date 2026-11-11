@@ -1,0 +1,212 @@
+py-spy> Sampling process 50 times a second. Press Control-C to exit.
+
+[WARNING] FlashAttention is not available in the current environment. Using GQA-native SDPA attention.
+Loading model from offload_path ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+OlmoeConfig {
+  "architectures": [
+    "OlmoeForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": null,
+  "clip_qkv": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 50279,
+  "hidden_act": "silu",
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "intermediate_size": 1024,
+  "max_position_embeddings": 4096,
+  "model_type": "olmoe",
+  "norm_topk_prob": false,
+  "num_attention_heads": 16,
+  "num_experts": 64,
+  "num_experts_per_tok": 8,
+  "num_hidden_layers": 16,
+  "num_key_value_heads": 16,
+  "output_router_logits": false,
+  "pad_token_id": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 10000.0,
+    "rope_type": "default"
+  },
+  "router_aux_loss_coef": 0.01,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.22.1",
+  "use_cache": false,
+  "vocab_size": 50304
+}
+
+TOPO: 35 stages, 16 sparse
+py-spy> 1.01s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.14s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.27s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.44s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.59s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.81s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.97s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 2.40s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 3.44s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 4.53s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 5.61s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 6.67s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 7.68s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 8.72s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 9.80s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 10.74s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 11.76s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 8.28s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 5.41s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 2.13s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.19s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 3.46s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 4.45s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+py-spy> 1.08s behind in sampling, results may be inaccurate. Try reducing the sampling rate
+TOPO: set_topology done
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+exp752 mode=2
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 0: 7.93 tok/s hits+9624 miss+200
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 1: 8.55 tok/s hits+9584 miss+98
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 2: 8.91 tok/s hits+9639 miss+91
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 3: 9.36 tok/s hits+9602 miss+176
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 4: 9.92 tok/s hits+4164 miss+94
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 5: 9.34 tok/s hits+9777 miss+147
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 6: 9.20 tok/s hits+9600 miss+142
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 7: 9.33 tok/s hits+9639 miss+73
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 8: 9.59 tok/s hits+9602 miss+104
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 9: 9.30 tok/s hits+9760 miss+70
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 10: 9.99 tok/s hits+3840 miss+96
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 11: 8.97 tok/s hits+9753 miss+107
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 12: 9.43 tok/s hits+9649 miss+129
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 13: 9.06 tok/s hits+9585 miss+47
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 14: 9.25 tok/s hits+9676 miss+70
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 15: 9.54 tok/s hits+9740 miss+96
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 16: 9.80 tok/s hits+4507 miss+91
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 17: 9.34 tok/s hits+9790 miss+58
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 18: 9.43 tok/s hits+9545 miss+79
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 19: 9.64 tok/s hits+9603 miss+37
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 20: 9.06 tok/s hits+9623 miss+83
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 21: 9.14 tok/s hits+9637 miss+73
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 22: 9.68 tok/s hits+3811 miss+97
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+/home/mfeth/exp774/engine_arm774.py:124: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  out = model.generate(ids, max_new_tokens=n, min_new_tokens=n, do_sample=False,
+[lcnu r=0.75 sp=on so=off op=off] prompt 23: 9.49 tok/s hits+9766 miss+70
+DONE out/PY_DB.json
+[20261111 05:46:05.093743Z ][234580 ][INFO  ]Creating I/O thread pool with  4  threads - archer_prio_aio_handle.cpp:234
+[20261111 05:46:05.093758Z ][234580 ][INFO  ]Create ArcherAioThread for thread:  0 - archer_aio_thread.cpp:12
+[20261111 05:46:05.093759Z ][234580 ][INFO  ]Create ArcherAioThread for thread:  1 - archer_aio_thread.cpp:12
+[20261111 05:46:05.093760Z ][234580 ][INFO  ]Create ArcherAioThread for thread:  2 - archer_aio_thread.cpp:12
+[20261111 05:46:05.093760Z ][234580 ][INFO  ]Create ArcherAioThread for thread:  3 - archer_aio_thread.cpp:12
+[20261111 05:46:05.094381Z ][234580 ][INFO  ]Creating pinned memory pool:  16  chunks of  1024  KB - pinned_memory_pool.cpp:16
+[20261111 05:46:05.114674Z ][234580 ][INFO  ]Loading index file from  /home/mfeth/moe-offload/archer_index - archer_tensor_handle.cpp:54
+[20261111 05:46:05.116240Z ][234580 ][INFO  ]Index file size  3219 - archer_tensor_handle.cpp:63
+[20261111 05:46:05.117564Z ][234580 ][INFO  ]Device count  1 - archer_prefetch_handle.cpp:66
+[20261111 05:46:05.117567Z ][234580 ][INFO  ]Enabled peer access for all devices - archer_prefetch_handle.cpp:89
+[20261111 05:46:05.592105Z ][234580 ][INFO  ]Moving dense parameters to CPU - model_topology.cpp:660
+18 left17 left16 left15 left14 left13 left12 left11 left10 left9 left8 left7 left6 left5 left4 left3 left2 left1 left
+finished: 19/19
+[20261111 05:46:07.344705Z ][234580 ][INFO  ]Moving sparse parameters to CPU - model_topology.cpp:674
+[20261111 05:46:42.084655Z ][234580 ][INFO  ]Processing partition  0  ( 10236  MB,  2364  tensors) - model_topology.cpp:746
+[20261111 05:46:48.898205Z ][234580 ][INFO  ]Processing partition  1  ( 2961  MB,  708  tensors) - model_topology.cpp:746
+
+py-spy> Stopped sampling because process exited
+py-spy> Wrote raw flamegraph data to 'out/PY_DB.pyspy'. Samples: 8844 Errors: 2
+py-spy> You can use the flamegraph.pl script from https://github.com/brendangregg/flamegraph to generate a SVG

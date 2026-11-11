@@ -1,0 +1,13 @@
+FREEZE-774 — frozen before launch (2026-11-11)
+Runner:      run_exp774.sh  9168802c453bbd0d  (3 cells PY_LGC/PY_SPEC/PY_DB; 24 prompts; timeout 3600; roster incl exp773)
+Analyzer:    analyze774.py  f8be2771eda3312f  (tau_w=5.0; rows>=24; R gates 0.7/0.3; leaf<=0.5x; RESIDUAL-CARRIER iff top DB-LGC delta >= max(75, 0.3*net+))
+Prereg:      PREREG-774.md  69af2d41502c8721
+Fixtures:    fixtures774.py 59ff5cd8628fb3df  (11/11 local+remote pre-freeze)
+Patch:       patch773.py    f2d9478b3c5862f2  (verbatim exp773 intervention)
+Prompts:     prompts774.json 8c2745289c928c82 (6 lineage + 18 new)
+Engine:      engine_arm774.py 1f119bd017985083  (byte-copy exp773)
+Sampler:     sampler774.py  9c39353053718c1c  (byte-copy exp773)
+src774:      cp -a src753 + patch773.py; patched expert_prefetcher.py c5996708db8f9ffb (== exp773); HEAD b7f6ca4d2caa5229
+Envelope:    OLMoE-1B-7B-0125-Instruct, lcnu r=0.75, threads 4, gpu-route off, CUDA_VISIBLE_DEVICES=1, venv ~/venvs/moei-engine, torch 2.11.0+cu128, py-spy spawn 50 Hz raw, 24 prompts x 64 tok, warmup 1
+Void:        any post-freeze change to the above; py-spy != PYSPY.txt; busy-gate roster includes exp771-774
+FREEZE-774-SHA16: c9ceb1002d4a7bc6
