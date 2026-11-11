@@ -1,0 +1,27 @@
+FREEZE-776 (2026-11-11, thread 79990)
+Files (all in ~/warp-work/exp776-routed, staged to /home/mfeth/exp776):
+  engine_arm776.py    sha16 1f119bd017985083 (byte-copy exp775)
+  sampler776.py       sha16 9c39353053718c1c (byte-copy exp775)
+  prompts774.json     sha16 8c2745289c928c82 (byte-copy exp774/775)
+  patch776.py         (routedlog instrumented async-dbuf; EXP776_LOG_OUT)
+  run_exp776.sh       (1 cell PY_DBL; wall informational; roster exp746..exp776)
+  analyze776.py       (P,H,lift; rc 9/4/1/2/7; gates lift>=0.15&P>=0.40 / 0.05 / else)
+  PREREG-776.md       (hypothesis, frozen rule, voids)
+  fixtures776.py      sha16 b84669d545231ffd — battery 8/8 local + 8/8 remote
+src776 = cp -a src753 + patch776.py:
+  HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd
+  markers: exp776 routedlog=1, EXP773_DB=1
+  expert_prefetcher.py sha16 3571f714c811e1c7
+  import-ok (venv moei-engine)
+Smoke probe (pre-freeze): 1 prompt x 4 tok, DB path, logging on:
+  RC=0; probe.rl.jsonl 150 lines, parse-ok 150, 0 bad; routed sets non-empty;
+  first calls |routed|=1 (decode steps, per-layer calls) — heterogeneous |R|
+  expected; analyzer reports distribution.
+Envelope: OLMoE-1B-7B-0125-Instruct, lcnu r=0.75, threads 4, gpu-route off,
+  CUDA_VISIBLE_DEVICES=1, 24 prompts x 64 tok, warmup 1, py-spy 50 Hz spawn.
+WALL IS INFORMATIONAL (logging syncs); NOT comparable to exp774 refs.
+Decision rule frozen in PREREG-776.md + analyze776.py:
+  rc=1 PREDICTIVE-LIFT lift>=0.15 AND P>=0.40
+  rc=2 MILD-LIFT lift>=0.05
+  rc=7 NO-LIFT else; rc=9 IDENTIFY; rc=4 DATA (pairs<200/BADIO)
+No changes after this line.

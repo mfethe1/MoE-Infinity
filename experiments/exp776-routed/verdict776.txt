@@ -1,0 +1,9 @@
+exp776 routed-expert persistence vs heuristic coverage
+W(info-only, logging syncs) = 213.88s
+rl.jsonl: 20175 calls
+Q1 mean|R| = 1.0 distinct experts/call (min 1, max 1); heuristic k = 2.0; ceiling k/|R| = 2.000
+Q2 routed persistence P = |R_t & R_t+1|/|R_t+1| = 0.0161 over 20145 pairs
+Q3 heuristic vs true need H = |L_t & R_t+1|/|R_t+1| = 0.0299
+Q4 lift = P - H = -0.0138
+NO-LIFT: routing churns too fast for prev-routed prediction (persistence 2%, lift -1.38%) — no predictor of this class helps; prefetch-on-use/recency remains the best available class
+rc=7

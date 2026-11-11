@@ -1,0 +1,5 @@
+/home/mfeth/exp776/run_exp776.sh: line 17: /proc/298820/cmdline: No such file or directory
+== 2026-11-11T06:50:20Z start
+PY_DBL RC=0
+DONE out/PY_DBL.json
+== done 2026-11-11T06:55:16Z ==
