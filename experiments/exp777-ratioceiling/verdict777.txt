@@ -1,0 +1,10 @@
+exp777 residency-ratio wall ceiling (src776 shipped path)
+PY_R075 (r=0.75): RC=0 W=172.98 tok/s=7.874
+PY_R090 (r=0.90): RC=0 W=178.96 tok/s=7.610
+PY_R0975 (r=0.975): RC=0 W=175.86 tok/s=7.745
+PY_R100 (r=1.0): RC=0 W=172.91 tok/s=7.877
+covariate: W(R075)=172.98 vs gate [137.00, 228.32] (exp775 DB ref 182.66 +/-25%)
+r* = 1.0 (PY_R100); headroom = (W075 - W(r*)) / W075 = +0.0004
+monotone non-increasing W over r: no (report-only)
+NO-HEADROOM: residency budget costs <3% of decode wall — policy lane CLOSED; residual lives outside expert residency
+rc=7

@@ -1,0 +1,20 @@
+FREEZE-777 (2026-11-11, thread 79990) — residency-ratio wall ceiling
+Files (~/warp-work/exp777-ratioceiling, staged /home/mfeth/exp777):
+  engine_arm777.py  sha16 1f119bd017985083 (byte-copy exp776; runner uses
+                    /home/mfeth/exp776/ copies — identical shas verified)
+  sampler777.py     sha16 9c39353053718c1c (same)
+  prompts774.json   sha16 8c2745289c928c82 (same)
+  run_exp777.sh     4 cells: PY_R075/PY_R090/PY_R0975/PY_R100, src776 build,
+                    shipped DB path (EXP773_DB=1, NO logging env set)
+  analyze777.py     headroom vs r*; rc 9/4/1/2/7 (gates 0.10 / 0.03)
+  PREREG-777.md     hypothesis + frozen rule + voids
+  fixtures777.py    battery 9/9 local + 9/9 remote
+Build: src776 AS-BUILT (expert_prefetcher sha16 3571f714c811e1c7 verified
+  in-run); SRC_HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd; no new patch.
+Covariate: PY_R075 vs exp775 DB ref 182.66 +/-25% -> [137.00, 228.33].
+r* = max r with RC=0; failed cells (e.g. r=1.0 OOM) recorded, not voided.
+Envelope: OLMoE-1B-7B-0125-Instruct, lcnu, threads 4, gpu-route off,
+  CUDA_VISIBLE_DEVICES=1, 24 prompts x 64 tok, warmup 1, py-spy 50 Hz.
+Decision rule frozen in PREREG-777.md + analyze776.py lineage:
+  rc=1 LARGE >=0.10 | rc=2 MILD [0.03,0.10) | rc=7 NO <0.03 | 4 DATA | 9 ID
+No changes after this line.
