@@ -1,0 +1,9 @@
+exp776b same-layer (period-15) persistence re-analysis
+input rl.jsonl sha16 = 10adf7341ab6a017 (expected 10adf7341ab6a017)
+calls=20175 (1345 steps x 15 positions)
+P_same(lag-15) = 0.1724 over 20055 same-layer pairs  [random 0.0156]
+H_same topk2->same-layer-next = 0.2543  [random 0.0312]
+P_lag1 (exp776 published, cross-layer) = 0.0161 over 20167 pairs
+same-layer vs adjacent lift = +0.1563; P_same/random = 11.0x
+WEAK-MEMORY: routing is NOT memoryless (P_same 17.24% = 11.0x random) but far below the 40% viability bar — prediction-based prefetch stays dead (exp776 NO-LIFT verdict stands; its 'memoryless' mechanism claim is CORRECTED)
+rc=2

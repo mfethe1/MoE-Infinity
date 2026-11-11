@@ -1,0 +1,31 @@
+FREEZE-776B (2026-11-11, thread 79990) — analysis-only, no new run
+Purpose: correct exp776's pairing flaw. exp776 paired ADJACENT log lines; the
+prefetcher is a single instance fed by all MoE layers in order, so adjacent
+lines are CROSS-LAYER pairs. exp776's published 'memoryless' mechanism claim
+measured cross-layer overlap, not same-layer-next-step.
+
+Input (frozen, unchanged from exp776 seal):
+  sealed776/out/PY_DBL.rl.jsonl  sha16 10adf7341ab6a017
+  (exp776 tar adf21fc814ab61ca, verdict 85337020316a4ed5)
+
+Structure facts (pre-freeze probe, now frozen):
+  - t is a single global counter 0..20174 (one t=0, zero resets)
+  - 20175 = 15 x 1345 exactly; lag scan 1..24: overlap ~0.013-0.02 at all
+    lags EXCEPT lag-15 = 0.1724 -> period K=15, same-layer pair = (i, i+15)
+  - gaps: 20143 < 50 ms, 29 >= 1 s (prompt boundaries), 2 other
+
+Analyzer: analyze776b.py (battery fixtures776b.py 6/6 local)
+Metrics: P_same = |R_i & R_{i+15}|/|R_{i+15}| span-guarded 2.0 s;
+  H_same = |L_i & R_{i+15}|/|R_{i+15}|; P_lag1 re-derived for reference.
+Random baselines 1/64=0.015625, 2/64=0.03125.
+
+Frozen decision rule:
+  rc=1 REOPENED       P_same >= 0.40 (exp776 mechanism RETRACTED; intervention)
+  rc=2 WEAK-MEMORY    0.06 <= P_same < 0.40 (memory real but class dead;
+                      exp776 'memoryless' CORRECTED; NO-LIFT verdict stands)
+  rc=7 CONFIRMED      P_same < 0.06 (memoryless airtight)
+  rc=4 DATA < 2000 pairs; rc=9 IDENTIFY (sha mismatch / non-periodic)
+Regardless of rc, a correction receipt on PR #353 is REQUIRED because
+exp776's published mechanism sentence is not supported by adjacent-line
+pairing; P_same is the correct statistic.
+No changes after this line.
