@@ -46,5 +46,5 @@ while read -u 3 ID ARM STORE G; do
   echo "$ID RC=$RC store=$STORE rmode=$RMODE"; grep -E "prompt [0-9]+:" out/$ID.log | tail -3 | cut -c1-120
   [ $RC -ne 0 ] && { tail -8 out/$ID.log; echo "$ID FAILED" >> out/FAILED; }
 done 3< <(python3 -c "import json;[print(c['id'],c['arm'],c['store'],c['gpu']) for c in json.load(open('cells783.json'))]")
-python3 analyze783.py out > out/verdict.txt 2>&1; cat out/verdict.txt
+python3 analyze783.py . > out/verdict.txt 2>&1; cat out/verdict.txt
 echo "== $(date -u +%FT%TZ) EXP783-DONE"
