@@ -1,0 +1,23 @@
+FREEZE-785 (2026-11-11, pre-launch)
+Engine: src753 build, git HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd
+Store .so: /home/mfeth/exp759/src753/moe_infinity/_store*.so f54e5756 (per RUN_SHA256 at launch)
+Model: OLMoE-1B-7B-0125-Instruct (bf16 store ~/moe-offload, unchanged)
+Harness shas (sha256 first16):
+  engine_arm785.py 08c1883997699d48 (new: --spec-prefetch flag from engine_arm783.py lineage)
+  run_exp785.sh    1864f865b00156cf
+  cells785.json    0a30c66e1c413f0b (8 cells C/S x 0.75/0.25 x a/b, GPU1, threads 4)
+  analyze785.py    5327c991bbf20083 (rc1/2/3/4/9; NEW rc4 REGRESSION)
+  fixtures785.py   fceef53c4e86e09d (6/6 local + remote py3.12)
+  PREREG-785.md    2bbb11c52c741c739 (frozen BEFORE launch; freeze-manifest first draft
+                   dropped one hex char — corrected post-launch, file unchanged: local
+                   sha == remote sha 2bbb11c52c741c739 verified after start)
+  prompts24.json   c1752a13b01e06b4 (same 24-prompt set as exp784)
+  allquiet746.sh   1dfc07c500e51e49 / mon760.sh ab8f319c14ad1e9d / nvsamp.py 12c1f05fa112e9f6
+  probe8.json      de0da14e5b9264e1
+Probes (qualification, disclosed in PREREG; probe jsons kept on remote):
+  spec ON @0.75: 4.01 tok/s (baseline ~10.6) = -62%
+  spec ON @0.25: 4.49 tok/s miss 47.7% (baseline 10.07) = -55%
+  threads=16 @0.75: 4.67 tok/s (-56%, recorded not A/B'd)
+  spec_prefetch_effective=True read back from archer_config in probe runs
+Identity gates in runner: PYTHONPATH=/home/mfeth/exp759/src753 enforced; ENV.txt must
+contain src753 import path AND git HEAD b7f6ca4d...; else exit 9.

@@ -1,0 +1,10 @@
+[
+  {"id": "C75a", "spec": "off", "ratio": 0.75, "gpu": 1},
+  {"id": "S75a", "spec": "on",  "ratio": 0.75, "gpu": 1},
+  {"id": "C25a", "spec": "off", "ratio": 0.25, "gpu": 1},
+  {"id": "S25a", "spec": "on",  "ratio": 0.25, "gpu": 1},
+  {"id": "C75b", "spec": "off", "ratio": 0.75, "gpu": 1},
+  {"id": "S75b", "spec": "on",  "ratio": 0.75, "gpu": 1},
+  {"id": "C25b", "spec": "off", "ratio": 0.25, "gpu": 1},
+  {"id": "S25b", "spec": "on",  "ratio": 0.25, "gpu": 1}
+]
