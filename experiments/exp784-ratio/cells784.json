@@ -1,0 +1,10 @@
+[
+  {"id": "B25a", "arm": "B", "ratio": 0.25, "gpu": 1},
+  {"id": "F25a", "arm": "F", "ratio": 0.25, "gpu": 1},
+  {"id": "B50a", "arm": "B", "ratio": 0.50, "gpu": 1},
+  {"id": "F50a", "arm": "F", "ratio": 0.50, "gpu": 1},
+  {"id": "B25b", "arm": "B", "ratio": 0.25, "gpu": 1},
+  {"id": "F25b", "arm": "F", "ratio": 0.25, "gpu": 1},
+  {"id": "B50b", "arm": "B", "ratio": 0.50, "gpu": 1},
+  {"id": "F50b", "arm": "F", "ratio": 0.50, "gpu": 1}
+]

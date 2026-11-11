@@ -1,0 +1,18 @@
+FREEZE-784 (2026-11-11) — sealed before first A/B cell run
+Question: FP8 vs BF16 decode across device_memory_ratio {0.25, 0.50}, miss-heavy regime (PREREG-784.md sha 04f65c2…, see RUN_SHA256 for full)
+Harness/files (sha256, local==remote verified at push):
+  engine_arm783.py  8e4f41879f62f2c7…  BYTE-IDENTICAL to exp783 freeze (continuity)
+  cells784.json     8 cells: B25a F25a B50a F50a B25b F25b B50b F50b
+  run_exp784.sh     analyzer invoked with experiment ROOT (exp783 lesson applied)
+  analyze784.py     fixtures 12/12 local py3.14 + remote py3.12
+  fixtures784.py
+  prompts24.json    24 diverse-topic prompts (new; widen expert working set)
+Build identity:
+  PYTHONPATH=/home/mfeth/exp759/src753; HEAD b7f6ca4d2caa5229698d78deb03b454fc20947dd
+  _store.cpython-312-x86_64-linux-gnu.so f54e5756ee182bcf… (same as exp782/783)
+Stores: ~/moe-offload-fp8 7,409,513,928 B | ~/moe-offload 13,838,673,780 B (unchanged since exp783)
+GPUs: 2x RTX 5060 Ti; cells pinned CUDA_VISIBLE_DEVICES=1
+Qualification probes (pre-freeze, 8 prompts x 32 tok, NOT sealed):
+  bf16@0.25: 10.07 tok/s, miss 46.7% (20,952 misses) — regime knob works
+  fp8@0.25:  10.88 tok/s, miss 23.9% (10,702 misses) — working-set mechanism visible
+Prereg attempt-1 budget: 3. No post-hoc gate edits on sealed data.
