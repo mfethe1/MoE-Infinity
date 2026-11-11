@@ -1,0 +1,17 @@
+FREEZE-771 (pre-launch)
+date: 2026-11-11 UTC
+files (sha256[:16]):
+  engine_arm771.py 1f119bd017985083  (== exp769/770 engine, byte-identical)
+  sampler771.py    9c39353053718c1c  (== sampler770, byte-identical; cross-check only)
+  run_exp771.sh    3436e48b4a32e31c  (exp770 runner + py-spy SPAWN mode 50Hz raw)
+  analyze771.py    d40b54d1683c6fb4  (frozen decision rule, PREREG-771)
+  PREREG-771.md    ad31ba1638ca33ba
+  fixtures771.py   56d375fdcb4df4c3  (8/8 PASS local AND remote)
+input: prompts.json 6d06ff563dd9f24e (== exp769, cmp-identical)
+probes (pre-freeze): attach mode DENIED (sudo ptrace) -> switched to spawn mode;
+  spawn probe rc=0, 299 samples, 0 errors, raw collapsed written.
+envelope: OLMoE-1B-7B, src753 @ b7f6ca4, lcnu r=0.75, threads 4, gpu-route off,
+  CUDA_VISIBLE_DEVICES=1, venv moei-engine, py-spy 0.4.3, 6 prompts x 64 tok,
+  warmup 1. Cells PY_LGC / PY_SPEC. Busy-gate exp746..exp767 + exp770 + exp771.
+decision rule frozen in analyze771.py (rate=50, tau=2.0s, tau_f=1.0s, f=0.4, g=0.6;
+  rc1 F-TOP / rc2 F-PAIR / rc7 F-DIFFUSE / rc5 NO-SIGNAL / rc8 REVERSED).

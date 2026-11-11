@@ -1,0 +1,18 @@
+exp771 function-level CPU attribution (py-spy raw leaf, rate=50)
+SRC_HEAD=b7f6ca4d2caa
+PY_LGC: rows=6 samples=3864
+PY_SPEC: rows=6 samples=4109
+W(gen wall): LGC 44.27s SPEC 52.41s  DW=+8.13s (cross-check)
+sampled CPU: LGC 77.3s SPEC 82.2s  DcpuS=+4.90s (tau=2.0)
+positive leaf delta sum: 16.34s across 264 functions
+top leaf deltas (SPEC-LGC):
+  ExpertPrefetcher.speculative_prefetch (moe_infinity/memory/expert_pref   +4.92s   30.1% of +delta
+  Linear.forward (torch/nn/modules/linear.py:134)                          +0.70s    4.3% of +delta
+  DistributedExpertExecutor._dispatch_eager_local (moe_infinity/distribu   +0.46s    2.8% of +delta
+  OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:56)    +0.44s    2.7% of +delta
+  _compile_bytecode (<frozen importlib._bootstrap_external>:753)           +0.34s    2.1% of +delta
+  apply_rotary_pos_emb (transformers/models/olmoe/modeling_olmoe.py:154)   +0.34s    2.1% of +delta
+  rotate_half (transformers/models/olmoe/modeling_olmoe.py:130)            +0.30s    1.8% of +delta
+  OlmoeRMSNorm.forward (transformers/models/olmoe/modeling_olmoe.py:57)    +0.26s    1.6% of +delta
+F-DIFFUSE: top1 +4.92s < max(1.0s,40%) and pair < max(2.0s,60%) -> successor: line-level attribution or code-region timing
+rc=7
