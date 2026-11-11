@@ -1,0 +1,9 @@
+FREEZE-768 2026-11-11T04:03:55Z
+PREREG-768.md  fc786c9d25d65917
+analyze768.py  3ae61c7721aeaa9a  (fixture battery 7/7 PASS on Mack)
+fixtures768.py 3345c2a8b7be32d2
+input: SEALED exp767 stacks (read-only; sha of inputs recorded below)
+tau=2.0s; floors: combined>=30000, each named subtree>=500/arm
+9081d49e4fe1c48dbbf6d7ba7cec6a99547d82fe3e090b6bb4a9382a8792c890  /home/mfeth/exp767/out/NAT_LGC.pyspy
+8495db6477964272762c7e32c134e58f55e4e537ae9efc288b77c5075359340d  /home/mfeth/exp767/out/NAT_SPEC.pyspy
+36a34133558e75a699cd98a88021d62261ce7fc50c29809681eb4300f7970e4b  /home/mfeth/exp767/out/SRC_HEAD.txt

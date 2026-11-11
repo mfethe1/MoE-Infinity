@@ -1,0 +1,12 @@
+[RECONSTRUCTED 2026-11-11 from captured stdout of attempt-1 run under FREEZE-768 84dd2eb137845228;
+ the A2 run legitimately overwrote out/verdict768.txt on Winnie — identical table, only decision line differs]
+exp768 named-subtree decomposition (native attribution, sealed exp767 stacks)
+samples: LGC=17666 SPEC=19277 combined=36943
+SRC_HEAD=b7f6ca4d2caa
+subtree thread-secs totals (LGC -> SPEC, delta):
+  SPEC     0.000 ->    1.880  D=  +1.880
+  EAGER   19.810 ->   17.920  D=  -1.890
+  WAIT    22.650 ->   22.900  D=  +0.250
+total attributed delta = +16.110 thread-secs
+INCONCLUSIVE: combined=36943 floor-fails=['LGC:SPEC:0', 'SPEC:SPEC:188']
+rc=3

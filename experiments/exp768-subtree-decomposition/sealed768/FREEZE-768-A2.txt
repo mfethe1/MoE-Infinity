@@ -1,0 +1,6 @@
+FREEZE-768-A2 2026-11-11T04:05:07Z
+attempt-1: analyze768.py 3ae61c7721aeaa9a -> rc=3 INCONCLUSIVE (structural floor flaw, sealed)
+PREREG-768-A2.md  2d6c80662f78c4ec
+analyze768a2.py   1de9a1d93b24ab6d  (fixtures768a2 battery 9/9 PASS on Mack)
+fixtures768a2.py  57f07e3e28daaeb2
+gates: EAGER/WAIT>=500/arm; SPEC>=100 SPEC-arm only (feature-gated); tau=2.0

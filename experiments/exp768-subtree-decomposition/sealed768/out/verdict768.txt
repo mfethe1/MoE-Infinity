@@ -1,0 +1,15 @@
+exp768 named-subtree decomposition (native attribution, sealed exp767 stacks)
+samples: LGC=17666 SPEC=19277 combined=36943
+SRC_HEAD=b7f6ca4d2caa
+subtree thread-secs totals (LGC -> SPEC, delta):
+  SPEC     0.000 ->    1.880  D=  +1.880
+  EAGER   19.810 ->   17.920  D=  -1.890
+  WAIT    22.650 ->   22.900  D=  +0.250
+subtree per-family detail (secs):
+  SPEC  deltas {"PY_PREF": 0.07, "PY_EXEC": 0.02, "N_TORCH": 0.2, "N_LIBC": 0.2, "N_HEX": 1.36, "N_OTH": 0.03}
+  EAGER deltas {"PY_PREF": 0.01, "PY_OTH": 0.01, "N_TORCH": 0.61, "N_LIBC": -1.4, "N_HEX": -0.52, "N_OTH": -0.6}
+  WAIT  deltas {"PY_PREF": 0.11, "PY_EXEC": -0.04, "PY_OTH": -0.04, "N_TORCH": 0.21, "N_LIBC": 0.2, "N_HEX": -0.25, "N_OTH": 0.06}
+whole-process family deltas (covariate, no gates):
+  {"PY_PREF": 0.12, "PY_EXEC": 0.46, "PY_OTH": 4.25, "N_TORCH": 5.5, "N_LIBC": 1.68, "N_HEX": 3.84, "N_OTH": 0.26}
+total attributed delta = +16.110 thread-secs
+D3 NET-NULL: |De|-1.890 |Ds|+1.880 |Dw|+0.250 all < tau -> wall cost invisible to in-process 100Hz native sampling; successor exp769 unprofiled OS-counter differential (page-faults, ctx-switches, per-thread CPU, RSS)
