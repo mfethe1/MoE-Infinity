@@ -1,0 +1,30 @@
+EXP-798 VERDICT: MECHANISM SUPPORTED (G1 TRUE) — first positive promotion
+in the inline-steal series (after exp795 VOID, exp796 VOID, exp797 NO-MOVE)
+
+Attempt 3 arms (warmup W first; balanced F/N order; env load <= ~2.9 incl.
+probe self-load; binary eba566fb; probe794 verbatim 073e8f51):
+- W  21.450 s (took the cold page-cache hit, confirming attempt-2 diagnosis)
+- F1 18.626 / N1 18.747  (early slots, warm: +0.6% N)
+- F2 22.648 / N2 19.320  (late slots: F degraded 21.6%, N held)
+- wall(N) mean 19.034 vs wall(F) mean 20.637 -> ratio 0.9223
+- G1 (N <= 0.97F): TRUE -> -7.8% wall reduction with steal ON
+- G2 refute: not triggered
+- wait_share ~50% both arms (work moved INSIDE wait_dispatch_local exactly
+  as the pre-declared measurement note predicted; wait_ms/call 2.235 N vs
+  2.335 F)
+
+CAVEATS (stated, not buried): n=2 per arm; passive rep spread is large
+(18.63-22.65, 21%) so the mean-difference sits within passive's own spread;
+G1 is TRUE per pre-declared rule, promoted with that caveat.
+
+SECONDARY FINDING (arguably stronger than the mean): wall-time VARIANCE
+collapses with steal — N spread 3.0% (18.75/19.32) vs F spread 21.6%
+(18.63/22.65), ~7x reduction. Consistent with the mechanism: passive wait
+depends on scheduler-mediated worker wakeups (latency jitter); inline steal
+executes on the caller thread (deterministic path). Also matches exp796's
+loaded-host signal and exp797's floors.
+
+Evidence stack for inline steal now: exp795 +6.8% quiet obs; exp796 +59%
+loaded obs; exp797 +10.3% nominal; exp798 G1-true -7.8% wall + 7x variance
+reduction. NEXT (exp799): high-rep confirmatory (>=5 reps/arm) in a
+CI-dead window with variance as the PRIMARY endpoint (mean secondary).
