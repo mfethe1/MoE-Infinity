@@ -1,0 +1,11 @@
+{
+ "ratio": 0.5,
+ "decode_wall_s": 19.782,
+ "dispatch_s": 1.006,
+ "wait_s": 9.977,
+ "calls": 4352,
+ "wait_share_pct": 50.4,
+ "dispatch_share_pct": 5.1,
+ "wait_ms_per_call": 2.29,
+ "dispatch_ms_per_call": 0.23
+}

@@ -1,0 +1,29 @@
+EXP-799 VERDICT: P1 PASS (variance collapse replicates at n=5); S1 FAIL
+(mean -1.76 pct < 3 pct gate). PROMOTED CLAIM: variance only.
+
+CI-dead window (load 0.14-2.15 all arms; GPU0 empty; env gate PASS).
+W warmup 18.814 (absorbed cold; all measured arms warm).
+
+N walls [18.877 18.957 18.826 19.145 18.859] mean 18.933 CV 0.68 pct
+F walls [19.877 18.924 19.782 18.878 18.896] mean 19.271 CV 2.65 pct
+P1: CV(N) 0.0068 <= 0.4*CV(F) 0.0106 -> TRUE (3.9x CV ratio)
+S1: mean ratio 0.9824 -> FALSE (below 0.97 gate; exp798's -7.8 pct rode
+a passive tail event, F2 22.65)
+S2 refute: not triggered.
+
+STRUCTURE FINDING: passive walls are BIMODAL — three at 18.87-18.92 and
+two at 19.78-19.88, nothing between (gap 0.86 s). Signature of two
+scheduler paths for the worker-wakeup round trip (fast vs delayed);
+inline steal collapses to the fast mode deterministically (N spread 0.32 s
+total). n=5 is small for a formal bimodality test; recorded as observed
+structure, promoted as variance only.
+
+Wait shares ~51 pct both arms (mechanism classification: work moved
+inline, consistent with exp798).
+
+FINAL INLINE-STEAL EVIDENCE: mean gain is SMALL and unreliable (~1.8 pct
+at n=5; +6.8/+59/+10.3 obs elsewhere were noise/tail-inflated); VARIANCE
+gain is REAL and replicated twice (7x spread ratio exp798, 3.9x CV ratio
+exp799, bimodal->unimodal). For serving (p99/tail latency) the variance
+result is the headline. UPSTREAM PR: frame as jitter reduction with
+MOE_INLINE_WAIT kill-switch, NOT a throughput win.
