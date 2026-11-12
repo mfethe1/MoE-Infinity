@@ -1,0 +1,122 @@
+[WARNING] FlashAttention is not available in the current environment. Using GQA-native SDPA attention.
+Loading model from offload_path ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+OlmoeConfig {
+  "architectures": [
+    "OlmoeForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": null,
+  "clip_qkv": null,
+  "dtype": "bfloat16",
+  "eos_token_id": 50279,
+  "hidden_act": "silu",
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "intermediate_size": 1024,
+  "max_position_embeddings": 4096,
+  "model_type": "olmoe",
+  "norm_topk_prob": false,
+  "num_attention_heads": 16,
+  "num_experts": 64,
+  "num_experts_per_tok": 8,
+  "num_hidden_layers": 16,
+  "num_key_value_heads": 16,
+  "output_router_logits": false,
+  "pad_token_id": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_parameters": {
+    "rope_theta": 10000.0,
+    "rope_type": "default"
+  },
+  "router_aux_loss_coef": 0.01,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.22.1",
+  "use_cache": false,
+  "vocab_size": 50304
+}
+
+TOPO: 35 stages, 16 sparse
+TOPO: set_topology done
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+/home/mfeth/exp793/profile793.py:108: DeprecationWarning: MoE.generate() is deprecated. Use MoE.serve() for continuous batching with higher throughput. MoE.generate() will be removed in a future version.
+  model.generate(ids, max_new_tokens=n, min_new_tokens=n,
+{
+ "decode_wall_ms": 24370.3,
+ "decode_ms_self": {
+  "moe_glue": 14111.8,
+  "attn_core": 3942.3,
+  "norm": 3704.9,
+  "qkvo_proj": 1887.9,
+  "layer_glue": 772.4,
+  "router": 543.6,
+  "lm_head": 120.5,
+  "rotary": 96.6,
+  "embed": 43.8,
+  "unaccounted": -853.5
+ },
+ "shares_pct_of_wall": {
+  "moe_glue": 57.9,
+  "attn_core": 16.2,
+  "norm": 15.2,
+  "qkvo_proj": 7.7,
+  "layer_glue": 3.2,
+  "router": 2.2,
+  "lm_head": 0.5,
+  "rotary": 0.4,
+  "embed": 0.2,
+  "unaccounted": -3.5
+ },
+ "dispatch_stall_est_pct": 39.9,
+ "decision": "TARGET=moe_glue"
+}
+[20261112 15:25:39.145036Z ][2621441 ][INFO  ]Creating I/O thread pool with  4  threads - archer_prio_aio_handle.cpp:234
+[20261112 15:25:39.145052Z ][2621441 ][INFO  ]Create ArcherAioThread for thread:  0 - archer_aio_thread.cpp:12
+[20261112 15:25:39.145053Z ][2621441 ][INFO  ]Create ArcherAioThread for thread:  1 - archer_aio_thread.cpp:12
+[20261112 15:25:39.145053Z ][2621441 ][INFO  ]Create ArcherAioThread for thread:  2 - archer_aio_thread.cpp:12
+[20261112 15:25:39.145054Z ][2621441 ][INFO  ]Create ArcherAioThread for thread:  3 - archer_aio_thread.cpp:12
+[20261112 15:25:39.145393Z ][2621441 ][INFO  ]Creating pinned memory pool:  16  chunks of  1024  KB - pinned_memory_pool.cpp:16
+[20261112 15:25:39.163515Z ][2621441 ][INFO  ]Loading index file from  /home/mfeth/moe-offload/archer_index - archer_tensor_handle.cpp:54
+[20261112 15:25:39.165687Z ][2621441 ][INFO  ]Index file size  3219 - archer_tensor_handle.cpp:63
+[20261112 15:25:39.166438Z ][2621441 ][INFO  ]Device count  1 - archer_prefetch_handle.cpp:66
+[20261112 15:25:39.166441Z ][2621441 ][INFO  ]Enabled peer access for all devices - archer_prefetch_handle.cpp:89
+[20261112 15:25:39.544909Z ][2621441 ][INFO  ]Moving dense parameters to CPU - model_topology.cpp:660
+18 left17 left16 left15 left14 left13 left12 left11 left10 left9 left8 left7 left6 left5 left4 left3 left2 left1 left
+finished: 19/19
+[20261112 15:25:40.901675Z ][2621441 ][INFO  ]Moving sparse parameters to CPU - model_topology.cpp:674
+[20261112 15:26:18.274551Z ][2621441 ][INFO  ]Processing partition  0  ( 10236  MB,  2364  tensors) - model_topology.cpp:746
+[20261112 15:26:23.675298Z ][2621441 ][INFO  ]Processing partition  1  ( 2961  MB,  708  tensors) - model_topology.cpp:746
+RC=0
