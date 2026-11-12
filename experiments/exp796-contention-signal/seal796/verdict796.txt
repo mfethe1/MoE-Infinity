@@ -1,0 +1,27 @@
+EXP-796 VERDICT: VOID (pre-declared Gate 0/1 branches triggered)
+
+Findings (all from frozen p796_*.json):
+1. INTRINSIC NONDETERMINISM: H(P1,P2)=85/256 with SAME binary, SAME config,
+   fresh processes. Greedy decode on this stack is not run-to-run
+   reproducible. Bit-level token gates are unusable, full stop.
+2. DETERMINISM FLAG INEFFECTIVE for token reproducibility: H(DPi,DPj)=150,
+   173, 123 WITH MOE_GROUPED_DETERMINISTIC=1 (worse than unflagged 85).
+   Gate 0 branch "flag insufficient -> VOID token gates" taken.
+3. Gate 1 (H(DPi,DAi)==0 under flag) failed: 162/101/161. Per pre-declared
+   rule: VOID, no perf interpretation.
+
+Observational perf (confounded, NOT promoted):
+- DA (steal ON): 9.325/9.442/9.641 pooled -> mean 9.469
+- DP (passive):  4.953/5.078/7.810 pooled -> mean 5.947 (+59.2% DA, separated)
+- BUT host was under load during battery (15-min loadavg 8.64; GPU0 CI job +
+  buildkitd/dockerd CPU), AND arm order was sequential (passive arms early
+  under heavier load, steal arms late during recovery; DP3 7.81 shows the
+  transition). Magnitude unreliable; direction consistent with exp795's
+  quiet-host +6.8%.
+- Hypothesis promoted to testable: inline steal is host-CPU-contention
+  resilient (caller-thread exec vs worker-thread wakeup starvation).
+
+NEXT (exp797): interleaved 2x2 steal{ON,OFF} x load{quiet,burner} with
+taskset-pinned CPU burners, ABBA ordering, 3 reps/cell; correctness via
+divergence-floor comparison (H(steal,steal) vs H(passive,passive) vs
+intrinsic 85/256 floor), not bit equality.
