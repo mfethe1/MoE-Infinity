@@ -1,0 +1,1 @@
+cd /home/mfeth/exp789 && python3 probe789.py C=/home/mfeth/exp788/src788:default N1=/home/mfeth/exp788/src788:1,4,2,2\;1,4,2,2 N2=/home/mfeth/exp788/src788:1,2,8,2\;1,2,8,2 N3=/home/mfeth/exp788/src788:1,4,1,4\;1,4,1,4 N4=/home/mfeth/exp788/src788:1,1,4,4\;1,1,4,4 > /home/mfeth/exp789/probe789.out 2>&1; echo PROBE_RC=$? >> /home/mfeth/exp789/probe789.out
