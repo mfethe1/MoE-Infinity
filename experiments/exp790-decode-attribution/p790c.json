@@ -1,0 +1,61 @@
+{
+ "model": "/home/mfeth/models/OLMoE-1B-7B-0125-Instruct",
+ "torch": "2.11.0+cu128",
+ "gpu": "NVIDIA GeForce RTX 5060 Ti",
+ "decode_ms_stream": 82697.0,
+ "decode_ms_wall": 26633.5,
+ "stream_vs_wall": 3.105,
+ "decode_ms_by_bucket": {
+  "other_mod": 53511.7,
+  "moe_block": 19465.2,
+  "attn_block": 5033.8,
+  "norm": 2865.3,
+  "attn_proj": 1196.7,
+  "router": 459.8,
+  "head": 164.6
+ },
+ "shares": {
+  "other_mod": 0.6471,
+  "moe_block": 0.2354,
+  "attn_block": 0.0609,
+  "norm": 0.0346,
+  "attn_proj": 0.0145,
+  "router": 0.0056,
+  "head": 0.002
+ },
+ "counts_decode": {
+  "head": 496,
+  "other_mod": 4464,
+  "norm": 16120,
+  "attn_proj": 15872,
+  "attn_block": 3968,
+  "router": 3968,
+  "moe_block": 3968
+ },
+ "decision_rule": "top non-grouped bucket >=25% of decode stream time",
+ "decision": "TARGET=other_mod",
+ "top_non_grouped": [
+  "other_mod",
+  0.6471
+ ],
+ "walls_pre_s": [
+  0.952,
+  0.889,
+  0.861,
+  0.818,
+  0.848,
+  0.817,
+  0.788,
+  0.876
+ ],
+ "walls_full_s": [
+  3.995,
+  4.193,
+  4.054,
+  3.907,
+  4.309,
+  3.995,
+  4.461,
+  4.568
+ ]
+}

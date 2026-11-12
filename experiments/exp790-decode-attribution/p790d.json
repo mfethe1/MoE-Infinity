@@ -1,0 +1,55 @@
+{
+ "model": "/home/mfeth/models/OLMoE-1B-7B-0125-Instruct",
+ "torch": "2.11.0+cu128",
+ "gpu": "NVIDIA GeForce RTX 5060 Ti",
+ "decode_wall_ms": 28163.2,
+ "decode_ms_self": {
+  "moe_glue": 19145.0,
+  "norm": 3123.4,
+  "attn_core": 2868.8,
+  "qkvo_proj": 1315.3,
+  "layer_glue": 682.8,
+  "router": 478.1,
+  "unaccounted": 286.8,
+  "lm_head": 122.4,
+  "rotary": 96.5,
+  "embed": 44.1
+ },
+ "shares_pct_of_wall": {
+  "moe_glue": 68.0,
+  "norm": 11.1,
+  "attn_core": 10.2,
+  "qkvo_proj": 4.7,
+  "layer_glue": 2.4,
+  "router": 1.7,
+  "unaccounted": 1.0,
+  "lm_head": 0.4,
+  "rotary": 0.3,
+  "embed": 0.2
+ },
+ "experts_native_share_pct": 68.0,
+ "grouped_gemm_known_pct": 18.0,
+ "dispatch_stall_est_pct": 50.0,
+ "decision_rule": "top non-experts bucket >=25% of decode wall",
+ "decision": "TARGET=moe_glue",
+ "walls_pre_s": [
+  0.97,
+  0.885,
+  0.854,
+  0.855,
+  0.86,
+  0.839,
+  0.782,
+  0.843
+ ],
+ "walls_full_s": [
+  4.718,
+  4.538,
+  4.103,
+  3.905,
+  4.265,
+  4.401,
+  4.579,
+  4.543
+ ]
+}

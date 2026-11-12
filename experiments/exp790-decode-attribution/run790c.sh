@@ -1,0 +1,1 @@
+cd /home/mfeth/exp790 && CUDA_VISIBLE_DEVICES=1 ~/venvs/moei-engine/bin/python profile790c.py --model ~/models/OLMoE-1B-7B-0125-Instruct --offload ~/moe-offload --prompts /home/mfeth/exp788/probe8.json --out /home/mfeth/exp790/p790c.json > /home/mfeth/exp790/profile790c.out 2>&1; echo RC=$? >> /home/mfeth/exp790/profile790c.out
