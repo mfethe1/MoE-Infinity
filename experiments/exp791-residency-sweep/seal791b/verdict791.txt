@@ -1,0 +1,4 @@
+C(0.25): reps=[8.492, 8.631, 7.668] mean=8.264 sd=0.521
+T(0.50): reps=[10.773, 10.723, 11.001] mean=10.832 sd=0.148
+delta=+31.08% (gate +2%) separation min(T)>max(C): True
+VERDICT: MOVE — promote device_memory_ratio 0.25->0.5 for this envelope
