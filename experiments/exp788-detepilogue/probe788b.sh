@@ -1,0 +1,1 @@
+cd /home/mfeth/exp788 && python3 probe788.py D2=/home/mfeth/exp788/src788:on D3=/home/mfeth/exp788/src788:on T0=/home/mfeth/exp788/src788:off T1=/home/mfeth/exp788/src788:off > /home/mfeth/exp788/probe788.out 2>&1; echo PROBE_RC=$? >> /home/mfeth/exp788/probe788.out

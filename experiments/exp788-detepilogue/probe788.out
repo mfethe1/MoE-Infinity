@@ -1,0 +1,5 @@
+[D2] det=on pp=src788 mean=5.255 tok/s n=8 rc=0 sha0=d7cb7c8f33bb
+[D3] det=on pp=src788 mean=10.161 tok/s n=8 rc=0 sha0=463f9e4ef5d7
+[T0] det=off pp=src788 mean=10.333 tok/s n=8 rc=0 sha0=463f9e4ef5d7
+[T1] det=off pp=src788 mean=10.099 tok/s n=8 rc=0 sha0=463f9e4ef5d7
+PROBE_RC=0

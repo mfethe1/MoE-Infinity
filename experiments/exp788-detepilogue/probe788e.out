@@ -1,0 +1,4 @@
+[E1] det=on pp=src788 mean=9.834 tok/s n=8 rc=0 sha0=463f9e4ef5d7
+[E2] det=on pp=src788 mean=9.370 tok/s n=8 rc=0 sha0=3f052166098c
+[E3] det=on pp=src788 mean=9.444 tok/s n=8 rc=0 sha0=17479fb932e6
+PROBE_RC=0

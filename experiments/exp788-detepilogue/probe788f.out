@@ -1,0 +1,4 @@
+[F1] det=on pp=src788 mean=10.669 tok/s n=8 rc=0 sha0=3f052166098c
+[F2] det=on pp=src788 mean=10.172 tok/s n=8 rc=0 sha0=3f052166098c
+[F3] det=on pp=src788 mean=9.421 tok/s n=8 rc=0 sha0=463f9e4ef5d7
+PROBE_RC=0
