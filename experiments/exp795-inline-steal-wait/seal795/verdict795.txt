@@ -1,0 +1,26 @@
+EXP-795 VERDICT: VOID (pre-declared Gate 1 correctness rule triggered)
+
+Arms (ratio 0.5, grouped, 8 prompts x 32 tok, fresh process each):
+- C  binary d252620b (editable; exp791/793/794 lineage): pooled 10.551 t/s
+- P  binary eba566fb (src795), MOE_INLINE_WAIT=0 passive: pooled 9.991 t/s
+- A  binary eba566fb, inline steal ON: pooled 10.669 t/s
+
+Divergence decomposition (greedy token IDs, 256 tokens/arm):
+- C vs P (binary lineage only, treatment off): 64/256 across prompts 1,3,4,6
+  -> cross-binary FP compile noise floor; rule's same-binary assumption false.
+- P vs A (same binary, env-only): 15/256, prompt 6 only (first diff token 3);
+  prompts 0-5,7 bit-identical.
+
+Gate 1 (all-identical across C,P,A) FAILED -> VOID. No promotion, perf
+numbers observational only:
+- A vs P (same binary, patch effect): +6.79% pooled, but P variance high
+  (6.46-11.44; prompt-0 warm artifact) -> magnitude unreliable.
+- A vs C: +1.12%; P vs C: -5.31% (lineage penalty dominates cross-binary
+  comparisons).
+
+Lesson: (1) correctness gates must compare SAME binary with env toggle, or
+use logit-margin/hamming thresholds vs a measured cross-binary noise floor;
+(2) binary lineage is a first-order confound (src788 tree carries exp752
+retirement work absent from editable tree); (3) inline steal shows a
+possibly-real ~7% same-binary gain warranting a FP-robust re-test (exp796
+candidate): same-binary A/B, multi-rep, hamming-threshold gate.
