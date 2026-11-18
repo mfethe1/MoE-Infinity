@@ -19,9 +19,32 @@ tok.padding_side = "left"
 m = MoE(MODEL, cfg)
 res = {}
 
+def find_hf(root, maxd=8):
+    from collections import deque
+    seen, q = set(), deque([(root, 0)])
+    while q:
+        o, d = q.popleft()
+        if o is None or id(o) in seen or d > maxd:
+            continue
+        seen.add(id(o))
+        if isinstance(o, torch.nn.Module) and any(
+                n == "rotary_emb" for n, _ in o.named_modules()):
+            return o
+        dd = getattr(o, "__dict__", None)
+        if isinstance(dd, dict):
+            for v in list(dd.values()):
+                q.append((v, d + 1))
+    return None
+
+hf = find_hf(m)
+res["hf_found"] = hf is not None and type(hf).__name__
+hf_inner = hf
+
 def rotary_devices():
     found = {}
-    for n, mod in m.named_modules():
+    if hf_inner is None:
+        return {"error": "hf module not found"}
+    for n, mod in hf_inner.named_modules():
         if mod.__class__.__name__ == "OlmoeRotaryEmbedding":
             iv = getattr(mod, "inv_freq", None)
             found[n] = str(iv.device) if iv is not None else "None"
@@ -50,13 +73,10 @@ def call(tag, prompts, n, explicit):
     res[tag + "_inv_freq"] = rotary_devices()
 
 try:
-    hf_inner = None
-    for n, mod in m.named_modules():
-        if mod.__class__.__name__ == "OlmoeForCausalLM":
-            hf_inner = mod
-            break
     if hf_inner is not None:
         res["hf_first_param_device"] = str(next(hf_inner.parameters()).device)
+    else:
+        res["hf_first_param_device"] = "hf-not-found"
 except Exception as e:
     res["hf_first_param_device"] = "ERR:" + str(e)[:80]
 
