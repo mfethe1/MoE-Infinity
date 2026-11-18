@@ -1,0 +1,97 @@
+{
+ "meta": {
+  "model": "/home/mfeth/models/OLMoE-1B-7B-0125-Instruct",
+  "offload": "/home/mfeth/moe-offload-olmoe-0125-r05",
+  "cfg": {
+   "offload_path": "/home/mfeth/moe-offload-olmoe-0125-r05",
+   "device_memory_ratio": 0.5,
+   "expert_eviction_policy": "lcnu",
+   "num_threads": 4,
+   "gpu_only_expert_routing": true,
+   "adaptive_resident_mode": "legacy",
+   "speculative_prefetch": false
+  },
+  "new_tok": 128,
+  "started": "2026-11-18T20:32:06Z",
+  "ended": "2026-11-18T21:31:16Z"
+ },
+ "warm": {
+  "waited_s": 0.1,
+  "load5": 2.15,
+  "gpu1": 41.0
+ },
+ "blocks": [
+  {
+   "arm": 8,
+   "wall_ms": 947261.9,
+   "n_gen": 8,
+   "n_out_tok": 1024
+  },
+  {
+   "arm": 1,
+   "wall_ms": 99981.2,
+   "n_gen": 1,
+   "n_out_tok": 128
+  },
+  {
+   "arm": 2,
+   "wall_ms": 520368.6,
+   "n_gen": 2,
+   "n_out_tok": 256
+  },
+  {
+   "arm": 8,
+   "wall_ms": 894245.0,
+   "n_gen": 8,
+   "n_out_tok": 1024
+  },
+  {
+   "arm": 4,
+   "wall_ms": 203550.1,
+   "n_gen": 4,
+   "n_out_tok": 512
+  },
+  {
+   "arm": 4,
+   "wall_ms": 121972.1,
+   "n_gen": 4,
+   "n_out_tok": 512
+  },
+  {
+   "arm": 4,
+   "wall_ms": 119065.6,
+   "n_gen": 4,
+   "n_out_tok": 512
+  },
+  {
+   "arm": 1,
+   "wall_ms": 11330.8,
+   "n_gen": 1,
+   "n_out_tok": 128
+  },
+  {
+   "arm": 1,
+   "wall_ms": 11447.6,
+   "n_gen": 1,
+   "n_out_tok": 128
+  },
+  {
+   "arm": 2,
+   "wall_ms": 88282.7,
+   "n_gen": 2,
+   "n_out_tok": 256
+  },
+  {
+   "arm": 2,
+   "wall_ms": 88289.7,
+   "n_gen": 2,
+   "n_out_tok": 256
+  },
+  {
+   "arm": 8,
+   "wall_ms": 132848.9,
+   "n_gen": 8,
+   "n_out_tok": 1024
+  }
+ ]
+}
