@@ -1,0 +1,21 @@
+{
+ "experiment": "exp828-M2b-dispatcher-counters",
+ "frozen": "2026-11-19T13:20:00Z",
+ "files": {
+  "PREREG-M2B.md": "c5c4e598331be6d2b1b849046d6134aa14b528ef643d4886c1d43d73b7864472",
+  "m2b_counters.py": "e0414f34dab982ae5977e8f93f09de6a66bee1deb2163ca19c3d6bf882f3fd05"
+ },
+ "engine_commit_winnie": "033798811664f5d89cae58049ff16e912ebc5862",
+ "arms": [
+  0.5,
+  0.65,
+  0.75,
+  0.9
+ ],
+ "protocol": "fresh engine per arm, probe8 prompts, 8 warm + 32 measured, counters outside timed region, quiet gate retry 30x60s",
+ "baseline_refs": {
+  "engine_b1_tok_s_m1": 13.28,
+  "engine_step_ms": 75.3,
+  "m2a_cpu_aten_share_prompt3": "2.07s CPU in 5.91s wall"
+ }
+}
