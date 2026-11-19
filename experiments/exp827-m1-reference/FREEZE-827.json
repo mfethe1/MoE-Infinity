@@ -1,9 +1,9 @@
 {
  "experiment": "exp827-M1-all-resident-reference",
- "frozen": "2026-11-19T03:07:44Z",
+ "frozen": "2026-11-19T03:08:39Z",
  "files": {
   "PREREG-M1.md": "eaf7f1639958b3b6db53ad7de1c31e63352d51dd9b2c07e1f32eaec540851e4f",
-  "m1_reference.py": "1cae68288599e2feb70df3b80bc2e6276e85dc0a26782fd80811eefab00bad5b"
+  "m1_reference.py": "43eff0163bc3a9ae99ecc4b2a5d74aed80c872577e304e50d8dc3dbcda99f819"
  },
  "engine_commit_winnie": "033798811664f5d89cae58049ff16e912ebc5862",
  "transformers_patch": "c7b5510952bcaecf483b81f041671703c7108d6731fcbdc107ac13dcb482efbd (rotary device guard, exp825)",
@@ -16,5 +16,6 @@
   "ref",
   "eng"
  ],
- "note": "ref process loads plain HF bf16 (8bit fallback recorded); eng = moe_infinity 0.50. Separate processes per restart-flag rule."
+ "note": "ref process loads plain HF bf16 (8bit fallback recorded); eng = moe_infinity 0.50. Separate processes per restart-flag rule.",
+ "correction": "m1_reference.py fixed pre-run (OOM fallback del-m NameError; assert m) \u2014 no data existed at correction time"
 }

@@ -37,11 +37,12 @@ res = {"mode": MODE, "meta": {}, "blocks": []}
 if MODE == "ref":
     from transformers import AutoModelForCausalLM
     quant = None
+    m = None
     try:
         m = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.bfloat16,
                                                  device_map="cuda:0")
     except torch.cuda.OutOfMemoryError:
-        del m
+        m = None
         torch.cuda.empty_cache()
         m = AutoModelForCausalLM.from_pretrained(MODEL, load_in_8bit=True, device_map="cuda:0")
         quant = "8bit"
@@ -53,7 +54,7 @@ else:
                     "num_threads": 4, "gpu_only_expert_routing": True,
                     "adaptive_resident_mode": "legacy", "speculative_prefetch": False})
     res["meta"]["quant"] = "engine-bf16-offload0.50"
-
+assert m is not None
 m.eval()
 
 def gen_b1(p):
