@@ -66,9 +66,13 @@ def gen_b1(p):
     return (time.perf_counter() - t0) * 1000.0, int(out.shape[1] - ids.shape[1])
 
 def gen_b8():
-    ids = torch.nn.utils.rnn.pad_sequence(
-        [enc_ids(p)[0] for p in PROMPTS], batch_first=True,
-        padding_value=tok.pad_token_id).to("cuda:0")
+    seqs = [enc_ids(p)[0] for p in PROMPTS]
+    maxlen = max(s.shape[0] for s in seqs)
+    rows = []
+    for s in seqs:  # LEFT pad (prereg): pad tokens prepend, generation continues from each prompt's real tail
+        pad = torch.full((maxlen - s.shape[0],), tok.pad_token_id, dtype=s.dtype)
+        rows.append(torch.cat([pad, s]))
+    ids = torch.stack(rows).to("cuda:0")
     am = (ids != tok.pad_token_id).long()
     t0 = time.perf_counter()
     with torch.no_grad():
