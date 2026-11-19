@@ -36,17 +36,15 @@ res = {"mode": MODE, "meta": {}, "blocks": []}
 
 if MODE == "ref":
     from transformers import AutoModelForCausalLM
-    quant = None
-    m = None
     try:
         m = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.bfloat16,
                                                  device_map="cuda:0")
+        res["meta"]["quant"] = "bf16"
     except torch.cuda.OutOfMemoryError:
-        m = None
-        torch.cuda.empty_cache()
-        m = AutoModelForCausalLM.from_pretrained(MODEL, load_in_8bit=True, device_map="cuda:0")
-        quant = "8bit"
-    res["meta"]["quant"] = quant or "bf16"
+        res["meta"]["quant"] = "OOM-at-bf16-load"
+        res["meta"]["error"] = "bf16 resident load OOM (16GB card); no bnb fallback installed"
+        json.dump(res, open(f"/home/mfeth/exp825-s0/m1-{MODE}.json", "w"))
+        print("REF_OOM_AT_LOAD"); sys.exit(3)
 else:
     from moe_infinity import MoE
     m = MoE(MODEL, {"offload_path": "/home/mfeth/moe-offload-olmoe-0125-r05",
@@ -55,7 +53,8 @@ else:
                     "adaptive_resident_mode": "legacy", "speculative_prefetch": False})
     res["meta"]["quant"] = "engine-bf16-offload0.50"
 assert m is not None
-m.eval()
+if hasattr(m, "eval"):
+    m.eval()
 
 def gen_b1(p):
     ids = enc_ids(p).to("cuda:0")
@@ -102,7 +101,13 @@ shapes = ["b1", "b8"] if MODE == "ref" else ["b1"]
 for k in shapes:
     for rep in range(3):
         time.sleep(2)
-        res["blocks"].append(block(k))
+        try:
+            res["blocks"].append(block(k))
+        except torch.cuda.OutOfMemoryError:
+            torch.cuda.empty_cache()
+            res["blocks"].append({"kind": k, "error": "OOM"})
+            print(MODE, k, rep, "OOM", flush=True)
+            break
         print(MODE, k, rep, "done", flush=True)
 
 res["meta"]["ended"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
