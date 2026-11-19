@@ -4,7 +4,7 @@
  "files": {
   "PREREG-M2.md": "72b8118269cbb9542f8dc9cce367367e0ddd31bca1cb32062e6ae9defce62217",
   "m2_profile.py": "5d032454f165b7e249a31cecfc6a671b4f928d3d9498812affcc868948985c2c",
-  "PREREG-M2-ADDENDUM.md": "79f2620729657948d7a5d2e8d27f6eb0b46e6525ab949240712f012996dcdcf2"
+  "PREREG-M2-ADDENDUM.md": "7d75ecd175de6fdfad7cd737882edf6b2be912538c636a7b7e7e884ec2c09e54"
  },
  "engine_commit_winnie": "033798811664f5d89cae58049ff16e912ebc5862",
  "gpu": "Winnie GPU1, cron 2718b688f385 paused + ollama unloaded for window (BELIEFS winnie-gpu1-shared-with-ollama)",
