@@ -1,0 +1,102 @@
+{
+ "ratio": 0.9,
+ "vram_after_load": {
+  "torch_max_alloc_mb": 5137.9,
+  "smi_used_mib": 5488,
+  "occupancy_bytes": 0.0,
+  "num_offloaded_experts": 1024
+ },
+ "prompts": [
+  {
+   "prompt": "Explain how photosynthesis converts ligh",
+   "wall_s": 4.092,
+   "tok": 32,
+   "hit_rate": 0.8561,
+   "exposed_fetch_ms": 8.3,
+   "fetch_ms_per_tok": 0.26,
+   "misses_est": 589,
+   "h2d_mb_est": 7415.1,
+   "occupancy_bytes": 12680695808.0
+  },
+  {
+   "prompt": "Describe the key differences between cla",
+   "wall_s": 3.599,
+   "tok": 32,
+   "hit_rate": 0.9249,
+   "exposed_fetch_ms": 7.2,
+   "fetch_ms_per_tok": 0.23,
+   "misses_est": 308,
+   "h2d_mb_est": 3872.5,
+   "occupancy_bytes": 13209178112.0
+  },
+  {
+   "prompt": "Summarize the main causes of the fall of",
+   "wall_s": 4.412,
+   "tok": 32,
+   "hit_rate": 0.9483,
+   "exposed_fetch_ms": 10.1,
+   "fetch_ms_per_tok": 0.31,
+   "misses_est": 212,
+   "h2d_mb_est": 2662.6,
+   "occupancy_bytes": 13599248384.0
+  },
+  {
+   "prompt": "How do I debug a memory leak in a JavaSc",
+   "wall_s": 4.412,
+   "tok": 32,
+   "hit_rate": 0.9609,
+   "exposed_fetch_ms": 10.4,
+   "fetch_ms_per_tok": 0.32,
+   "misses_est": 160,
+   "h2d_mb_est": 2013.7,
+   "occupancy_bytes": 13699911680.0
+  },
+  {
+   "prompt": "What are the best practices for growing ",
+   "wall_s": 3.995,
+   "tok": 32,
+   "hit_rate": 0.9686,
+   "exposed_fetch_ms": 8.9,
+   "fetch_ms_per_tok": 0.28,
+   "misses_est": 129,
+   "h2d_mb_est": 1619.3,
+   "occupancy_bytes": 13800574976.0
+  },
+  {
+   "prompt": "Explain how compound interest works over",
+   "wall_s": 4.711,
+   "tok": 32,
+   "hit_rate": 0.9738,
+   "exposed_fetch_ms": 10.8,
+   "fetch_ms_per_tok": 0.34,
+   "misses_est": 107,
+   "h2d_mb_est": 1350.6,
+   "occupancy_bytes": 13825740800.0
+  },
+  {
+   "prompt": "Write a short poem about a lighthouse in",
+   "wall_s": 5.365,
+   "tok": 32,
+   "hit_rate": 0.9775,
+   "exposed_fetch_ms": 12.9,
+   "fetch_ms_per_tok": 0.4,
+   "misses_est": 92,
+   "h2d_mb_est": 1159.8,
+   "occupancy_bytes": 13838323712.0
+  },
+  {
+   "prompt": "What are the early symptoms of type 2 di",
+   "wall_s": 4.045,
+   "tok": 32,
+   "hit_rate": 0.9803,
+   "exposed_fetch_ms": 8.7,
+   "fetch_ms_per_tok": 0.27,
+   "misses_est": 81,
+   "h2d_mb_est": 1014.2,
+   "occupancy_bytes": 13838323712.0
+  }
+ ],
+ "pooled_tok_per_s": 7.392,
+ "median_fetch_ms_per_tok": 0.31,
+ "mean_hit_rate": 0.9488
+}
