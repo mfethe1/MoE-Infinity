@@ -41,10 +41,15 @@ if MODE == "ref":
                                                  device_map="cuda:0")
         res["meta"]["quant"] = "bf16"
     except torch.cuda.OutOfMemoryError:
-        res["meta"]["quant"] = "OOM-at-bf16-load"
-        res["meta"]["error"] = "bf16 resident load OOM (16GB card); no bnb fallback installed"
-        json.dump(res, open(f"/home/mfeth/exp825-s0/m1-{MODE}.json", "w"))
-        print("REF_OOM_AT_LOAD"); sys.exit(3)
+        torch.cuda.empty_cache()
+        try:
+            m = AutoModelForCausalLM.from_pretrained(MODEL, load_in_8bit=True, device_map="cuda:0")
+            res["meta"]["quant"] = "8bit-bnb"
+        except Exception as e:
+            res["meta"]["quant"] = "OOM-at-both"
+            res["meta"]["error"] = repr(e)[:300]
+            json.dump(res, open(f"/home/mfeth/exp825-s0/m1-{MODE}.json", "w"))
+            print("REF_OOM_AT_LOAD"); sys.exit(3)
 else:
     from moe_infinity import MoE
     m = MoE(MODEL, {"offload_path": "/home/mfeth/moe-offload-olmoe-0125-r05",

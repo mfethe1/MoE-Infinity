@@ -13,7 +13,7 @@ reference on the same GPU? This single measurement decides the program pivot:
 - P3 (context): REF_b8 recorded as the ceiling any multi-token repair (#6) aims for.
 
 ## Arms (separate processes; restart-flag rule)
-- REF: plain HF transformers AutoModelForCausalLM, bf16 fully on GPU (fallback: 8-bit, recorded),
+- REF: plain HF transformers AutoModelForCausalLM, bf16 fully on GPU (MEASURED INFEASIBLE: 3.6GB Windows VRAM floor -> 8-bit bnb resident, recorded),
   greedy, min_new_tokens=128 forced (EOS disabled), 8 fixed prompts (MEASURE-825 set), b1 and b8.
 - ENG: moe_infinity engine, device_memory_ratio 0.50 (frozen config), same prompts, b1 only.
 - Interleave as process pairs: REF, ENG, REF, ENG ... 3 pairs (6 measured blocks per arm shape),

@@ -1,9 +1,9 @@
 {
  "experiment": "exp827-M1-all-resident-reference",
- "frozen": "2026-11-19T04:12:54Z",
+ "frozen": "2026-11-19T04:19:25Z",
  "files": {
-  "PREREG-M1.md": "eaf7f1639958b3b6db53ad7de1c31e63352d51dd9b2c07e1f32eaec540851e4f",
-  "m1_reference.py": "c38bc104b01582526be565f1212d72afba990bf036f9c0a3b28390f55f350629"
+  "PREREG-M1.md": "b77e353dfaf571927111c3ec214aa424f8b05ac6c6217bdcb4a343bc3a4ae521",
+  "m1_reference.py": "371111112c97468897568f5192f72d541e2e59524e080d5eecfaf139f383337f"
  },
  "engine_commit_winnie": "033798811664f5d89cae58049ff16e912ebc5862",
  "transformers_patch": "c7b5510952bcaecf483b81f041671703c7108d6731fcbdc107ac13dcb482efbd (rotary device guard, exp825)",
@@ -17,6 +17,6 @@
   "eng"
  ],
  "note": "ref process loads plain HF bf16 (8bit fallback recorded); eng = moe_infinity 0.50. Separate processes per restart-flag rule.",
- "correction": "m1_reference.py fixed pre-run (OOM fallback del-m NameError; assert m) \u2014 no data existed at correction time; pad fix pre-measurement: b8 right-pad -> LEFT-pad (prereg requirement; unit stopped during burn-in, zero measured blocks existed); fix 3 pre-rerun: MoE lacks .eval (hasattr guard \u2014 violated own recorded lesson), bnb 8-bit fallback removed (not installed; OOM recorded as data), per-block OOM catch so b8 OOM preserves b1 blocks",
+ "correction": "m1_reference.py fixed pre-run (OOM fallback del-m NameError; assert m) \u2014 no data existed at correction time; pad fix pre-measurement: b8 right-pad -> LEFT-pad (prereg requirement; unit stopped during burn-in, zero measured blocks existed); fix 3 pre-rerun: MoE lacks .eval (hasattr guard \u2014 violated own recorded lesson), bnb 8-bit fallback removed (not installed; OOM recorded as data), per-block OOM catch so b8 OOM preserves b1 blocks; fix 4: bf16 resident infeasible (3.6GB Windows VRAM floor on 16GB card) -> bnb 0.50.2 installed, 8-bit resident ref arm (quantization tax on ref recorded; favorable to pivot-a if it still wins)",
  "environment_note": "GPU1 shares with Windows-side Ollama llama-server (MiMo-V2.6 9B Q4_K_M 11GB, keep_alive expiry awaited before rerun); nvidia-smi compute-apps broken in WSL (exp822)"
 }
