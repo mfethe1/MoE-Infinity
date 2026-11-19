@@ -49,9 +49,16 @@ for p in PROMPTS[:2]:
     with torch.no_grad():
         m.generate(ids, max_new_tokens=NEW, do_sample=False, pad_token_id=tok.eos_token_id)
 
+time.sleep(30)  # settle: burn-in async prefetch tail can inflate GPU util
 for p in PROMPTS[:4]:
-    la, gu = quiet()
-    assert la < 3 and gu < 5, f"quiet gate failed {la} {gu}"
+    for attempt in range(30):
+        la, gu = quiet()
+        if la < 3 and gu < 5:
+            break
+        if attempt % 5 == 0:
+            print(f"gate wait {la} {gu} attempt {attempt}", flush=True)
+        time.sleep(60)
+    assert la < 3 and gu < 5, f"quiet gate failed after 30 tries {la} {gu}"
     ids = enc_ids(p).to("cuda:0")
     torch.cuda.synchronize()
     t0 = time.perf_counter()

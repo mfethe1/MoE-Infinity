@@ -14,5 +14,14 @@
   "engine_step_ms": 75.3
  },
  "note": "profiler key_averages only (no per-memcpy byte sizes in API; expert bytes = count x 12.6MB upper bound)",
- "gate_fail_20261119": "rank misstated (M2 is rank 1, not 2); M2a = frozen subset (0.50 attribution); M2b counters at 0.50+0.65 + exp791 rerun preregged separately"
+ "gate_fail_20261119": "rank misstated (M2 is rank 1, not 2); M2a = frozen subset (0.50 attribution); M2b counters at 0.50+0.65 + exp791 rerun preregged separately",
+ "corrections": [
+  {
+   "n": 1,
+   "date": "2026-11-19",
+   "what": "quiet gate abort -> retry (30 x 60s) + 30s settle after burn-in",
+   "why": "first launch died at first profiled prompt: GPU1 util 23% transient (load 0.53); hard abort wasted a loaded engine",
+   "sha_after": "6fa34f6024f612eebd34c8054ea56267ea55f37355cb1f510a4752b3ff0362ff"
+  }
+ ]
 }
