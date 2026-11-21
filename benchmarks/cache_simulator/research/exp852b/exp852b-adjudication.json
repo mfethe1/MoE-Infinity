@@ -1,0 +1,665 @@
+{
+ "aa_cpu": {
+  "granite|1024": {
+   "gmean": 0.9725523493823586,
+   "lower_bonf": 0.9056220387940515,
+   "sd_log": 0.08286060400043489,
+   "upper95": 1.0152407975128959,
+   "upper_bonf": 1.0444291677670225
+  },
+  "granite|256": {
+   "gmean": 1.0017719740944455,
+   "lower_bonf": 0.9894048255773863,
+   "sd_log": 0.014435856816475323,
+   "upper95": 1.0092973020350553,
+   "upper_bonf": 1.0142937068206064
+  },
+  "granite|262144": {
+   "gmean": 1.0010513983234264,
+   "lower_bonf": 0.9680725574857282,
+   "sd_log": 0.03892962050123197,
+   "upper95": 1.0214600483241119,
+   "upper_bonf": 1.035153712742302
+  },
+  "granite|4096": {
+   "gmean": 0.9839153160441921,
+   "lower_bonf": 0.9536816265477177,
+   "sd_log": 0.03626938460487836,
+   "upper95": 1.0025909429766757,
+   "upper_bonf": 1.0151074763291603
+  },
+  "qwen30b|1024": {
+   "gmean": 1.0011322618919685,
+   "lower_bonf": 0.9797594667906676,
+   "sd_log": 0.025078102055601362,
+   "upper95": 1.0142331339676154,
+   "upper_bonf": 1.0229712901718455
+  },
+  "qwen30b|256": {
+   "gmean": 1.0226111306031043,
+   "lower_bonf": 0.966163930992933,
+   "sd_log": 0.06598582117125872,
+   "upper95": 1.0581987167128035,
+   "upper_bonf": 1.0823562036295975
+  },
+  "qwen30b|262144": {
+   "gmean": 0.9866209429146752,
+   "lower_bonf": 0.9139765520772677,
+   "sd_log": 0.08887933259670795,
+   "upper95": 1.0331455790751167,
+   "upper_bonf": 1.0650392318987518
+  },
+  "qwen30b|4096": {
+   "gmean": 1.0119294857117807,
+   "lower_bonf": 0.9903782044776864,
+   "sd_log": 0.02501706049482213,
+   "upper95": 1.025139209184717,
+   "upper_bonf": 1.0339497370026989
+  }
+ },
+ "checks": [
+  {
+   "detail": "e2ab0c5305e638df vs ARTIFACT e2ab0c5305e638df",
+   "name": "V0-freeze PREREG.md",
+   "ok": true
+  },
+  {
+   "detail": "b846a7151016e929 vs ARTIFACT b846a7151016e929",
+   "name": "V0-freeze run_paired.py",
+   "ok": true
+  },
+  {
+   "detail": "ce9b41bef6448336 vs ARTIFACT ce9b41bef6448336",
+   "name": "V0-freeze smoke.log",
+   "ok": true
+  },
+  {
+   "detail": "c2fd75e4a8c63f01 vs ARTIFACT c2fd75e4a8c63f01",
+   "name": "V0-freeze sealed_deps.sha256",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V0 result artifact_sha256 matches live ARTIFACT.sha256 file",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V0 prereg/runner sha recorded in result == frozen",
+   "ok": true
+  },
+  {
+   "detail": "eaa4289c2602fc5d",
+   "name": "V0 rows_jsonl_sha256 matches file",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V0 sealed_post_ok",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V0 single attempt a1, no resume consumed",
+   "ok": true
+  },
+  {
+   "detail": "480",
+   "name": "row count 8 groups x 5 arms x 12 blocks = 480",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|256/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|256/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|256/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|256/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|256/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|1024/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|1024/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|1024/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|1024/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|1024/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|4096/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|4096/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|4096/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|4096/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|4096/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|262144/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|262144/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|262144/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|262144/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete qwen30b|262144/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|256/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|256/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|256/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|256/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|256/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|1024/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|1024/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|1024/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|1024/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|1024/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|4096/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|4096/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|4096/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|4096/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|4096/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|262144/shared_costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|262144/costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|262144/shared_costfit",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|262144/costfit3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "blocks complete granite|262144/costfit3_AA",
+   "ok": true
+  },
+  {
+   "detail": "{'a1-2026-11-21T03:11:25Z'}",
+   "name": "all rows from the recorded attempt",
+   "ok": true
+  },
+  {
+   "detail": "['qwen30b|256', 'qwen30b|1024', 'qwen30b|4096', 'qwen30b|262144', 'granite|256', 'granite|1024', 'granite|4096', 'granite|262144']",
+   "name": "frozen group order (qwen caps then granite caps)",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|256 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|256 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|256 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|1024 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|1024 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|1024 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|4096 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|4096 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|4096 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|262144 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|262144 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality qwen30b|262144 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|256 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|256 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|256 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|1024 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|1024 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|1024 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|4096 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|4096 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|4096 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|262144 R2",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|262144 R3",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 base-vs-shared equality granite|262144 AA",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V2 aggregate (result v2_ok agrees with recompute)",
+   "ok": true
+  },
+  {
+   "detail": "missing=0",
+   "name": "V4 no missing V6 rows",
+   "ok": true
+  },
+  {
+   "detail": "max=5.56e-05",
+   "name": "V4 max P-core share <= 0.01",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V4 aggregate (result core_ok agrees)",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V3 parity_smoke at run start",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V1 parity_ok all groups",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V1 pairs all equal, no diff_fields",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "V3 accounting_ok all groups",
+   "ok": true
+  },
+  {
+   "detail": "[]",
+   "name": "rung4 no ECONOMICS-DRIFT",
+   "ok": true
+  },
+  {
+   "detail": "[]",
+   "name": "rung5 no CEILING-DRIFT",
+   "ok": true
+  },
+  {
+   "detail": "1.7958848187",
+   "name": "t(0.95,11) matches runner 1.7958848187...",
+   "ok": true
+  },
+  {
+   "detail": "2.9808724301",
+   "name": "t(0.99375,11) matches runner 2.9808724301...",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "ALL recomputed stats match result JSON within 1e-9 (8 groups x 3 fams x 2 metrics x 5 stats)",
+   "ok": true
+  },
+  {
+   "detail": "PAYOFF-REJECTED (max Lbonf 1.46259)",
+   "name": "cpu ladder verdict == runner",
+   "ok": true
+  },
+  {
+   "detail": "NOISE-FLOOR-FAIL ([('qwen30b|256', 'sd=0.3177'), ('qwen30b|262144', 'sd=0.1837'), ('granite|1024', 'sd=0.1763')])",
+   "name": "wall ladder (secondary) == runner NOISE-FLOOR-FAIL",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "no confident cpu/wall contradiction",
+   "ok": true
+  },
+  {
+   "detail": "PAYOFF-REJECTED vs PAYOFF-REJECTED",
+   "name": "FINAL VERDICT == runner settled verdict",
+   "ok": true
+  },
+  {
+   "detail": "",
+   "name": "complete & budget ok (rung 2)",
+   "ok": true
+  }
+ ],
+ "cpu_detail": "max Lbonf 1.46259",
+ "cpu_ladder": "PAYOFF-REJECTED",
+ "final_verdict": "PAYOFF-REJECTED",
+ "groups": [
+  "qwen30b|256",
+  "qwen30b|1024",
+  "qwen30b|4096",
+  "qwen30b|262144",
+  "granite|256",
+  "granite|1024",
+  "granite|4096",
+  "granite|262144"
+ ],
+ "n_checks": 94,
+ "n_failed": 0,
+ "r2_cpu": {
+  "granite|1024": {
+   "gmean": 1.5241171060081553,
+   "lower_bonf": 1.4529676516555645,
+   "sd_log": 0.05555719464158696,
+   "upper95": 1.5686535837958329,
+   "upper_bonf": 1.5987506330095096
+  },
+  "granite|256": {
+   "gmean": 1.3401773362208511,
+   "lower_bonf": 1.2750070566094145,
+   "sd_log": 0.05793145292139038,
+   "upper95": 1.3810377259666247,
+   "upper_bonf": 1.4086787074702645
+  },
+  "granite|262144": {
+   "gmean": 1.5042474908838122,
+   "lower_bonf": 1.4551827382716471,
+   "sd_log": 0.03853705582277153,
+   "upper95": 1.5346025594385329,
+   "upper_bonf": 1.5549665717707561
+  },
+  "granite|4096": {
+   "gmean": 1.4970558138525931,
+   "lower_bonf": 1.4237001335109367,
+   "sd_log": 0.058385774765935046,
+   "upper95": 1.5430626382039012,
+   "upper_bonf": 1.574191121456851
+  },
+  "qwen30b|1024": {
+   "gmean": 1.3138177856357638,
+   "lower_bonf": 1.2863526180061924,
+   "sd_log": 0.024551262200796994,
+   "upper95": 1.3306469909459409,
+   "upper_bonf": 1.341869367458739
+  },
+  "qwen30b|256": {
+   "gmean": 1.234586960457724,
+   "lower_bonf": 1.2046059458060443,
+   "sd_log": 0.028569278908851616,
+   "upper95": 1.2530086296229734,
+   "upper_bonf": 1.265314162061804
+  },
+  "qwen30b|262144": {
+   "gmean": 1.468512149869257,
+   "lower_bonf": 1.3688596060006768,
+   "sd_log": 0.0816635098517351,
+   "upper95": 1.5320187919510282,
+   "upper_bonf": 1.5754193672309746
+  },
+  "qwen30b|4096": {
+   "gmean": 1.3968003062866863,
+   "lower_bonf": 1.3033833386697002,
+   "sd_log": 0.08044203587172988,
+   "upper95": 1.4562832521723104,
+   "upper_bonf": 1.4969127176613466
+  }
+ },
+ "r3_cpu": {
+  "granite|1024": {
+   "gmean": 1.4494276725142108,
+   "lower_bonf": 1.3425194103996478,
+   "sd_log": 0.08904175514982565,
+   "upper95": 1.517904015197666,
+   "upper_bonf": 1.5648493135935917
+  },
+  "granite|256": {
+   "gmean": 1.3582603760867422,
+   "lower_bonf": 1.3137570366904865,
+   "sd_log": 0.038714237266296275,
+   "upper95": 1.3857967748218212,
+   "upper_bonf": 1.4042712600000633
+  },
+  "granite|262144": {
+   "gmean": 1.5118543318031574,
+   "lower_bonf": 1.4562339243069131,
+   "sd_log": 0.04355975502690245,
+   "upper95": 1.5463843020047559,
+   "upper_bonf": 1.569599143681425
+  },
+  "granite|4096": {
+   "gmean": 1.5310928804678101,
+   "lower_bonf": 1.462592009605658,
+   "sd_log": 0.05319159931460824,
+   "upper95": 1.5739017982976482,
+   "upper_bonf": 1.6028020071374984
+  },
+  "qwen30b|1024": {
+   "gmean": 1.2719439148355933,
+   "lower_bonf": 1.2274048137659008,
+   "sd_log": 0.041422642203577276,
+   "upper95": 1.2995538328388796,
+   "upper_bonf": 1.3180992157945544
+  },
+  "qwen30b|256": {
+   "gmean": 1.2142597544083122,
+   "lower_bonf": 1.174951893693176,
+   "sd_log": 0.038242053298774815,
+   "upper95": 1.238573556284898,
+   "upper_bonf": 1.2548826544219032
+  },
+  "qwen30b|262144": {
+   "gmean": 1.3423288578415937,
+   "lower_bonf": 1.2410046411036173,
+   "sd_log": 0.09120798492880193,
+   "upper95": 1.4073250398541526,
+   "upper_bonf": 1.4519258856211426
+  },
+  "qwen30b|4096": {
+   "gmean": 1.3144525357078751,
+   "lower_bonf": 1.265690004940004,
+   "sd_log": 0.0439310396590929,
+   "upper95": 1.3447327658362098,
+   "upper_bonf": 1.3650937132198993
+  }
+ },
+ "wall_detail": "[('qwen30b|256', 'sd=0.3177'), ('qwen30b|262144', 'sd=0.1837'), ('granite|1024', 'sd=0.1763')]",
+ "wall_ladder": "NOISE-FLOOR-FAIL"
+}

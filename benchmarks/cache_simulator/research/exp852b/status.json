@@ -1,0 +1,15 @@
+{
+ "attempt": "a1-2026-11-21T03:11:25Z",
+ "elapsed_s": 34232,
+ "groups_done": [
+  "granite|1024",
+  "granite|256",
+  "granite|262144",
+  "granite|4096",
+  "qwen30b|1024",
+  "qwen30b|256",
+  "qwen30b|262144",
+  "qwen30b|4096"
+ ],
+ "t_utc": "2026-11-21T12:41:57Z"
+}

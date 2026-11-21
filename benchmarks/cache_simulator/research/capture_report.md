@@ -1484,3 +1484,14 @@ Verdict FIX-FASTER|INCOMPLETE|TWO-GPU-SLOWER|PASS|MANIP-OK (flags: R1:EXCLUDED(b
 ## exp750r2 — pre-registered replication (R2) of exp750: D2 resolution + pooled replication sensitivity — ADDENDUM76
 
 Verdict FIX-FASTER|NOREGRESS-T|TWO-GPU-SLOWER|PASS|MANIP-OK (zero lost cells; D2 RESOLVED): identical frozen protocol re-run on Winnie unit exp750 (launch 2026-11-09T18:46:42Z -> EXP750-DONE 22:49:18Z, 4h02m; 6h14m CPU, 47.2G peak; 21 cells + 7 frozen-rule reruns = 28/28 rc=0). PREREG-R2.md frozen pre-launch (sha de78901b...9616, full pin in 1846Z receipt); pre-run RUN_SHA256 = FROZEN750 on all 12 protocol files + binds the manifest itself; freeze/ re-verified 13/13. D2 s = D(S1)/D(R1) = 0.9964/1.0032/0.9858 -> NOREGRESS-T 3/3 in [0.95,1.05] (run-1 was INCOMPLETE: 1.0316/0.9902 with b3_R1 lost); D1 q = 1.577/1.528/1.552 (>=1.10 3/3) and D3 u = 0.496/0.490/0.489 (<=0.91 3/3) replicate run-1 labels; link S0/S1 4.57-4.64x (gen3 x2, descriptive); R1 across-block CV(D) 0.0012 (run-1 0.0077). All 7 FOREIGN originals (5x ollama=1, 2x foreign-GPU mem gain) recovered by clean _x reruns -> 0 cells-of-record lost. G-Q PASS every gated arm 6/6 vs exp749 b1_R; G-M MANIP-OK (CLB=1 exactly the 5 K2 cells that ran; 21 prov.json arm->build exact; so_sha pre==post==ref; tgz byte-identical Mack==Winnie cd362bc2...ceb93). Pooled 5-block replication sensitivity s=1.001052 in band -> no decision SENSITIVE. Programmatic adjudication: gen_addendum76.py 224/224 runtime asserts from primary sources; settle recompute owner-independent (no classifier import). Publication: ADDENDUM76 + exp750r2/{freeze,raw,settle} (this commit).
+
+
+## exp852b — paired fresh-process shared-view payoff, A/A-gated (successor of sealed exp852) — ADDENDUM77
+
+Verdict PAYOFF-REJECTED: shared metadata views cost >35% E-core CPU-time everywhere
+(worst granite|4096 gmean x1.5311, max_g L_bonf
+1.46259 > 1.35); A/A cpu gate clean; wall secondary NOISE-FLOOR-FAIL (busy host,
+reported only). Pre-registered consequence: shared views stay out of time-critical
+Python paths; fused records (exp729 CONFIRMED+SAVING, exp732 CONFIRMED) remain the
+adopted design; further time claims need a compiled implementation. Full evidence:
+research/exp852b/ (94-check independent adjudication, 480-row raw data, frozen shas).

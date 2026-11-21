@@ -1,0 +1,230 @@
+costfit   (178095, 21905, 0.890475, 0, None, 'lcnu')
+shared_costfit (178095, 21905, 0.890475, 0, None, 'lcnu')
+  victim/evict events: 44327 vs 44327, sequences equal=True; masses equal=True; resident order equal=True -> PARITY OK
+costfit3  (178095, 21905, 0.890475, 0, {'lcnu': 0, 's3fifo': 0, 'rothead': 0}, 'lcnu')
+shared_costfit3 (178095, 21905, 0.890475, 0, {'lcnu': 0, 's3fifo': 0, 'rothead': 0}, 'lcnu')
+  victim/evict events: 88654 vs 88654, sequences equal=True; masses equal=True; resident order equal=True -> PARITY OK
+{
+ "smoke": true,
+ "t": "2026-11-21T02:22:31Z",
+ "S0_sealed_ok": true,
+ "S7_driftbite_ok": true,
+ "S5_anchors_ok": true,
+ "S8_t_table": [
+  [
+   0.95,
+   11,
+   1.795885,
+   1.795885
+  ],
+  [
+   0.975,
+   11,
+   2.200985,
+   2.200985
+  ],
+  [
+   0.95,
+   5,
+   2.015048,
+   2.015048
+  ],
+  [
+   0.995,
+   11,
+   3.105807,
+   3.105807
+  ],
+  [
+   0.99,
+   20,
+   2.527977,
+   2.527977
+  ]
+ ],
+ "S8_t_ok": true,
+ "S8b_t_reject_df11": 2.980872,
+ "S8b_simpson_cdf_at_q": 0.9937500000000001,
+ "S8b_ok": true,
+ "S8c_aa_gate_ok": true,
+ "S8d_combine_ok": true,
+ "S9_stats_ok": true,
+ "S6_ladder_ok": true,
+ "S10_order_ok": true,
+ "S1_parity_smoke_ok": true,
+ "S2_rows": [
+  {
+   "stream": "qwen30b",
+   "policy": "costfit3",
+   "worker_hit": 0.32004,
+   "measure_hit": 0.32004,
+   "acc": [
+    150000,
+    150000
+   ],
+   "cpu_s": 9.7579,
+   "wall_s": 18.605,
+   "thread_cpu_s": 9.7579,
+   "p_share": 0.0,
+   "qos_bg_share": 1.0
+  },
+  {
+   "stream": "qwen30b",
+   "policy": "shared_costfit3",
+   "worker_hit": 0.32004,
+   "measure_hit": 0.32004,
+   "acc": [
+    150000,
+    150000
+   ],
+   "cpu_s": 12.5269,
+   "wall_s": 23.8717,
+   "thread_cpu_s": 12.5269,
+   "p_share": 3.8250380498154593e-07,
+   "qos_bg_share": 1.0
+  },
+  {
+   "stream": "granite",
+   "policy": "costfit3",
+   "worker_hit": 0.45863333333333334,
+   "measure_hit": 0.45863333333333334,
+   "acc": [
+    150000,
+    150000
+   ],
+   "cpu_s": 8.5622,
+   "wall_s": 17.5758,
+   "thread_cpu_s": 8.5621,
+   "p_share": 0.0,
+   "qos_bg_share": 1.0
+  },
+  {
+   "stream": "granite",
+   "policy": "shared_costfit3",
+   "worker_hit": 0.45863333333333334,
+   "measure_hit": 0.45863333333333334,
+   "acc": [
+    150000,
+    150000
+   ],
+   "cpu_s": 10.9279,
+   "wall_s": 21.0027,
+   "thread_cpu_s": 10.9279,
+   "p_share": 0.0,
+   "qos_bg_share": 1.0
+  }
+ ],
+ "S2_worker_eq_measure": true,
+ "S2_ecore_ok": true,
+ "S11_group": {
+  "blocks_complete": 2,
+  "complete": true,
+  "v2_ok": true,
+  "accounting_ok": true
+ },
+ "S11_group_ratios": {
+  "cpu_s": {
+   "shared_costfit": 1.3444,
+   "shared_costfit3": 1.3438,
+   "AA": 1.0376
+  },
+  "wall_s": {
+   "shared_costfit": 1.3284,
+   "shared_costfit3": 1.3737,
+   "AA": 1.0959
+  }
+ },
+ "S11_core": {
+  "core_ok": true,
+  "p_share_max": 7.648027746940113e-06
+ },
+ "S11_diag": {
+  "mean_pos": {
+   "costfit": 1.0,
+   "costfit3": 1.0,
+   "shared_costfit": 3.5,
+   "shared_costfit3": 1.5,
+   "costfit3_AA": 3.0
+  },
+  "aa_gmean_when_AA_second": 1.0375955171653408,
+  "aa_gmean_when_AA_first": null,
+  "corr_logR3cpu_loaddiff": -1.0,
+  "R3_instructions_gmean": 1.3346970580715136,
+  "R3_cycles_gmean": 1.3456364253107456,
+  "cpu_minus_thread_s_max": 2.1208999998023614e-05
+ },
+ "S11_ok": true,
+ "S12_detail": {
+  "jsonl_roundtrip": true,
+  "resume_filter": true,
+  "attempt_limit": true
+ },
+ "S12_jsonl_ok": true,
+ "S14_parity_hygiene_ok": true,
+ "S13_pilot": {
+  "group": "granite|256",
+  "blocks": 6,
+  "elapsed_s": 2043.1,
+  "s_per_block": 340.5,
+  "sd_log_R3_cpu": 0.0509806005690518,
+  "sd_log_R3_wall": 0.2124342131344488,
+  "sd_log_AA_cpu": 0.038210446023203316,
+  "gmean_R3_cpu": 1.3253664839156603,
+  "gmean_R2_cpu": 1.3123547037284728,
+  "gmean_AA_cpu": 0.9797704236047415,
+  "v2_ok": true,
+  "core_ok": true,
+  "p_share_max": 1.0933391828112843e-05,
+  "diag": {
+   "mean_pos": {
+    "costfit": 1.6666666666666667,
+    "costfit3": 1.5,
+    "shared_costfit": 2.0,
+    "shared_costfit3": 1.6666666666666667,
+    "costfit3_AA": 3.1666666666666665
+   },
+   "aa_gmean_when_AA_second": 0.9747327288863502,
+   "aa_gmean_when_AA_first": 1.005352142391948,
+   "corr_logR3cpu_loaddiff": 0.3707614161364935,
+   "R3_instructions_gmean": 1.326441950643953,
+   "R3_cycles_gmean": 1.3256365857560914,
+   "cpu_minus_thread_s_max": 7.42500000008306e-05
+  },
+  "loadavg": {
+   "min": 7.96484375,
+   "median": 9.16064453125,
+   "max": 15.46728515625
+  },
+  "worker_cpu_s_by_arm": {
+   "costfit": 16.546,
+   "costfit3": 34.295,
+   "shared_costfit": 22.088,
+   "shared_costfit3": 45.647,
+   "costfit3_AA": 33.424
+  },
+  "K_rule": 12
+ },
+ "S13b_budget": {
+  "stream_accesses": {
+   "qwen30b": 1424640,
+   "granite": 638208
+  },
+  "cpu_s_at_smoke_limit": {
+   "qwen30b": 11.142399999999999,
+   "granite": 9.745049999999999
+  },
+  "s_per_block_by_stream": {
+   "qwen30b": 869.1,
+   "granite": 340.5
+  },
+  "projected_s": 58059,
+  "projected_h": 16.13,
+  "budget_s": 108000,
+  "margin": 0.85
+ },
+ "S13b_budget_ok": true,
+ "S13_ok": true,
+ "failed": [],
+ "all_ok": true
+}
+EXIT=0
