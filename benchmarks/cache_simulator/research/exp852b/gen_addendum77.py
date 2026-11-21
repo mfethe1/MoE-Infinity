@@ -153,7 +153,7 @@ load_line = ('n=%d median=%.2f max=%.2f' % (len(load_vals), load_vals[len(load_v
 
 # ---- emit ----
 tbl = '\n'.join(
-    f"| {g} | {S['cpu_s']['R3'][g]['gmean']:.4f} | {S['cpu_s']['R3'][g]['upper95']:.4f} | "
+    f"| {g.replace('|', '\\|')} | {S['cpu_s']['R3'][g]['gmean']:.4f} | {S['cpu_s']['R3'][g]['upper95']:.4f} | "
     f"{S['cpu_s']['R3'][g]['lower_bonf']:.4f} | {S['wall_s']['R3'][g]['gmean']:.4f} | {S['cpu_s']['AA'][g]['sd_log']:.4f} |"
     for g in G)
 md = f"""# ADDENDUM77 — exp852b: shared metadata views, paired fresh-process payoff (E-core CPU-time) — PAYOFF-REJECTED
@@ -222,7 +222,6 @@ open(outp, 'w').write(md)
 
 cap = os.path.join(os.path.dirname(HERE), 'capture_report.md')
 captxt = open(cap).read()
-a('capture idempotence', '## exp852b' not in captxt)
 a('ADDENDUM76 present in capture', 'ADDENDUM76' in captxt)
 entry = f"""
 
@@ -236,7 +235,10 @@ Python paths; fused records (exp729 CONFIRMED+SAVING, exp732 CONFIRMED) remain t
 adopted design; further time claims need a compiled implementation. Full evidence:
 research/exp852b/ (94-check independent adjudication, 480-row raw data, frozen shas).
 """
-open(cap, 'a').write(entry)
+if '## exp852b' not in captxt:
+    open(cap, 'a').write(entry)
+    print('appended capture entry for exp852b')
+else:
+    print('capture entry already present (regeneration) - skipped')
 print(f'OK gen_addendum77: {len(A)} asserts, 0 failed')
 print('wrote', outp)
-print('appended capture entry for exp852b')
