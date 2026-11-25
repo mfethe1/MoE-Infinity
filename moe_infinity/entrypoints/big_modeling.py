@@ -1363,12 +1363,46 @@ class MoE:
 
         from moe_infinity.engine.types import SamplingParams
 
+        # The native engine takes a flat token list: honour attention_mask by
+        # dropping masked-out tokens, and reject position_ids it cannot apply.
+        prompt_token_ids = [int(token) for token in input_ids[0].tolist()]
+        attention_mask = kwargs.get("attention_mask")
+        if attention_mask is not None:
+            if tuple(attention_mask.shape) != tuple(input_ids.shape):
+                raise ValueError(
+                    f"attention_mask shape {tuple(attention_mask.shape)} != "
+                    f"input_ids shape {tuple(input_ids.shape)}"
+                )
+            keep = [bool(value) for value in attention_mask[0].tolist()]
+            if not any(keep):
+                raise ValueError(
+                    "attention_mask masks out the entire prompt; at least "
+                    "one token must be attended"
+                )
+            prompt_token_ids = [
+                token for token, kept in zip(prompt_token_ids, keep) if kept
+            ]
+        position_ids = kwargs.get("position_ids")
+        if position_ids is not None:
+            if tuple(position_ids.shape) != tuple(input_ids.shape):
+                raise ValueError(
+                    f"position_ids shape {tuple(position_ids.shape)} != "
+                    f"input_ids shape {tuple(input_ids.shape)}"
+                )
+            if [int(p) for p in position_ids[0].tolist()] != list(
+                range(int(input_ids.shape[1]))
+            ):
+                raise ValueError(
+                    "position_ids is not supported on the native generation "
+                    "path; use the HuggingFace path (use_native_engine=False) "
+                    "or omit position_ids"
+                )
+
         self._resolve_spec_strategy(speculative_draft)
         self._configure_hook(input_ids)
         self._cached_past_key_values = None
         self.model.eval()
 
-        prompt_token_ids = [int(token) for token in input_ids[0].tolist()]
         if len(prompt_token_ids) > self.max_seq_length:
             raise ValueError(
                 f"prompt length {len(prompt_token_ids)} exceeds max_seq_length {self.max_seq_length}"
