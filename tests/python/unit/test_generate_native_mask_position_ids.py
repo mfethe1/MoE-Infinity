@@ -2,8 +2,7 @@
 
 The native engine path (use_native_engine=True, batch-1 2D input) used to
 build ``prompt_token_ids`` from ``input_ids[0]`` and silently drop
-``attention_mask`` and ``position_ids``. The contract pinned here
-(PREREG + ADDENDUM-1):
+``attention_mask`` and ``position_ids``. The required behavior is:
 
 * attention_mask is checked first, in order: shape must equal input_ids
   shape ("attention_mask shape"); values must all be 0 or 1
@@ -13,15 +12,17 @@ build ``prompt_token_ids`` from ``input_ids[0]`` and silently drop
   ids (matching DFlash and the HF path), so ``out[:, L:]`` is the
   continuation.
 * position_ids is checked next: shape must equal input_ids shape
-  ("position_ids shape"), and anything other than the default
-  ``[0..L-1]`` (L = full input length) is rejected
-  ("position_ids is not supported on the native"). The comparison must not
-  truncate: float ids equal to [0..L-1] are accepted, fractional ones are
+  ("position_ids shape"). At positions kept by the mask, values must match
+  ``[0..K-1]`` (K = kept token count), as in HuggingFace's default positions;
+  anything else is rejected ("position_ids is not supported on the native").
+  Without a mask, this is the full-length default ``[0..L-1]``. The comparison
+  must not truncate: integral float ids are accepted, fractional ones are
   rejected.
 * Every ValueError raise path is side-effect free: ``_configure_hook`` and
   the native engine are never called.
 * The HF path (use_native_engine=False) forwards both kwargs unchanged.
 """
+
 from __future__ import annotations
 
 import warnings
@@ -100,7 +101,7 @@ def _only_engine_call(moe):
     return calls[0]
 
 
-# --- C1: attention_mask shape ------------------------------------------------
+# --- attention_mask shape ----------------------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -118,7 +119,7 @@ def test_attention_mask_shape_mismatch_raises(mask):
         _generate(moe, _input_ids(), attention_mask=mask)
 
 
-# --- C2: all-zero attention_mask ---------------------------------------------
+# --- all-zero attention_mask -------------------------------------------------
 
 
 def test_all_zero_attention_mask_raises():
@@ -128,7 +129,7 @@ def test_all_zero_attention_mask_raises():
         _generate(moe, _input_ids(), attention_mask=mask)
 
 
-# --- C3: attention_mask holes are trimmed ------------------------------------
+# --- attention_mask holes are trimmed ----------------------------------------
 
 
 def test_attention_mask_holes_trim_prompt_in_order():
@@ -142,12 +143,12 @@ def test_attention_mask_holes_trim_prompt_in_order():
     assert list(call["prompt_token_ids"]) == [5, 6, 8]
     assert isinstance(call["sampling_params"], SamplingParams)
     assert isinstance(out, torch.Tensor)
-    # ADDENDUM-1 C3: return the FULL input row + engine output, not the
-    # trimmed prompt, so out[:, input_ids.shape[1]:] is the continuation.
+    # Return the FULL input row + engine output, not the trimmed prompt, so
+    # out[:, input_ids.shape[1]:] is the continuation.
     assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
 
 
-# --- C4: all-ones attention_mask == no mask ----------------------------------
+# --- all-ones attention_mask == no mask --------------------------------------
 
 
 def test_all_ones_attention_mask_matches_no_mask_call():
@@ -168,7 +169,7 @@ def test_all_ones_attention_mask_matches_no_mask_call():
     assert torch.equal(out, base_out)
 
 
-# --- C5: default position_ids accepted ---------------------------------------
+# --- default position_ids accepted -------------------------------------------
 
 
 def test_default_position_ids_accepted():
@@ -183,7 +184,7 @@ def test_default_position_ids_accepted():
     assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
 
 
-# --- C6: non-default position_ids rejected -----------------------------------
+# --- non-default position_ids rejected ---------------------------------------
 
 
 def test_non_default_position_ids_raise():
@@ -196,25 +197,44 @@ def test_non_default_position_ids_raise():
 
 
 def test_position_ids_compared_against_full_length_after_mask_trim():
-    # Default is [0..L-1] over the FULL input length, not the trimmed prompt:
-    # with a holed mask, [0..L-1] is accepted and [0..k-1]-style ids are not.
     moe = _make_moe()
     mask = torch.tensor([[1, 1, 0, 1]], dtype=torch.long)
     full = torch.arange(4, dtype=torch.long).unsqueeze(0)
-    _generate(moe, _input_ids(), attention_mask=mask, position_ids=full)
-    assert list(_only_engine_call(moe)["prompt_token_ids"]) == [5, 6, 8]
-
-    moe2 = _make_moe()
-    trimmed_style = torch.tensor([[0, 1, 1, 2]], dtype=torch.long)
     with pytest.raises(
         ValueError, match="position_ids is not supported on the native"
     ):
-        _generate(
-            moe2, _input_ids(), attention_mask=mask, position_ids=trimmed_style
-        )
+        _generate(moe, _input_ids(), attention_mask=mask, position_ids=full)
 
 
-# --- C7: position_ids shape ---------------------------------------------------
+def test_hf_default_position_ids_accepted_after_mask_trim():
+    moe = _make_moe()
+    mask = torch.tensor([[1, 1, 0, 1]], dtype=torch.long)
+    hf_default = torch.tensor([[0, 1, 0, 2]], dtype=torch.long)
+
+    _generate(moe, _input_ids(), attention_mask=mask, position_ids=hf_default)
+
+    assert list(_only_engine_call(moe)["prompt_token_ids"]) == [5, 6, 8]
+
+
+def test_left_padded_hf_default_position_ids_accepted():
+    input_ids = torch.tensor([[0, 0, 7, 8]], dtype=torch.long)
+    mask = torch.tensor([[0, 0, 1, 1]], dtype=torch.long)
+    hf_default = torch.tensor([[0, 0, 0, 1]], dtype=torch.long)
+    moe = _make_moe()
+
+    _generate(moe, input_ids, attention_mask=mask, position_ids=hf_default)
+
+    assert list(_only_engine_call(moe)["prompt_token_ids"]) == [7, 8]
+
+    moe2 = _make_moe()
+    full = torch.arange(4, dtype=torch.long).unsqueeze(0)
+    with pytest.raises(
+        ValueError, match="position_ids is not supported on the native"
+    ):
+        _generate(moe2, input_ids, attention_mask=mask, position_ids=full)
+
+
+# --- position_ids shape -------------------------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -256,7 +276,7 @@ def test_attention_mask_checked_before_position_ids():
         )
 
 
-# --- C8: HF-path control ------------------------------------------------------
+# --- HF-path control ----------------------------------------------------------
 
 
 def test_hf_path_forwards_attention_mask_and_position_ids():
@@ -274,7 +294,7 @@ def test_hf_path_forwards_attention_mask_and_position_ids():
     assert torch.equal(kwargs["position_ids"], position_ids)
 
 
-# --- C9: no mask / position kwargs == stock behaviour --------------------------
+# --- no mask / position kwargs == stock behaviour ------------------------------
 
 
 def test_no_mask_or_position_kwargs_uses_full_prompt():
@@ -292,7 +312,7 @@ def test_no_mask_or_position_kwargs_uses_full_prompt():
     assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
 
 
-# --- C11: attention_mask must be 0/1 valued ------------------------------------
+# --- attention_mask must be 0/1 valued ----------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -341,7 +361,7 @@ def test_mask_shape_checked_before_binary():
         _generate(moe, _input_ids(), attention_mask=mask)
 
 
-# --- C12: position_ids default check must not truncate --------------------------
+# --- position_ids default check must not truncate ------------------------------
 
 
 def test_fractional_float_position_ids_raise():
@@ -365,7 +385,7 @@ def test_float_default_position_ids_accepted():
     assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
 
 
-# --- C13: raise paths are side-effect free --------------------------------------
+# --- raise paths are side-effect free ------------------------------------------
 
 
 @pytest.mark.parametrize(
@@ -388,7 +408,11 @@ def test_float_default_position_ids_accepted():
             "position_ids shape",
         ),
         (
-            {"position_ids": torch.tensor([[10, 11, 12, 13]], dtype=torch.long)},
+            {
+                "position_ids": torch.tensor(
+                    [[10, 11, 12, 13]], dtype=torch.long
+                )
+            },
             "position_ids is not supported on the native",
         ),
         (

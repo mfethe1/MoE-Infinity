@@ -1393,9 +1393,10 @@ class MoE:
                     f"position_ids shape {tuple(position_ids.shape)} != "
                     f"input_ids shape {tuple(input_ids.shape)}"
                 )
-            if position_ids[0].tolist() != list(
-                range(int(input_ids.shape[1]))
-            ):
+            _pos = position_ids[0].tolist()
+            if attention_mask is not None:
+                _pos = [p for p, k in zip(_pos, keep) if k]
+            if _pos != list(range(len(prompt_token_ids))):
                 raise ValueError(
                     "position_ids is not supported on the native generation "
                     "path; use the HuggingFace path (use_native_engine=False) "
