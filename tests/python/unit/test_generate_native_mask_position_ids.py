@@ -2,18 +2,26 @@
 
 The native engine path (use_native_engine=True, batch-1 2D input) used to
 build ``prompt_token_ids`` from ``input_ids[0]`` and silently drop
-``attention_mask`` and ``position_ids``. The contract pinned here:
+``attention_mask`` and ``position_ids``. The contract pinned here
+(PREREG + ADDENDUM-1):
 
-* attention_mask is checked first: shape must equal input_ids shape
-  ("attention_mask shape"), an all-zero mask is rejected ("entire prompt"),
-  and masked-out tokens are trimmed from the prompt in original order.
+* attention_mask is checked first, in order: shape must equal input_ids
+  shape ("attention_mask shape"); values must all be 0 or 1
+  ("must be 0/1 valued"); an all-zero mask is rejected ("entire prompt");
+  then masked-out tokens are trimmed from the ENGINE prompt in original
+  order. The RETURNED tensor is still the FULL input row + engine output
+  ids (matching DFlash and the HF path), so ``out[:, L:]`` is the
+  continuation.
 * position_ids is checked next: shape must equal input_ids shape
   ("position_ids shape"), and anything other than the default
   ``[0..L-1]`` (L = full input length) is rejected
-  ("position_ids is not supported on the native").
+  ("position_ids is not supported on the native"). The comparison must not
+  truncate: float ids equal to [0..L-1] are accepted, fractional ones are
+  rejected.
+* Every ValueError raise path is side-effect free: ``_configure_hook`` and
+  the native engine are never called.
 * The HF path (use_native_engine=False) forwards both kwargs unchanged.
 """
-
 from __future__ import annotations
 
 import warnings
@@ -134,7 +142,9 @@ def test_attention_mask_holes_trim_prompt_in_order():
     assert list(call["prompt_token_ids"]) == [5, 6, 8]
     assert isinstance(call["sampling_params"], SamplingParams)
     assert isinstance(out, torch.Tensor)
-    assert out.tolist() == [[5, 6, 8] + ENGINE_OUTPUT]
+    # ADDENDUM-1 C3: return the FULL input row + engine output, not the
+    # trimmed prompt, so out[:, input_ids.shape[1]:] is the continuation.
+    assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
 
 
 # --- C4: all-ones attention_mask == no mask ----------------------------------
@@ -280,3 +290,128 @@ def test_no_mask_or_position_kwargs_uses_full_prompt():
     )
     assert out.dtype == torch.long
     assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
+
+
+# --- C11: attention_mask must be 0/1 valued ------------------------------------
+
+
+@pytest.mark.parametrize(
+    "mask",
+    [
+        torch.tensor([[2, -1, 0, 1]], dtype=torch.long),
+        torch.tensor([[0.5, 1.0, 0.0, 1.0]], dtype=torch.float32),
+        torch.tensor([[1, 1, 2, 1]], dtype=torch.long),
+    ],
+    ids=["int-2-neg1", "float-half", "int-single-2"],
+)
+def test_non_binary_attention_mask_raises(mask):
+    moe = _make_moe()
+    with pytest.raises(ValueError, match="must be 0/1 valued"):
+        _generate(moe, _input_ids(), attention_mask=mask)
+
+
+@pytest.mark.parametrize(
+    "mask",
+    [
+        torch.tensor([[True, True, False, True]]),
+        torch.tensor([[1.0, 1.0, 0.0, 1.0]], dtype=torch.float32),
+    ],
+    ids=["bool", "float-binary"],
+)
+def test_binary_non_long_attention_mask_accepted(mask):
+    moe = _make_moe()
+    out = _generate(moe, _input_ids(), attention_mask=mask)
+    assert list(_only_engine_call(moe)["prompt_token_ids"]) == [5, 6, 8]
+    assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
+
+
+def test_non_binary_mask_checked_before_all_zero():
+    # Truncated to int this mask is all-zero; the 0/1 check must run first
+    # (shape -> 0/1-valued -> all-zero -> trim) and must not truncate.
+    moe = _make_moe()
+    mask = torch.tensor([[0.0, 0.0, 0.4, 0.0]], dtype=torch.float32)
+    with pytest.raises(ValueError, match="must be 0/1 valued"):
+        _generate(moe, _input_ids(), attention_mask=mask)
+
+
+def test_mask_shape_checked_before_binary():
+    moe = _make_moe()
+    mask = torch.tensor([[2, 2, 2]], dtype=torch.long)
+    with pytest.raises(ValueError, match="attention_mask shape"):
+        _generate(moe, _input_ids(), attention_mask=mask)
+
+
+# --- C12: position_ids default check must not truncate --------------------------
+
+
+def test_fractional_float_position_ids_raise():
+    moe = _make_moe()
+    position_ids = torch.tensor([[0.0, 1.5, 2.9, 3.2]], dtype=torch.float32)
+    with pytest.raises(
+        ValueError, match="position_ids is not supported on the native"
+    ):
+        _generate(moe, _input_ids(), position_ids=position_ids)
+
+
+def test_float_default_position_ids_accepted():
+    moe = _make_moe()
+    position_ids = torch.tensor([[0.0, 1.0, 2.0, 3.0]], dtype=torch.float32)
+
+    out = _generate(moe, _input_ids(), position_ids=position_ids)
+
+    call = _only_engine_call(moe)
+    assert set(call.keys()) == {"prompt_token_ids", "sampling_params"}
+    assert list(call["prompt_token_ids"]) == INPUT_ROW
+    assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
+
+
+# --- C13: raise paths are side-effect free --------------------------------------
+
+
+@pytest.mark.parametrize(
+    "kwargs, match",
+    [
+        (
+            {"attention_mask": torch.ones((1, 3), dtype=torch.long)},
+            "attention_mask shape",
+        ),
+        (
+            {"attention_mask": torch.tensor([[2, -1, 0, 1]], dtype=torch.long)},
+            "must be 0/1 valued",
+        ),
+        (
+            {"attention_mask": torch.zeros((1, 4), dtype=torch.long)},
+            "entire prompt",
+        ),
+        (
+            {"position_ids": torch.tensor([[0, 1, 2]], dtype=torch.long)},
+            "position_ids shape",
+        ),
+        (
+            {"position_ids": torch.tensor([[10, 11, 12, 13]], dtype=torch.long)},
+            "position_ids is not supported on the native",
+        ),
+        (
+            {
+                "position_ids": torch.tensor(
+                    [[0.0, 1.5, 2.9, 3.2]], dtype=torch.float32
+                )
+            },
+            "position_ids is not supported on the native",
+        ),
+    ],
+    ids=[
+        "mask-shape",
+        "mask-non-binary",
+        "mask-all-zero",
+        "pos-shape",
+        "pos-non-default",
+        "pos-float-non-default",
+    ],
+)
+def test_raise_paths_have_no_side_effects(kwargs, match):
+    moe = _make_moe()
+    with pytest.raises(ValueError, match=match):
+        _generate(moe, _input_ids(), **kwargs)
+    assert moe._configure_hook.call_count == 0
+    assert moe._native_generation_engine.calls == []
