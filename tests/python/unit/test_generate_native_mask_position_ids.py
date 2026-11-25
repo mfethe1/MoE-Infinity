@@ -1,0 +1,282 @@
+"""MoE.generate() native path must honour attention_mask / position_ids.
+
+The native engine path (use_native_engine=True, batch-1 2D input) used to
+build ``prompt_token_ids`` from ``input_ids[0]`` and silently drop
+``attention_mask`` and ``position_ids``. The contract pinned here:
+
+* attention_mask is checked first: shape must equal input_ids shape
+  ("attention_mask shape"), an all-zero mask is rejected ("entire prompt"),
+  and masked-out tokens are trimmed from the prompt in original order.
+* position_ids is checked next: shape must equal input_ids shape
+  ("position_ids shape"), and anything other than the default
+  ``[0..L-1]`` (L = full input length) is rejected
+  ("position_ids is not supported on the native").
+* The HF path (use_native_engine=False) forwards both kwargs unchanged.
+"""
+
+from __future__ import annotations
+
+import warnings
+from unittest.mock import MagicMock
+
+import pytest
+
+pytest.importorskip("torch")
+
+import torch
+
+from moe_infinity.engine.types import SamplingParams
+
+ENGINE_OUTPUT = [9, 9]
+INPUT_ROW = [5, 6, 7, 8]
+
+
+class _FakeResult:
+    def __init__(self):
+        self.output_token_ids = list(ENGINE_OUTPUT)
+
+
+class FakeNativeEngine:
+    def __init__(self):
+        self.calls: list[dict] = []
+        self.spec_strategy = None
+
+    def generate(self, **kwargs):
+        self.calls.append(kwargs)
+        return _FakeResult()
+
+
+class FakeHFModel:
+    def __init__(self):
+        self.calls: list[tuple[torch.Tensor, dict]] = []
+
+    def eval(self):
+        return self
+
+    def generate(self, input_ids, **kwargs):
+        self.calls.append((input_ids, kwargs))
+        extra = torch.tensor([ENGINE_OUTPUT], dtype=input_ids.dtype)
+        return torch.cat([input_ids, extra], dim=1)
+
+
+def _make_moe(use_native_engine: bool = True):
+    from moe_infinity.entrypoints.big_modeling import MoE
+
+    instance = MoE.__new__(MoE)
+    instance.model = FakeHFModel()
+    instance._configure_hook = MagicMock()
+    instance._cached_past_key_values = None
+    instance.max_seq_length = 1024
+    instance.use_native_engine = use_native_engine
+    if use_native_engine:
+        instance._native_generation_engine = FakeNativeEngine()
+    else:
+        instance._native_generation_engine = None
+        instance._resolve_native_input_device = lambda: torch.device("cpu")
+    return instance
+
+
+def _input_ids():
+    return torch.tensor([INPUT_ROW], dtype=torch.long)
+
+
+def _generate(moe, input_ids, **kwargs):
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", DeprecationWarning)
+        return moe.generate(input_ids, max_new_tokens=2, **kwargs)
+
+
+def _only_engine_call(moe):
+    calls = moe._native_generation_engine.calls
+    assert len(calls) == 1, f"expected one engine call, got {len(calls)}"
+    return calls[0]
+
+
+# --- C1: attention_mask shape ------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "mask",
+    [
+        torch.tensor([[1, 1, 1]], dtype=torch.long),
+        torch.tensor([1, 1, 1, 1], dtype=torch.long),
+        torch.tensor([[1, 1, 1, 1], [1, 1, 1, 1]], dtype=torch.long),
+    ],
+    ids=["short", "1d", "batch2"],
+)
+def test_attention_mask_shape_mismatch_raises(mask):
+    moe = _make_moe()
+    with pytest.raises(ValueError, match="attention_mask shape"):
+        _generate(moe, _input_ids(), attention_mask=mask)
+
+
+# --- C2: all-zero attention_mask ---------------------------------------------
+
+
+def test_all_zero_attention_mask_raises():
+    moe = _make_moe()
+    mask = torch.zeros((1, 4), dtype=torch.long)
+    with pytest.raises(ValueError, match="entire prompt"):
+        _generate(moe, _input_ids(), attention_mask=mask)
+
+
+# --- C3: attention_mask holes are trimmed ------------------------------------
+
+
+def test_attention_mask_holes_trim_prompt_in_order():
+    moe = _make_moe()
+    mask = torch.tensor([[1, 1, 0, 1]], dtype=torch.long)
+
+    out = _generate(moe, _input_ids(), attention_mask=mask)
+
+    call = _only_engine_call(moe)
+    assert set(call.keys()) == {"prompt_token_ids", "sampling_params"}
+    assert list(call["prompt_token_ids"]) == [5, 6, 8]
+    assert isinstance(call["sampling_params"], SamplingParams)
+    assert isinstance(out, torch.Tensor)
+    assert out.tolist() == [[5, 6, 8] + ENGINE_OUTPUT]
+
+
+# --- C4: all-ones attention_mask == no mask ----------------------------------
+
+
+def test_all_ones_attention_mask_matches_no_mask_call():
+    baseline = _make_moe()
+    base_out = _generate(baseline, _input_ids())
+    base_call = _only_engine_call(baseline)
+
+    moe = _make_moe()
+    out = _generate(
+        moe, _input_ids(), attention_mask=torch.ones((1, 4), dtype=torch.long)
+    )
+    call = _only_engine_call(moe)
+
+    assert set(call.keys()) == set(base_call.keys())
+    assert list(call["prompt_token_ids"]) == list(base_call["prompt_token_ids"])
+    assert list(call["prompt_token_ids"]) == INPUT_ROW
+    assert call["sampling_params"] == base_call["sampling_params"]
+    assert torch.equal(out, base_out)
+
+
+# --- C5: default position_ids accepted ---------------------------------------
+
+
+def test_default_position_ids_accepted():
+    moe = _make_moe()
+    position_ids = torch.arange(4, dtype=torch.long).unsqueeze(0)
+
+    out = _generate(moe, _input_ids(), position_ids=position_ids)
+
+    call = _only_engine_call(moe)
+    assert set(call.keys()) == {"prompt_token_ids", "sampling_params"}
+    assert list(call["prompt_token_ids"]) == INPUT_ROW
+    assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
+
+
+# --- C6: non-default position_ids rejected -----------------------------------
+
+
+def test_non_default_position_ids_raise():
+    moe = _make_moe()
+    position_ids = torch.tensor([[10, 11, 12, 13]], dtype=torch.long)
+    with pytest.raises(
+        ValueError, match="position_ids is not supported on the native"
+    ):
+        _generate(moe, _input_ids(), position_ids=position_ids)
+
+
+def test_position_ids_compared_against_full_length_after_mask_trim():
+    # Default is [0..L-1] over the FULL input length, not the trimmed prompt:
+    # with a holed mask, [0..L-1] is accepted and [0..k-1]-style ids are not.
+    moe = _make_moe()
+    mask = torch.tensor([[1, 1, 0, 1]], dtype=torch.long)
+    full = torch.arange(4, dtype=torch.long).unsqueeze(0)
+    _generate(moe, _input_ids(), attention_mask=mask, position_ids=full)
+    assert list(_only_engine_call(moe)["prompt_token_ids"]) == [5, 6, 8]
+
+    moe2 = _make_moe()
+    trimmed_style = torch.tensor([[0, 1, 1, 2]], dtype=torch.long)
+    with pytest.raises(
+        ValueError, match="position_ids is not supported on the native"
+    ):
+        _generate(
+            moe2, _input_ids(), attention_mask=mask, position_ids=trimmed_style
+        )
+
+
+# --- C7: position_ids shape ---------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "position_ids",
+    [
+        torch.tensor([[0, 1, 2]], dtype=torch.long),
+        torch.tensor([0, 1, 2, 3], dtype=torch.long),
+    ],
+    ids=["short", "1d"],
+)
+def test_position_ids_shape_mismatch_raises(position_ids):
+    moe = _make_moe()
+    with pytest.raises(ValueError, match="position_ids shape"):
+        _generate(moe, _input_ids(), position_ids=position_ids)
+
+
+# --- check order: attention_mask before position_ids --------------------------
+
+
+def test_attention_mask_checked_before_position_ids():
+    bad_pos = torch.tensor([[10, 11, 12, 13]], dtype=torch.long)
+
+    moe = _make_moe()
+    with pytest.raises(ValueError, match="attention_mask shape"):
+        _generate(
+            moe,
+            _input_ids(),
+            attention_mask=torch.ones((1, 3), dtype=torch.long),
+            position_ids=bad_pos,
+        )
+
+    moe2 = _make_moe()
+    with pytest.raises(ValueError, match="entire prompt"):
+        _generate(
+            moe2,
+            _input_ids(),
+            attention_mask=torch.zeros((1, 4), dtype=torch.long),
+            position_ids=torch.tensor([[0, 1, 2]], dtype=torch.long),
+        )
+
+
+# --- C8: HF-path control ------------------------------------------------------
+
+
+def test_hf_path_forwards_attention_mask_and_position_ids():
+    moe = _make_moe(use_native_engine=False)
+    mask = torch.tensor([[1, 1, 0, 1]], dtype=torch.long)
+    position_ids = torch.tensor([[10, 11, 12, 13]], dtype=torch.long)
+
+    _generate(moe, _input_ids(), attention_mask=mask, position_ids=position_ids)
+
+    assert len(moe.model.calls) == 1
+    ids, kwargs = moe.model.calls[0]
+    assert ids.tolist() == [INPUT_ROW]
+    assert "attention_mask" in kwargs and "position_ids" in kwargs
+    assert torch.equal(kwargs["attention_mask"], mask)
+    assert torch.equal(kwargs["position_ids"], position_ids)
+
+
+# --- C9: no mask / position kwargs == stock behaviour --------------------------
+
+
+def test_no_mask_or_position_kwargs_uses_full_prompt():
+    moe = _make_moe()
+
+    out = _generate(moe, _input_ids())
+
+    call = _only_engine_call(moe)
+    assert set(call.keys()) == {"prompt_token_ids", "sampling_params"}
+    assert list(call["prompt_token_ids"]) == INPUT_ROW
+    assert call["sampling_params"] == SamplingParams(
+        temperature=1.0, top_p=1.0, top_k=0, max_tokens=2
+    )
+    assert out.dtype == torch.long
+    assert out.tolist() == [INPUT_ROW + ENGINE_OUTPUT]
