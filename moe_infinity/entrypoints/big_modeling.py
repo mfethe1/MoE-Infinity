@@ -1365,7 +1365,8 @@ class MoE:
 
         # The native engine takes a flat token list: honour attention_mask by
         # dropping masked-out tokens, and reject position_ids it cannot apply.
-        prompt_token_ids = [int(token) for token in input_ids[0].tolist()]
+        full_row_ids = [int(token) for token in input_ids[0].tolist()]
+        prompt_token_ids = list(full_row_ids)
         attention_mask = kwargs.get("attention_mask")
         if attention_mask is not None:
             if tuple(attention_mask.shape) != tuple(input_ids.shape):
@@ -1373,6 +1374,9 @@ class MoE:
                     f"attention_mask shape {tuple(attention_mask.shape)} != "
                     f"input_ids shape {tuple(input_ids.shape)}"
                 )
+            binary = (attention_mask == 0) | (attention_mask == 1)
+            if not bool(torch.all(binary).item()):
+                raise ValueError("attention_mask must be 0/1 valued")
             keep = [bool(value) for value in attention_mask[0].tolist()]
             if not any(keep):
                 raise ValueError(
@@ -1389,7 +1393,7 @@ class MoE:
                     f"position_ids shape {tuple(position_ids.shape)} != "
                     f"input_ids shape {tuple(input_ids.shape)}"
                 )
-            if [int(p) for p in position_ids[0].tolist()] != list(
+            if position_ids[0].tolist() != list(
                 range(int(input_ids.shape[1]))
             ):
                 raise ValueError(
@@ -1425,7 +1429,9 @@ class MoE:
         finally:
             self._cached_past_key_values = None
 
-        output_ids = prompt_token_ids + result.output_token_ids
+        # Return the FULL input row (like DFlash and the HF path) so
+        # out[:, input_ids.shape[1]:] is the continuation.
+        output_ids = full_row_ids + list(result.output_token_ids)
         return torch.tensor(
             [output_ids],
             dtype=input_ids.dtype,
